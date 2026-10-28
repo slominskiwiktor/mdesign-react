@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/brand/mdesign-logo.png" alt="Logo mDesign" width="160" />
+  <img src="public/brand/mdesign-readme.png?v=tile-fd42efc967c9" alt="Logo mDesign" width="160" />
 </p>
 
 # mDesign React — UI kit inspirowany aplikacją mObywatel
