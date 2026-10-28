@@ -1,0 +1,128 @@
+.mp-catalog-page {
+  font:
+    16px/24px 'Open Sans',
+    Arial,
+    sans-serif;
+  color: #101317;
+  min-width: 0;
+  width: 100%;
+}
+.mp-catalog-page > .mp-page-title {
+  width: 100%;
+}
+.mp-catalog-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 32px;
+}
+.mp-catalog-index a {
+  color: #0452a8;
+  text-decoration: underline;
+}
+.mp-catalog-section {
+  min-width: 0;
+  padding: 28px 0;
+  border-top: 1px solid #d0d4db;
+  scroll-margin-top: 24px;
+}
+.mp-catalog-section > header h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  line-height: 32px;
+}
+.mp-catalog-section > header p {
+  margin: 0 0 24px;
+  max-width: 800px;
+  color: #52575f;
+}
+.mp-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  align-items: start;
+  gap: 24px;
+}
+.mp-catalog-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+.mp-catalog-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mp-catalog-section > .mp-data-table + .mp-data-table {
+  margin-top: 24px;
+}
+.mp-catalog-icon-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.mp-catalog-icon-filter input {
+  height: 48px;
+  padding: 11px 12px;
+  border: 1px solid #808893;
+  border-radius: 4px;
+  background: #fff;
+  font: inherit;
+}
+.mp-catalog-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.mp-catalog-icons > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff;
+  color: #0452a8;
+}
+.mp-catalog-icons code {
+  font-size: 10px;
+  line-height: 16px;
+  overflow-wrap: anywhere;
+  color: #34383f;
+}
+.mp-catalog-section > .mp-shell {
+  border: 1px solid #d0d4db;
+  min-height: 600px;
+  isolation: isolate;
+}
+.mp-catalog-spacer {
+  height: 40px;
+}
+.mp-dialog-scope {
+  display: contents;
+}
+.mp-catalog-section .mp-header .m-button {
+  font-size: 14px;
+}
+.mp-catalog-section .mp-page-title h1 {
+  font-size: 24px;
+  line-height: 26px;
+}
+.mp-catalog-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px;
+}
+.mp-catalog-page > .mp-page-title {
+  margin-top: 0;
+}
+@media (max-width: 600px) {
+  .mp-catalog-page {
+    padding: 16px;
+  }
+}

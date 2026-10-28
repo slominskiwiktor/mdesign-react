@@ -1,0 +1,44 @@
+{
+  "documents": {
+    "name": "Dokumenty · małe karty",
+    "screen": "documents",
+    "theme": "light",
+    "reserved": false,
+    "dialog": false
+  },
+  "services": {
+    "name": "Usługi · ulubione",
+    "screen": "services",
+    "theme": "light",
+    "reserved": false,
+    "dialog": false
+  },
+  "services-dark": {
+    "name": "Usługi · motyw ciemny",
+    "screen": "services",
+    "theme": "dark",
+    "reserved": false,
+    "dialog": false
+  },
+  "pesel": {
+    "name": "PESEL · niezastrzeżony",
+    "screen": "pesel",
+    "theme": "light",
+    "reserved": false,
+    "dialog": false
+  },
+  "pesel-reserved": {
+    "name": "PESEL · zastrzeżony",
+    "screen": "pesel",
+    "theme": "light",
+    "reserved": true,
+    "dialog": false
+  },
+  "pesel-confirm": {
+    "name": "PESEL · potwierdzenie",
+    "screen": "pesel",
+    "theme": "light",
+    "reserved": false,
+    "dialog": true
+  }
+}

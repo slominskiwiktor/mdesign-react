@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Zgłoś podatność prywatnie
+    url: https://github.com/slominskiwiktor/mdesign-react/security/advisories/new
+    about: Nie publikuj szczegółów podatności w publicznym Issue. Skorzystaj z prywatnego zgłoszenia.
+  - name: Playground i dokumentacja komponentów
+    url: https://slominskiwiktor.github.io/mdesign-react/
+    about: Przejrzyj API, przykłady i dostępne warianty komponentów.

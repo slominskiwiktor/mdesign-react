@@ -1,0 +1,83 @@
+name: Publish playground
+
+on:
+  workflow_run:
+    workflows: [UI kit CI]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      STORYBOOK_DISABLE_TELEMETRY: '1'
+    steps:
+      - name: Require the latest main revision
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_REVISION: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          current_revision=$(gh api "repos/$GITHUB_REPOSITORY/commits/main" --jq '.sha')
+          test "$current_revision" = "$EXPECTED_REVISION"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: 1.4.4
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - run: bun install --frozen-lockfile
+      - run: bun run verify
+      - run: bun run build:showcase && bun run build:storybook
+        env:
+          VITE_DOCS_BASE: /mdesign-react/
+      - run: bun run -- playwright install --with-deps chromium
+      - name: Verify playground at its public subpath
+        run: |
+          bun run preview --host 127.0.0.1 --port 4180 --base=/mdesign-react/ > /tmp/pages-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          node --input-type=module <<'JS'
+          const deadline = Date.now() + 30000;
+          while (true) {
+            try { if ((await fetch('http://127.0.0.1:4180/mdesign-react/index.json')).ok) break; } catch {}
+            if (Date.now() > deadline) throw new Error('Playground preview did not start');
+            await new Promise(resolve => setTimeout(resolve, 250));
+          }
+          JS
+          node scripts/verify-explorer.mjs http://127.0.0.1:4180/mdesign-react artifacts/pages-explorer
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: dist/storybook
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy playground
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

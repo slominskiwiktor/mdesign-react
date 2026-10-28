@@ -1,0 +1,15 @@
+/* Neutral demo decoration; no official document artwork. */
+.m-document-artwork {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.m-document-artwork > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

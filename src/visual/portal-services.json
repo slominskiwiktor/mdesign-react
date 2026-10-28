@@ -1,0 +1,174 @@
+{
+  "capturedAt": "2026-10-19T21:28:53.114Z",
+  "cards": [
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Twój dowód stracił ważność, uległ uszkodzeniu lub został skradziony? A może chcesz wyrobić swój pierwszy dokument? Nic prostszego, teraz wniosek o dowód możesz złożyć online.",
+      "id": "0",
+      "title": "Wniosek o wydanie dowodu osobistego"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Chcesz wyjechać z dzieckiem za granicę? Potrzebujesz dla niego dokumentu tożsamości? Złóż wniosek o dowód.",
+      "id": "1",
+      "title": "Wniosek o wydanie dowodu osobistego dla dziecka lub podopiecznego"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Dowód Twojego dziecka, podopiecznego lub osoby, której jesteś pełnomocnikiem, został utracony lub uszkodzony? Zgłoś to jak najszybciej, by unieważnić dowód.",
+      "id": "2",
+      "title": "Zgłoszenie utraty lub uszkodzenia dowodu osobistego dziecka lub innej osoby"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Zaginął dowód Twojego dziecka, podopiecznego lub osoby, której jesteś pełnomocnikiem? Jeśli przypuszczasz, że dowód może się odnaleźć, zawieś jego ważność. Kiedy się odnajdzie, cofnij zawieszenie.",
+      "id": "3",
+      "title": "Zgłoszenie lub cofnięcie zawieszenia dowodu osobistego dziecka lub innej osoby"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Twoje dane osobowe wyciekły? Mogły zostać wykorzystane bez upoważnienia? Zgłoś to i unieważnij swój dowód.",
+      "id": "4",
+      "title": "Zgłoszenie kradzieży tożsamości"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Podejrzewasz, że dane osobowe Twojego dziecka, podopiecznego lub osoby, której jesteś pełnomocnikiem, zostały wykorzystane bez upoważnienia? Zgłoś to i unieważnij dowód.",
+      "id": "5",
+      "title": "Zgłoszenie kradzieży tożsamości dziecka lub innej osoby"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Potrzebujesz zaświadczenia z informacją o danych w Rejestrze Dowodów Osobistych? Możesz zawnioskować online o dane Twoje lub innej osoby.",
+      "id": "6",
+      "title": "Wniosek o wydanie zaświadczenia o danych przetwarzanych w Rejestrze Dowodów Osobistych"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Potrzebujesz informacji w formie wypisu i wyrysu z planu ogólnego gminy? Dzięki usłudze e-Wyrys załatwisz wszystko online.",
+      "id": "7",
+      "title": "Wniosek o e-Wyrys z planu ogólnego gminy"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Chcesz usunąć drzewo lub krzew ze swojej działki? Sprawdź, czy musisz mieć pozwolenie. Jeśli tak, wniosek możesz złożyć przez internet.",
+      "id": "8",
+      "title": "Wniosek o zezwolenie na usunięcie drzewa lub krzewu"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Jesteś zarządcą drogi? Sprawdź, czy możesz skorzystać ze zwolnienia z obowiązku budowy kanału technologicznego.",
+      "id": "9",
+      "title": "Wniosek o zwolnienie z obowiązku budowy kanału technologicznego"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Potrzebujesz informacji z rejestru mieszkańców o osobach, które mieszkają pod wskazanym adresem? Złóż wniosek, aby otrzymać potrzebne zaświadczenie.",
+      "id": "10",
+      "title": "Wniosek o wydanie zaświadczenia o liczbie osób zameldowanych w lokalu lub budynku w mieście Gdyni"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Okazało się, że Twoja opłata skarbowa była za wysoka? A może sprawa, za którą zapłacono, nie została zrealizowana? Zawnioskuj o zwrot opłaty skarbowej.",
+      "id": "11",
+      "title": "Wniosek o zwrot opłaty skarbowej w Gdyni"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Chcesz sprawdzić, czy działka znajduje się na obszarze zdegradowanym, obszarze rewitalizacji lub w specjalnej strefie rewitalizacji w Łodzi? Potrzebujesz zaświadczenia do ustalenia prawa pierwokupu przez gminę? Złóż wniosek, który rozpatrzy Urząd Miasta Łodzi.",
+      "id": "12",
+      "title": "Wniosek o wydanie zaświadczenia o położeniu działki na obszarze zdegradowanym lub na obszarze rewitalizacji albo w specjalnej strefie rewitalizacji w Łodzi"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Potrzebujesz potwierdzenia wpisu do ewidencji klubów sportowych w Łodzi? A może musisz udokumentować status prawny klubu przed sponsorem lub bankiem? Złóż wniosek, aby otrzymać potrzebne zaświadczenie.",
+      "id": "13",
+      "title": "Wniosek o wydanie zaświadczenia z ewidencji klubów sportowych Prezydenta Miasta Łodzi"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Widzisz problem w Łodzi, którym powinny zająć się służby miejskie? Chcesz zgłosić uszkodzenie chodnika lub drogi albo problem z czystością? Prześlij zgłoszenie do Urzędu Miasta Łodzi.",
+      "id": "14",
+      "title": "Zgłoszenie dotyczące uszkodzeń, napraw oraz utrzymania czystości w Łodzi"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Szukasz dokumentacji przechowywanej w archiwum zakładowym Starostwa Powiatowego w Poznaniu? Złóż wniosek, który rozpatrzy Starostwo Powiatowe w Poznaniu.",
+      "id": "15",
+      "title": "Wniosek o udostępnienie dokumentacji przechowywanej w archiwum zakładowym Starostwa Powiatowego w Poznaniu"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Interesuje Cię stan środowiska w powiecie poznańskim? A może potrzebujesz kopii koncesji geologicznej? Złóż wniosek, który rozpatrzy Starostwo Powiatowe w Poznaniu.",
+      "id": "16",
+      "title": "Wniosek o udostępnienie informacji o środowisku i jego ochronie w powiecie poznańskim"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Chcesz uzyskać zaświadczenie o wpisie do ewidencji klubów sportowych, uczniowskich klubów sportowych, stowarzyszeń zwykłych lub o wykreśleniu z ewidencji prowadzonej przez Starostę Poznańskiego? Złóż wniosek, który rozpatrzy Starostwo Powiatowe w Poznaniu.",
+      "id": "17",
+      "title": "Wniosek o wydanie zaświadczenia o wpisie do ewidencji klubów sportowych, uczniowskich klubów sportowych, stowarzyszeń zwykłych lub o wykreśleniu z ewidencji prowadzonej przez Starostę Poznańskiego"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Chcesz otrzymać zwrot błędnie uiszczonej wpłaty lub nadpłaty? Złóż wniosek, który rozpatrzy Starostwo Powiatowe w Poznaniu.",
+      "id": "18",
+      "title": "Wniosek o zwrot nienależnie uiszczonej wpłaty lub nadpłaty w powiecie poznańskim"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Chcesz szybciej rozpocząć inwestycję? Złożenie przez każdą ze stron postępowania oświadczenia o zrzeczeniu się prawa do wniesienia odwołania od decyzji przyspiesza ten proces.",
+      "id": "19",
+      "title": "Oświadczenie o zrzeczeniu się prawa do wniesienia odwołania od decyzji wydanej przez Wydział Architektury i Zabytków we Wrocławiu"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Masz ukończone 60 lat i mieszkasz we Wrocławiu? Zawnioskuj o kartę seniora i korzystaj ze zniżek na wydarzenia kulturalne i edukacyjne oraz zajęcia sportowe.",
+      "id": "20",
+      "title": "Wniosek o przyznanie Wrocławskiej Karty Seniora"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Interesuje Cię stan środowiska we Wrocławiu? Złóż wniosek, który rozpatrzy Urząd Miejski Wrocławia.",
+      "id": "21",
+      "title": "Wniosek o udostępnienie informacji o środowisku i jego ochronie we Wrocławiu"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Jesteś mieszkańcem Wrocławia posiadającym przydomowy ogródek i potrzebujesz kompostownika? Złóż wniosek o użyczenie kompostownika, który rozpatrzy Urząd Miejski Wrocławia.",
+      "id": "22",
+      "title": "Wniosek o użyczenie kompostownika we Wrocławiu"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Jesteś właścicielem lub użytkownikiem wieczystym nieruchomości? Potrzebujesz potwierdzenia numeru porządkowego budynku lub nazwy ulicy? Złóż wniosek i uzyskaj zaświadczenie.",
+      "id": "23",
+      "title": "Wniosek o wydanie zaświadczenia o numerze porządkowym lub nazwie ulicy we Wrocławiu"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Potrzebujesz potwierdzenia, że grunt jest objęty uproszczonym planem urządzenia lasu lub decyzją dotyczącą gospodarki leśnej? Złóż wniosek, który rozpatrzy Urząd Miejski Wrocławia.",
+      "id": "24",
+      "title": "Wniosek o wydanie zaświadczenia o objęciu gruntu uproszczonym planem urządzenia lasu lub decyzją w sprawie gospodarki leśnej we Wrocławiu"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Potrzebujesz informacji, czy działka jest objęta miejscowym planem zagospodarowania przestrzennego? Planujesz inwestycję, sprzedaż lub zakup nieruchomości? Złóż wniosek, aby otrzymać zaświadczenie właściwe dla lokalizacji działki.",
+      "id": "25",
+      "title": "Wniosek o wydanie zaświadczenia o obowiązywaniu lub braku miejscowego planu zagospodarowania przestrzennego dla nieruchomości we Wrocławiu"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Potrzebujesz zaświadczenia o ostateczności decyzji wydanej przez Wydział Architektury i Zabytków we Wrocławiu? Złóż wniosek, aby otrzymać potrzebny dokument.",
+      "id": "26",
+      "title": "Wniosek o wydanie zaświadczenia o ostateczności decyzji wydanej przez Wydział Architektury i Zabytków we Wrocławiu"
+    },
+    {
+      "actionLabel": "Załatw sprawę",
+      "description": "Chcesz założyć księgę wieczystą dla lokalu mieszkalnego? Sprzedajesz mieszkanie lub inny lokal? Złóż wniosek, aby otrzymać zaświadczenie niezbędne do wydzielenia lokalu.",
+      "id": "27",
+      "title": "Wniosek o wydanie zaświadczenia o samodzielności lokali we Wrocławiu"
+    }
+  ],
+  "sourceUrl": "https://www.mobywatel.gov.pl/zalatw-sprawe"
+}

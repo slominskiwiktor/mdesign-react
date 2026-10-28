@@ -1,0 +1,35 @@
+node_modules
+dist
+.DS_Store
+*.local
+*.tsbuildinfo
+artifacts
+/coverage/
+test-results/
+playwright-report/
+.playwright-mcp/
+.vitest-attachments/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+!.env.*.example
+# Transfer credentials belong beside the project, never in Git.
+migration-access/
+**/migration-access/
+auth.json
+codex-auth.json
+github.json
+git-identity.json
+*transfer*.zip
+*.zip.sha256
+
+# Private history and withdrawn-source archives must never be committed.
+*.bundle
+**/private-git-history*/
+**/private-removed*/
+**/prepared-checkout/
+
+# Browser failure screenshots are diagnostics, not approved visual baselines.
+src/browser/__screenshots__/*.browser.test.tsx/

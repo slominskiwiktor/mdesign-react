@@ -1,0 +1,58 @@
+name: Błąd
+description: Zgłoś błąd komponentu, paczki lub dokumentacji.
+title: '[Bug]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Podatności zgłaszaj prywatnie przez [Security](https://github.com/slominskiwiktor/mdesign-react/security/advisories/new).
+        Nie zamieszczaj danych osobowych, haseł, tokenów ani prawdziwych dokumentów.
+  - type: input
+    id: version
+    attributes:
+      label: Wersja mDesign
+      description: Podaj wersję używanej paczki lub identyfikator commita.
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Obszar
+      options:
+        - Wspólne komponenty
+        - Mobile
+        - Portal
+        - Landing
+        - Tokeny lub zasoby
+        - Paczka lub build
+        - Dokumentacja lub playground
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Jak odtworzyć
+      description: Podaj kroki i minimalny przykład z danymi demonstracyjnymi. Możesz dołączyć zrzut lub link do publicznego repozytorium.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Oczekiwany wynik
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Rzeczywisty wynik
+      description: Dołącz istotny komunikat błędu, jeśli występuje.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Środowisko
+      description: Wersja React, przeglądarka, system operacyjny oraz wersje Node i Bun, jeśli dotyczą problemu.
+    validations:
+      required: true

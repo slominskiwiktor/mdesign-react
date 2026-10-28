@@ -1,0 +1,51 @@
+{
+  "source": "Project owner supplied replacement artwork",
+  "sourceFile": "public/brand/mdesign-logo.png",
+  "sourceSha256": "47b510a15edde5a893994c75d544301ef72380cdccca49e02956e5e608046a68",
+  "adaptation": "Uses the transparent artwork supplied by the project owner. SVG framing omits detached pixels in the outer margin, retaining the supplied alpha edge and interior artwork. Runtime PNG and lossless WebP exports are 512px.",
+  "texture": {
+    "file": "public/brand/mdesign-blueprint.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 257572,
+    "sha256": "e755f0525b536c82ff7274c7d5e70d5092ead280aa568696e1d469a79ea5df54"
+  },
+  "marks": [
+    {
+      "file": "public/brand/mdesign-symbol.svg",
+      "bytes": 343630,
+      "sha256": "1e9837bae75a7e1a04d4eae1bfb56bc5058c17879b7b78f26dc86d7bf79c561c"
+    },
+    {
+      "file": "public/storybook-mark.svg",
+      "bytes": 343743,
+      "sha256": "cf3812bcb718696a53d345cfd5b95ce1b815d463b45ebab309df2cd9a9b1d4ab"
+    },
+    {
+      "file": "public/storybook-mark-dark.svg",
+      "bytes": 343743,
+      "sha256": "8272857b237537f77045c1630a4fc36c2297a538276a69a465cad6097ebdd465"
+    },
+    {
+      "file": "public/favicon.svg",
+      "bytes": 343630,
+      "sha256": "1e9837bae75a7e1a04d4eae1bfb56bc5058c17879b7b78f26dc86d7bf79c561c"
+    }
+  ],
+  "socialPreview": {
+    "file": "public/social-preview.png",
+    "width": 1280,
+    "height": 640,
+    "bytes": 110902,
+    "sha256": "2694c6376ac015320c2c7f852a0893cd001cc927a0640d81a021db005574e642",
+    "origin": "mDesign layout using the project logo"
+  },
+  "readmeMark": {
+    "file": "public/brand/mdesign-readme.png",
+    "width": 512,
+    "height": 512,
+    "bytes": 374535,
+    "sha256": "e8606ffa9db85efd4f8e3b9c43a6cfc8c2e62e0269dad96a95742e6861eeb34f",
+    "origin": "SVG export of the supplied transparent artwork"
+  }
+}

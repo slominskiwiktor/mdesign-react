@@ -1,0 +1,454 @@
+{
+  "verifiedAt": "2026-10-19",
+  "repository": "https://github.com/fajfer/mObywatel",
+  "commit": "d39d2f947b1078332d758de086cb3cb7dd163940",
+  "commitDate": "2026-01-04T14:34:31+01:00",
+  "uiSnapshotImportDates": [
+    "2025-12-29",
+    "2025-12-30"
+  ],
+  "upstreamPortal": "https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny",
+  "officialPortalVerification": {
+    "status": "partial-3-of-53",
+    "iconFiles": "The 2026-10-19 record covers normalized source SVG comparisons for documents, pension-logo and pesel. The other 50 aliases were not compared individually with the official viewer. Current replacements are identified by distributionChange.",
+    "method": "Per-entry officialPortalComparison records retain the SVG comparisons, excluding the XML declaration and outer whitespace. The source cross-check also compared Sources/Tokens/Spacings.swift with the pinned mirror. No new authenticated-viewer comparison was performed on 2026-10-28."
+  },
+  "license": "LicenseRef-COI-MIT-PL",
+  "copyright": "2025 Centralny Ośrodek Informatyki",
+  "licenseSource": "LICENSES/LicenseRef-COI-MIT-PL.txt",
+  "licenseVerification": {
+    "checkedAt": "2026-10-28",
+    "sourceAnnotations": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/REUSE.toml",
+    "licenseText": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/LICENSES/LicenseRef-COI-MIT-PL.txt",
+    "scope": "The pinned mirror annotates iOS/** as LicenseRef-COI-MIT-PL. Its repository-level EUPL license is distinct from that annotation. This does not establish rights to unrelated portal assets, trademarks or state symbols."
+  },
+  "transformations": "Document logos and embedded raster miniatures replaced by neutral mDesign demo cards on 2026-10-28; remaining source SVGs unchanged. Per-entry metadata identifies replacements.",
+  "notes": [
+    "Original source paths and hashes identify the pinned historical inputs.",
+    "2026-10-28: document logos and miniature document artworks have neutral demo replacements. Consult distributionChange on each entry.",
+    "Other native icon SVGs remain unchanged; ServiceIcon has separate adaptation metadata."
+  ],
+  "icons": {
+    "pesel": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC013_zastrzez_PESEL.imageset/IC013_zastrzez_PESEL.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC013_zastrzez_PESEL.imageset/IC013_zastrzez_PESEL.svg",
+      "sha256": "a7de74b84f29e53b9895da02bb34dc3efa09537dd2a00d7019fb01dce28e93bc",
+      "bytes": 1817,
+      "officialPortalVerification": "verified-svg-content-match",
+      "officialPortalComparison": {
+        "verifiedAt": "2026-10-19",
+        "source": "https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/ios",
+        "sourcePath": "Sources/Assets.xcassets/Icons/Lift/Brand/IC013_zastrzez_PESEL.imageset/IC013_zastrzez_PESEL.svg",
+        "originalPortalBytes": 1779,
+        "originalPortalSha256": "5a2b15239aa04e044222ebec5ad44dcf829b275bbd533f212f14738b7f2d2486",
+        "normalizedSha256": "e3ec882f046b6f69d641d289f93fffd528d0ec2d31c19737dda5fc772c10774c",
+        "normalization": "Remove optional XMLdeclaration, trim outerwhitespace; keepallSVGcontent unchanged.",
+        "fullBytesEqual": false,
+        "normalizedContentEqual": true
+      }
+    },
+    "verify-pesel": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC012_sprawdz_PESEL.imageset/IC012_sprawdz_PESEL.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC012_sprawdz_PESEL.imageset/IC012_sprawdz_PESEL.svg",
+      "sha256": "22efecd52b8ee63dc4d3797fb5e3365a67a94493e75e77e044313721b8e0dbc5",
+      "bytes": 1429,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "cybersecurity": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC010_bezpieczenstwo_w_sieci.imageset/IC010_bezpieczenstwo_w_sieci.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC010_bezpieczenstwo_w_sieci.imageset/IC010_bezpieczenstwo_w_sieci.svg",
+      "sha256": "c87eb8e496d1f235492463d8e261e6dbfc667de69a3556e291e08d8daa32dbbc",
+      "bytes": 2644,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "verify-id": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA043_Sprawdzenie_dowodu.imageset/DA043_Sprawdzenie_dowodu.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA043_Sprawdzenie_dowodu.imageset/DA043_Sprawdzenie_dowodu.svg",
+      "sha256": "cc53a0b9496f392b4aaf1d67a98d40a56d6100370bf5fc7e80aa2d96d9cf5521",
+      "bytes": 1184,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "apply": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC020_zloz_dokument.imageset/IC020_zloz_dokument.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC020_zloz_dokument.imageset/IC020_zloz_dokument.svg",
+      "sha256": "38f3b23baf3bf9ac6f8fcbaab42a1f0ebe0a3d9084bf25e678b4825efb58cbba",
+      "bytes": 1118,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "my-cases": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC021_twoje_sprawy.imageset/IC021_twoje_sprawy.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC021_twoje_sprawy.imageset/IC021_twoje_sprawy.svg",
+      "sha256": "186a49ed64c77c8b036c7aabc280f5dc4abb7daf4438fa0500afe7052e0a9f87",
+      "bytes": 1760,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "payments": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC014_ePlatnosci.imageset/IC014_ePlatnosci.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC014_ePlatnosci.imageset/IC014_ePlatnosci.svg",
+      "sha256": "9aeb396099db23442f170f8f9391a505db69fe5a30f5de0a506c97694873eed6",
+      "bytes": 842,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "car-history": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC006_historia_pojazdu.imageset/IC006_historia_pojazdu.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC006_historia_pojazdu.imageset/IC006_historia_pojazdu.svg",
+      "sha256": "33d328f89b491d776a83b89e1122a93d826b20f5dd50a15ee34a441a3ff39a67",
+      "bytes": 2628,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "collision": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC023_stluczka.imageset/IC023_stluczka.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC023_stluczka.imageset/IC023_stluczka.svg",
+      "sha256": "3082dd0bcb385f3318aed5b50e325e61bab0d9ad5a94a3021bab29e44e611582",
+      "bytes": 3580,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "signature": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC003_podpisz_wniosek.imageset/IC003_podpisz_wniosek.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC003_podpisz_wniosek.imageset/IC003_podpisz_wniosek.svg",
+      "sha256": "79f9a39e8c9b05f530bb4c29ce2e0dcc9a4ea0a328e82618b1b7ea7e56568957",
+      "bytes": 2741,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "penalty-points": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC004_punkty_karne.imageset/IC004_punkty_karne.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC004_punkty_karne.imageset/IC004_punkty_karne.svg",
+      "sha256": "a223e17781d9020a4116226d2c96180a4ac74b47fbd5bfcedf32b4de8f169d0b",
+      "bytes": 2386,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "documents": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF001_Documents.imageset/IF001_Documents.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF001_Documents.imageset/IF001_Documents.svg",
+      "sha256": "2c0257713089e8bcacc18b289e4ebe2ce6b1ce159eb6327f74d3664ed2b5a02d",
+      "bytes": 1789,
+      "officialPortalVerification": "verified-svg-content-match",
+      "officialPortalComparison": {
+        "verifiedAt": "2026-10-19",
+        "source": "https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/ios",
+        "sourcePath": "Sources/Assets.xcassets/Icons/Lift/BottomBar/IF001_Documents.imageset/IF001_Documents.svg",
+        "originalPortalBytes": 1751,
+        "originalPortalSha256": "5a816a0203be2da59e2e96481b0d862605da5da91469db6bd9491cae26607269",
+        "normalizedSha256": "2bdd5283a5bca50c183c14be00f8325622e31be063cfadb025d382f75dcd4798",
+        "normalization": "Remove optional XMLdeclaration, trim outerwhitespace; keepallSVGcontent unchanged.",
+        "fullBytesEqual": false,
+        "normalizedContentEqual": true
+      }
+    },
+    "services": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF002_Services.imageset/IF002_Services.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF002_Services.imageset/IF002_Services.svg",
+      "sha256": "74e35acaa74cb7eb3684b8f3aa5690f60137d81cb3efc17891e7713b5b330b03",
+      "bytes": 2367,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "qr": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF004_Scan.imageset/IF004_Scan.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF004_Scan.imageset/IF004_Scan.svg",
+      "sha256": "cd5ae2e6fc808d01058c587100b52cccb5f9d3a02683198db487873afe17c8c7",
+      "bytes": 2459,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "more": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF005_More.imageset/IF005_More.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF005_More.imageset/IF005_More.svg",
+      "sha256": "eebc258e3d9ed3aae827106bb5edb211a7231a440e4d32d9c8f777d48c15e491",
+      "bytes": 3106,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "id-document": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB001_mDowod_card_mini.imageset/IB001_mDowod_card_mini.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB001_mDowod_card_mini.imageset/IB001_mDowod_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "officialPortalVerification": "pending-per-asset",
+      "originalSha256": "eb70889089450e3910421fcabccab3ee261fe15f2bccfe133d83c5eb75abc9bb",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    "pension-card": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB002_Emeryt_card_mini.imageset/IB002_Emeryt_card_mini.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB002_Emeryt_card_mini.imageset/IB002_Emeryt_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "officialPortalVerification": "pending-per-asset",
+      "originalSha256": "c8bc90daaea808db76172e27d2cc3c3282b193b1774c8187861bf1d290d84bbc",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    "family-card": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB005_KDR_card_mini.imageset/IB005_KDR_card_mini.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB005_KDR_card_mini.imageset/IB005_KDR_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "officialPortalVerification": "pending-per-asset",
+      "originalSha256": "cbe74a50ed1daef801bb68501305096739fc23e9de414234912377fc720c4073",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    "vehicles": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB004_mPojazd_card_mini.imageset/IB004_mPojazd_card_mini.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB004_mPojazd_card_mini.imageset/IB004_mPojazd_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "officialPortalVerification": "pending-per-asset",
+      "originalSha256": "ec76f4daae89e109c0f129cd4639b764e8d3e92a4f49b924e19a94fdc639d7e0",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    "driving-license": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB003_PJ_card_mini.imageset/IB003_PJ_card_mini.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB003_PJ_card_mini.imageset/IB003_PJ_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "officialPortalVerification": "pending-per-asset",
+      "originalSha256": "91408cf58115651fce9c05b7cd30359a2b6b03e3c5e8d27f38475ab6bc2083d3",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    "documents-filled": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF006_Documents_fill.imageset/IF006_Documents_fill.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF006_Documents_fill.imageset/IF006_Documents_fill.svg",
+      "sha256": "15efd05aac3d8e615a14888f13fa0250a7713053f912d564cafa50ff65b51401",
+      "bytes": 819,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "services-filled": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF007_Services_fill.imageset/IF007_Services_fill.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF007_Services_fill.imageset/IF007_Services_fill.svg",
+      "sha256": "65b4682b73030aa7a49f2f69237be7ab25ce1f98b621e286295864fa4b8ab11b",
+      "bytes": 1295,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "qr-filled": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF009_Scan_fill.imageset/IF009_Scan_fill.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF009_Scan_fill.imageset/IF009_Scan_fill.svg",
+      "sha256": "6c600568305eb7b664ee67c4dfe2f38483e7ce3f6882213c511bd5b32c41f558",
+      "bytes": 2562,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "more-filled": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF010_More_fill.imageset/IF010_More_fill.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF010_More_fill.imageset/IF010_More_fill.svg",
+      "sha256": "563d7580c8ceaef283721bba573484b138ef66acd8373df3c6f836641a532241",
+      "bytes": 2097,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "search": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB002_Search.imageset/AB002_Search.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB002_Search.imageset/AB002_Search.svg",
+      "sha256": "2a0065c4d25e2fca643d048f8df4379d4fa792b4c8b7817cb44264e63d898f0b",
+      "bytes": 546,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "check": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA012_Check_mark.imageset/AA012_Check_mark.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA012_Check_mark.imageset/AA012_Check_mark.svg",
+      "sha256": "0f450546539afd7d1be4094ccddf110ab3d2adefd1bb2945e36d48a95ea37d27",
+      "bytes": 412,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "back": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB004_Arrow_left.imageset/AB004_Arrow_left.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB004_Arrow_left.imageset/AB004_Arrow_left.svg",
+      "sha256": "7ed762c7fdb6fc357ee2e7dd03eb2ce558c96064f4e0ccc882a9ba7035c10749",
+      "bytes": 472,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "grid": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA068_Grid.imageset/AA068_Grid.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA068_Grid.imageset/AA068_Grid.svg",
+      "sha256": "61603d19595369d54ecde106ceba61b826ccf0d1d676fe43bed3f540ca3c4ff6",
+      "bytes": 574,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "list": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA058_Bulleted_list.imageset/AA058_Bulleted_list.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA058_Bulleted_list.imageset/AA058_Bulleted_list.svg",
+      "sha256": "a9ee9b92cc0ccf4f026e3162e421a926a6767fc283acd1f88102e950f66cb959",
+      "bytes": 1173,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "bell": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB013_Notifications.imageset/AB013_Notifications.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB013_Notifications.imageset/AB013_Notifications.svg",
+      "sha256": "a5f10ab90a455678f6592a68cd71ef1ebb96abb83c31fdd842ac7e9d775251f7",
+      "bytes": 1407,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "help": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB015_Help.imageset/AB015_Help.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB015_Help.imageset/AB015_Help.svg",
+      "sha256": "a5489977d4b516851cb8ceadb03cb907eda8870cb894e8fbe2165fa1660a0f72",
+      "bytes": 784,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "plus": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB016_Add.imageset/AB016_Add.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB016_Add.imageset/AB016_Add.svg",
+      "sha256": "263e51d51c244c80d6e1868ec3577e19b85296187aff4db3d79e04bac0f7678d",
+      "bytes": 437,
+      "officialPortalVerification": "pending-per-asset"
+    },
+    "id-logo": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA001_Card_logo_default.imageset/IA001_Card_logo_default.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA001_Card_logo_default.imageset/IA001_Card_logo_default.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "officialPortalVerification": "pending-per-asset",
+      "originalSha256": "bcfad8e35a6657538e5f46dc7577ea3a56cb9dc6bd402da514eacb53ac785751",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    "pension-logo": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA002_Card_logo_ZUS.imageset/IA002_Card_logo_ZUS.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA002_Card_logo_ZUS.imageset/IA002_Card_logo_ZUS.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "officialPortalVerification": "verified-svg-content-match",
+      "officialPortalComparison": {
+        "verifiedAt": "2026-10-19",
+        "source": "https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/ios",
+        "sourcePath": "Sources/Assets.xcassets/Icons/Lift/Documents/IA002_Card_logo_ZUS.imageset/IA002_Card_logo_ZUS.svg",
+        "originalPortalBytes": 1296,
+        "originalPortalSha256": "0b374eefd24ee4eb3774c21c751be4d3c0c301d84ddc91a837c3d19e3c03cad8",
+        "normalizedSha256": "9805d1dd06282ae847ef3900a122e97415200530a9bfb8dd77c5a1e1520b4c2a",
+        "normalization": "Remove optional XMLdeclaration, trim outerwhitespace; keepallSVGcontent unchanged.",
+        "fullBytesEqual": false,
+        "normalizedContentEqual": true
+      },
+      "originalSha256": "c02fb360759344ba8c6afb83d7bcde4192cbb7ee5f744f5382960a89d0f06ecd",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    "family-logo": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA003_Card_logo_KDR.imageset/IA003_Card_logo_KDR.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA003_Card_logo_KDR.imageset/IA003_Card_logo_KDR.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "officialPortalVerification": "pending-per-asset",
+      "originalSha256": "22b77c3e4b5f3e388d822e3bbdfeb6d31d8ddb76c7695ca35e142c340722e5d3",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    "checkbox-mark": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Dedicated/E006_Checkbox_mark.imageset/E006_Checkbox_mark.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Dedicated/E006_Checkbox_mark.imageset/E006_Checkbox_mark.svg",
+      "sha256": "06945e3cb094774b5bd51be7a5a632af8ff5a4f586f4b93b00b3ebf53ba5d0a9",
+      "bytes": 248,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "field-error": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Dedicated/E001_Error_mark_small.imageset/E001_Error_mark_small.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Dedicated/E001_Error_mark_small.imageset/E001_Error_mark_small.svg",
+      "sha256": "ded92deeab7f0fcee74df37ce3d0d790f51c4c7e1f85319eb67dcdc3b1a3373b",
+      "bytes": 600,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "show-password": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA022_Show_password.imageset/AA022_Show_password.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA022_Show_password.imageset/AA022_Show_password.svg",
+      "sha256": "9ea45baa973b39e750847e72f98da1fdc20c9e40ee59b7d70324cdcfbea7e5e2",
+      "bytes": 807,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "hide-password": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA023_Hide_password.imageset/AA023_Hide_password.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA023_Hide_password.imageset/AA023_Hide_password.svg",
+      "sha256": "84dfa6dc057876b84b93614c8a0a30a4e56320a9b24d03bdfecadf42fd7024bc",
+      "bytes": 1286,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "support-info": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Support/C1_Info.imageset/C1_Info.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Support/C1_Info.imageset/C1_Info.svg",
+      "sha256": "4ecb9d361d0015991c7a3edf1ac29f9b22e6a61e9591b504a26e40abc7e21877",
+      "bytes": 548,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "support-warning": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Support/C2_Warning_mark.imageset/C2_Warning_mark.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Support/C2_Warning_mark.imageset/C2_Warning_mark.svg",
+      "sha256": "dab9e6fae1630456ccf4b2f9d61ca438d321a208dcc5ee6e5536c3629089deaa",
+      "bytes": 550,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "support-error": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Support/C3_Error_mark.imageset/C3_Error_mark.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Support/C3_Error_mark.imageset/C3_Error_mark.svg",
+      "sha256": "4792362ccfc0db915ad023e2d514d8978b33e69fc2508b927f24f4b01c0cee80",
+      "bytes": 568,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "support-success": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Support/C4_Success.imageset/C4_Success.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Support/C4_Success.imageset/C4_Success.svg",
+      "sha256": "f5c2c732f2a9c653ee76bf514df172814f1b3cecfdfa09fdd7984f9976574867",
+      "bytes": 559,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "status-info": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B008_Info.imageset/B008_Info.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Filled/B008_Info.imageset/B008_Info.svg",
+      "sha256": "795d657d895c9ff0140ac1249649a4e254bfbead00eb49ffd9eae4975ca366a6",
+      "bytes": 514,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "status-success": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/b009_check_mark.imageset/b009_check_mark.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Filled/b009_check_mark.imageset/b009_check_mark.svg",
+      "sha256": "6305d940765e47720cf8fd2ae9d3f0832f4a1de23cd242431a04499a7cd2dedf",
+      "bytes": 496,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "status-error": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/b010_x_mark.imageset/b010_x_mark.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Filled/b010_x_mark.imageset/b010_x_mark.svg",
+      "sha256": "7a23df896881cd47732c8f349b0b5eeb6ef08ce00f8c0682b76b7fbd3d778c74",
+      "bytes": 398,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "status-notice": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B012_notice_mark.imageset/B012_notice_mark.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Filled/B012_notice_mark.imageset/B012_notice_mark.svg",
+      "sha256": "79c5d7a48bf5a09a39fefaf2c16055ea6423c4b1376e1e9d45d8312421b5c50b",
+      "bytes": 892,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "status-minus": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B007_Minus.imageset/B007_Minus.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Filled/B007_Minus.imageset/B007_Minus.svg",
+      "sha256": "f18c8215a188f7e4e247f84e5d82e919042d4f3bbd76960254c8cd4880b3f767",
+      "bytes": 258,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "chevron-left": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB005_Chevron_left.imageset/AB005_Chevron_left.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB005_Chevron_left.imageset/AB005_Chevron_left.svg",
+      "sha256": "9ee721853800681c6462627d54d2506b906ddbde9872677c877abdb821fa8731",
+      "bytes": 416,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "chevron-right": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB006_Chevron_right.imageset/AB006_Chevron_right.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB006_Chevron_right.imageset/AB006_Chevron_right.svg",
+      "sha256": "6ce07f539d2e2fe3cc050e65ebda17917070bb3be64bc1e67a07aa2088bcabba",
+      "bytes": 415,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "field-clear": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA018_Fail.imageset/AA018_Fail.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA018_Fail.imageset/AA018_Fail.svg",
+      "sha256": "b120f819d4d4530abe0cbb2950d123c0d0d7879c7a0eaa889ad459d9e848538f",
+      "bytes": 675,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "chevron-down": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB008_Chevron_down.imageset/AB008_Chevron_down.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB008_Chevron_down.imageset/AB008_Chevron_down.svg",
+      "sha256": "88508e33d5f19d7c02bf5d8063cb8c6343cce720619123cbe88fcf581a1de890",
+      "bytes": 396,
+      "officialPortalVerification": "not-compared-individually"
+    },
+    "close": {
+      "nativeSourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB009_X_mark.imageset/AB009_X_mark.svg",
+      "sourceUrl": "https://github.com/fajfer/mObywatel/blob/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB009_X_mark.imageset/AB009_X_mark.svg",
+      "sha256": "76fa62ff43806af46e448f5e2529e268ba30b5287567c29aa7a30cb929059775",
+      "bytes": 527,
+      "officialPortalVerification": "not-compared-individually"
+    }
+  },
+  "scope": "Public API identifiers retained; includes explicitly marked neutral replacements, not an unchanged original catalogue."
+}

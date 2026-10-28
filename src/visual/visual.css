@@ -1,0 +1,255 @@
+.demo-notice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #d9cfab;
+  background: #fff8df;
+  color: #493c12;
+  font:
+    12px/1.5 'Open Sans',
+    sans-serif;
+}
+
+.visual-mobile-canvas {
+  width: 375px;
+  height: 812px;
+  overflow: hidden;
+  background: #f4f6fb;
+  isolation: isolate;
+  position: relative;
+}
+.visual-mobile-canvas > .sample-phone {
+  width: 375px;
+  max-width: none;
+  height: 812px;
+}
+.visual-comparison {
+  font-family: var(--m-font);
+  color: var(--m-text);
+}
+.visual-comparison-controls {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.visual-comparison-controls > div:first-child {
+  flex: 1;
+}
+.visual-comparison h2 {
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0;
+}
+.visual-comparison p {
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--m-muted);
+  margin: 7px 0 0;
+}
+.visual-comparison-controls > label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+}
+.visual-comparison select {
+  border: 1px solid var(--m-border);
+  border-radius: 4px;
+  min-height: 38px;
+  padding: 8px;
+  background: var(--m-surface);
+  color: var(--m-text);
+  font: inherit;
+}
+.visual-mode {
+  display: flex;
+  padding: 3px;
+  border: 1px solid var(--m-border);
+  border-radius: 5px;
+  gap: 3px;
+  background: var(--m-bg);
+}
+.visual-mode button {
+  background: none;
+  color: var(--m-muted);
+  padding: 8px;
+  font-size: 11px;
+  border-radius: 3px;
+}
+.visual-mode button[aria-pressed='true'] {
+  background: var(--m-surface);
+  color: var(--m-brand);
+}
+.visual-opacity {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 12px;
+  color: var(--m-muted);
+  margin: 25px 0;
+}
+.visual-opacity input {
+  width: min(300px, 45%);
+  accent-color: var(--m-brand);
+}
+.visual-comparison-stage {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 30px 16px;
+  background: var(--m-bg);
+  border: 1px solid var(--m-border);
+  border-radius: 8px;
+  margin-top: 24px;
+  overflow: auto;
+}
+.visual-comparison-item {
+  flex-shrink: 0;
+}
+.visual-comparison-item > span {
+  display: block;
+  font-size: 11px;
+  color: var(--m-muted);
+  margin-bottom: 12px;
+}
+.visual-comparison-phone {
+  display: block;
+  width: 375px;
+  height: 812px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 6px 30px #0001;
+}
+.visual-reference-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  width: 375px;
+  height: 812px;
+}
+.visual-source-path {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 20px;
+  color: var(--m-muted);
+}
+.visual-source-path code {
+  overflow-wrap: anywhere;
+  font-size: 10px;
+}
+.visual-source-path a {
+  color: var(--m-brand);
+}
+
+.visual-comparison-controls > div:first-child {
+  min-width: min(100%, 280px);
+}
+.visual-comparison-controls > label {
+  font-size: 12px;
+}
+.visual-comparison > .visual-mode {
+  display: inline-flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.visual-comparison .visual-mode button {
+  min-height: 36px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.visual-comparison .visual-mode button:focus-visible,
+.visual-comparison select:focus-visible,
+.visual-opacity input:focus-visible {
+  outline: 2px solid var(--m-brand);
+  outline-offset: 3px;
+}
+.visual-verification {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid var(--m-border);
+  background: var(--m-bg);
+  border-radius: 8px;
+}
+.visual-verification-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: baseline;
+  font-size: 12px;
+}
+.visual-verification-summary strong {
+  font-size: 15px;
+}
+.visual-verification-summary span {
+  color: var(--m-muted);
+}
+.visual-verification-summary a {
+  margin-left: auto;
+  color: var(--m-brand);
+}
+.visual-verification p {
+  margin: 12px 0 0;
+  max-width: 90ch;
+}
+.visual-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 20px 0 0;
+}
+.visual-metrics dt {
+  color: var(--m-muted);
+  font-size: 11px;
+  line-height: 18px;
+}
+.visual-metrics dd {
+  margin: 4px 0 0;
+  font-size: 20px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.visual-metrics small {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--m-muted);
+}
+.visual-capture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.visual-comparison .visual-protocol {
+  max-width: 100ch;
+  margin-top: 16px;
+}
+@media (max-width: 480px) {
+  .visual-comparison-stage {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 700px) {
+  .visual-metrics {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .visual-verification-summary a {
+    margin-left: 0;
+    width: 100%;
+  }
+  .visual-comparison-controls > label {
+    width: 100%;
+  }
+  .visual-verification {
+    padding: 16px;
+  }
+}

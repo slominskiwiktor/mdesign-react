@@ -1,0 +1,1861 @@
+{
+  "verifiedAt": "2026-10-19",
+  "source": "https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/ios",
+  "sourceType": "Authenticated official source-code viewer",
+  "sourceRevision": "The viewer does not expose a source commit; verification date is not a source-revision date.",
+  "scope": "Only source code and color JSON. No profile data, session data, or authentication credentials.",
+  "semanticMapping": {
+    "base": {
+      "primary": "primary900",
+      "secondary": "secondary900",
+      "background": "background"
+    },
+    "wallet": {
+      "primary": "walletPrimary900",
+      "secondary": "walletSecondary900"
+    },
+    "neutral": {
+      "text": "neutral500",
+      "secondaryText": "neutral200",
+      "muted": "neutral100",
+      "disabled": "neutral60",
+      "subtleSurface": "neutral10",
+      "divider": "neutral30"
+    },
+    "serviceBackgrounds": {
+      "pesel": "peselRestriction",
+      "verify-pesel": "peselVerification",
+      "cybersecurity": "networkSecurityIssues",
+      "apply": "applicationFromServices",
+      "signature": "documentsSigning",
+      "payments": "payments",
+      "car-history": "vehicleHistory",
+      "driver-qualifications": "driverQualifications",
+      "air-quality": "airQuality",
+      "environmental-violation": "environmentalViolation",
+      "flood-alert": "floodAlert",
+      "internet": "internet",
+      "safe-bus": "safeBus",
+      "company": "company",
+      "electoral-register": "electoralRegister"
+    }
+  },
+  "darkAppearance": "No dark appearance entries in any of the55 extracted originalContents.json files; dark adaptations are not original named-color definitions.",
+  "colors": {
+    "background": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Base/background.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xFB\",\n          \"green\" : \"0xF6\",\n          \"red\" : \"0xF4\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xFB",
+                "green": "0xF6",
+                "red": "0xF4"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#F4F6FB",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "primary900": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Base/primary900.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x93\",\n          \"green\" : \"0x4A\",\n          \"red\" : \"0x01\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x93",
+                "green": "0x4A",
+                "red": "0x01"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#014A93",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "secondary900": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Base/secondary900.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xF9\",\n          \"green\" : \"0xEA\",\n          \"red\" : \"0xDB\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xF9",
+                "green": "0xEA",
+                "red": "0xDB"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#DBEAF9",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "walletPrimary900": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Base/walletPrimary900.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xF8\",\n          \"green\" : \"0x5E\",\n          \"red\" : \"0x16\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xF8",
+                "green": "0x5E",
+                "red": "0x16"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#165EF8",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "walletSecondary900": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Base/walletSecondary900.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xFD\",\n          \"green\" : \"0xEC\",\n          \"red\" : \"0xE5\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xFD",
+                "green": "0xEC",
+                "red": "0xE5"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#E5ECFD",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "neutral10": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Neutral/neutral10.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"display-p3\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xF9\",\n          \"green\" : \"0xF8\",\n          \"red\" : \"0xF6\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "display-p3",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xF9",
+                "green": "0xF8",
+                "red": "0xF6"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#F6F8F9",
+          "alpha": 1,
+          "colorSpace": "display-p3"
+        }
+      ]
+    },
+    "neutral100": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Neutral/neutral100.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"display-p3\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x75\",\n          \"green\" : \"0x6A\",\n          \"red\" : \"0x65\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "display-p3",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x75",
+                "green": "0x6A",
+                "red": "0x65"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#656A75",
+          "alpha": 1,
+          "colorSpace": "display-p3"
+        }
+      ]
+    },
+    "neutral200": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Neutral/neutral200.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"display-p3\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x5F\",\n          \"green\" : \"0x57\",\n          \"red\" : \"0x52\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "display-p3",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x5F",
+                "green": "0x57",
+                "red": "0x52"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#52575F",
+          "alpha": 1,
+          "colorSpace": "display-p3"
+        }
+      ]
+    },
+    "neutral30": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Neutral/neutral30.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"display-p3\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xED\",\n          \"green\" : \"0xEA\",\n          \"red\" : \"0xE7\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "display-p3",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xED",
+                "green": "0xEA",
+                "red": "0xE7"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#E7EAED",
+          "alpha": 1,
+          "colorSpace": "display-p3"
+        }
+      ]
+    },
+    "neutral500": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Neutral/neutral500.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"display-p3\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x17\",\n          \"green\" : \"0x13\",\n          \"red\" : \"0x10\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "display-p3",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x17",
+                "green": "0x13",
+                "red": "0x10"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#101317",
+          "alpha": 1,
+          "colorSpace": "display-p3"
+        }
+      ]
+    },
+    "neutral60": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Neutral/neutral60.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"display-p3\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xB2\",\n          \"green\" : \"0xAA\",\n          \"red\" : \"0xA4\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "display-p3",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xB2",
+                "green": "0xAA",
+                "red": "0xA4"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#A4AAB2",
+          "alpha": 1,
+          "colorSpace": "display-p3"
+        }
+      ]
+    },
+    "neutral80": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Neutral/neutral80.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"display-p3\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x93\",\n          \"green\" : \"0x88\",\n          \"red\" : \"0x80\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "display-p3",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x93",
+                "green": "0x88",
+                "red": "0x80"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#808893",
+          "alpha": 1,
+          "colorSpace": "display-p3"
+        }
+      ]
+    },
+    "blue100": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Support/blue100.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xDD\",\n          \"green\" : \"0x69\",\n          \"red\" : \"0x00\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xDD",
+                "green": "0x69",
+                "red": "0x00"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#0069DD",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "blue20": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Support/blue20.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xFF\",\n          \"green\" : \"0xEA\",\n          \"red\" : \"0xD9\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xFF",
+                "green": "0xEA",
+                "red": "0xD9"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#D9EAFF",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "green100": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Support/green100.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x26\",\n          \"green\" : \"0x7C\",\n          \"red\" : \"0x31\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x26",
+                "green": "0x7C",
+                "red": "0x31"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#317C26",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "green20": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Support/green20.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xE1\",\n          \"green\" : \"0xFA\",\n          \"red\" : \"0xEE\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xE1",
+                "green": "0xFA",
+                "red": "0xEE"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#EEFAE1",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "applicationFromServices": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/applicationFromServices.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xED\",\n          \"green\" : \"0xE4\",\n          \"red\" : \"0xDE\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xED",
+                "green": "0xE4",
+                "red": "0xDE"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#DEE4ED",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "networkSecurityIssues": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/networkSecurityIssues.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xFE\",\n          \"green\" : \"0xC7\",\n          \"red\" : \"0xDF\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xFE",
+                "green": "0xC7",
+                "red": "0xDF"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#DFC7FE",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "orange100": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Support/orange100.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x00\",\n          \"green\" : \"0x5E\",\n          \"red\" : \"0xAE\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x00",
+                "green": "0x5E",
+                "red": "0xAE"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#AE5E00",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "orange20": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Support/orange20.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xD2\",\n          \"green\" : \"0xF1\",\n          \"red\" : \"0xFD\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xD2",
+                "green": "0xF1",
+                "red": "0xFD"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#FDF1D2",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "payments": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/payments.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xEA\",\n          \"green\" : \"0xE3\",\n          \"red\" : \"0xD2\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xEA",
+                "green": "0xE3",
+                "red": "0xD2"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#D2E3EA",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "peselRestriction": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/peselRestriction.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xFE\",\n          \"green\" : \"0xC7\",\n          \"red\" : \"0xDF\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xFE",
+                "green": "0xC7",
+                "red": "0xDF"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#DFC7FE",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "peselVerification": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/peselVerification.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xFE\",\n          \"green\" : \"0xC7\",\n          \"red\" : \"0xDF\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xFE",
+                "green": "0xC7",
+                "red": "0xDF"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#DFC7FE",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "red100": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Support/red100.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x1C\",\n          \"green\" : \"0x29\",\n          \"red\" : \"0xCD\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x1C",
+                "green": "0x29",
+                "red": "0xCD"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#CD291C",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "red20": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Support/red20.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xE5\",\n          \"green\" : \"0xE9\",\n          \"red\" : \"0xFF\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xE5",
+                "green": "0xE9",
+                "red": "0xFF"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#FFE9E5",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "red200": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Support/red200.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x13\",\n          \"green\" : \"0x18\",\n          \"red\" : \"0x9B\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x13",
+                "green": "0x18",
+                "red": "0x9B"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#9B1813",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "vehicleHistory": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/vehicleHistory.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xFF\",\n          \"green\" : \"0xEA\",\n          \"red\" : \"0xD9\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xFF",
+                "green": "0xEA",
+                "red": "0xD9"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#D9EAFF",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "airQuality": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/airQuality.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xD9\",\n          \"green\" : \"0xF8\",\n          \"red\" : \"0xD0\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xD9",
+                "green": "0xF8",
+                "red": "0xD0"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#D0F8D9",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "company": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/company.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xD9\",\n          \"green\" : \"0xDB\",\n          \"red\" : \"0xE2\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xD9",
+                "green": "0xDB",
+                "red": "0xE2"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#E2DBD9",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "documentsSigning": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/documentsSigning.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xED\",\n          \"green\" : \"0xE4\",\n          \"red\" : \"0xDE\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xED",
+                "green": "0xE4",
+                "red": "0xDE"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#DEE4ED",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "driverQualifications": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/driverQualifications.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xFF\",\n          \"green\" : \"0xEA\",\n          \"red\" : \"0xD9\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xFF",
+                "green": "0xEA",
+                "red": "0xD9"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#D9EAFF",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "electoralRegister": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/electoralRegister.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xED\",\n          \"green\" : \"0xE4\",\n          \"red\" : \"0xDE\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xED",
+                "green": "0xE4",
+                "red": "0xDE"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#DEE4ED",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "environmentalViolation": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/environmentalViolation.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xD9\",\n          \"green\" : \"0xF8\",\n          \"red\" : \"0xD0\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xD9",
+                "green": "0xF8",
+                "red": "0xD0"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#D0F8D9",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "floodAlert": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/floodAlert.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xD9\",\n          \"green\" : \"0xF8\",\n          \"red\" : \"0xD0\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xD9",
+                "green": "0xF8",
+                "red": "0xD0"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#D0F8D9",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "internet": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/internet.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xFF\",\n          \"green\" : \"0xEC\",\n          \"red\" : \"0xC1\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xFF",
+                "green": "0xEC",
+                "red": "0xC1"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#C1ECFF",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "safeBus": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Lift/Brand/safeBus.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xD2\",\n          \"green\" : \"0xF1\",\n          \"red\" : \"0xFD\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xD2",
+                "green": "0xF1",
+                "red": "0xFD"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#FDF1D2",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "arable200": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/arable200.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x2F\",\n          \"green\" : \"0x32\",\n          \"red\" : \"0x3D\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x2F",
+                "green": "0x32",
+                "red": "0x3D"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#3D322F",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "arable80": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/arable80.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x64\",\n          \"green\" : \"0x6A\",\n          \"red\" : \"0x7F\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x64",
+                "green": "0x6A",
+                "red": "0x7F"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#7F6A64",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "brown200": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/brown200.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x19\",\n          \"green\" : \"0x28\",\n          \"red\" : \"0x50\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x19",
+                "green": "0x28",
+                "red": "0x50"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#502819",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "celadon200": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/celadon200.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x34\",\n          \"green\" : \"0x3D\",\n          \"red\" : \"0x03\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x34",
+                "green": "0x3D",
+                "red": "0x03"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#033D34",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "celadon80": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/celadon80.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x6F\",\n          \"green\" : \"0x84\",\n          \"red\" : \"0x16\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x6F",
+                "green": "0x84",
+                "red": "0x16"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#16846F",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "coral300": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/coral300.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x19\",\n          \"green\" : \"0x2F\",\n          \"red\" : \"0xB2\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x19",
+                "green": "0x2F",
+                "red": "0xB2"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#B22F19",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "cornflower300": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/cornflower300.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x64\",\n          \"green\" : \"0x2A\",\n          \"red\" : \"0x16\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x64",
+                "green": "0x2A",
+                "red": "0x16"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#162A64",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "grass200": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/grass200.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x06\",\n          \"green\" : \"0x50\",\n          \"red\" : \"0x21\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x06",
+                "green": "0x50",
+                "red": "0x21"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#215006",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "neutral300": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/neutral300.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x3F\",\n          \"green\" : \"0x38\",\n          \"red\" : \"0x34\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x3F",
+                "green": "0x38",
+                "red": "0x34"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#34383F",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "ocean200": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/ocean200.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x4E\",\n          \"green\" : \"0x3F\",\n          \"red\" : \"0x00\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x4E",
+                "green": "0x3F",
+                "red": "0x00"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#003F4E",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "ocean400": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/ocean400.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x27\",\n          \"green\" : \"0x1F\",\n          \"red\" : \"0x00\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x27",
+                "green": "0x1F",
+                "red": "0x00"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#001F27",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "ocean80": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/ocean80.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x9C\",\n          \"green\" : \"0x7E\",\n          \"red\" : \"0x00\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x9C",
+                "green": "0x7E",
+                "red": "0x00"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#007E9C",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "pink80": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/pink80.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x91\",\n          \"green\" : \"0x3B\",\n          \"red\" : \"0xCF\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x91",
+                "green": "0x3B",
+                "red": "0xCF"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#CF3B91",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "secondary100": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/secondary100.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x3D\",\n          \"green\" : \"0x21\",\n          \"red\" : \"0xD4\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x3D",
+                "green": "0x21",
+                "red": "0xD4"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#D4213D",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "snow80": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/snow80.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xF1\",\n          \"green\" : \"0x94\",\n          \"red\" : \"0x44\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xF1",
+                "green": "0x94",
+                "red": "0x44"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#4494F1",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "sprouts100": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/sprouts100.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x00\",\n          \"green\" : \"0x5A\",\n          \"red\" : \"0x53\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x00",
+                "green": "0x5A",
+                "red": "0x53"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#535A00",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "steel100": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/steel100.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x5D\",\n          \"green\" : \"0x49\",\n          \"red\" : \"0x39\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x5D",
+                "green": "0x49",
+                "red": "0x39"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#39495D",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "steel200": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/steel200.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0x41\",\n          \"green\" : \"0x34\",\n          \"red\" : \"0x29\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0x41",
+                "green": "0x34",
+                "red": "0x29"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#293441",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    },
+    "steel30": {
+      "sourcePath": "Sources/Assets.xcassets/Colors/Documents/steel30.colorset/Contents.json",
+      "rawJSON": "{\n  \"colors\" : [\n    {\n      \"color\" : {\n        \"color-space\" : \"srgb\",\n        \"components\" : {\n          \"alpha\" : \"1.000\",\n          \"blue\" : \"0xED\",\n          \"green\" : \"0xE4\",\n          \"red\" : \"0xDE\"\n        }\n      },\n      \"idiom\" : \"universal\"\n    }\n  ],\n  \"info\" : {\n    \"author\" : \"xcode\",\n    \"version\" : 1\n  }\n}",
+      "parsed": {
+        "colors": [
+          {
+            "color": {
+              "color-space": "srgb",
+              "components": {
+                "alpha": "1.000",
+                "blue": "0xED",
+                "green": "0xE4",
+                "red": "0xDE"
+              }
+            },
+            "idiom": "universal"
+          }
+        ],
+        "info": {
+          "author": "xcode",
+          "version": 1
+        }
+      },
+      "readAt": "2026-10-19",
+      "resolved": [
+        {
+          "appearance": "universal",
+          "hex": "#DEE4ED",
+          "alpha": 1,
+          "colorSpace": "srgb"
+        }
+      ]
+    }
+  }
+}

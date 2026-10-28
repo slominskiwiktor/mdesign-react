@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "sourceAuditVersion": "0.4.0",
+  "inventories": [
+    {
+      "surface": "mobile",
+      "file": "mobile-0.4.0.json",
+      "bytes": 185976,
+      "sha256": "9b0377bed3df97013e950f9446eee92f87fdf528a5ae01564579c9a3fa87d813",
+      "historicalLocation": "artifacts/coverage/mobile-0.4.0.json"
+    },
+    {
+      "surface": "portal",
+      "file": "portal-0.4.0.json",
+      "bytes": 90563,
+      "sha256": "6e4324151ce0733cc69ac3f8c142fed25a53d737dd0be40ff1aaaed3da5fee1a",
+      "historicalLocation": "artifacts/coverage/portal-0.4.0.json"
+    },
+    {
+      "surface": "landing",
+      "file": "landing-0.4.0.json",
+      "bytes": 47773,
+      "sha256": "5a07f86fb087861f4119ee39eaf2170b80513144b63f8f3f97490bb3490f635e",
+      "historicalLocation": "artifacts/coverage/landing-0.4.0.json"
+    }
+  ]
+}

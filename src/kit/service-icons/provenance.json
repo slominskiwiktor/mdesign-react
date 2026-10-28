@@ -1,0 +1,103 @@
+{
+  "verifiedAt": "2026-10-19",
+  "sourceLicense": "../native-icons/LICENSE-COI-MIT-PL.txt",
+  "scope": "Service icon variants derived from the native catalogue.",
+  "icons": [
+    {
+      "file": "apply-light.svg",
+      "sha256": "01e9605e4072854ea22d78f5b5306cf22e3c8aa4e3ccc031cd28ab6d57e5aefa",
+      "name": "apply",
+      "theme": "light",
+      "source": "../native-icons/apply.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "pesel-light.svg",
+      "sha256": "0fdb200d8a2eebb5c7efeff000ad83d84d567dee056252f46275bb226f177a70",
+      "name": "pesel",
+      "theme": "light",
+      "source": "../native-icons/pesel.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "my-cases-light.svg",
+      "sha256": "4be89bcc49d8b1eac3c271d289cc484c255ade1eeee525f1ee85488a21230208",
+      "name": "my-cases",
+      "theme": "light",
+      "source": "../native-icons/my-cases.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "verify-id-light.svg",
+      "sha256": "4a337fef5ca3da3b9bf6f746633668a1173c8e71042de51a47c33444042929ca",
+      "name": "verify-id",
+      "theme": "light",
+      "source": "../native-icons/verify-id.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "cybersecurity-light.svg",
+      "sha256": "c87eb8e496d1f235492463d8e261e6dbfc667de69a3556e291e08d8daa32dbbc",
+      "name": "cybersecurity",
+      "theme": "light",
+      "source": "../native-icons/cybersecurity.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "verify-pesel-light.svg",
+      "sha256": "22efecd52b8ee63dc4d3797fb5e3365a67a94493e75e77e044313721b8e0dbc5",
+      "name": "verify-pesel",
+      "theme": "light",
+      "source": "../native-icons/verify-pesel.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "apply-dark.svg",
+      "sha256": "5b607e9847fc8c6640277518019ea5f5d646af1bfca265be61fd32ee24d430e1",
+      "name": "apply",
+      "theme": "dark",
+      "source": "../native-icons/apply.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "pesel-dark.svg",
+      "sha256": "518af41c23fd26ab5816b1b69e48fa5fd836ec800717164a077d510664177d9c",
+      "name": "pesel",
+      "theme": "dark",
+      "source": "../native-icons/pesel.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "my-cases-dark.svg",
+      "sha256": "b1ca4339c7d0d2292f006cbf39c72596621a51df18769cd3092143dd98237e29",
+      "name": "my-cases",
+      "theme": "dark",
+      "source": "../native-icons/my-cases.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "verify-id-dark.svg",
+      "sha256": "9585caa91d0d5514eb7ec4137062e5054f5acecf911d8ef660c989fe215fdb72",
+      "name": "verify-id",
+      "theme": "dark",
+      "source": "../native-icons/verify-id.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "cybersecurity-dark.svg",
+      "sha256": "e38b1044272ffc542cc21789f2fa50551993e0f6aebf3ed43b53702579a4b166",
+      "name": "cybersecurity",
+      "theme": "dark",
+      "source": "../native-icons/cybersecurity.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    },
+    {
+      "file": "verify-pesel-dark.svg",
+      "sha256": "72fead586b4a20828e5f43755f2bfac9bc97a8a48d6c9ef5ff93315d90aaec0d",
+      "name": "verify-pesel",
+      "theme": "dark",
+      "source": "../native-icons/verify-pesel.svg",
+      "adaptation": "Palette and dimensions adapted for service cards."
+    }
+  ]
+}

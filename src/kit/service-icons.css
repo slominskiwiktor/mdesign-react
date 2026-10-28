@@ -1,0 +1,28 @@
+[data-theme='light'] {
+  --m-service-light-display: block;
+  --m-service-dark-display: none;
+}
+[data-theme='dark'] {
+  --m-service-light-display: none;
+  --m-service-dark-display: block;
+}
+.m-service-artwork {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.m-service-artwork > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.m-service-artwork > .m-service-artwork-light {
+  display: var(--m-service-light-display, block);
+}
+.m-service-artwork > .m-service-artwork-dark {
+  display: var(--m-service-dark-display, none);
+}

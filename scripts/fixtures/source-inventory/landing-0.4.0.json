@@ -1,0 +1,1475 @@
+{
+  "version": "0.4.0",
+  "auditedAt": "2026-10-19",
+  "surface": "public marketing/information site",
+  "site": "https://info.mobywatel.gov.pl",
+  "readOnly": true,
+  "conclusion": "Nie jest to pełny zestaw komponentów publicznego landingu. API 0.4.0 obejmuje 34 komponenty mobile/portal; landing ma oddzielny system Lato, którego wariantów i kompozycji nie zaimplementowano.",
+  "acceptance": "Zgodność dotyczy identycznego wyglądu, geometrii i zachowania komponentu w jego kontekście. Nie wymaga identyczności RGBA/PNG. Podobny prymityw lub wspólny zasób nie oznacza gotowego komponentu landingowego.",
+  "method": {
+    "browser": "T3 collaborative preview tab_c; read-only DOM inspection",
+    "browserViewport": {
+      "width": 375,
+      "height": 812
+    },
+    "routesObserved": 11,
+    "uniqueAppSelectorsObserved": 55,
+    "sourceReview": "Official currently served Angular bundle and global CSS verified against previously downloaded local copies by byte equality and SHA256; inspected CMS home/documents/press JSON as corroboration.",
+    "apiInventory": "artifacts/coverage/api-0.4.0.json",
+    "apiComponentCount": 34,
+    "componentFamilyGrouping": "28 audit families group related upstream components. This is an observed inventory, not a count or denominator for every internal upstream component. No percentage claim is made."
+  },
+  "sources": [
+    {
+      "url": "https://info.mobywatel.gov.pl/",
+      "kind": "official live page",
+      "fontObserved": "Lato, sans-serif"
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+      "kind": "official served application JavaScript",
+      "localPath": "/tmp/mdesign-assets/landing-main.js",
+      "bytes": 854759,
+      "sha256": "241c310833b45d00215ff9e3d1e80f314fcf78e05d0bf727a0f189a96cca7758",
+      "downloadMatchesServed": true,
+      "angularComponentSelectors": {
+        "app-card-news": 58231,
+        "app-card": 60637,
+        "a": 64329,
+        "app-faq-section": 65728,
+        "app-faq": 73017,
+        "app-faq-subsection": 77829,
+        "app-side-banner-section": 82153,
+        "app-video-item": 86052,
+        "app-video-player": 104309,
+        "app-root": 181837,
+        "app-footer": 190717,
+        "app-select": 217812,
+        "app-modal-download-app": 231041,
+        "app-sign-language-link": 232641,
+        "app-nav-top-bar": 234265,
+        "app-social-media-links": 237129,
+        "app-nav": 251356,
+        "app-skip-link": 269012,
+        "app-layout": 270824,
+        "app-service-card": 273769,
+        "app-services-section": 280045,
+        "app-news-section": 282368,
+        "app-document-cards": 288051,
+        "app-documents": 295039,
+        "app-document-section": 297234,
+        "app-statistic": 298565,
+        "app-statistics": 300566,
+        "app-join-to": 304253,
+        "app-awards-section": 311977,
+        "img": 516029,
+        "app-header": 317338,
+        "app-sub-header": 320780,
+        "app-home-page": 326031,
+        "input": 685282,
+        "form": 709126,
+        "router-outlet": 754623,
+        "ng-component": 757230,
+        "ngb-modal-backdrop": 820787,
+        "ngb-modal-window": 826357,
+        "ngb-offcanvas-backdrop": 837244,
+        "ngb-offcanvas-panel": 839606,
+        "svg-icon": 851478
+      }
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/styles.17bb983444f6189b.css",
+      "kind": "official served global CSS",
+      "localPath": "/tmp/mdesign-assets/landing.css",
+      "bytes": 429447,
+      "sha256": "c3066ce764813575e44317e1e15ab3fb72bc0765774bf1d700dfe34ccefaf53e",
+      "downloadMatchesServed": true
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/mapa-strony",
+      "kind": "official human-readable sitemap"
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/api/v6/home?locale=PL",
+      "kind": "official CMS endpoint present in served ContentService",
+      "localPath": "/tmp/mdesign-perfect-original/landing-original/home.json"
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/api/v6/documents?locale=PL",
+      "kind": "official CMS endpoint present in served ContentService",
+      "localPath": "/tmp/mdesign-perfect-original/landing-original/documents.json"
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/api/v6/press?locale=PL",
+      "kind": "official CMS endpoint present in served ContentService",
+      "localPath": "/tmp/mdesign-perfect-original/landing-original/press.json"
+    }
+  ],
+  "foundationEvidence": {
+    "landing": {
+      "font": "Lato",
+      "body": "16px, #1d1d1d",
+      "rootFontSize": "62.5%",
+      "h1": "40px on small viewport, 57px at min-width992px; weight900; line-height120%",
+      "h2": "32px on small viewport, 48px at min-width992px; weight900; line-height120%",
+      "button": "Lato16px weight500, pill radius120px, padding24px, primary #1d1d1d/#fff, secondary #a1a3a6 border on #f4f6fb"
+    },
+    "kit": {
+      "web": "Open Sans; current PrimeNG controls and separately scoped GDS context",
+      "mobile": "System font; source/reference native recipes",
+      "landing": "No Lato registration or landing platform/theme in src/kit."
+    }
+  },
+  "statusDefinitions": {
+    "implemented": "Reusable exported component matches the observed landing family in appearance, geometry and behavior.",
+    "partial": "A related reusable generic/native/portal export exists; the observed landing recipe or behavior is missing.",
+    "asset_only": "Some graphics are reused, but the corresponding landing component and behavior are absent.",
+    "example_only": "Only private demonstration markup exists; it is not a public package API.",
+    "missing": "No reusable implementation of the observed landing family; related primitive exports, where listed, are possible building blocks only."
+  },
+  "familyCounts": {
+    "implemented": 0,
+    "partial": 10,
+    "asset_only": 1,
+    "example_only": 0,
+    "missing": 17
+  },
+  "families": [
+    {
+      "id": "landing-foundation",
+      "name": "Typografia Lato, skala i motyw marketingowy",
+      "status": "missing",
+      "relatedExports": [],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "body",
+            ".heading-1",
+            ".heading-2"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak rejestracji Lato i data-platform=landing; --m-font udostępnia Open Sans dla portalu i font systemowy dla mobile.",
+      "codeEvidence": []
+    },
+    {
+      "id": "marketing-actions",
+      "name": "Przyciski i linki marketingowe",
+      "status": "partial",
+      "relatedExports": [
+        "Button",
+        "IconButton"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            ".button",
+            ".button-primary",
+            ".button-secondary"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Eksporty mają geometrię PrimeNG/GDS lub native. Landing: Lato, czarny primary, promień120px, padding24px; brak wariantu landing.",
+      "codeEvidence": []
+    },
+    {
+      "id": "marketing-navigation",
+      "name": "Nagłówek, rozwijane menu i nawigacja mobilna",
+      "status": "missing",
+      "relatedExports": [
+        "AppHeader",
+        "Sidebar"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-nav",
+            ".menu-collapse-trigger",
+            ".menu-mobile-header-item"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "AppHeader/Sidebar odtwarzają portalowe wzorce. Brak menu marketingowego z submenu oraz jego mobilnego zachowania.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-nav",
+          "offset": 251356
+        }
+      ]
+    },
+    {
+      "id": "utility-accessibility-bar",
+      "name": "Pasek pomocniczy, animacje, PJM i odnośniki społecznościowe",
+      "status": "missing",
+      "relatedExports": [
+        "Switch",
+        "IconButton"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-nav-top-bar",
+            "app-sign-language-link",
+            "app-social-media-links",
+            ".toggle-button"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak gotowego paska i przełączania animacji dla sekcji landingowych; same prymitywy nie stanowią tej implementacji.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-nav-top-bar",
+          "offset": 234265
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-sign-language-link",
+          "offset": 232641
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-social-media-links",
+          "offset": 237129
+        }
+      ]
+    },
+    {
+      "id": "language-select",
+      "name": "Wybór języka",
+      "status": "partial",
+      "relatedExports": [
+        "Select"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-select",
+            ".change-language-button",
+            ".dropdown-menu"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Kit ma natywny Select, nie landingowy dropdown z zaznaczeniem, przyciskiem języka i integracją routingu.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-select",
+          "offset": 217812
+        }
+      ]
+    },
+    {
+      "id": "marketing-hero",
+      "name": "Hero strony głównej i podstron",
+      "status": "missing",
+      "relatedExports": [],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-header",
+            "app-sub-header",
+            "app-hero-section",
+            ".text-container"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty/mdowod",
+          "selectors": [
+            "app-header",
+            "app-sub-header",
+            "app-hero-section",
+            ".text-container"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak eksportu hero z ilustracją, responsywnymi tłami, animacją i marketingową typografią.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-header",
+          "offset": 317338
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-sub-header",
+          "offset": 320780
+        }
+      ]
+    },
+    {
+      "id": "statistics",
+      "name": "Statystyki liczbowe",
+      "status": "missing",
+      "relatedExports": [],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-statistics",
+            "app-statistic"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak eksportu sekcji statystyk i jej animowanego zachowania.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-statistics",
+          "offset": 300566
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-statistic",
+          "offset": 298565
+        }
+      ]
+    },
+    {
+      "id": "awards",
+      "name": "Sekcja wyróżnień",
+      "status": "missing",
+      "relatedExports": [],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-awards-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak gotowego wzorca wyróżnień.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-awards-section",
+          "offset": 311977
+        }
+      ]
+    },
+    {
+      "id": "marketing-document-carousel",
+      "name": "Prezentacja i przewijana kolekcja dokumentów",
+      "status": "asset_only",
+      "relatedExports": [
+        "DocumentArtwork",
+        "DocumentCard",
+        "DocumentTile"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-documents",
+            "app-document-cards",
+            ".document-cards-mobile",
+            ".document-cards-row"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Kit wykorzystuje wybrane oryginalne grafiki i ma native karty dokumentów. Nie zawiera marketingowej kolekcji, drag/scroll ani animacji kart.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-documents",
+          "offset": 295039
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-document-cards",
+          "offset": 288051
+        }
+      ]
+    },
+    {
+      "id": "service-feature-cards",
+      "name": "Marketingowe karty usług",
+      "status": "partial",
+      "relatedExports": [
+        "ServiceTile"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-services-section",
+            "app-service-card",
+            ".service-card",
+            ".img-layer",
+            ".text-layer"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "ServiceTile jest kompaktowym kaflem usług portalu/mobile; brak dużej karty z warstwą ilustracji, opisem i linkiem landingowym.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-services-section",
+          "offset": 280045
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-service-card",
+          "offset": 273769
+        }
+      ]
+    },
+    {
+      "id": "listing-hero",
+      "name": "Nagłówek katalogu z licznikiem i układem wyszukiwania",
+      "status": "missing",
+      "relatedExports": [
+        "SearchField"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty",
+          "selectors": [
+            "app-listing-hero",
+            "app-document-list-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi",
+          "selectors": [
+            "app-listing-hero",
+            "app-document-list-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty-lokalne",
+          "selectors": [
+            "app-listing-hero",
+            "app-document-list-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Nie ma eksportu kompozycji nagłówka listingu, licznika i formularza filtrów.",
+      "codeEvidence": []
+    },
+    {
+      "id": "catalog-search",
+      "name": "Dynamiczna wyszukiwarka katalogu i FAQ",
+      "status": "partial",
+      "relatedExports": [
+        "SearchField",
+        "TextField",
+        "EmptyState"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty",
+          "selectors": [
+            "app-search-input",
+            ".filters-form"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi",
+          "selectors": [
+            "app-search-input",
+            ".filters-form"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty-lokalne",
+          "selectors": [
+            "app-search-input",
+            ".filters-form"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/pytania-odpowiedzi",
+          "selectors": [
+            "app-search-input",
+            ".filters-form"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Kontrolowany SearchField jest dostępny, lecz nie ma landingowego wyglądu, logiki filtrowania katalogu/FAQ i komunikowania liczby wyników.",
+      "codeEvidence": []
+    },
+    {
+      "id": "catalog-content-cards",
+      "name": "Karty w katalogach dokumentów i usług",
+      "status": "partial",
+      "relatedExports": [
+        "Card",
+        "DocumentCard"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty",
+          "selectors": [
+            "app-card",
+            "app-new-post"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi",
+          "selectors": [
+            "app-card",
+            "app-new-post"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Ogólna karta nie zawiera landingowej struktury ilustracji, nagłówka, opisu i odsyłacza Czytaj więcej; brak odpowiedniego wariantu stylu.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-card",
+          "offset": 60637
+        }
+      ]
+    },
+    {
+      "id": "breadcrumbs",
+      "name": "Ścieżka nawigacji marketingowej",
+      "status": "partial",
+      "relatedExports": [
+        "Breadcrumbs"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty",
+          "selectors": [
+            "app-breadcrumb"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci/nowosc-w-usludze-sprawdz-OC",
+          "selectors": [
+            "app-breadcrumb"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Semantyczny Breadcrumbs istnieje; brak wariantu z geometrią i typografią landingu.",
+      "codeEvidence": []
+    },
+    {
+      "id": "news-list-and-cards",
+      "name": "Aktualności, karta wyróżniona i karty artykułów",
+      "status": "missing",
+      "relatedExports": [
+        "Card"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-news-section",
+            "app-card-news",
+            "app-news-page",
+            "app-news-list"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci",
+          "selectors": [
+            "app-news-section",
+            "app-card-news",
+            "app-news-page",
+            "app-news-list"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak eksportowanych NewsCard/NewsList/featured article oraz metadanych i wariantów listingu.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-news-section",
+          "offset": 282368
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-card-news",
+          "offset": 58231
+        }
+      ]
+    },
+    {
+      "id": "news-filter",
+      "name": "Filtr kategorii aktualności",
+      "status": "missing",
+      "relatedExports": [
+        "Select"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci",
+          "selectors": [
+            "app-news-filter",
+            "app-combobox",
+            ".drop-button"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Natywny Select nie odwzorowuje observed custom combobox z przyciskiem Wszystkie i jego listą opcji.",
+      "codeEvidence": []
+    },
+    {
+      "id": "article-template",
+      "name": "Treść artykułu i rekomendacje",
+      "status": "missing",
+      "relatedExports": [],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci/nowosc-w-usludze-sprawdz-OC",
+          "selectors": [
+            "app-article",
+            "app-card-news"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak stylowanego RichText/ArticleLayout z nagłówkiem, multimediami i Przeczytaj również.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-card-news",
+          "offset": 58231
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "name": "Kategorie FAQ i rozwijane odpowiedzi",
+      "status": "partial",
+      "relatedExports": [
+        "Accordion",
+        "SearchField"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/pytania-odpowiedzi",
+          "selectors": [
+            "app-faq-page",
+            "app-faq-section",
+            "app-faq-subsection",
+            "app-faq",
+            ".faq-accordion",
+            ".question"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi/zastrzez-pesel",
+          "selectors": [
+            "app-faq-page",
+            "app-faq-section",
+            "app-faq-subsection",
+            "app-faq",
+            ".faq-accordion",
+            ".question"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Accordion ma dostępne rozwijanie, ale nie landingowe Lato, skalę, grupowanie, wyszukiwanie i wariant odpowiedzi z multimediami.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-faq-section",
+          "offset": 65728
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-faq-subsection",
+          "offset": 77829
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-faq",
+          "offset": 73017
+        }
+      ]
+    },
+    {
+      "id": "product-information",
+      "name": "Sekcje szczegółów dokumentu lub usługi i bannery",
+      "status": "missing",
+      "relatedExports": [],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty/mdowod",
+          "selectors": [
+            "app-basic-info-section",
+            "app-banner-section",
+            "app-detail-info-section",
+            "app-side-banner-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi/zastrzez-pesel",
+          "selectors": [
+            "app-basic-info-section",
+            "app-banner-section",
+            "app-detail-info-section",
+            "app-side-banner-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-basic-info-section",
+            "app-banner-section",
+            "app-detail-info-section",
+            "app-side-banner-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak eksportowanych szablonów sekcji z responsywnymi ilustracjami i treścią CMS.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-side-banner-section",
+          "offset": 82153
+        }
+      ]
+    },
+    {
+      "id": "tap-tooltip",
+      "name": "Podpowiedź dotykowa w szczegółach",
+      "status": "partial",
+      "relatedExports": [
+        "Tooltip"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty/mdowod",
+          "selectors": [
+            "app-tap-tooltip"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi/zastrzez-pesel",
+          "selectors": [
+            "app-tap-tooltip"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Tooltip Radix jest prymitywem hover/focus; nie udostępnia obserwowanego landingowego wzorca tap-tooltip.",
+      "codeEvidence": []
+    },
+    {
+      "id": "video",
+      "name": "Kafel filmu, player i modal",
+      "status": "missing",
+      "relatedExports": [
+        "Dialog"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty/mdowod",
+          "selectors": [
+            "app-video-section",
+            "app-video-item",
+            "app-video-player",
+            ".video-play"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi/zastrzez-pesel",
+          "selectors": [
+            "app-video-section",
+            "app-video-item",
+            "app-video-player",
+            ".video-play"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Dialog może być budulcem; brak playera, thumbnail/play, wariantów PJM/audiodeskrypcji i integracji filmu.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-video-item",
+          "offset": 86052
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-video-player",
+          "offset": 104309
+        }
+      ]
+    },
+    {
+      "id": "app-download",
+      "name": "CTA pobrania aplikacji i panel pobierania",
+      "status": "missing",
+      "relatedExports": [
+        "Dialog"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-modal-download-app",
+            "app-download-app",
+            ".offcanvas-body",
+            ".store-icon"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci",
+          "selectors": [
+            "app-modal-download-app",
+            "app-download-app",
+            ".offcanvas-body",
+            ".store-icon"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak gotowego CTA z badge sklepów i kodem/ilustracją oraz prawego offcanvas. Kod app-nav wywołuje offcanvasService.open(...position:end).",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-modal-download-app",
+          "offset": 231041
+        }
+      ]
+    },
+    {
+      "id": "social-follow-banner",
+      "name": "Sekcja śledzenia aktualności i dołączenia",
+      "status": "missing",
+      "relatedExports": [],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-join-to"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak eksportowanego marketingowego bannera z odnośnikami społecznościowymi.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-join-to",
+          "offset": 304253
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "name": "Stopka marketingowa i karta pobrania",
+      "status": "missing",
+      "relatedExports": [],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-footer",
+            ".footer-container",
+            ".footer-card",
+            ".footer-static"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak Footer w API. Stopka przykładowego portalu nie jest eksportem ani wzorcem landingowym.",
+      "codeEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-footer",
+          "offset": 190717
+        }
+      ]
+    },
+    {
+      "id": "cookie-consent",
+      "name": "Cookiebot i ustawienia cookies",
+      "status": "missing",
+      "relatedExports": [],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "#CybotCookiebotDialog",
+            ".CybotCookiebotDialogBodyButton"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Landing ładuje Cookiebot zewnętrznie. Kit nie udostępnia bannera, centrum preferencji ani zarządzania zgodami.",
+      "codeEvidence": []
+    },
+    {
+      "id": "press-downloads",
+      "name": "Karty plików i materiałów prasowych",
+      "status": "missing",
+      "relatedExports": [
+        "Button",
+        "Card"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/prasa",
+          "selectors": [
+            "app-press-page"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak landingowego komponentu pliku/download card; przyciski i ogólne karty są tylko budulcem.",
+      "codeEvidence": []
+    },
+    {
+      "id": "sitemap",
+      "name": "Mapa strony z grupami linków i rozwijaniem",
+      "status": "partial",
+      "relatedExports": [
+        "Accordion"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/mapa-strony",
+          "selectors": [
+            "app-sitemap-page",
+            ".accordion"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Brak gotowego wariantu mapy strony i jej stylu; Accordion jest tylko częściowym odpowiednikiem funkcji.",
+      "codeEvidence": []
+    },
+    {
+      "id": "loading",
+      "name": "Wskaźnik ładowania listingu aktualności",
+      "status": "partial",
+      "relatedExports": [
+        "Spinner"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci",
+          "selectors": [
+            "app-loader"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "gap": "Ogólny Spinner jest eksportowany; wygląd landingowego loadera i zachowanie doczytywania nie są zaimplementowanym wariantem.",
+      "codeEvidence": []
+    }
+  ],
+  "routes": [
+    {
+      "url": "https://info.mobywatel.gov.pl/",
+      "path": "/",
+      "title": "mObywatel - Aplikacja mobilna i serwis dla obywateli",
+      "components": [
+        "app-root",
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-home-page",
+        "app-header",
+        "app-statistics",
+        "app-statistic",
+        "app-awards-section",
+        "app-sub-header",
+        "app-document-section",
+        "app-documents",
+        "app-document-cards",
+        "app-services-section",
+        "app-service-card",
+        "app-news-section",
+        "app-card-news",
+        "app-join-to",
+        "app-side-banner-section",
+        "app-footer"
+      ],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Twoje dokumenty i usługi w telefonie"
+        },
+        {
+          "tag": "H2",
+          "text": "Dołącz do milionów, korzystaj z aplikacji mObywatel"
+        },
+        {
+          "tag": "H2",
+          "text": "mObywatel to także portal internetowy"
+        },
+        {
+          "tag": "H2",
+          "text": "Więcej niż aplikacja w telefonie"
+        },
+        {
+          "tag": "H2",
+          "text": "Poznaj mDowód"
+        },
+        {
+          "tag": "H2",
+          "text": "Cyfrowe dokumenty  dla Twojego komfortu i wygody"
+        },
+        {
+          "tag": "H2",
+          "text": "Dokumenty zawsze pod ręką"
+        },
+        {
+          "tag": "H2",
+          "text": "Usługi"
+        },
+        {
+          "tag": "H3",
+          "text": "Alert powodziowy"
+        },
+        {
+          "tag": "H3",
+          "text": "Bezpiecznie w sieci"
+        }
+      ],
+      "controls": [],
+      "forms": []
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/dokumenty",
+      "path": "/dokumenty",
+      "title": "Dokumenty - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-documents-list-page",
+        "app-document-list-section",
+        "app-listing-hero",
+        "app-breadcrumb",
+        "app-search-input",
+        "app-new-post",
+        "app-card",
+        "app-footer"
+      ],
+      "headings": [
+        "Dokumenty (32)",
+        "mDowód",
+        "Dokument ochrony czasowej (Документ про тимчасовий захист)",
+        "Identyfikator komornika sądowego",
+        "Karta Dużej Rodziny",
+        "Legitymacja adwokacka",
+        "Legitymacja aplikanta radcowskiego",
+        "Legitymacja doktoranta",
+        "Legitymacja biegłego rewidenta",
+        "Legitymacja doradcy podatkowego"
+      ],
+      "controls": [
+        {
+          "id": "",
+          "label": "Wyszukiwarka dokumentów. Wyszukiwarka działa dynamicznie. Wystarczy, że zaczniesz wprowadzać znaki",
+          "name": "",
+          "placeholder": "Wyszukaj",
+          "tag": "INPUT",
+          "type": "text"
+        }
+      ],
+      "forms": []
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/uslugi",
+      "path": "/uslugi",
+      "title": "Usługi - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-services-list-page",
+        "app-document-list-section",
+        "app-listing-hero",
+        "app-breadcrumb",
+        "app-search-input",
+        "app-new-post",
+        "app-card",
+        "app-footer"
+      ],
+      "headings": [
+        "Usługi (37)",
+        "Ochrona danych",
+        "Bezpiecznie w sieci",
+        "Sprawdź dowód",
+        "Sprawdź PESEL",
+        "Zastrzeż dokument",
+        "Zastrzeż PESEL",
+        "Bezpieczeństwo",
+        "Poradnik bezpieczeństwa",
+        "Szkolenia obronne"
+      ],
+      "controls": [
+        {
+          "id": "",
+          "label": "Wyszukiwarka usług. Wyszukiwarka działa dynamicznie. Wystarczy, że zaczniesz wprowadzać znaki",
+          "name": "",
+          "placeholder": "Wyszukaj",
+          "tag": "INPUT",
+          "type": "text"
+        }
+      ],
+      "forms": []
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/dokumenty-lokalne",
+      "path": "/dokumenty-lokalne",
+      "title": "Dokumenty lokalne - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-local-documents",
+        "app-local-document-list-section",
+        "app-listing-hero",
+        "app-breadcrumb",
+        "app-search-input",
+        "app-card",
+        "app-footer"
+      ],
+      "headings": [
+        "Dokumenty lokalne (20)",
+        "Augustowska Karta Turysty",
+        "Bydgoska Karta Rodziny",
+        "Chełmska Karta Dużej Rodziny",
+        "Chełmska Karta Mieszkańca",
+        "Karta Dużej Rodziny Gminy Suchy Las",
+        "Karta Mieszkańca Kobyłki",
+        "Karta Mieszkańca Gminy Michałowice",
+        "Karta Jastrzębianina",
+        "Karta Seniora Województwa Łódzkiego"
+      ],
+      "controls": [
+        {
+          "label": "Wyszukiwarka dokumentów lokalnych. Wyszukiwarka działa dynamicznie. Wystarczy, że zaczniesz wprowadzać znaki",
+          "name": "",
+          "placeholder": "Wyszukaj",
+          "tag": "INPUT",
+          "type": "text"
+        }
+      ],
+      "forms": [
+        {
+          "action": null,
+          "class": "filters-form ng-untouched ng-pristine ng-valid"
+        }
+      ]
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/pytania-odpowiedzi",
+      "path": "/pytania-odpowiedzi",
+      "title": "Pytania i odpowiedzi - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-faq-page",
+        "app-listing-hero",
+        "app-breadcrumb",
+        "app-search-input",
+        "app-faq-subsection",
+        "app-faq",
+        "app-footer"
+      ],
+      "headings": [
+        "Pytania i odpowiedzi",
+        "mObywatel w aplikacji i przeglądarce",
+        "Co to jest mObywatel?",
+        "Co to jest mObywatel.gov.pl?",
+        "Czym różni się aplikacja od serwisu mObywatel?",
+        "Jakie sprawy załatwię w aplikacji mObywatel?",
+        "Jakie sprawy załatwię w serwisie mObywatel.gov.pl?",
+        "O aplikacji",
+        "Co to jest mObywatel?",
+        "Dlaczego warto korzystać z aplikacji mObywatel?"
+      ],
+      "controls": [
+        {
+          "id": "",
+          "label": "Wyszukiwarka pytań i odpowiedzi. Wyszukiwarka działa dynamicznie. Wystarczy, że zaczniesz wprowadzać znaki",
+          "name": "",
+          "placeholder": "Wyszukaj",
+          "tag": "INPUT",
+          "type": "text"
+        }
+      ],
+      "forms": []
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/aktualnosci",
+      "path": "/aktualnosci",
+      "title": "Aktualności - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-news-page",
+        "app-breadcrumb",
+        "app-news-list",
+        "app-news-filter",
+        "app-combobox",
+        "app-download-app",
+        "app-loader",
+        "app-footer"
+      ],
+      "headings": [
+        "Nowość w usłudze Sprawdź OC",
+        "Więcej aktualności",
+        "Sandbox Europejskiego Portfela Tożsamości Cyfrowej dla firm i instytucji – dlaczego warto dołączyć do testów?",
+        "Niedostępność usług Dane w KRS i Księgi wieczyste",
+        "Nowe funkcje w usługach Odyseusz i Recepty",
+        "Dołącz do milionów Polaków korzystających z aplikacji mObywatel!",
+        "Sandbox Europejskiego Portfela Tożsamości Cyfrowej – sprawdź, jak działa cyfrowa tożsamość",
+        "Nowości w mObywatelu Juniorze – logowanie biometrią i powiadomienia",
+        "Europejski Portfel Tożsamości Cyfrowej – co to jest i po co powstaje?",
+        "Ruszył Sandbox Europejskiego Portfela Tożsamości Cyfrowej dla firm i instytucji"
+      ],
+      "controls": [],
+      "forms": []
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/aktualnosci/nowosc-w-usludze-sprawdz-OC",
+      "path": "/aktualnosci/nowosc-w-usludze-sprawdz-OC",
+      "title": "Nowość w usłudze Sprawdź OC - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-article",
+        "app-breadcrumb",
+        "app-video-section",
+        "app-card-news",
+        "app-footer"
+      ],
+      "headings": [
+        "Nowość w usłudze Sprawdź OC",
+        "mObywatel – Twój komfort i wygoda na wyciągnięcie ręki",
+        "Sprawdź OC w kilka sekund",
+        "Pobierz potwierdzenie weryfikacji w PDF-ie na swój telefon",
+        "Przeczytaj również",
+        "Sandbox Europejskiego Portfela Tożsamości Cyfrowej dla firm i instytucji – dlaczego warto dołączyć do testów?",
+        "Niedostępność usług Dane w KRS i Księgi wieczyste",
+        "Nowe funkcje w usługach Odyseusz i Recepty",
+        "Pobierz aplikację mObywatel"
+      ],
+      "controls": [],
+      "forms": []
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/uslugi/zastrzez-pesel",
+      "path": "/uslugi/zastrzez-pesel",
+      "title": "Zastrzeż PESEL - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-generic-app-list-item-page",
+        "app-hero-section",
+        "app-breadcrumb",
+        "app-basic-info-section",
+        "app-banner-section",
+        "app-detail-info-section",
+        "app-tap-tooltip",
+        "app-video-section",
+        "app-video-item",
+        "app-faq-section",
+        "app-faq-subsection",
+        "app-faq",
+        "app-footer"
+      ],
+      "headings": [
+        "Zastrzeż PESEL",
+        "Podstawowe informacje",
+        "Zrób to prościej",
+        "Poznaj usługę Zastrzeż PESEL",
+        "Poznaj usługę Zastrzeż PESEL",
+        "Sprawdź, jak korzystać z usługi Zastrzeż PESEL",
+        "Pytania i odpowiedzi",
+        "Co oznacza zastrzeżenie numeru PESEL?",
+        "Czy warto zastrzec numer PESEL?",
+        "Jakie są prawne skutki zastrzeżenia numeru PESEL po wejściu w życie nowych przepisów 1 czerwca 2024?"
+      ],
+      "controls": [],
+      "forms": []
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/dokumenty/mdowod",
+      "path": "/dokumenty/mdowod",
+      "title": "mDowód - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-generic-app-list-item-page",
+        "app-hero-section",
+        "app-breadcrumb",
+        "app-basic-info-section",
+        "app-banner-section",
+        "app-detail-info-section",
+        "app-tap-tooltip",
+        "app-video-section",
+        "app-video-item",
+        "app-faq-section",
+        "app-faq-subsection",
+        "app-faq",
+        "app-footer"
+      ],
+      "headings": [
+        "mDowód",
+        "Podstawowe informacje",
+        "Zrób to prościej",
+        "Poznaj możliwości mDowodu",
+        "Poznaj możliwości mDowodu",
+        "Poznaj mDowód",
+        "Poznaj mDowód [Audiodeskrypcja]",
+        "Poznaj mDowód [PJM]",
+        "Sprawdź, jak potwierdzić tożsamość mDowodem",
+        "Pytania i odpowiedzi"
+      ],
+      "controls": [],
+      "forms": []
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/mapa-strony",
+      "path": "/mapa-strony",
+      "title": "Mapa strony - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-sitemap-page",
+        "app-breadcrumb",
+        "app-footer"
+      ],
+      "headings": [
+        "Mapa strony",
+        "Strona główna",
+        "Aplikacja",
+        "Pokaż wszystko",
+        "Dokumenty",
+        "Dokumenty lokalne",
+        "Usługi",
+        "O aplikacji",
+        "Rozwój aplikacji",
+        "Warto wiedzieć"
+      ],
+      "controls": [],
+      "forms": []
+    },
+    {
+      "url": "https://info.mobywatel.gov.pl/prasa",
+      "path": "/prasa",
+      "title": "Materiały prasowe - mObywatel",
+      "components": [
+        "app-layout",
+        "app-skip-link",
+        "app-nav",
+        "app-sign-language-link",
+        "app-nav-top-bar",
+        "app-social-media-links",
+        "app-select",
+        "app-press-page",
+        "app-breadcrumb",
+        "app-footer"
+      ],
+      "headings": [
+        "Materiały prasowe",
+        "Grafiki",
+        "Ekrany",
+        "Pobierz aplikację mObywatel"
+      ],
+      "controls": [],
+      "forms": []
+    }
+  ],
+  "auditLimits": [
+    "Inspected home and ten representative public routes, plus shared official source bundle/CSS. Did not enumerate every document, service, article or every CMS content variation.",
+    "Browser inspection used a375px mobile viewport. Desktop variants and main breakpoint geometry were confirmed in official CSS/templates; desktop menus were not exhaustively interaction-tested in this audit.",
+    "DOM inventories include rendered-but-hidden shared menu, cookie and responsive content. A present selector does not prove a state has been interactively exercised.",
+    "FAQ expand, news category combobox, download offcanvas, carousel drag and video playback were identified from DOM/code, not all exercised end to end.",
+    "T3 host disconnected after successful local-documents inspection. Additional sandbox, development and contact route attempts are excluded from the observed route inventory. No unsupported browser was substituted.",
+    "/sitemap.xml and /robots.txt returned the SPA HTML shell withHTTP200, not a machine-readable sitemap/robots document; the actual /mapa-strony page was used.",
+    "Cookiebot is a third-party integration observed on the official page. Its presence is evidence of a product family, not a recommendation to copy the integration or a claim that the React kit manages consent.",
+    "Reused landing document artwork, colors and downloaded Lato files are not counted as implemented marketing components. No source or UI implementation changed during this audit.",
+    "Mobile/authenticated portal completeness is outside this landing-only report. The package's34 components are not a count of all upstream mObywatel components."
+  ]
+}

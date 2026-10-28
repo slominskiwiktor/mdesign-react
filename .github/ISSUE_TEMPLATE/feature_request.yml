@@ -1,0 +1,33 @@
+name: Propozycja
+description: Zaproponuj komponent, zmianę API lub usprawnienie dokumentacji.
+title: '[Feature]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sprawdź dostępne komponenty w [playgroundzie](https://slominskiwiktor.github.io/mdesign-react/).
+        Przykłady powinny korzystać z fikcyjnych danych i neutralnych materiałów demonstracyjnych.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Jaki problem chcesz rozwiązać
+      description: Opisz konkretną sytuację i użytkowników, których dotyczy.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proponowane rozwiązanie
+      description: Opisz oczekiwane zachowanie lub przykład API.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatywy
+      description: Czy da się rozwiązać problem istniejącymi komponentami?
+  - type: textarea
+    id: context
+    attributes:
+      label: Dodatkowy kontekst
+      description: Opcjonalne makiety, źródła lub przykłady. Nie dołączaj danych osobowych ani materiałów bez prawa do ich udostępnienia.

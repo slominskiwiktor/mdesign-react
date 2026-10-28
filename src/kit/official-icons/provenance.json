@@ -1,0 +1,2881 @@
+{
+  "verifiedAt": "2026-10-19",
+  "source": "https://github.com/fajfer/mObywatel",
+  "commit": "d39d2f947b1078332d758de086cb3cb7dd163940",
+  "license": "LicenseRef-COI-MIT-PL",
+  "copyright": "2025 Centralny Ośrodek Informatyki",
+  "scope": "Public API identifiers retained; includes explicitly marked neutral replacements, not an unchanged original catalogue.",
+  "transformations": "Document logos and embedded raster miniatures replaced by neutral mDesign demo cards on 2026-10-28; remaining source SVGs unchanged. Per-entry metadata identifies replacements.",
+  "icons": [
+    {
+      "id": "Icons/Brand/Documents/DB010_Legitymacja_emeryta_rencisty/DB010_Legitymacja_emeryta_rencisty",
+      "file": "icon-001.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Documents/DB010_Legitymacja_emeryta_rencisty.imageset/DB010_Legitymacja_emeryta_rencisty.svg",
+      "sha256": "0f412b4f25579c89737732721f2e80d81deaf20bb898d9623b3bebcc4ddf014e",
+      "bytes": 759,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Documents/DB027_Legitymacja_doktoranta/DB027_Legitymacja_doktoranta",
+      "file": "icon-002.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Documents/DB027_Legitymacja_doktoranta.imageset/DB027_Legitymacja_doktoranta.svg",
+      "sha256": "0245f5bd6434a817618434a27a07b3b0c60af90d6d76f84e21ef92df1be6611e",
+      "bytes": 702,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Documents/DB028_Legitymacja_diagnosty_laboratoryjnego/DB028_Legitymacja_diagnosty_laboratoryjnego",
+      "file": "icon-003.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Documents/DB028_Legitymacja_diagnosty_laboratoryjnego.imageset/DB028_Legitymacja_diagnosty_laboratoryjnego.svg",
+      "sha256": "96ee1f5cc52c1492efc7294e0f091883847b5cf173ebc94e52c96ef0733023bb",
+      "bytes": 1170,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Documents/DB029_Legitymacja_nauczyciela/DB029_Legitymacja_nauczyciela",
+      "file": "icon-004.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Documents/DB029_Legitymacja_nauczyciela.imageset/DB029_Legitymacja_nauczyciela.svg",
+      "sha256": "f42236913700ea6df37889eab264c59b342a1d37249039ba6e95a1a92a4978e9",
+      "bytes": 1760,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Documents/DB030_Identyfikator_komornika_sadowego/DB030_Identyfikator_komornika_sadowego",
+      "file": "icon-005.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Documents/DB030_Identyfikator_komornika_sadowego.imageset/DB030_Identyfikator_komornika_sadowego.svg",
+      "sha256": "8eddb0f5bc6f980d136cdf4b4a44e6726c7b5025989ae1292477467cb652b672",
+      "bytes": 1469,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Documents/DB031_Legitymacja_inzyniera_budownictwa/DB031_Legitymacja_inzyniera_budownictwa",
+      "file": "icon-006.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Documents/DB031_Legitymacja_inzyniera_budownictwa.imageset/DB031_Legitymacja_inzyniera_budownictwa.svg",
+      "sha256": "68fedbb6bef7c370bd23498c4a3d7022128117ee2e4d75062d1b8df6eba4f436",
+      "bytes": 655,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Documents/DB032_Legitymacja_doradcy_podatkowego/DB032_Legitymacja_doradcy_podatkowego",
+      "file": "icon-007.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Documents/DB032_Legitymacja_doradcy_podatkowego.imageset/DB032_Legitymacja_doradcy_podatkowego.svg",
+      "sha256": "0547b8a82dff9b6ac12fa0aabf7676f0c57a79076ced0bd2cd0e1b10b1dbe62f",
+      "bytes": 1763,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Documents/DB033_Legitymacja_bieglego_rewidenta/DB033_Legitymacja_bieglego_rewidenta",
+      "file": "icon-008.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Documents/DB033_Legitymacja_bieglego_rewidenta.imageset/DB033_Legitymacja_bieglego_rewidenta.svg",
+      "sha256": "2f87d29fe2c2e432d9bf89e81955d21015be985c9e85631a9abb6ba1e16b1c3e",
+      "bytes": 828,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA001_Punkty_karne/DA001_Punkty_karne",
+      "file": "icon-009.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA001_Punkty_karne.imageset/DA001_Punkty_karne.svg",
+      "sha256": "8c2f619e54b6795df379e75fc905f5e672b237cff1ba788078b565c953ce5ca7",
+      "bytes": 1456,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA002_Naruszenie_srodowiskowe/DA002_Naruszenie_srodowiskowe",
+      "file": "icon-010.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA002_Naruszenie_srodowiskowe.imageset/DA002_Naruszenie_srodowiskowe.svg",
+      "sha256": "e8524599e6ad68c69384c1afa13a7ca791930ae31182931d23450394fae6c972",
+      "bytes": 756,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA003_Polak_za_granica/DA003_Polak_za_granica",
+      "file": "icon-011.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA003_Polak_za_granica.imageset/DA003_Polak_za_granica.svg",
+      "sha256": "1458ab0fd9cf500cdcc3403a53506a291a0ff63a4424d3ae5c1fe7ec80dd5243",
+      "bytes": 562,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA004_eRecepta/DA004_eRecepta",
+      "file": "icon-012.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA004_eRecepta.imageset/DA004_eRecepta.svg",
+      "sha256": "ddce5799dbeae1a7134a8f8e0c1e474a97b2607cce46b0831a946b7727f4a9bb",
+      "bytes": 813,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA005_Dodatek_energetyczny/DA005_Dodatek_energetyczny",
+      "file": "icon-013.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA005_Dodatek_energetyczny.imageset/DA005_Dodatek_energetyczny.svg",
+      "sha256": "aad3c42047ab0aff3b2493838160bf23e61526382a333cc76aa9943020819f82",
+      "bytes": 724,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA006_Bilkom/DA006_Bilkom",
+      "file": "icon-014.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA006_Bilkom.imageset/DA006_Bilkom.svg",
+      "sha256": "d05bb9ce0926d9f64654a02d7117e0f1d95af1a84e707141586ecb15fd8527d8",
+      "bytes": 845,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA007_Dodatek_gazowy/DA007_Dodatek_gazowy",
+      "file": "icon-015.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA007_Dodatek_gazowy.imageset/DA007_Dodatek_gazowy.svg",
+      "sha256": "33c3f2686b465a8e2fcb856428bcb8c11150743ac189648e9fdbb15b5dcadc3f",
+      "bytes": 657,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA008_Zastrzez_pesel/DA008_Zastrzez_pesel",
+      "file": "icon-016.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA008_Zastrzez_pesel.imageset/DA008_Zastrzez_pesel.svg",
+      "sha256": "59af838225f8bf5b8c5f91344db0ebf7c553a1c48d62d5021c2cfa951f882b8f",
+      "bytes": 812,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA009_Weryfikuj_pesel/DA009_Weryfikuj_pesel",
+      "file": "icon-017.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA009_Weryfikuj_pesel.imageset/DA009_Weryfikuj_pesel.svg",
+      "sha256": "eaf7da34809c781e71b524abe2483035cd3d17fb630eb4bfce04182beb928744",
+      "bytes": 718,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA010_Bezpieczny_autobus/DA010_Bezpieczny_autobus",
+      "file": "icon-018.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA010_Bezpieczny_autobus.imageset/DA010_Bezpieczny_autobus.svg",
+      "sha256": "6b669f75195b8dea9b83895c0cf58c75c12a8725d3c0b1fd30df2478c22dc46a",
+      "bytes": 865,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA011_CRW/DA011_CRW",
+      "file": "icon-019.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA011_CRW.imageset/DA011_CRW.svg",
+      "sha256": "bb110824737f9bd8cee53b1712b8cfbab691b6698a72c6f35048cb345ad30950",
+      "bytes": 1035,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA012_Czyste_powietrze/DA012_Czyste_powietrze",
+      "file": "icon-020.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA012_Czyste_powietrze.imageset/DA012_Czyste_powietrze.svg",
+      "sha256": "59a6512e00254aefe9ca7a8a694e3ca199c0880e6fd686623bb4e90eb466b2ba",
+      "bytes": 999,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA013_ePlatnosci/DA013_ePlatnosci",
+      "file": "icon-021.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA013_ePlatnosci.imageset/DA013_ePlatnosci.svg",
+      "sha256": "d5e7381a105d8d07c975b934d9d775f53357bb526d3962bf9fd21b7b3aafe44f",
+      "bytes": 648,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA014_eWizyta_w_ZUS/DA014_eWizyta_w_ZUS",
+      "file": "icon-022.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA014_eWizyta_w_ZUS.imageset/DA014_eWizyta_w_ZUS.svg",
+      "sha256": "1719e1114997117dbc213fbf511a794c5322e9a9786b328d943bdfc22ec08111",
+      "bytes": 503,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA015_Historia_pojazdu/DA015_Historia_pojazdu",
+      "file": "icon-023.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA015_Historia_pojazdu.imageset/DA015_Historia_pojazdu.svg",
+      "sha256": "3eaa2fa2b7928c622ba9ebc67d64f385e80640d1e159074d9b5e3eedbc1e3e1a",
+      "bytes": 1940,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA016_Limit_energii/DA016_Limit_energii",
+      "file": "icon-024.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA016_Limit_energii.imageset/DA016_Limit_energii.svg",
+      "sha256": "4dc647c02505b07044f3aa2bd0a738ed41b5668a2c2c0ca0379d6aabe0907a52",
+      "bytes": 1059,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA017_Pelnomocnictwa/DA017_Pelnomocnictwa",
+      "file": "icon-025.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA017_Pelnomocnictwa.imageset/DA017_Pelnomocnictwa.svg",
+      "sha256": "be3bb1e89d753a429334334014b1ca6b501a4305d3f31ee0a175811c6790c2e5",
+      "bytes": 993,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA018_Dodatek_do_ciepla/DA018_Dodatek_do_ciepla",
+      "file": "icon-026.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA018_Dodatek_do_ciepla.imageset/DA018_Dodatek_do_ciepla.svg",
+      "sha256": "c08eb08b69ccfafaa6be046f4cef9dae7aaf10caaddd7f9b9613cca1bc86e8c9",
+      "bytes": 1816,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA019_Very_good_air/DA019_Very_good_air",
+      "file": "icon-027.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA019_Very_good_air.imageset/DA019_Very_good_air.svg",
+      "sha256": "dfda6b323d458af50e929177d69105279db67d08e74b304f82698fbe324488df",
+      "bytes": 843,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA020_Satisfactory_air/DA020_Satisfactory_air",
+      "file": "icon-028.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA020_Satisfactory_air.imageset/DA020_Satisfactory_air.svg",
+      "sha256": "f4478a42661ee2acf17df0b09266f1cb3ab2c40c69244e71ffe8afdff6fb3a0c",
+      "bytes": 927,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA021_Air_below_normal/DA021_Air_below_normal",
+      "file": "icon-029.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA021_Air_below_normal.imageset/DA021_Air_below_normal.svg",
+      "sha256": "f349606e84df303e09cbe63d6210ce16590194f25e7ff70cc34bd62477306775",
+      "bytes": 1044,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA022_Harmful_air/DA022_Harmful_air",
+      "file": "icon-030.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA022_Harmful_air.imageset/DA022_Harmful_air.svg",
+      "sha256": "9c5838e53b5e5de527b7765385213d50f9a9f0789731b3acf0d87cfadd3b2507",
+      "bytes": 948,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA023_Life_threatening_air/DA023_Life_threatening_air",
+      "file": "icon-031.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA023_Life_threatening_air.imageset/DA023_Life_threatening_air.svg",
+      "sha256": "a0e3d0a217a7684e1d510080cf070b8a6d4ca1e10645740fff9b8d3824f3be01",
+      "bytes": 857,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA024_Dangerous_air/DA024_Dangerous_air",
+      "file": "icon-032.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA024_Dangerous_air.imageset/DA024_Dangerous_air.svg",
+      "sha256": "f39ea9f6ee5f9254a0f8fa73fe6f61afb183da20b5fff8fda40c440bbb94db91",
+      "bytes": 880,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA025_Ticket/DA025_Ticket",
+      "file": "icon-033.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA025_Ticket.imageset/DA025_Ticket.svg",
+      "sha256": "e8be9885a1e4fa895ae6d1152a512365fecf175903e9cf3f01e1e313a74b6cee",
+      "bytes": 932,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA026_Your_inboxes/DA026_Your_inboxes",
+      "file": "icon-034.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA026_Your_inboxes.imageset/DA026_Your_inboxes.svg",
+      "sha256": "f63f373061536366bd71f5500487445ed7715489c2cf1c7bb25102ea6a1c3695",
+      "bytes": 612,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA030_Sign_the_document/DA030_Sign_the_document",
+      "file": "icon-035.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA030_Sign_the_document.imageset/DA030_Sign_the_document.svg",
+      "sha256": "e6e45d3f3408612962a1160dbce18326153026898bf31dc1c9cb13c9742aa545",
+      "bytes": 792,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA031_mBiznes/DA031_mBiznes",
+      "file": "icon-036.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA031_mBiznes.imageset/DA031_mBiznes.svg",
+      "sha256": "90aa1242044a3aa80bc494e9d9e28d516fd7660402f4b39679f5217d0392a01a",
+      "bytes": 1957,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA032_mStluczka/DA032_mStluczka",
+      "file": "icon-037.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA032_mStluczka.imageset/DA032_mStluczka.svg",
+      "sha256": "e2f708b3660fbcb50aa014ef87627ce69bb7fec20cd1cc9e36c18b39995358b9",
+      "bytes": 2395,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA033_Bon_energetyczny/DA033_Bon_energetyczny",
+      "file": "icon-038.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA033_Bon_energetyczny.imageset/DA033_Bon_energetyczny.svg",
+      "sha256": "8ce7ce6c4a63247d9ad14d9cfd67f680148f252007f96b592a8ffcfae5aae601",
+      "bytes": 885,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA034_Wniosek_o_dowod/DA034_Wniosek_o_dowod",
+      "file": "icon-039.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA034_Wniosek_o_dowod.imageset/DA034_Wniosek_o_dowod.svg",
+      "sha256": "67bd9eba56a7da6f9497716a5368b656138db09be1a2f3ec274be18982ea1d6b",
+      "bytes": 866,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA035_Bezpiecznie_w_sieci/DA035_Bezpiecznie_w_sieci",
+      "file": "icon-040.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA035_Bezpiecznie_w_sieci.imageset/DA035_Bezpiecznie_w_sieci.svg",
+      "sha256": "49cd87cf6d98d0fda94972a5b216e7f9b2d896d76f3e3882e4d1be7f7201b384",
+      "bytes": 2900,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA036_Wniosek_o_paszport/DA036_Wniosek_o_paszport",
+      "file": "icon-041.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA036_Wniosek_o_paszport.imageset/DA036_Wniosek_o_paszport.svg",
+      "sha256": "7c7dd477cb2f4a6998982c02da767dc921e4e2ef4cbfbd41d574a4254082e4dd",
+      "bytes": 906,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA037_Alert_powodziowy/DA037_Alert_powodziowy",
+      "file": "icon-042.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA037_Alert_powodziowy.imageset/DA037_Alert_powodziowy.svg",
+      "sha256": "90ff8c3ff039769f5fb3c95839c708280e683f4ccdb78c605bb2078153e5e8aa",
+      "bytes": 5153,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA038_Zloz_wniosek/DA038_Zloz_wniosek",
+      "file": "icon-043.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA038_Zloz_wniosek.imageset/DA038_Zloz_wniosek.svg",
+      "sha256": "e902e49f3252f6b0355f9af02c0fab990396d67fa1060d1d527c5c458acd1d27",
+      "bytes": 1166,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA039_Zawieszanie_dowodu/DA039_Zawieszanie_dowodu",
+      "file": "icon-044.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA039_Zawieszanie_dowodu.imageset/DA039_Zawieszanie_dowodu.svg",
+      "sha256": "f41f4f3c22b20fc884ee2d9c3d6c5aeea1f4443df8186ce171b6a7f10331aa8f",
+      "bytes": 1173,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA040_Uniewaznienie_dowodu/DA040_Uniewaznienie_dowodu",
+      "file": "icon-045.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA040_Uniewaznienie_dowodu.imageset/DA040_Uniewaznienie_dowodu.svg",
+      "sha256": "623eac1491a8a7bb4ea74d86f12868f69858b0ddd509d6c74478343006da1a58",
+      "bytes": 1367,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA041_Uprawnienia_kierowcow/DA041_Uprawnienia_kierowcow",
+      "file": "icon-046.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA041_Uprawnienia_kierowcow.imageset/DA041_Uprawnienia_kierowcow.svg",
+      "sha256": "0d0e5c1394d8b97b156ba3f8cfb0e4c7d8306d7c4eef96f9b2fe3d81dca21af7",
+      "bytes": 1848,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA042_Restrict_document/DA042_Restrict_document",
+      "file": "icon-047.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA042_Restrict_document.imageset/DA042_Restrict_document.svg",
+      "sha256": "85766c1d214a1539e51ea3104b5a45f1aaf3b6f05b2db24df6f14bcb0ff466b7",
+      "bytes": 1254,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/DA043_Sprawdzenie_dowodu/DA043_Sprawdzenie_dowodu",
+      "file": "icon-048.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/DA043_Sprawdzenie_dowodu.imageset/DA043_Sprawdzenie_dowodu.svg",
+      "sha256": "cc53a0b9496f392b4aaf1d67a98d40a56d6100370bf5fc7e80aa2d96d9cf5521",
+      "bytes": 1184,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/da027_your_affairs/da027_your_affairs",
+      "file": "icon-049.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/da027_your_affairs.imageset/da027_your_affairs.svg",
+      "sha256": "71dc92b5d027005ce5070086079cee99f8dea058f1ad1d9ca44a11a4f809bdf3",
+      "bytes": 896,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/da028_tax_office/da028_tax_office",
+      "file": "icon-050.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/da028_tax_office.imageset/da028_tax_office.svg",
+      "sha256": "a7721cd0d228e24e3a15e2d4f7a505ebd2f5e3827809b85a57f82986911f15e9",
+      "bytes": 1239,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Brand/Services/da029_news/da029_news",
+      "file": "icon-051.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Brand/Services/da029_news.imageset/da029_news.svg",
+      "sha256": "763c4532d191cfa04f382942452547fe34bbd401c9528a8fad6b839f1898134b",
+      "bytes": 1080,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Components/J001_File_upload/J001_File_upload",
+      "file": "icon-052.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Components/J001_File_upload.imageset/J001_File_upload.svg",
+      "sha256": "85cb23dba31aa2adc5a653d7b3051da85e906ce9840bf0cd662e9606d8d8d3ef",
+      "bytes": 1980,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Dedicated/E001_Error_mark_small/E001_Error_mark_small",
+      "file": "icon-053.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Dedicated/E001_Error_mark_small.imageset/E001_Error_mark_small.svg",
+      "sha256": "ded92deeab7f0fcee74df37ce3d0d790f51c4c7e1f85319eb67dcdc3b1a3373b",
+      "bytes": 600,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Dedicated/E002_External/E002_External",
+      "file": "icon-054.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Dedicated/E002_External.imageset/E002_External.svg",
+      "sha256": "f4a0a229e5300f7358892169ac8f1fd32df2c7767602f01197cd4810b738f90a",
+      "bytes": 871,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Dedicated/E003_Badge/E003_Badge",
+      "file": "icon-055.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Dedicated/E003_Badge.imageset/E003_Badge.svg",
+      "sha256": "86d5eedc14d6130eb76669f07a07141762256124cae8cb6964ca14587adb556c",
+      "bytes": 278,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Dedicated/E004_X_mark_small/E004_X_mark_small",
+      "file": "icon-056.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Dedicated/E004_X_mark_small.imageset/E004_X_mark_small.svg",
+      "sha256": "4fdc507569f528ecf6787b71c21862c4f5cf4a5178db5a8baa1174fadc22fb2a",
+      "bytes": 534,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Dedicated/E005_Check_mark/E005_Check_mark",
+      "file": "icon-057.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Dedicated/E005_Check_mark.imageset/E005_Check_mark.svg",
+      "sha256": "a0f77b320a8d4474b509f3770337ff777caee42d35e3358e6d9e3d5216b7d897",
+      "bytes": 441,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Dedicated/E006_Checkbox_mark/E006_Checkbox_mark",
+      "file": "icon-058.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Dedicated/E006_Checkbox_mark.imageset/E006_Checkbox_mark.svg",
+      "sha256": "06945e3cb094774b5bd51be7a5a632af8ff5a4f586f4b93b00b3ebf53ba5d0a9",
+      "bytes": 248,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Dedicated/E007_Exclamation_mark/E007_Exclamation_mark",
+      "file": "icon-059.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Dedicated/E007_Exclamation_mark.imageset/E007_Exclamation_mark.svg",
+      "sha256": "2395c57a1d316a4dd6f5349babce9124548e71e85de1380b9cb7bd578eaa9437",
+      "bytes": 496,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G001_Bell_big/G001_Bell_big",
+      "file": "icon-060.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G001_Bell_big.imageset/G001_Bell_big.svg",
+      "sha256": "185a5f1b10f0c9c1d318826fd402bf4a0e4db853f7a5761e93f1b99ae0e3d1f6",
+      "bytes": 1255,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G002_Document_box_big/G002_Document_box_big",
+      "file": "icon-061.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G002_Document_box_big.imageset/G002_Document_box_big.svg",
+      "sha256": "ded0a9030248b6fa8e804b1f7b70cf4e4e8f8824f1a3cdf1346ca7f32604c789",
+      "bytes": 866,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G005_mBiznes/G005_mBiznes",
+      "file": "icon-062.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G005_mBiznes.imageset/G005_mBiznes.svg",
+      "sha256": "aef556784ba18133909dd4e92243b4e7e8c888f679181ad53eb2bb4422c758fc",
+      "bytes": 1614,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G006_Address_book/G006_Address_book",
+      "file": "icon-063.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G006_Address_book.imageset/G006_Address_book.svg",
+      "sha256": "71ee1161cd8bcbeb9b47816b6dc13e55798eb389aa0877566bb0e6e3028971fb",
+      "bytes": 2646,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G007_Sign_the_document/G007_Sign_the_document",
+      "file": "icon-064.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G007_Sign_the_document.imageset/G007_Sign_the_document.svg",
+      "sha256": "9187fa09d5da2359e972b943155a20480b9eaa7a9570da918c3d282f5469321a",
+      "bytes": 4530,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G008_ID/G008_ID",
+      "file": "icon-065.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G008_ID.imageset/G008_ID.svg",
+      "sha256": "653a0978bf7540b9726f9d5bc4eb21b3ce06d3fc08085632a839b311089aec9c",
+      "bytes": 2364,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G009_ePlatnosci/G009_ePlatnosci",
+      "file": "icon-066.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G009_ePlatnosci.imageset/G009_ePlatnosci.svg",
+      "sha256": "dffa83d033a5cd14b2415791923e2fa07216abdf9e627384953d5f4face4011b",
+      "bytes": 3362,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G010_Idea/G010_Idea",
+      "file": "icon-067.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G010_Idea.imageset/G010_Idea.svg",
+      "sha256": "da2b08ea01cf19698f5e97ac8da17eab61936d052635f29bd99890d5d07a0591",
+      "bytes": 6364,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G011_Wniosek_o_paszport/G011_Wniosek_o_paszport",
+      "file": "icon-068.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G011_Wniosek_o_paszport.imageset/G011_Wniosek_o_paszport.svg",
+      "sha256": "b1a8bf1f28373ae75ecdff8a276ba601cb89c1a56630eb9f33f79c87e49de950",
+      "bytes": 2478,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G012_Zloz_wniosek/G012_Zloz_wniosek",
+      "file": "icon-069.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G012_Zloz_wniosek.imageset/G012_Zloz_wniosek.svg",
+      "sha256": "6525683a1ab4fc6d50f778c7ee989cb9f11d785b2f5e57208509029e4057c3c2",
+      "bytes": 2965,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G013_Registration_data/G013_Registration_data",
+      "file": "icon-070.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G013_Registration_data.imageset/G013_Registration_data.svg",
+      "sha256": "ff6e1d4cd7a14922342ed8958356447d969dd208104db5ecb18537ff6c660844",
+      "bytes": 1837,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G014_Zawieszanie_dowodu/G014_Zawieszanie_dowodu",
+      "file": "icon-071.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G014_Zawieszanie_dowodu.imageset/G014_Zawieszanie_dowodu.svg",
+      "sha256": "7d9b21aab7e02435aeb25a3639d232552c34e73ec04729a07a5fe728b4889da7",
+      "bytes": 2088,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G015_Uniewaznienie_dowodu/G015_Uniewaznienie_dowodu",
+      "file": "icon-072.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G015_Uniewaznienie_dowodu.imageset/G015_Uniewaznienie_dowodu.svg",
+      "sha256": "5de482a83bc6621abd6f0633ab09550e3081fb47ec4fa667782794dcf448a9eb",
+      "bytes": 2966,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G016_Stluczka/G016_Stluczka",
+      "file": "icon-073.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G016_Stluczka.imageset/G016_Stluczka.svg",
+      "sha256": "b488fee1a3aeffc0e891e63c3862b0ca5ef78cb132741eee3abd54695fcfc1d7",
+      "bytes": 6132,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G017_Fingerprint/G017_Fingerprint",
+      "file": "icon-074.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G017_Fingerprint.imageset/G017_Fingerprint.svg",
+      "sha256": "d2313ce4bf29d5d771761e96764a00dbc8638430cd07795217788ccc54b42530",
+      "bytes": 5297,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G018_Restrict_document/G018_Restrict_document",
+      "file": "icon-075.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G018_Restrict_document.imageset/G018_Restrict_document.svg",
+      "sha256": "82f3eef379dd231babec9b51466b52b737f079bd073a1d31e007ffd5555c69d0",
+      "bytes": 2134,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/G019_Home_pin/G019_Home_pin",
+      "file": "icon-076.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/G019_Home_pin.imageset/G019_Home_pin.svg",
+      "sha256": "287ed615b8919c7a36dbc3ebb1a379195bc4029b7a4888ad5f53c781af4806d4",
+      "bytes": 1530,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/g003_check_pesel/g003_check_pesel",
+      "file": "icon-077.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/g003_check_pesel.imageset/g003_check_pesel.svg",
+      "sha256": "26d7f25d0c1ec7ef1a09b22c421330aa591c82782ba4d4fde55e6773563480a1",
+      "bytes": 1137,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/EmptyState/g004_secure_pesel/g004_secure_pesel",
+      "file": "icon-078.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/EmptyState/g004_secure_pesel.imageset/g004_secure_pesel.svg",
+      "sha256": "7e1e0d973bf07cf076252e7f035389ba101a16617cffa2d2a38eb5f7803b5e0f",
+      "bytes": 1431,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B001_Home/B001_Home",
+      "file": "icon-079.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B001_Home.imageset/B001_Home.svg",
+      "sha256": "72b05bcd5b57d751c273399ecd7a9f1833d8f29ccd5375491c426fdc2b2a33fb",
+      "bytes": 456,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B002_Framed_person/B002_Framed_person",
+      "file": "icon-080.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B002_Framed_person.imageset/B002_Framed_person.svg",
+      "sha256": "461948015f29bdc7253cc65d2539b01c9ce45a5336f9891e6ff966043cf37629",
+      "bytes": 830,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B003_Scanner_QR/B003_Scanner_QR",
+      "file": "icon-081.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B003_Scanner_QR.imageset/B003_Scanner_QR.svg",
+      "sha256": "e65e94175f8413a8ffd9560472c8eead885362f59ce6ce672c529b81ce4af671",
+      "bytes": 678,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B004_Services/B004_Services",
+      "file": "icon-082.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B004_Services.imageset/B004_Services.svg",
+      "sha256": "bc8391c890084f697b523262e2db0f582b4efdbd5e42b46e8d6c83583e8ec831",
+      "bytes": 271,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B005_More/B005_More",
+      "file": "icon-083.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B005_More.imageset/B005_More.svg",
+      "sha256": "0a5f73f1744c2b949acaadbd8f035744f4393c78baf8c171b91f67ff194bf56c",
+      "bytes": 540,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B006_Plus/B006_Plus",
+      "file": "icon-084.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B006_Plus.imageset/B006_Plus.svg",
+      "sha256": "f3ac474b2ad9d1dd4b36d7bd8ec322565b9468fd3cadc8d08081f8c3cbdf8e4f",
+      "bytes": 527,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B007_Minus/B007_Minus",
+      "file": "icon-085.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B007_Minus.imageset/B007_Minus.svg",
+      "sha256": "f18c8215a188f7e4e247f84e5d82e919042d4f3bbd76960254c8cd4880b3f767",
+      "bytes": 258,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B008_Info/B008_Info",
+      "file": "icon-086.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B008_Info.imageset/B008_Info.svg",
+      "sha256": "795d657d895c9ff0140ac1249649a4e254bfbead00eb49ffd9eae4975ca366a6",
+      "bytes": 514,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B012_notice_mark/B012_notice_mark",
+      "file": "icon-087.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B012_notice_mark.imageset/B012_notice_mark.svg",
+      "sha256": "79c5d7a48bf5a09a39fefaf2c16055ea6423c4b1376e1e9d45d8312421b5c50b",
+      "bytes": 892,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B013_Like/B013_Like",
+      "file": "icon-088.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B013_Like.imageset/B013_Like.svg",
+      "sha256": "3a8912722d91bfafca09ed00715ab154c48cf5aa325382d2d0b26810770b1888",
+      "bytes": 1187,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B014_Dislike/B014_Dislike",
+      "file": "icon-089.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B014_Dislike.imageset/B014_Dislike.svg",
+      "sha256": "96436603345959778a1bdf6610c7b9222fda468700ffdf844e77c30d9dbeca64",
+      "bytes": 639,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B015_Pin/B015_Pin",
+      "file": "icon-090.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B015_Pin.imageset/B015_Pin.svg",
+      "sha256": "f70327d81bd04c8d9b32e0a099547aae997ae8e46c91ecd3255d759d2ac0c330",
+      "bytes": 559,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/B016_Settings/B016_Settings",
+      "file": "icon-091.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/B016_Settings.imageset/B016_Settings.svg",
+      "sha256": "1b70b7c0d9e5110e7d01586e24de7a66e9a9b9c3cd5fecd194643d281f115e73",
+      "bytes": 2334,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/b009_check_mark/b009_check_mark",
+      "file": "icon-092.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/b009_check_mark.imageset/b009_check_mark.svg",
+      "sha256": "6305d940765e47720cf8fd2ae9d3f0832f4a1de23cd242431a04499a7cd2dedf",
+      "bytes": 496,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/b010_x_mark/b010_x_mark",
+      "file": "icon-093.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/b010_x_mark.imageset/b010_x_mark.svg",
+      "sha256": "7a23df896881cd47732c8f349b0b5eeb6ef08ce00f8c0682b76b7fbd3d778c74",
+      "bytes": 398,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Filled/b011_exclamation_mark/b011_exclamation_mark",
+      "file": "icon-094.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Filled/b011_exclamation_mark.imageset/b011_exclamation_mark.svg",
+      "sha256": "3942ec5dc3de998cb7e524cc1282d8c7b24af6c0dc788e8d16d4122205b9879e",
+      "bytes": 497,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF001_Documents/IF001_Documents",
+      "file": "icon-095.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF001_Documents.imageset/IF001_Documents.svg",
+      "sha256": "2c0257713089e8bcacc18b289e4ebe2ce6b1ce159eb6327f74d3664ed2b5a02d",
+      "bytes": 1789,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF002_Services/IF002_Services",
+      "file": "icon-096.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF002_Services.imageset/IF002_Services.svg",
+      "sha256": "74e35acaa74cb7eb3684b8f3aa5690f60137d81cb3efc17891e7713b5b330b03",
+      "bytes": 2367,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF003_Search/IF003_Search",
+      "file": "icon-097.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF003_Search.imageset/IF003_Search.svg",
+      "sha256": "8ae25b6be462297418a82d903cace36ef968094fd5b686516ea8013fc28d32d2",
+      "bytes": 654,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF004_Scan/IF004_Scan",
+      "file": "icon-098.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF004_Scan.imageset/IF004_Scan.svg",
+      "sha256": "cd5ae2e6fc808d01058c587100b52cccb5f9d3a02683198db487873afe17c8c7",
+      "bytes": 2459,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF005_More/IF005_More",
+      "file": "icon-099.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF005_More.imageset/IF005_More.svg",
+      "sha256": "eebc258e3d9ed3aae827106bb5edb211a7231a440e4d32d9c8f777d48c15e491",
+      "bytes": 3106,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF006_Documents_fill/IF006_Documents_fill",
+      "file": "icon-100.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF006_Documents_fill.imageset/IF006_Documents_fill.svg",
+      "sha256": "15efd05aac3d8e615a14888f13fa0250a7713053f912d564cafa50ff65b51401",
+      "bytes": 819,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF007_Services_fill/IF007_Services_fill",
+      "file": "icon-101.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF007_Services_fill.imageset/IF007_Services_fill.svg",
+      "sha256": "65b4682b73030aa7a49f2f69237be7ab25ce1f98b621e286295864fa4b8ab11b",
+      "bytes": 1295,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF008_Search_fill/IF008_Search_fill",
+      "file": "icon-102.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF008_Search_fill.imageset/IF008_Search_fill.svg",
+      "sha256": "c45531d9e38380c3ef303e12e5de63ec1d923467c23a34aa9b67c08c25a221ec",
+      "bytes": 809,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF009_Scan_fill/IF009_Scan_fill",
+      "file": "icon-103.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF009_Scan_fill.imageset/IF009_Scan_fill.svg",
+      "sha256": "6c600568305eb7b664ee67c4dfe2f38483e7ce3f6882213c511bd5b32c41f558",
+      "bytes": 2562,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/BottomBar/IF010_More_fill/IF010_More_fill",
+      "file": "icon-104.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/BottomBar/IF010_More_fill.imageset/IF010_More_fill.svg",
+      "sha256": "563d7580c8ceaef283721bba573484b138ef66acd8373df3c6f836641a532241",
+      "bytes": 2097,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC001_recepty/IC001_recepty",
+      "file": "icon-105.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC001_recepty.imageset/IC001_recepty.svg",
+      "sha256": "513eeecdf13237b1159dd37079f341649ef2f3db6a77fa7ec5b8a18c7005c588",
+      "bytes": 2011,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC002_firma/IC002_firma",
+      "file": "icon-106.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC002_firma.imageset/IC002_firma.svg",
+      "sha256": "aed42ef70945b09e1c568899bd4887d88b084ceaf8bdad669a35b72a5a667bb8",
+      "bytes": 843,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC003_podpisz_wniosek/IC003_podpisz_wniosek",
+      "file": "icon-107.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC003_podpisz_wniosek.imageset/IC003_podpisz_wniosek.svg",
+      "sha256": "79f9a39e8c9b05f530bb4c29ce2e0dcc9a4ea0a328e82618b1b7ea7e56568957",
+      "bytes": 2741,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC004_punkty_karne/IC004_punkty_karne",
+      "file": "icon-108.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC004_punkty_karne.imageset/IC004_punkty_karne.svg",
+      "sha256": "a223e17781d9020a4116226d2c96180a4ac74b47fbd5bfcedf32b4de8f169d0b",
+      "bytes": 2386,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC005_mandaty/IC005_mandaty",
+      "file": "icon-109.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC005_mandaty.imageset/IC005_mandaty.svg",
+      "sha256": "2e473f885eeb22ab9cff1c2c4e4e9e21f7caec0676d15ba89e147724c45ff5ab",
+      "bytes": 1709,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC006_historia_pojazdu/IC006_historia_pojazdu",
+      "file": "icon-110.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC006_historia_pojazdu.imageset/IC006_historia_pojazdu.svg",
+      "sha256": "33d328f89b491d776a83b89e1122a93d826b20f5dd50a15ee34a441a3ff39a67",
+      "bytes": 2628,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC007_naruszenie_srodowiskowe/IC007_naruszenie_srodowiskowe",
+      "file": "icon-111.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC007_naruszenie_srodowiskowe.imageset/IC007_naruszenie_srodowiskowe.svg",
+      "sha256": "1caff3ff84458509c929fb7b2f6bf596fac3d8cce7e46c14abb4ca1e85953452",
+      "bytes": 2185,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC008_jakosc_powietrza/IC008_jakosc_powietrza",
+      "file": "icon-112.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC008_jakosc_powietrza.imageset/IC008_jakosc_powietrza.svg",
+      "sha256": "a7389511937955d850fac972010e9daaddeb01c337b501a70a4e5c759f36eec5",
+      "bytes": 2853,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC009_alert_powodziowy/IC009_alert_powodziowy",
+      "file": "icon-113.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC009_alert_powodziowy.imageset/IC009_alert_powodziowy.svg",
+      "sha256": "350d46953ef31f4711b355d7846bae6e915745a0c3b3c7a9ff51a55993e9eb95",
+      "bytes": 2475,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC010_bezpieczenstwo_w_sieci/IC010_bezpieczenstwo_w_sieci",
+      "file": "icon-114.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC010_bezpieczenstwo_w_sieci.imageset/IC010_bezpieczenstwo_w_sieci.svg",
+      "sha256": "c87eb8e496d1f235492463d8e261e6dbfc667de69a3556e291e08d8daa32dbbc",
+      "bytes": 2644,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC011_wybory/IC011_wybory",
+      "file": "icon-115.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC011_wybory.imageset/IC011_wybory.svg",
+      "sha256": "cc30a1e0da663c0b35325d9a2ad5ee526d069a6e77c86cf0e395b439606a5b9f",
+      "bytes": 2282,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC012_sprawdz_PESEL/IC012_sprawdz_PESEL",
+      "file": "icon-116.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC012_sprawdz_PESEL.imageset/IC012_sprawdz_PESEL.svg",
+      "sha256": "22efecd52b8ee63dc4d3797fb5e3365a67a94493e75e77e044313721b8e0dbc5",
+      "bytes": 1429,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC013_zastrzez_PESEL/IC013_zastrzez_PESEL",
+      "file": "icon-117.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC013_zastrzez_PESEL.imageset/IC013_zastrzez_PESEL.svg",
+      "sha256": "a7de74b84f29e53b9895da02bb34dc3efa09537dd2a00d7019fb01dce28e93bc",
+      "bytes": 1817,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC014_ePlatnosci/IC014_ePlatnosci",
+      "file": "icon-118.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC014_ePlatnosci.imageset/IC014_ePlatnosci.svg",
+      "sha256": "9aeb396099db23442f170f8f9391a505db69fe5a30f5de0a506c97694873eed6",
+      "bytes": 842,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC015_e-wizytwa_w_ZUS/IC015_e-wizytwa_w_ZUS",
+      "file": "icon-119.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC015_e-wizytwa_w_ZUS.imageset/IC015_e-wizytwa_w_ZUS.svg",
+      "sha256": "e039a8448d9daaa5d81c674f06cf4e3827314517a665eabaed6d5a7e067ee618",
+      "bytes": 1651,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC016_bezpieczny_autobus/IC016_bezpieczny_autobus",
+      "file": "icon-120.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC016_bezpieczny_autobus.imageset/IC016_bezpieczny_autobus.svg",
+      "sha256": "836511d45b5a5ae14fb68fd3bd521411f5b3268bf23c4b93b037f469e1ac17b0",
+      "bytes": 1066,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC017_bilkom/IC017_bilkom",
+      "file": "icon-121.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC017_bilkom.imageset/IC017_bilkom.svg",
+      "sha256": "1a5ca35c576f422077d51f946c46df6fe96dce46c4c45ccf2ac7165736463f8e",
+      "bytes": 1835,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC018_karta_MKA/IC018_karta_MKA",
+      "file": "icon-122.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC018_karta_MKA.imageset/IC018_karta_MKA.svg",
+      "sha256": "6d1528145a760d222636bcc8468387a1588a7bda9ad093e0c0dec055d8190859",
+      "bytes": 976,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC019_polak_za_granica/IC019_polak_za_granica",
+      "file": "icon-123.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC019_polak_za_granica.imageset/IC019_polak_za_granica.svg",
+      "sha256": "061abd4579f859214cac981602800f1b078aec91b4da3a015e3e191d2a617b6a",
+      "bytes": 1769,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC020_zloz_dokument/IC020_zloz_dokument",
+      "file": "icon-124.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC020_zloz_dokument.imageset/IC020_zloz_dokument.svg",
+      "sha256": "38f3b23baf3bf9ac6f8fcbaab42a1f0ebe0a3d9084bf25e678b4825efb58cbba",
+      "bytes": 1118,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC021_twoje_sprawy/IC021_twoje_sprawy",
+      "file": "icon-125.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC021_twoje_sprawy.imageset/IC021_twoje_sprawy.svg",
+      "sha256": "186a49ed64c77c8b036c7aabc280f5dc4abb7daf4438fa0500afe7052e0a9f87",
+      "bytes": 1760,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC022_ksiegi_wieczyste/IC022_ksiegi_wieczyste",
+      "file": "icon-126.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC022_ksiegi_wieczyste.imageset/IC022_ksiegi_wieczyste.svg",
+      "sha256": "d6a85fc6cf0f74d713b7ff38107de36e89b8d5bd0b0301794729a29f7e1eda10",
+      "bytes": 1497,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC023_stluczka/IC023_stluczka",
+      "file": "icon-127.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC023_stluczka.imageset/IC023_stluczka.svg",
+      "sha256": "3082dd0bcb385f3318aed5b50e325e61bab0d9ad5a94a3021bab29e44e611582",
+      "bytes": 3580,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC024_uprawnienia_kierowcy/IC024_uprawnienia_kierowcy",
+      "file": "icon-128.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC024_uprawnienia_kierowcy.imageset/IC024_uprawnienia_kierowcy.svg",
+      "sha256": "6de87c99ee9c367d8b07957f801b57d4cc6a0790c624979e97c9dca03dc162ef",
+      "bytes": 1833,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC025_internet_gov_pl/IC025_internet_gov_pl",
+      "file": "icon-129.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC025_internet_gov_pl.imageset/IC025_internet_gov_pl.svg",
+      "sha256": "a7cf811fe112a87aef2041478aced90c542971e08e3ca4a2d23aa223358f5e1d",
+      "bytes": 1668,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC026_pozostale/IC026_pozostale",
+      "file": "icon-130.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC026_pozostale.imageset/IC026_pozostale.svg",
+      "sha256": "06777d7abaa676747aa22bf221918a83c5d66f024e1d7979b2cd84c442233ca5",
+      "bytes": 1115,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC027_profil_zaufany_bankowosc/IC027_profil_zaufany_bankowosc",
+      "file": "icon-131.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC027_profil_zaufany_bankowosc.imageset/IC027_profil_zaufany_bankowosc.svg",
+      "sha256": "e258e216f5118a9b683249bc187b4fa46937c80568628b27bfe0366fc9095bb7",
+      "bytes": 956,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC028_inne_uslugi/IC028_inne_uslugi",
+      "file": "icon-132.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC028_inne_uslugi.imageset/IC028_inne_uslugi.svg",
+      "sha256": "5bffe1f9adaa82dd783c3a3399fc9c9fae65c38c2b0b888f706d871f2a95d586",
+      "bytes": 659,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC029_zastrzez_dokument/IC029_zastrzez_dokument",
+      "file": "icon-133.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC029_zastrzez_dokument.imageset/IC029_zastrzez_dokument.svg",
+      "sha256": "cf413a98380f11aae9b9a175e1cac680cf0c2b37ebcc81a7c0580d3b4efb33b9",
+      "bytes": 2416,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Brand/IC030_ulubione/IC030_ulubione",
+      "file": "icon-134.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Brand/IC030_ulubione.imageset/IC030_ulubione.svg",
+      "sha256": "dfdce6583a51e45a5f239ca353fcb789a5b5e8a2d43d736a08e1c1701af3751c",
+      "bytes": 2010,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB001_mDowod_card_mini/IB001_mDowod_card_mini",
+      "file": "icon-135.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB001_mDowod_card_mini.imageset/IB001_mDowod_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "eb70889089450e3910421fcabccab3ee261fe15f2bccfe133d83c5eb75abc9bb",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB002_Emeryt_card_mini/IB002_Emeryt_card_mini",
+      "file": "icon-136.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB002_Emeryt_card_mini.imageset/IB002_Emeryt_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "c8bc90daaea808db76172e27d2cc3c3282b193b1774c8187861bf1d290d84bbc",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB003_PJ_card_mini/IB003_PJ_card_mini",
+      "file": "icon-137.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB003_PJ_card_mini.imageset/IB003_PJ_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "91408cf58115651fce9c05b7cd30359a2b6b03e3c5e8d27f38475ab6bc2083d3",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB004_mPojazd_card_mini/IB004_mPojazd_card_mini",
+      "file": "icon-138.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB004_mPojazd_card_mini.imageset/IB004_mPojazd_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "ec76f4daae89e109c0f129cd4639b764e8d3e92a4f49b924e19a94fdc639d7e0",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB005_KDR_card_mini/IB005_KDR_card_mini",
+      "file": "icon-139.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB005_KDR_card_mini.imageset/IB005_KDR_card_mini.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "cbe74a50ed1daef801bb68501305096739fc23e9de414234912377fc720c4073",
+      "distributionChange": "2026-10-28: original document miniature with official markings replaced by a neutral mDesign demo card; identifier retained."
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB006_LSzkolna_card_mini/IB006_LSzkolna_card_mini",
+      "file": "icon-140.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB006_LSzkolna_card_mini.imageset/IB006_LSzkolna_card_mini.svg",
+      "sha256": "2e1408319961abaac99a93582cdd55cdd3da4fc9a3f8ac01a14ff4d7f7a5d6cc",
+      "bytes": 78706,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB007_LStudencka_card_mini/IB007_LStudencka_card_mini",
+      "file": "icon-141.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB007_LStudencka_card_mini.imageset/IB007_LStudencka_card_mini.svg",
+      "sha256": "3eb73e71a08c256f6d5cb9e4e622dd1f88aa94037beaf9e368021e2606aa87c8",
+      "bytes": 78706,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB008_LAdwokacka_card_mini/IB008_LAdwokacka_card_mini",
+      "file": "icon-142.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB008_LAdwokacka_card_mini.imageset/IB008_LAdwokacka_card_mini.svg",
+      "sha256": "4023d7728afa04cc438477121c83c284c70a1e54491ac43f92926db4421b65af",
+      "bytes": 36306,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB009_LPoselska_card_mini/IB009_LPoselska_card_mini",
+      "file": "icon-143.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB009_LPoselska_card_mini.imageset/IB009_LPoselska_card_mini.svg",
+      "sha256": "0bedfd35658e0aa51a7d0fefebc3806fd4ced2fc2a1a2db9d9a7e20c93dbf3c1",
+      "bytes": 78706,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB010_UUT_card_mini/IB010_UUT_card_mini",
+      "file": "icon-144.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB010_UUT_card_mini.imageset/IB010_UUT_card_mini.svg",
+      "sha256": "a58046f6e780a1d9af4aa72b8b793a09abd80847d49f1946d0eaa7b35448fbea",
+      "bytes": 78716,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB011_DIIA_card_mini/IB011_DIIA_card_mini",
+      "file": "icon-145.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB011_DIIA_card_mini.imageset/IB011_DIIA_card_mini.svg",
+      "sha256": "28e4c38eb4c38fb451ff16d6acf27af07176d703a2468f985a4707e62bb1ce1f",
+      "bytes": 78655,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB012_PWZPielegniarka_card_mini/IB012_PWZPielegniarka_card_mini",
+      "file": "icon-146.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB012_PWZPielegniarka_card_mini.imageset/IB012_PWZPielegniarka_card_mini.svg",
+      "sha256": "fdbbf4be7272e561fbc289809ca847c86678ffa9df85298626ead1d17d8f52fe",
+      "bytes": 78754,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB013_PWZPolozna_card_mini/IB013_PWZPolozna_card_mini",
+      "file": "icon-147.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB013_PWZPolozna_card_mini.imageset/IB013_PWZPolozna_card_mini.svg",
+      "sha256": "3fc0df97df132dbb3489430ebe1c45ff6086d743140132828fa08a3931893e26",
+      "bytes": 78753,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB014_PWZLekarz_card_mini/IB014_PWZLekarz_card_mini",
+      "file": "icon-148.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB014_PWZLekarz_card_mini.imageset/IB014_PWZLekarz_card_mini.svg",
+      "sha256": "05a463afffdeb0a3af14cbe223c198b4ea28c2bc2e09ab742b03bb6b75d73ba3",
+      "bytes": 78753,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB015_PWZDentysta_card_mini/IB015_PWZDentysta_card_mini",
+      "file": "icon-149.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB015_PWZDentysta_card_mini.imageset/IB015_PWZDentysta_card_mini.svg",
+      "sha256": "bc7ef68b5265614b387f2e0f23e7e8d69832f43b8c2037a3ae63ec6d276ee696",
+      "bytes": 78795,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB016_Legitymacja_radcy_prawnego_card_mini/IB016_Legitymacja_radcy_prawnego_card_mini",
+      "file": "icon-150.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB016_Legitymacja_radcy_prawnego_card_mini.imageset/IB016_Legitymacja_radcy_prawnego_card_mini.svg",
+      "sha256": "ed3d213c140024a23629abd9cbd4f33437b36075a8892d6e8b8376ef948f2a6d",
+      "bytes": 22488,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB017_Legitymacja_osoby_niepelnosprawnej_card_mini/IB017_Legitymacja_osoby_niepelnosprawnej_card_mini",
+      "file": "icon-151.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB017_Legitymacja_osoby_niepelnosprawnej_card_mini.imageset/IB017_Legitymacja_osoby_niepelnosprawnej_card_mini.svg",
+      "sha256": "319f4c52e2aebfa1c89915b10629f6c3910a63856b5b2bb33b37c8999a2bdd81",
+      "bytes": 3585,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB018_Legitymacja_senatorska_card_mini/IB018_Legitymacja_senatorska_card_mini",
+      "file": "icon-152.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB018_Legitymacja_senatorska_card_mini.imageset/IB018_Legitymacja_senatorska_card_mini.svg",
+      "sha256": "7fee3ac1c04b4c62890791eec35e35711fc0abdaccf0758f326b9750f83f1985",
+      "bytes": 78769,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB019_Legitymacja_Sluzbowa_Nauczyciela_card_mini/IB019_Legitymacja_Sluzbowa_Nauczyciela_card_mini",
+      "file": "icon-153.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB019_Legitymacja_Sluzbowa_Nauczyciela_card_mini.imageset/IB019_Legitymacja_Sluzbowa_Nauczyciela_card_mini.svg",
+      "sha256": "55b965abc2a965d2ea94d90a274c14ca7fd946c803dd6163a76a7ba8269d916a",
+      "bytes": 78754,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB020_Dokument_generyczny_card_mini/IB020_Dokument_generyczny_card_mini",
+      "file": "icon-154.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB020_Dokument_generyczny_card_mini.imageset/IB020_Dokument_generyczny_card_mini.svg",
+      "sha256": "abfcc9e448a0a7c5062f27738f179c07ec96dab43e4e38a1430d92e758920c57",
+      "bytes": 78672,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB021_Identyfikator_komornika_sadowego_card_mini/IB021_Identyfikator_komornika_sadowego_card_mini",
+      "file": "icon-155.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB021_Identyfikator_komornika_sadowego_card_mini.imageset/IB021_Identyfikator_komornika_sadowego_card_mini.svg",
+      "sha256": "51101e26fdcf52ce724799fed1423d246ed4f5083ef228fe2a53db61653f3699",
+      "bytes": 78954,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB022_Dokument_neutralny_card_mini/IB022_Dokument_neutralny_card_mini",
+      "file": "icon-156.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB022_Dokument_neutralny_card_mini.imageset/IB022_Dokument_neutralny_card_mini.svg",
+      "sha256": "a5ecbe67b293864bec5a9c5ff9c7b0a2aa4616292652b114d92aed8737e6770d",
+      "bytes": 78799,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/CardMini/IB023_Doradca_podatkowy_card_mini/IB023_Doradca_podatkowy_card_mini",
+      "file": "icon-157.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/CardMini/IB023_Doradca_podatkowy_card_mini.imageset/IB023_Doradca_podatkowy_card_mini.svg",
+      "sha256": "15cae33c1de16fd7f1865672d374fd101d967681c0d01fb2f12fe6d4659fbe71",
+      "bytes": 78996,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Devices/ID001_active_overlap_layout/ID001_active_overlap_layout",
+      "file": "icon-158.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Devices/ID001_active_overlap_layout.imageset/ID001_active_overlap_layout.svg",
+      "sha256": "e8740593acba0829f55b0f4f8939a69cc30c3b865a61edc424c24fe9ef7d60c9",
+      "bytes": 2130,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Devices/ID002_active_grid_layout/ID002_active_grid_layout",
+      "file": "icon-159.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Devices/ID002_active_grid_layout.imageset/ID002_active_grid_layout.svg",
+      "sha256": "80466ed20d8019b527818b6b3bcc015652e5df814c2bef15855102cc3b9f53fd",
+      "bytes": 2470,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Devices/ID003_active_list_layout/ID003_active_list_layout",
+      "file": "icon-160.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Devices/ID003_active_list_layout.imageset/ID003_active_list_layout.svg",
+      "sha256": "3602687b83c7a73e93538ed66dce78484f5c1e7e52f18fd75741680b01874d02",
+      "bytes": 2947,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Devices/ID004_inactive_overlap_layout/ID004_inactive_overlap_layout",
+      "file": "icon-161.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Devices/ID004_inactive_overlap_layout.imageset/ID004_inactive_overlap_layout.svg",
+      "sha256": "134f7e394e87fecfe7ffc44a4015eeb5cad243400769783c65c6a6f383146a2a",
+      "bytes": 2130,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Devices/ID005_inactive_grid_layout/ID005_inactive_grid_layout",
+      "file": "icon-162.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Devices/ID005_inactive_grid_layout.imageset/ID005_inactive_grid_layout.svg",
+      "sha256": "4c7c68465789e5d624ff8f5434acda219965e61c3866863743be84a3e42ee64f",
+      "bytes": 2470,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Devices/ID006_inactive_list_layout/ID006_inactive_list_layout",
+      "file": "icon-163.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Devices/ID006_inactive_list_layout.imageset/ID006_inactive_list_layout.svg",
+      "sha256": "039ce2dc9a237ac174cfc0a1b4e2ca14e76ab453d772a4396442660876f16fd1",
+      "bytes": 2947,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Devices/ID007_overlap_layout/ID007_overlap_layout",
+      "file": "icon-164.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Devices/ID007_overlap_layout.imageset/ID007_overlap_layout.svg",
+      "sha256": "45f33e2fe90c50a721f3a9c740d7d2783b86be9b004fd48cf00379a45421f193",
+      "bytes": 625,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Devices/ID008_grid_layout/ID008_grid_layout",
+      "file": "icon-165.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Devices/ID008_grid_layout.imageset/ID008_grid_layout.svg",
+      "sha256": "949addbf574d2b6a7327c14395ebf9ac41110389775bc08f546fa2a89de1dd27",
+      "bytes": 907,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Devices/ID009_list_layout/ID009_list_layout",
+      "file": "icon-166.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Devices/ID009_list_layout.imageset/ID009_list_layout.svg",
+      "sha256": "c8d463fb9d6a4e321d661b5be31af9e27a269943d30b5fc5b0dfe2d2564f46f1",
+      "bytes": 901,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/Documents/IA001_Card_logo_default/IA001_Card_logo_default",
+      "file": "icon-167.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA001_Card_logo_default.imageset/IA001_Card_logo_default.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "bcfad8e35a6657538e5f46dc7577ea3a56cb9dc6bd402da514eacb53ac785751",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA002_Card_logo_ZUS/IA002_Card_logo_ZUS",
+      "file": "icon-168.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA002_Card_logo_ZUS.imageset/IA002_Card_logo_ZUS.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "c02fb360759344ba8c6afb83d7bcde4192cbb7ee5f744f5382960a89d0f06ecd",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA003_Card_logo_KDR/IA003_Card_logo_KDR",
+      "file": "icon-169.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA003_Card_logo_KDR.imageset/IA003_Card_logo_KDR.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "22b77c3e4b5f3e388d822e3bbdfeb6d31d8ddb76c7695ca35e142c340722e5d3",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA004_Card_logo_lawyer/IA004_Card_logo_lawyer",
+      "file": "icon-170.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA004_Card_logo_lawyer.imageset/IA004_Card_logo_lawyer.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "2983007018c894f7e1ddef9b8398fffeb9332e1684df9a502933e3cdcb6dbddd",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA005_Card_logo_UUT/IA005_Card_logo_UUT",
+      "file": "icon-171.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA005_Card_logo_UUT.imageset/IA005_Card_logo_UUT.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "f5f0e3e45bbe57db231001805d6dae057c10c76a638137b71fe77a8529327bcc",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA006_Card_logo_PWZ_Nurse/IA006_Card_logo_PWZ_Nurse",
+      "file": "icon-172.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA006_Card_logo_PWZ_Nurse.imageset/IA006_Card_logo_PWZ_Nurse.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "b9ae65994753b8d6c80eddff45ff22a012456e75119b544e156e53e0738a6642",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA007_Card_logo_PWZ_Midwife/IA007_Card_logo_PWZ_Midwife",
+      "file": "icon-173.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA007_Card_logo_PWZ_Midwife.imageset/IA007_Card_logo_PWZ_Midwife.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "5dac8a33882299cc51fc6858784fbd6d36ddb7c94c1b569eed7e3e450ee555c2",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA008_Card_logo_advisor/IA008_Card_logo_advisor",
+      "file": "icon-174.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA008_Card_logo_advisor.imageset/IA008_Card_logo_advisor.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "2f08f11eb642429b784b08348979477d9efc21ff921da03c385bcfea1f4c0b62",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA009_Card_logo_LON/IA009_Card_logo_LON",
+      "file": "icon-175.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA009_Card_logo_LON.imageset/IA009_Card_logo_LON.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "09edb8a57c13c74db501d5ed21b63f446461704bc2e04283e3296107030b715c",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA010_Card_logo_KRK/IA010_Card_logo_KRK",
+      "file": "icon-176.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA010_Card_logo_KRK.imageset/IA010_Card_logo_KRK.svg",
+      "sha256": "4526671074ae806e996a87117ddef0a4db97172169ae710b4fe7ae3e9f121147",
+      "bytes": 266,
+      "monochrome": false,
+      "originalSha256": "1a1fa2b8c7b29cded9e653f0fc236112227d2f95a912ba087782361de6454ab1",
+      "distributionChange": "2026-10-28: original document badge/embedded artwork withdrawn; replaced by a neutral mDesign demo card. Public identifier retained."
+    },
+    {
+      "id": "Icons/Lift/Documents/IA011_PWZ_lekarza_asset/IA011_PWZ_lekarza_asset",
+      "file": "icon-177.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/Documents/IA011_PWZ_lekarza_asset.imageset/IA011_PWZ_lekarza_asset.svg",
+      "sha256": "e100ba1f7cf9b0bf80583c206b79f36655c7b1170aa641032dfe14154968ffbe",
+      "bytes": 1455,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/StatusCard/IE001_info/IE001_info",
+      "file": "icon-178.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/StatusCard/IE001_info.imageset/IE001_info.svg",
+      "sha256": "72f6e5165400520dbcc96347f5677c54641fa0e7b1dc4de3386c8a1c12aa5efb",
+      "bytes": 1178,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/StatusCard/IE002_notice_mark/IE002_notice_mark",
+      "file": "icon-179.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/StatusCard/IE002_notice_mark.imageset/IE002_notice_mark.svg",
+      "sha256": "f57399d43c8c6bdf33f0001fcb602f30bf5a906401633046f7e77191cc42799e",
+      "bytes": 745,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/StatusCard/IE003_x_mark/IE003_x_mark",
+      "file": "icon-180.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/StatusCard/IE003_x_mark.imageset/IE003_x_mark.svg",
+      "sha256": "127c1220f56f7b963fc2364511317c6dd9bd6f6ca0139034e043d47c751f655a",
+      "bytes": 982,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Lift/StatusCard/IE004_check_mark/IE004_check_mark",
+      "file": "icon-181.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Lift/StatusCard/IE004_check_mark.imageset/IE004_check_mark.svg",
+      "sha256": "dd1d61bb30fdcc997d3e54a5aface4c450d5788df113eaeb3dad85015b11eb3a",
+      "bytes": 737,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Outline/Comunication/AF001_Chat_bot/AF001_Chat_bot",
+      "file": "icon-182.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Comunication/AF001_Chat_bot.imageset/AF001_Chat_bot.svg",
+      "sha256": "edd54b43b96d2849a5e63f1cc60b51f7f865122313ef32671c4dd37dcc8bea4d",
+      "bytes": 1492,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Comunication/AF002_Chat/AF002_Chat",
+      "file": "icon-183.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Comunication/AF002_Chat.imageset/AF002_Chat.svg",
+      "sha256": "4e1dfd8780730390bcc339c04d5654ca924e5452a2c15b9f2d331a390c81fa10",
+      "bytes": 1085,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Comunication/AF003_Send/AF003_Send",
+      "file": "icon-184.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Comunication/AF003_Send.imageset/AF003_Send.svg",
+      "sha256": "612e0d08e9e123144e4b7d37960887ed74a54fedc6aab90b7b070c097b37305f",
+      "bytes": 620,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Comunication/AF004_Cases/AF004_Cases",
+      "file": "icon-185.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Comunication/AF004_Cases.imageset/AF004_Cases.svg",
+      "sha256": "528f4e6f63a5e55bd35477567750d1f8d98f7995163f950871db04dc62e6a695",
+      "bytes": 500,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Comunication/AF005_Idea/AF005_Idea",
+      "file": "icon-186.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Comunication/AF005_Idea.imageset/AF005_Idea.svg",
+      "sha256": "b504ce05bfd4890bb63801c37590fe757bea46baf29d5f171812d2d015efec75",
+      "bytes": 1713,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Comunication/AF006_video_call/AF006_video_call",
+      "file": "icon-187.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Comunication/AF006_video_call.imageset/AF006_video_call.svg",
+      "sha256": "4918e29f9a67dde10f31ecc7fb2398143f29af26a76cc5c4be44aa300cb24560",
+      "bytes": 1088,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE001_Published_certificate/AE001_Published_certificate",
+      "file": "icon-188.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE001_Published_certificate.imageset/AE001_Published_certificate.svg",
+      "sha256": "9c938a3a5749c95f14b6d01e8de2bfe5a56da38921bf7ac563ed3cca6e88e019",
+      "bytes": 1408,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE002_Update_certificate/AE002_Update_certificate",
+      "file": "icon-189.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE002_Update_certificate.imageset/AE002_Update_certificate.svg",
+      "sha256": "de83fe173c5512ecc84cc60a16fe66f0fea969dfd9ba3195b941d13a465fb0b5",
+      "bytes": 905,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE003_Legal_information/AE003_Legal_information",
+      "file": "icon-190.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE003_Legal_information.imageset/AE003_Legal_information.svg",
+      "sha256": "bd1ae2b8d79da245004bbf06eb63935790d61905fc76186823d34407ce1440f7",
+      "bytes": 1431,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE004_Power_of_attomey/AE004_Power_of_attomey",
+      "file": "icon-191.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE004_Power_of_attomey.imageset/AE004_Power_of_attomey.svg",
+      "sha256": "c85e79ebe503956c474667d3dbb1e1033499621b1b4c597688af7fb58ae6331f",
+      "bytes": 1143,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE005_Document_data/AE005_Document_data",
+      "file": "icon-192.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE005_Document_data.imageset/AE005_Document_data.svg",
+      "sha256": "fde0c71f77702a23e89539f87e3fe64482d07c1e12adadd30d433e626d689202",
+      "bytes": 964,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE006_Document/AE006_Document",
+      "file": "icon-193.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE006_Document.imageset/AE006_Document.svg",
+      "sha256": "fcf16c403083c0bb3e03a0f837c7ff04b1bf819d4a4e6e3c281f181537e08724",
+      "bytes": 798,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE007_Forward_document/AE007_Forward_document",
+      "file": "icon-194.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE007_Forward_document.imageset/AE007_Forward_document.svg",
+      "sha256": "8999ae9224b411fd28ce31f923a8b40e4e6e1a1914c0ccfb2aa7f58dd9d2e62a",
+      "bytes": 1034,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE008_Approved_document/AE008_Approved_document",
+      "file": "icon-195.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE008_Approved_document.imageset/AE008_Approved_document.svg",
+      "sha256": "4d5addc8245054a7b5f048c43003e656199dbed70cec3dc31eb508758aaa8008",
+      "bytes": 970,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE009_Share_document/AE009_Share_document",
+      "file": "icon-196.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE009_Share_document.imageset/AE009_Share_document.svg",
+      "sha256": "42b5f9e6be394e96c900f03383311318285b82945ae9dce3e5c67a8b45f0de4f",
+      "bytes": 857,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE010_Add_document/AE010_Add_document",
+      "file": "icon-197.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE010_Add_document.imageset/AE010_Add_document.svg",
+      "sha256": "90bdb4d696755a5e52bcad637f574c5eab15608387e0be0311bc54b03d228ccf",
+      "bytes": 799,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE011_Download_document/AE011_Download_document",
+      "file": "icon-198.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE011_Download_document.imageset/AE011_Download_document.svg",
+      "sha256": "c8a5aefadcbfdf0eab4c67940c093240a8174eb30bdee1fc15179625565d578f",
+      "bytes": 980,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE012_International_document/AE012_International_document",
+      "file": "icon-199.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE012_International_document.imageset/AE012_International_document.svg",
+      "sha256": "7643e68fa06bd50bbff8df0e91cae80b4a57da0bfc0af31d21c579b30844ca65",
+      "bytes": 1882,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Documents/AE013_Magnifying_glass/AE013_Magnifying_glass",
+      "file": "icon-200.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Documents/AE013_Magnifying_glass.imageset/AE013_Magnifying_glass.svg",
+      "sha256": "e09d34f497537680fac297b64998c6ea49c1887d8c1cfa8eb51dcfd1fd709b0d",
+      "bytes": 1128,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Hands/AH001_Like/AH001_Like",
+      "file": "icon-201.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Hands/AH001_Like.imageset/AH001_Like.svg",
+      "sha256": "8d4040e6d27ed31de58146fdd76f5476b61b16395853f365c5b38c51870a2883",
+      "bytes": 1119,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Hands/AH002_Dislike/AH002_Dislike",
+      "file": "icon-202.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Hands/AH002_Dislike.imageset/AH002_Dislike.svg",
+      "sha256": "f71089353622e5e78aa1e81ea22499c6a0835e48fea3aac58086ca18428ac4dc",
+      "bytes": 1209,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Hands/ah003_pointer/ah003_pointer",
+      "file": "icon-203.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Hands/ah003_pointer.imageset/ah003_pointer.svg",
+      "sha256": "f43c5f89cb9ec7962822b9342868051c784ae0101c362b6b84701e2dfbfacb46",
+      "bytes": 978,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB001_Home/AB001_Home",
+      "file": "icon-204.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB001_Home.imageset/AB001_Home.svg",
+      "sha256": "a25306848d1b1ab6411f86084236a78b8ecbed82223b04cb447ee0ac226588ae",
+      "bytes": 764,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB002_Search/AB002_Search",
+      "file": "icon-205.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB002_Search.imageset/AB002_Search.svg",
+      "sha256": "2a0065c4d25e2fca643d048f8df4379d4fa792b4c8b7817cb44264e63d898f0b",
+      "bytes": 546,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB003_Settings/AB003_Settings",
+      "file": "icon-206.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB003_Settings.imageset/AB003_Settings.svg",
+      "sha256": "5f980e4f1cba51b5dd216d17780cba9f7f5b261760576bf93870b7111871be80",
+      "bytes": 2043,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB004_Arrow_left/AB004_Arrow_left",
+      "file": "icon-207.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB004_Arrow_left.imageset/AB004_Arrow_left.svg",
+      "sha256": "7ed762c7fdb6fc357ee2e7dd03eb2ce558c96064f4e0ccc882a9ba7035c10749",
+      "bytes": 472,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB005_Chevron_left/AB005_Chevron_left",
+      "file": "icon-208.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB005_Chevron_left.imageset/AB005_Chevron_left.svg",
+      "sha256": "9ee721853800681c6462627d54d2506b906ddbde9872677c877abdb821fa8731",
+      "bytes": 416,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB006_Chevron_right/AB006_Chevron_right",
+      "file": "icon-209.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB006_Chevron_right.imageset/AB006_Chevron_right.svg",
+      "sha256": "6ce07f539d2e2fe3cc050e65ebda17917070bb3be64bc1e67a07aa2088bcabba",
+      "bytes": 415,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB007_Chevron_up/AB007_Chevron_up",
+      "file": "icon-210.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB007_Chevron_up.imageset/AB007_Chevron_up.svg",
+      "sha256": "68d4e44ab3778aefee5c792d742c7190aeac4072074003fc89c058a64f4742ca",
+      "bytes": 399,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB008_Chevron_down/AB008_Chevron_down",
+      "file": "icon-211.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB008_Chevron_down.imageset/AB008_Chevron_down.svg",
+      "sha256": "88508e33d5f19d7c02bf5d8063cb8c6343cce720619123cbe88fcf581a1de890",
+      "bytes": 396,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB009_X_mark/AB009_X_mark",
+      "file": "icon-212.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB009_X_mark.imageset/AB009_X_mark.svg",
+      "sha256": "76fa62ff43806af46e448f5e2529e268ba30b5287567c29aa7a30cb929059775",
+      "bytes": 527,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB010_More/AB010_More",
+      "file": "icon-213.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB010_More.imageset/AB010_More.svg",
+      "sha256": "3e33db088f69d18e38f16e68beb38b17d500ab8ea73bbf49d9abd37df2ef0042",
+      "bytes": 590,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB011_More_vertical/AB011_More_vertical",
+      "file": "icon-214.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB011_More_vertical.imageset/AB011_More_vertical.svg",
+      "sha256": "ee041153efdd724fd30596cdbe5121ff47013f3f97e0a0a69d6cee339984e2a9",
+      "bytes": 570,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB012_More_horizontal/AB012_More_horizontal",
+      "file": "icon-215.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB012_More_horizontal.imageset/AB012_More_horizontal.svg",
+      "sha256": "02d13b242b1d1621da8575815641d5370445261f084f516e7ae4364467f47d5f",
+      "bytes": 569,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB013_Notifications/AB013_Notifications",
+      "file": "icon-216.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB013_Notifications.imageset/AB013_Notifications.svg",
+      "sha256": "a5f10ab90a455678f6592a68cd71ef1ebb96abb83c31fdd842ac7e9d775251f7",
+      "bytes": 1407,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB014_Share/AB014_Share",
+      "file": "icon-217.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB014_Share.imageset/AB014_Share.svg",
+      "sha256": "bc541c2087e53ba61720e6f9a43d442da1b5d0301a31fdbcb3f156cb4080011c",
+      "bytes": 1167,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB015_Help/AB015_Help",
+      "file": "icon-218.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB015_Help.imageset/AB015_Help.svg",
+      "sha256": "a5489977d4b516851cb8ceadb03cb907eda8870cb894e8fbe2165fa1660a0f72",
+      "bytes": 784,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB016_Add/AB016_Add",
+      "file": "icon-219.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB016_Add.imageset/AB016_Add.svg",
+      "sha256": "263e51d51c244c80d6e1868ec3577e19b85296187aff4db3d79e04bac0f7678d",
+      "bytes": 437,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB017_Edit/AB017_Edit",
+      "file": "icon-220.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB017_Edit.imageset/AB017_Edit.svg",
+      "sha256": "bd8347d7743bee786ffee6dd93392b36765994cd5df7c6366d843a642f8b284c",
+      "bytes": 629,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB018_Share/AB018_Share",
+      "file": "icon-221.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB018_Share.imageset/AB018_Share.svg",
+      "sha256": "7a645b16c9b9331fd205ca7a92d7571177e051dc995605febb63ce1e4f73e36c",
+      "bytes": 864,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB019_Logout/AB019_Logout",
+      "file": "icon-222.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB019_Logout.imageset/AB019_Logout.svg",
+      "sha256": "f18a731a4645596b7911314b77da0130e5b8b67b5972bf179755350538ae8529",
+      "bytes": 919,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB020_Capslock/AB020_Capslock",
+      "file": "icon-223.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB020_Capslock.imageset/AB020_Capslock.svg",
+      "sha256": "80bc1fb1c494cdad992be9aff64c22c8b2a978b848308d36d28bd86b0b5032ec",
+      "bytes": 781,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB021_Reply/AB021_Reply",
+      "file": "icon-224.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB021_Reply.imageset/AB021_Reply.svg",
+      "sha256": "8e393c0f4659f10ea9a8d39651f4ef808e0af6720a082df38ae55cbf9fcb5ea1",
+      "bytes": 323,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB022_Forward/AB022_Forward",
+      "file": "icon-225.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB022_Forward.imageset/AB022_Forward.svg",
+      "sha256": "92e864a98cc834fe6aa059e8c97a9fef5d1a67664d39956b13003050191bbc94",
+      "bytes": 323,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB023_Zoom_in/AB023_Zoom_in",
+      "file": "icon-226.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB023_Zoom_in.imageset/AB023_Zoom_in.svg",
+      "sha256": "5608cdcce64c3db4daa66c12a1108e0c572f18c455f72ad2d5e8c424a7a0cc02",
+      "bytes": 951,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB024_Sort/AB024_Sort",
+      "file": "icon-227.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB024_Sort.imageset/AB024_Sort.svg",
+      "sha256": "9a27f664aec071528715332cab7aaa39e6caad2d2b8a5489a2746e43056e0a94",
+      "bytes": 905,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Navigation/AB025_Notifications_with_dot/AB025_Notifications_with_dot 2",
+      "file": "icon-228.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Navigation/AB025_Notifications_with_dot.imageset/AB025_Notifications_with_dot 2.svg",
+      "sha256": "5f92338acc372d334e3191ea39722f8e3dadebef38215675bdfcfee54b6177a2",
+      "bytes": 1383,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/People/AD001_Add_person/AD001_Add_person",
+      "file": "icon-229.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/People/AD001_Add_person.imageset/AD001_Add_person.svg",
+      "sha256": "744c9c0d990c7d223c32e88426c38a8183ac6e1b00c5bdfa1673721998704a91",
+      "bytes": 843,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/People/AD002_Selected_person/AD002_Selected_person",
+      "file": "icon-230.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/People/AD002_Selected_person.imageset/AD002_Selected_person.svg",
+      "sha256": "3500f89bfef7b771b4ad92639c44ba85ff9bd2d7ac146dccbc6e6829e27e8b4b",
+      "bytes": 812,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/People/AD003_Share_with_person/AD003_Share_with_person",
+      "file": "icon-231.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/People/AD003_Share_with_person.imageset/AD003_Share_with_person.svg",
+      "sha256": "6438e01b856ea1a22b6c7690dea27a05154e2b23c521137df99e09cb60e5df37",
+      "bytes": 860,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/People/AD004_Person/AD004_Person",
+      "file": "icon-232.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/People/AD004_Person.imageset/AD004_Person.svg",
+      "sha256": "211bd96f65748dcfe99010d369787c0fa187d0eca28e6d11e19d90251227f483",
+      "bytes": 696,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/People/AD005_Framed_person/AD005_Framed_person",
+      "file": "icon-233.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/People/AD005_Framed_person.imageset/AD005_Framed_person.svg",
+      "sha256": "bccca2a6ece2923d23ffa0eaf525880d6d431ba36aa2b0470a7d405027740a7a",
+      "bytes": 852,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/People/AD006_Many_users/AD006_Many_users",
+      "file": "icon-234.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/People/AD006_Many_users.imageset/AD006_Many_users.svg",
+      "sha256": "f7add9d2c34fe2e408d620740352911c208f273c2266041b3cea22847769308e",
+      "bytes": 1724,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/People/AD007_User_cog/AD007_User_cog",
+      "file": "icon-235.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/People/AD007_User_cog.imageset/AD007_User_cog.svg",
+      "sha256": "1e0e63409a91f3409083182d18f8a2b1ab3b60c0ffca2bdea2c33bcf317c664b",
+      "bytes": 3214,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/People/AD008_Family/AD008_Family",
+      "file": "icon-236.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/People/AD008_Family.imageset/AD008_Family.svg",
+      "sha256": "64a124d181828f80b0af1a8eef8d526f68696da8ae15105ef368d8646aa149fb",
+      "bytes": 1957,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Places/AG001_Office/AG001_Office",
+      "file": "icon-237.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Places/AG001_Office.imageset/AG001_Office.svg",
+      "sha256": "1c7ac76357b41a313b7d532e7fc789e65e5c01e2cacc49e8247a9f5ba751584c",
+      "bytes": 977,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Places/AG002_Office_localization/AG002_Office_localization",
+      "file": "icon-238.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Places/AG002_Office_localization.imageset/AG002_Office_localization.svg",
+      "sha256": "85889ff5a7b03f78da6f71dfbc088e4ee1aedbc970120a8ce0f7e7260eaf7757",
+      "bytes": 1222,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Places/AG003_Pin/AG003_Pin",
+      "file": "icon-239.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Places/AG003_Pin.imageset/AG003_Pin.svg",
+      "sha256": "3e8559e427190f093164716015bef61ba7353234683f75b82c41f282466cb433",
+      "bytes": 688,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Places/AG004_Map/AG004_Map",
+      "file": "icon-240.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Places/AG004_Map.imageset/AG004_Map.svg",
+      "sha256": "ce67ebd07af606ac6b17e84d1fef1eb460c9ffa79e9ee132904dc0eaa758bdb7",
+      "bytes": 1002,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Places/AG005_Globe/AG005_Globe",
+      "file": "icon-241.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Places/AG005_Globe.imageset/AG005_Globe.svg",
+      "sha256": "c0932f7cd637a3bfc47c7888d20eac84f44cd09272f7f4a0be7cd349142da476",
+      "bytes": 1192,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Places/AG006_Registration_data/AG006_Registration_data",
+      "file": "icon-242.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Places/AG006_Registration_data.imageset/AG006_Registration_data.svg",
+      "sha256": "203466db1235963a6b448575c68370773ba785f5a3e7ffc23643dad55ea5734b",
+      "bytes": 1574,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Places/AG007_Factory/AG007_Factory",
+      "file": "icon-243.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Places/AG007_Factory.imageset/AG007_Factory.svg",
+      "sha256": "4feec0808822a00f838066419d09ebe99bb097df56dc73ed69c1d20b57cf7672",
+      "bytes": 1086,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Places/AG008_Block_of_flats/AG008_Block_of_flats",
+      "file": "icon-244.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Places/AG008_Block_of_flats.imageset/AG008_Block_of_flats.svg",
+      "sha256": "f1397df9d6f7df2223e8f0bbcf14abf707d168f36684a79e11fe7fccca0136a3",
+      "bytes": 2084,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Places/AG009_Home_pin/AG009_Home_pin",
+      "file": "icon-245.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Places/AG009_Home_pin.imageset/AG009_Home_pin.svg",
+      "sha256": "5a0505fe487f761545d7e8bb1c9c26e3e2cea5fae26a71a66c5694a23fdea3b0",
+      "bytes": 1634,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/QrIdentity/AI001_Scanner_QR/AI001_Scanner_QR",
+      "file": "icon-246.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/QrIdentity/AI001_Scanner_QR.imageset/AI001_Scanner_QR.svg",
+      "sha256": "07a46d65b82f7703f864eb50aaf050065b459929f1fce9337505cf5c46351f51",
+      "bytes": 1259,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/QrIdentity/AI002_Confirm_identity/AI002_Confirm_identity",
+      "file": "icon-247.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/QrIdentity/AI002_Confirm_identity.imageset/AI002_Confirm_identity.svg",
+      "sha256": "791bc11a7a4a937b226c8b75f9726f8c7dcb3c6cca3e3c67f6ca863d1af312a8",
+      "bytes": 1033,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/QrIdentity/AI003_Check_document/AI003_Check_document",
+      "file": "icon-248.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/QrIdentity/AI003_Check_document.imageset/AI003_Check_document.svg",
+      "sha256": "d6d1e7c86678426ddc3db3de026ba12fdde6c6b4ad735be9f430fd2e8fa09161",
+      "bytes": 1450,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/QrIdentity/AI004_QR_code_WEB/AI004_QR_code_WEB",
+      "file": "icon-249.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/QrIdentity/AI004_QR_code_WEB.imageset/AI004_QR_code_WEB.svg",
+      "sha256": "33e6e5b8674d3edfc49f902220d8d3e593f1552e29bc4a763475578c2fc0dabf",
+      "bytes": 1258,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/QrIdentity/AI005_QR_code_mobile/AI005_QR_code_mobile",
+      "file": "icon-250.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/QrIdentity/AI005_QR_code_mobile.imageset/AI005_QR_code_mobile.svg",
+      "sha256": "2bd4318139108eba812272dff0850144ec45ac659e2a301de8f5dd4fee85c837",
+      "bytes": 1149,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/QrIdentity/AI006_Code_mobile/AI006_Code_mobile",
+      "file": "icon-251.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/QrIdentity/AI006_Code_mobile.imageset/AI006_Code_mobile.svg",
+      "sha256": "5e495b707a76310fac430d595a7d0f5f76a1bd2b0427d632ebada8bbc3268db0",
+      "bytes": 1741,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC001_Services/AC001_Services",
+      "file": "icon-252.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC001_Services.imageset/AC001_Services.svg",
+      "sha256": "c7a7030d723923d2c9a79852a9a06f0d5cbf2db1d3cb6dba42f3bf5e7fbefdc6",
+      "bytes": 438,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC002_Penalty_points/AC002_Penalty_points",
+      "file": "icon-253.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC002_Penalty_points.imageset/AC002_Penalty_points.svg",
+      "sha256": "06d9acc7b7929391059ccbf5f2921a17e4d8d7330fcd9ed3ab8002af2b4ae191",
+      "bytes": 1686,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC003_Verify_pesel/AC003_Verify_pesel",
+      "file": "icon-254.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC003_Verify_pesel.imageset/AC003_Verify_pesel.svg",
+      "sha256": "c2f089374509a5833efc6b9c1bc9de2c089a66d22b1d7cb9a0b18517d4ed6561",
+      "bytes": 968,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC004_Lock_pesel/AC004_Lock_pesel",
+      "file": "icon-255.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC004_Lock_pesel.imageset/AC004_Lock_pesel.svg",
+      "sha256": "5169bd77c22220dec4c1564a85b286971b1cdc660f3e44506a93c6d961ac708f",
+      "bytes": 1101,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC005_Very_good_air/AC005_Very_good_air",
+      "file": "icon-256.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC005_Very_good_air.imageset/AC005_Very_good_air.svg",
+      "sha256": "d77e8a2c85ad11c9f2da3245e7a5b7be3902f3cb963371edda079ef40f297045",
+      "bytes": 847,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC006_Satisfactory_air/AC006_Satisfactory_air",
+      "file": "icon-257.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC006_Satisfactory_air.imageset/AC006_Satisfactory_air.svg",
+      "sha256": "6e071115b46b675b44d8c06b380749b8f1790f12657d454a732dad28f09c70eb",
+      "bytes": 896,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC007_Air_below_normal/AC007_Air_below_normal",
+      "file": "icon-258.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC007_Air_below_normal.imageset/AC007_Air_below_normal.svg",
+      "sha256": "af3ae1690ca47f7c634f3b0cf7bc37eb377b02c47842263c8480282a3366b24e",
+      "bytes": 1000,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC008_Harmful_air/AC008_Harmful_air",
+      "file": "icon-259.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC008_Harmful_air.imageset/AC008_Harmful_air.svg",
+      "sha256": "66a4e331041f8919389eb84fe773eccb47d3519e4254cf9ec75270600ab2ced0",
+      "bytes": 907,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC009_Life_threatening_air/AC009_Life_threatening_air",
+      "file": "icon-260.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC009_Life_threatening_air.imageset/AC009_Life_threatening_air.svg",
+      "sha256": "7f69f37849ec360fa594160cf5ff5b501c7a4a90bb802a4da8323c591d9a1f2d",
+      "bytes": 821,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC010_Dangerous_air/AC010_Dangerous_air",
+      "file": "icon-261.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC010_Dangerous_air.imageset/AC010_Dangerous_air.svg",
+      "sha256": "d394c4c415ec6597b11b602f5d34e28742af1cbf95e9159a4fc3ee61e66dfa19",
+      "bytes": 852,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC011_Vehicle_history/AC011_Vehicle_history",
+      "file": "icon-262.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC011_Vehicle_history.imageset/AC011_Vehicle_history.svg",
+      "sha256": "8a80c1452b4f09de56de1e3c5ff027281aeadb4f5f9de3ded2a5e4622a792ffd",
+      "bytes": 1734,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC012_ZUS_e-appointment/AC012_ZUS_e-appointment",
+      "file": "icon-263.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC012_ZUS_e-appointment.imageset/AC012_ZUS_e-appointment.svg",
+      "sha256": "30c72c51b7884d0be4cf48e510f9dda21662e2c6d41a9810bf7af03c12a5a584",
+      "bytes": 1500,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC013_Ticket/AC013_Ticket",
+      "file": "icon-264.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC013_Ticket.imageset/AC013_Ticket.svg",
+      "sha256": "b84a0d50050873bc6f01d556f941e8c12344d39215a1b9cc7402475fce5e0237",
+      "bytes": 1638,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC014_mStluczka/AC014_mStluczka",
+      "file": "icon-265.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC014_mStluczka.imageset/AC014_mStluczka.svg",
+      "sha256": "5f248b17c9da8460414fc060885b3128ccaa34e3c5d6d03ee5b3d56886304338",
+      "bytes": 3235,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC015_Safe_bus/AC015_Safe_bus",
+      "file": "icon-266.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC015_Safe_bus.imageset/AC015_Safe_bus.svg",
+      "sha256": "e265d5225384e7f8ed556544eb94d69f259d65024cf16ebdb8441c7c7aa4c2de",
+      "bytes": 1467,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Services/AC016_Elections/AC016_Elections",
+      "file": "icon-267.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Services/AC016_Elections.imageset/AC016_Elections.svg",
+      "sha256": "e398b9f00e5adb1d6347ef6e561c62fb7381410794bf7bc9d76213d9081889cd",
+      "bytes": 1636,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA001_Copy/AA001_Copy",
+      "file": "icon-268.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA001_Copy.imageset/AA001_Copy.svg",
+      "sha256": "ac23708b81b5d5c91a066428fcebfac7f8e5dd00a147430eed4d8022efc59189",
+      "bytes": 925,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA002_Delete/AA002_Delete",
+      "file": "icon-269.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA002_Delete.imageset/AA002_Delete.svg",
+      "sha256": "b232ce4a5edb30ea492c8a07f34cde70b34f5c9ede8a9f6236a020fabd1e2b9d",
+      "bytes": 929,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA003_Refresh/AA003_Refresh",
+      "file": "icon-270.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA003_Refresh.imageset/AA003_Refresh.svg",
+      "sha256": "23263d752c242ac55fd02bff25c66befe1ada63396b3e2ea0d5cf260fe11a7ca",
+      "bytes": 986,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA004_Attachment/AA004_Attachment",
+      "file": "icon-271.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA004_Attachment.imageset/AA004_Attachment.svg",
+      "sha256": "11baf9a17094afe4fc270fe73dde9c387c011f69ffce636a2c5ad1c65e67baa7",
+      "bytes": 934,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA005_Upload/AA005_Upload",
+      "file": "icon-272.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA005_Upload.imageset/AA005_Upload.svg",
+      "sha256": "b6c18dac39a713d6cfc393165d486eb144133e06ca955b6dd1973f64a3b8f287",
+      "bytes": 666,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA006_Download/AA006_Download",
+      "file": "icon-273.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA006_Download.imageset/AA006_Download.svg",
+      "sha256": "8de53ef37cfc2999927d6574635fe957662d0d0f7f3d92317826d0ba4709bc70",
+      "bytes": 662,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA007_Date_picker/AA007_Date_picker",
+      "file": "icon-274.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA007_Date_picker.imageset/AA007_Date_picker.svg",
+      "sha256": "70ca4c39eef67f34c7fc4b610f53412a137b0dcdf96baae267f28d7f8a86bd08",
+      "bytes": 1206,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA008_Change_password/AA008_Change_password",
+      "file": "icon-275.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA008_Change_password.imageset/AA008_Change_password.svg",
+      "sha256": "8a462364d0209ac7eab214e4e772ffe86adedf8f912b19c7ec19c49b0e6737f4",
+      "bytes": 874,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA009_Fingerprint/AA009_Fingerprint",
+      "file": "icon-276.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA009_Fingerprint.imageset/AA009_Fingerprint.svg",
+      "sha256": "4acd93cdcb0fdcdac3592fe7990aa9dfb9173fbb1449ec11ebb5db8197d88d19",
+      "bytes": 5368,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA010_Internet_not_ok/AA010_Internet_not_ok",
+      "file": "icon-277.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA010_Internet_not_ok.imageset/AA010_Internet_not_ok.svg",
+      "sha256": "3c41c1ed18d0fb0db426f15de4b379522ff577d8970240955212f8051dd81037",
+      "bytes": 1489,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA011_Internet_ok/AA011_Internet_ok",
+      "file": "icon-278.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA011_Internet_ok.imageset/AA011_Internet_ok.svg",
+      "sha256": "bd773afe97084437ecb467d18dc980a6c0e2e868b0db94143235970fc372cbfd",
+      "bytes": 1173,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA012_Check_mark/AA012_Check_mark",
+      "file": "icon-279.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA012_Check_mark.imageset/AA012_Check_mark.svg",
+      "sha256": "0f450546539afd7d1be4094ccddf110ab3d2adefd1bb2945e36d48a95ea37d27",
+      "bytes": 412,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA013_Change_login_metod/AA013_Change_login_metod",
+      "file": "icon-280.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA013_Change_login_metod.imageset/AA013_Change_login_metod.svg",
+      "sha256": "e66ffad7b0beb39b1ee839e18c0725ca2c093bf8ac5f8c683e9094737583943b",
+      "bytes": 1477,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA014_Unrestricted/AA014_Unrestricted",
+      "file": "icon-281.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA014_Unrestricted.imageset/AA014_Unrestricted.svg",
+      "sha256": "5288680ed9e3731f8f4f9eac01328b1b4ede5421a19b2d5abf06606c16304948",
+      "bytes": 1086,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA015_Change_PIN/AA015_Change_PIN",
+      "file": "icon-282.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA015_Change_PIN.imageset/AA015_Change_PIN.svg",
+      "sha256": "e99c6473599da31ae0f81316e3efe56acc7c7678fd3a79c478ecbed9dab581c0",
+      "bytes": 1726,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA016_History/AA016_History",
+      "file": "icon-283.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA016_History.imageset/AA016_History.svg",
+      "sha256": "ba9e7f6706aa7313d47de7c39e00c66fda836613e07da68e6d79cea7e1a59140",
+      "bytes": 549,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA017_Face_ID/AA017_Face_ID",
+      "file": "icon-284.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA017_Face_ID.imageset/AA017_Face_ID.svg",
+      "sha256": "d8eb0587a8fb21cd0092234b13d7f435e92b653e3731c5aff7efb0dcb479ab07",
+      "bytes": 1387,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA018_Fail/AA018_Fail",
+      "file": "icon-285.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA018_Fail.imageset/AA018_Fail.svg",
+      "sha256": "b120f819d4d4530abe0cbb2950d123c0d0d7879c7a0eaa889ad459d9e848538f",
+      "bytes": 675,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA019_Logout/AA019_Logout",
+      "file": "icon-286.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA019_Logout.imageset/AA019_Logout.svg",
+      "sha256": "59d01093a2b49010977511e1ac26f09c28ea271c640edb4c0f58314e8ab31157",
+      "bytes": 627,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA020_Payments/AA020_Payments",
+      "file": "icon-287.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA020_Payments.imageset/AA020_Payments.svg",
+      "sha256": "936ec127a389895e725205996288e19291ab4f4d707a59eb3581c4679b3ff198",
+      "bytes": 885,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA021_Photo/AA021_Photo",
+      "file": "icon-288.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA021_Photo.imageset/AA021_Photo.svg",
+      "sha256": "56ba9de172766048debd3d0ff60fe9d48eb358f7b12d204b17ffa86a04340b20",
+      "bytes": 1000,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA022_Show_password/AA022_Show_password",
+      "file": "icon-289.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA022_Show_password.imageset/AA022_Show_password.svg",
+      "sha256": "9ea45baa973b39e750847e72f98da1fdc20c9e40ee59b7d70324cdcfbea7e5e2",
+      "bytes": 807,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA023_Hide_password/AA023_Hide_password",
+      "file": "icon-290.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA023_Hide_password.imageset/AA023_Hide_password.svg",
+      "sha256": "84dfa6dc057876b84b93614c8a0a30a4e56320a9b24d03bdfecadf42fd7024bc",
+      "bytes": 1286,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA024_Devices/AA024_Devices",
+      "file": "icon-291.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA024_Devices.imageset/AA024_Devices.svg",
+      "sha256": "2813ab93c821c4dbe58c8aa9905479808f7e82f0d1b024986129daa1f414d846",
+      "bytes": 882,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA025_Star/AA025_Star",
+      "file": "icon-292.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA025_Star.imageset/AA025_Star.svg",
+      "sha256": "5e83fcd397d3c81384288e59e9f0433879ed0c015cb68874b1743b8522bcae03",
+      "bytes": 892,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA026_Timeline/AA026_Timeline",
+      "file": "icon-293.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA026_Timeline.imageset/AA026_Timeline.svg",
+      "sha256": "7f27541938601833f1f63e83e6ab2c71ba686dbf3cd7ef21f89093101d4d99be",
+      "bytes": 1021,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA027_Crypto/AA027_Crypto",
+      "file": "icon-294.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA027_Crypto.imageset/AA027_Crypto.svg",
+      "sha256": "fac94cde4e625bdce2b2060f26d31e446d586922f0746d428156ba422d6b3ba1",
+      "bytes": 1279,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA028_Deactivate/AA028_Deactivate",
+      "file": "icon-295.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA028_Deactivate.imageset/AA028_Deactivate.svg",
+      "sha256": "00e2c7277acfb41516e094434eb6200c49df3b672845914843b3a1011f1a9a15",
+      "bytes": 981,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA029_Motion_off/AA029_Motion_off",
+      "file": "icon-296.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA029_Motion_off.imageset/AA029_Motion_off.svg",
+      "sha256": "3e45084988b2a1768d263cc87f0d96c1c020a83cf5b9d8f04de76e8f352ef20c",
+      "bytes": 1480,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA030_Motion_on/AA030_Motion_on",
+      "file": "icon-297.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA030_Motion_on.imageset/AA030_Motion_on.svg",
+      "sha256": "2254e302eec68c83284626d2488337afc6b9f4ed520a4117b207bb0b50070f1c",
+      "bytes": 1221,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA031_Link/AA031_Link",
+      "file": "icon-298.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA031_Link.imageset/AA031_Link.svg",
+      "sha256": "90f1ac5a2c502c4bc409254822315d13a2f5b3e914c0efc0705cffcf54268cf9",
+      "bytes": 1432,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA032_Phone/AA032_Phone",
+      "file": "icon-299.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA032_Phone.imageset/AA032_Phone.svg",
+      "sha256": "d7ff2428ccfc31935b4ac07ebb6481be33d1fe5dba5ec818f3389339dd4629d2",
+      "bytes": 703,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA033_Address_book/AA033_Address_book",
+      "file": "icon-300.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA033_Address_book.imageset/AA033_Address_book.svg",
+      "sha256": "4fa2d72707ca581b410a29c1d5e7427e4e1d76cf59bbd6a49d563ed511d2b0d8",
+      "bytes": 1335,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA034_Navigate/AA034_Navigate",
+      "file": "icon-301.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA034_Navigate.imageset/AA034_Navigate.svg",
+      "sha256": "54116952791ec04db622d8bc2b8ee55f7caf1cb60df02c09e32b7339f5d2acf1",
+      "bytes": 631,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA035_Document_box/AA035_Document_box",
+      "file": "icon-302.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA035_Document_box.imageset/AA035_Document_box.svg",
+      "sha256": "a5d8bef3686468399fa208cc93fccc887dc96dd322abdf468386b230e451569e",
+      "bytes": 829,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA036_Price_tag/AA036_Price_tag",
+      "file": "icon-303.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA036_Price_tag.imageset/AA036_Price_tag.svg",
+      "sha256": "47bdb0645b37a3ac0c4d91933c5c82830e53914ad1bd8a4b00bea6835a554480",
+      "bytes": 980,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA037_rounded_plus/AA037_rounded_plus",
+      "file": "icon-304.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA037_rounded_plus.imageset/AA037_rounded_plus.svg",
+      "sha256": "479c3f7e82b24283838a2a546a86e256ecb7befa796511a1fdfaa278f43aba1d",
+      "bytes": 583,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA038_rounded_minus/AA038_rounded_minus",
+      "file": "icon-305.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA038_rounded_minus.imageset/AA038_rounded_minus.svg",
+      "sha256": "28b0008f3df53bc1d82972bab7b40f3aaf2052440ad38aa233aade0a4ff69994",
+      "bytes": 504,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA039_handle_2/AA039_handle_2",
+      "file": "icon-306.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA039_handle_2.imageset/AA039_handle_2.svg",
+      "sha256": "0fa83c89334d08aca338b6c01cb252eb7e2715ec1f962f83a138c81a9963f94b",
+      "bytes": 438,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA040_handle_3/AA040_handle_3",
+      "file": "icon-307.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA040_handle_3.imageset/AA040_handle_3.svg",
+      "sha256": "2ef7b4ea2d82b940e6eec0cdb125076c54ceadbbdf5d8843a8d440a85547c6cc",
+      "bytes": 536,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA041_padlock/AA041_padlock",
+      "file": "icon-308.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA041_padlock.imageset/AA041_padlock.svg",
+      "sha256": "f8d5c811efc5840085fe6a7563de312fc29a00b77bb4b22d919a0747e985e6ea",
+      "bytes": 683,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA042_Opinion/AA042_Opinion",
+      "file": "icon-309.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA042_Opinion.imageset/AA042_Opinion.svg",
+      "sha256": "2ceee8af35bc56e382cae321811d303593aea0039fb475e5a6dc75af82fd6698",
+      "bytes": 1148,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA043_Location_off/AA043_Location_off",
+      "file": "icon-310.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA043_Location_off.imageset/AA043_Location_off.svg",
+      "sha256": "609f375b93720dc4ffaf2f72d431e378e17e1f7501f91ab813c053fa4327e47e",
+      "bytes": 1027,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA044_Accessibility/AA044_Accessibility",
+      "file": "icon-311.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA044_Accessibility.imageset/AA044_Accessibility.svg",
+      "sha256": "ae80d83f940f7e3f980106a6b410ce7d5fb0d37ba67fa86b7a7cbe31fb2b2743",
+      "bytes": 2264,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA045_Credit_Card/AA045_Credit_Card",
+      "file": "icon-312.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA045_Credit_Card.imageset/AA045_Credit_Card.svg",
+      "sha256": "c55020758a70afc34fa79c6c4c74e5d00f29173536927692d3f97ec944282c26",
+      "bytes": 763,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA046_Bullet/AA046_Bullet",
+      "file": "icon-313.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA046_Bullet.imageset/AA046_Bullet.svg",
+      "sha256": "bf8af587886b7e02cf2f351866b22aa686c4c9f67ae1daad7ed65518f52818c6",
+      "bytes": 334,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA047_Credit_card_change/AA047_Credit_card_change",
+      "file": "icon-314.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA047_Credit_card_change.imageset/AA047_Credit_card_change.svg",
+      "sha256": "e30985f7614e146870901e27c4ea7cc4b9c6616954e8f5bd84e3e11c2bec925a",
+      "bytes": 986,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA048_Verify/AA048_Verify",
+      "file": "icon-315.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA048_Verify.imageset/AA048_Verify.svg",
+      "sha256": "c2f089374509a5833efc6b9c1bc9de2c089a66d22b1d7cb9a0b18517d4ed6561",
+      "bytes": 968,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA049_Credit_card_add/AA049_Credit_card_add",
+      "file": "icon-316.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA049_Credit_card_add.imageset/AA049_Credit_card_add.svg",
+      "sha256": "deb9f14ea991da0e48a1a69e521affe1d8db7e42a2b128db732a33754e06becd",
+      "bytes": 1189,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA050_Alerts/AA050_Alerts",
+      "file": "icon-317.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA050_Alerts.imageset/AA050_Alerts.svg",
+      "sha256": "c6108a5040dcc38633097e7e7b5e7e305fdb46b34aaceca04d7a64a85bedc5be",
+      "bytes": 1837,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA051_Report_an_incident/AA051_Report_an_incident",
+      "file": "icon-318.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA051_Report_an_incident.imageset/AA051_Report_an_incident.svg",
+      "sha256": "d5e23d1f02e8c87392d985730b61a930784292ccc2f6e9a0d77b8a55e822eaaa",
+      "bytes": 1129,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA052_Filters/AA052_Filters",
+      "file": "icon-319.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA052_Filters.imageset/AA052_Filters.svg",
+      "sha256": "e96cfeee126a363e5296e1f277c04929b2eb2a9503f2eddbf0a338bfeeedf424",
+      "bytes": 1235,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA053_Bony_i_dodatki/AA053_Bony_i_dodatki",
+      "file": "icon-320.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA053_Bony_i_dodatki.imageset/AA053_Bony_i_dodatki.svg",
+      "sha256": "2f0ba227993efeb917e9aced4d549ec8a0c57a78e6006e941c6521fea9e76aec",
+      "bytes": 2452,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA054_Alert_powodziowy/AA054_Alert_powodziowy",
+      "file": "icon-321.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA054_Alert_powodziowy.imageset/AA054_Alert_powodziowy.svg",
+      "sha256": "b141f422617e7e14c286a604351dd7c0ccec6d9612a29d36b10d785503bf2ed4",
+      "bytes": 5859,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA055_Pauza/AA055_Pauza",
+      "file": "icon-322.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA055_Pauza.imageset/AA055_Pauza.svg",
+      "sha256": "0a7114952a794f200905e131ba21bf289fb4fac4883b1d42eee043a2929d0358",
+      "bytes": 713,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA056_Image/AA056_Image",
+      "file": "icon-323.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA056_Image.imageset/AA056_Image.svg",
+      "sha256": "d5332a186b632fdc3ee225a72ef2bf7e3bc30d06d2a40d380e744189202caefa",
+      "bytes": 1277,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA057_Funnel/AA057_Funnel",
+      "file": "icon-324.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA057_Funnel.imageset/AA057_Funnel.svg",
+      "sha256": "3f046d90b050619124dfb84728f7602f9ffc2be7c5f5d718c703c2b7abd34680",
+      "bytes": 1042,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA058_Bulleted_list/AA058_Bulleted_list",
+      "file": "icon-325.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA058_Bulleted_list.imageset/AA058_Bulleted_list.svg",
+      "sha256": "a9ee9b92cc0ccf4f026e3162e421a926a6767fc283acd1f88102e950f66cb959",
+      "bytes": 1173,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA059_Minus/AA059_Minus",
+      "file": "icon-326.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA059_Minus.imageset/AA059_Minus.svg",
+      "sha256": "287bcc06fdf1490752a112dcc9836cd4e2849733c95ef4d00a5de059addd278f",
+      "bytes": 316,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA060_Filter/AA060_Filter",
+      "file": "icon-327.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA060_Filter.imageset/AA060_Filter.svg",
+      "sha256": "b0a4f755e3586fabd01a0b9ffe700455a77bf46e8348cf275b90794f56ee4c02",
+      "bytes": 739,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA061_Cog_arrow_path/AA061_Cog_arrow_path",
+      "file": "icon-328.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA061_Cog_arrow_path.imageset/AA061_Cog_arrow_path.svg",
+      "sha256": "926b2881535b1236d2f601a2adaa7368319a2cda924cb76c33d729eac4c11c90",
+      "bytes": 2341,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA062_Arrow_turn_down/AA062_Arrow_turn_down",
+      "file": "icon-329.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA062_Arrow_turn_down.imageset/AA062_Arrow_turn_down.svg",
+      "sha256": "13146bb58622e54c710b9dba1f7e7da3dbd686e119ded37c86157f4cf07bd2fc",
+      "bytes": 848,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA063_Spinner/AA063_Spinner",
+      "file": "icon-330.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA063_Spinner.imageset/AA063_Spinner.svg",
+      "sha256": "6d56429b749b7904e9d427236d5e25336f6494451e524004001802286831f845",
+      "bytes": 612,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA064_Floppy_disk/AA064_Floppy_disk",
+      "file": "icon-331.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA064_Floppy_disk.imageset/AA064_Floppy_disk.svg",
+      "sha256": "a0965e5334df3668b96deed49743ca03bfa9e68848d7794453ffb84c85626370",
+      "bytes": 1057,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA065_Printer/AA065_Printer",
+      "file": "icon-332.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA065_Printer.imageset/AA065_Printer.svg",
+      "sha256": "b520d8dd6dd0c4af480a03720c9191d134a9b23bd5d7020e2c726938d81b1f5c",
+      "bytes": 1061,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA066_Archives/AA066_Archives",
+      "file": "icon-333.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA066_Archives.imageset/AA066_Archives.svg",
+      "sha256": "e36c2b71e7a79b673ff6e86ff4fe6e98cb0d21a1948794ee22d380dbb6a30d48",
+      "bytes": 761,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA067_Folder_arrow_up/AA067_Folder_arrow_up",
+      "file": "icon-334.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA067_Folder_arrow_up.imageset/AA067_Folder_arrow_up.svg",
+      "sha256": "18d0ce36c320b28e9f61a64c76697e9c289b67f31ff2fc18e894162f3c964223",
+      "bytes": 1207,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA068_Grid/AA068_Grid",
+      "file": "icon-335.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA068_Grid.imageset/AA068_Grid.svg",
+      "sha256": "61603d19595369d54ecde106ceba61b826ccf0d1d676fe43bed3f540ca3c4ff6",
+      "bytes": 574,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA069_Grid_off/AA069_Grid_off",
+      "file": "icon-336.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA069_Grid_off.imageset/AA069_Grid_off.svg",
+      "sha256": "514af2072817255fb6aa8f4ee26109f3733bfbca1ec5affaf1163e2d4c0ad313",
+      "bytes": 997,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA070_Restrict_document/AA070_Restrict_document",
+      "file": "icon-337.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA070_Restrict_document.imageset/AA070_Restrict_document.svg",
+      "sha256": "e50b9c5daed9a89dc3c407fe11b131840bc43ae87dea1528ab763b64ef12eb2c",
+      "bytes": 1264,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA071_Zawieszanie_dowodu/AA071_Zawieszanie_dowodu",
+      "file": "icon-338.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA071_Zawieszanie_dowodu.imageset/AA071_Zawieszanie_dowodu.svg",
+      "sha256": "983db3a55669a04635cfdfdb8432566f314e29c79d77a769c11e4cfa668feb46",
+      "bytes": 1621,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Symbols/AA072_Uniewaznienie_dowodu/AA072_Uniewaznienie_dowodu",
+      "file": "icon-339.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Symbols/AA072_Uniewaznienie_dowodu.imageset/AA072_Uniewaznienie_dowodu.svg",
+      "sha256": "05bc319622d7ac7a0a67b3e5857ca6ab2cb45c08f9921ca17f3397fba20b52cd",
+      "bytes": 1824,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Vehicles/AJ001_Car/AJ001_Car",
+      "file": "icon-340.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Vehicles/AJ001_Car.imageset/AJ001_Car.svg",
+      "sha256": "01970bf884b48ad42a86fef2845b9bb024f53df4214c30cc31071f5b23cfa40b",
+      "bytes": 1319,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Vehicles/AJ002_Car_check/AJ002_Car_check",
+      "file": "icon-341.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Vehicles/AJ002_Car_check.imageset/AJ002_Car_check.svg",
+      "sha256": "2f6e1c7dfdb149436bd8e91adece4a2b5d5ef56c63acf468b2fc81c077f7ab24",
+      "bytes": 1911,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Vehicles/AJ003_Bus/AJ003_Bus",
+      "file": "icon-342.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Vehicles/AJ003_Bus.imageset/AJ003_Bus.svg",
+      "sha256": "dbbc549ac70af3161e70a015a4eea3c3c594fd631e911392a656e82c90067863",
+      "bytes": 1137,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Vehicles/AJ004_Lorry/AJ004_Lorry",
+      "file": "icon-343.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Vehicles/AJ004_Lorry.imageset/AJ004_Lorry.svg",
+      "sha256": "4934fe1ede7a271a845b69245747e7ee4f35ea538c2b6f9baf39caacd90f0442",
+      "bytes": 1392,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Vehicles/AJ005_Train/AJ005_Train",
+      "file": "icon-344.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Vehicles/AJ005_Train.imageset/AJ005_Train.svg",
+      "sha256": "fc92c0fcf95352355a0869af282d4805f45c2310ff57c6c1cba959ac7ecc2020",
+      "bytes": 1185,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Vehicles/AJ006_Tractor/AJ006_Tractor",
+      "file": "icon-345.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Vehicles/AJ006_Tractor.imageset/AJ006_Tractor.svg",
+      "sha256": "85dab22b93edbddff45b122b3dfba51f5b4211942c7663ee446f495ed039c635",
+      "bytes": 1408,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Vehicles/AJ007_Motorcycle/AJ007_Motorcycle",
+      "file": "icon-346.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Vehicles/AJ007_Motorcycle.imageset/AJ007_Motorcycle.svg",
+      "sha256": "40491983a823d3b0a0635a9424ffddd0b4cf7e86b82cadc6871da898671061f6",
+      "bytes": 2054,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Outline/Vehicles/AJ008_Scooter/AJ008_Scooter",
+      "file": "icon-347.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Outline/Vehicles/AJ008_Scooter.imageset/AJ008_Scooter.svg",
+      "sha256": "774f1813f65a662b51d90771507ae3931ec68f620ae2eb72d99facc0289c3477",
+      "bytes": 1747,
+      "monochrome": true
+    },
+    {
+      "id": "Icons/Result/f1_info/f1_info",
+      "file": "icon-348.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Result/f1_info.imageset/f1_info.svg",
+      "sha256": "2454e906f14884824cca2656fccbd9a18199c0c4e4b286982aaf1dcd658a9cc2",
+      "bytes": 661,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Result/f2_warning_mark/f2_warning_mark",
+      "file": "icon-349.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Result/f2_warning_mark.imageset/f2_warning_mark.svg",
+      "sha256": "8d367fbe6c5718dfc9495e33936551959f02d1c83cb706dd232f49cc2557fbcc",
+      "bytes": 711,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Result/f3_failure/f3_failure",
+      "file": "icon-350.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Result/f3_failure.imageset/f3_failure.svg",
+      "sha256": "219dd3dc864ee07593db8b6ddc5f7816f173b722a0f5bdbd7ddacbe201b0a2ed",
+      "bytes": 746,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Result/f4_success/f4_success",
+      "file": "icon-351.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Result/f4_success.imageset/f4_success.svg",
+      "sha256": "f7f6dee50692bf88bf2c1e31bff42a757b05b6a894cd2f3f5d6aca3fa6abb6af",
+      "bytes": 626,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Support/C1_Info/C1_Info",
+      "file": "icon-352.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Support/C1_Info.imageset/C1_Info.svg",
+      "sha256": "4ecb9d361d0015991c7a3edf1ac29f9b22e6a61e9591b504a26e40abc7e21877",
+      "bytes": 548,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Support/C2_Warning_mark/C2_Warning_mark",
+      "file": "icon-353.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Support/C2_Warning_mark.imageset/C2_Warning_mark.svg",
+      "sha256": "dab9e6fae1630456ccf4b2f9d61ca438d321a208dcc5ee6e5536c3629089deaa",
+      "bytes": 550,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Support/C3_Error_mark/C3_Error_mark",
+      "file": "icon-354.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Support/C3_Error_mark.imageset/C3_Error_mark.svg",
+      "sha256": "4792362ccfc0db915ad023e2d514d8978b33e69fc2508b927f24f4b01c0cee80",
+      "bytes": 568,
+      "monochrome": false
+    },
+    {
+      "id": "Icons/Support/C4_Success/C4_Success",
+      "file": "icon-355.svg",
+      "sourcePath": "iOS/Sources/Assets.xcassets/Icons/Support/C4_Success.imageset/C4_Success.svg",
+      "sha256": "f5c2c732f2a9c653ee76bf514df172814f1b3cecfdfa09fdd7984f9976574867",
+      "bytes": 559,
+      "monochrome": false
+    }
+  ]
+}

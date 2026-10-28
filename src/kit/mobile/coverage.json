@@ -1,0 +1,1319 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "sourceAudit": "scripts/fixtures/source-inventory/mobile-0.4.0.json",
+  "scope": "All 65 semantic native UI families in the available iOS Components/Android source mirror. Cross-platform implementations, state variants, source helpers and models are deduplicated according to the 0.4.0 inventory.",
+  "statusMeaning": {
+    "implemented": "Reusable public React UI with a concrete source-family contract; not a claim of all-state pixel-level proof.",
+    "adapter": "Reusable public UI is implemented; documented OS/platform/host mechanism is represented through DOM or explicit callbacks."
+  },
+  "visualVerification": "Visual regression cases are listed in src/browser/visual-baselines.json and exercise rendered component fixtures.",
+  "items": [
+    {
+      "id": "accordion",
+      "label": "Accordion",
+      "reactExports": [
+        "Accordion"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Accordion/Accordion.swift"
+        ],
+        "android": [
+          "accordion/Accordion.kt",
+          "accordion/AccordionData.kt",
+          "accordion/provider/AccordionPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "inline-alert",
+      "label": "Inline alert",
+      "reactExports": [
+        "Alert",
+        "MobileAnnouncement"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "InlineAlert/InlineAlert.swift"
+        ],
+        "android": [
+          "alert/Alert.kt",
+          "alert/AlertButtonData.kt",
+          "alert/AlertData.kt",
+          "alert/provider/AlertPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "badge",
+      "label": "Notification badge / dot",
+      "reactExports": [
+        "NotificationBadge"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "badge/Badge.kt",
+          "badge/BadgeData.kt",
+          "badge/provider/BadgePreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "banner",
+      "label": "Banner / high-emphasis banner",
+      "reactExports": [
+        "MobileBanner"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [
+        "The Android mirror marks Banner deprecated in favor of Alert. Kept as an explicit compatibility family; not presented as the newest replacement for Alert."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "banner/Banner.kt",
+          "banner/BannerData.kt",
+          "banner/provider/BannerPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "bottom-navigation",
+      "label": "Bottom navigation",
+      "reactExports": [
+        "BottomNavigation"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "bottomnavigation/BottomNavigation.kt",
+          "bottomnavigation/BottomNavigationData.kt",
+          "bottomnavigation/BottomNavigationItem.kt",
+          "bottomnavigation/provider/BottomNavigationPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "bottom-sheet",
+      "label": "Modal bottom sheet",
+      "reactExports": [
+        "BottomSheet"
+      ],
+      "status": "adapter",
+      "previousStatus": "missing",
+      "limitations": [
+        "Modal focus/Escape/outside dismissal and pointer drag are implemented with Radix+DOM. Half-expanded state is controlled by state/onStateChange; Android ModalBottomSheetState and OS window insets are not shipped to the browser."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "bottomsheet/ModalBottomSheet.kt",
+          "bottomsheet/ModalBottomSheetData.kt"
+        ]
+      }
+    },
+    {
+      "id": "button",
+      "label": "Primary / secondary / tertiary button family",
+      "reactExports": [
+        "Button"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Buttons/ButtonStyleConfiguration+Extensions.swift",
+          "Buttons/ButtonType.swift",
+          "Buttons/PrimaryButtonStyle.swift",
+          "Buttons/SecondaryButtonStyle.swift",
+          "Buttons/TertiaryButtonStyle.swift",
+          "Buttons/View+RippleEffect.swift"
+        ],
+        "android": [
+          "button/Button.kt",
+          "button/ButtonData.kt",
+          "button/ButtonPPP.kt",
+          "button/common/ButtonSize.kt",
+          "button/common/ButtonState.kt",
+          "button/common/ButtonType.kt",
+          "button/common/ButtonVariant.kt"
+        ]
+      }
+    },
+    {
+      "id": "icon-button",
+      "label": "Icon button",
+      "reactExports": [
+        "IconButton"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Buttons/IconButtonStyle.swift"
+        ],
+        "android": [
+          "button/buttonicon/ButtonIcon.kt",
+          "button/buttonicon/ButtonIconData.kt",
+          "button/buttonicon/ButtonIconPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "text-button",
+      "label": "Text button",
+      "reactExports": [
+        "MobileTextButton",
+        "Button"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Buttons/TextButtonStyle.swift"
+        ],
+        "android": [
+          "button/buttontext/ButtonText.kt",
+          "button/buttontext/ButtonTextData.kt",
+          "button/buttontext/ButtonTextPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "navigation-link-row",
+      "label": "Navigation link row style",
+      "reactExports": [
+        "ListRow",
+        "NativeSingleCard"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Buttons/NavigationLinkButtonStyle.swift"
+        ],
+        "android": []
+      }
+    },
+    {
+      "id": "card-list",
+      "label": "Grouped card list",
+      "reactExports": [
+        "CardList"
+      ],
+      "status": "implemented",
+      "previousStatus": "example-only",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "cardlist/CardList.kt",
+          "cardlist/provider/CardListPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "chat-bubble",
+      "label": "Chat bubble with typing/CTA/footer",
+      "reactExports": [
+        "ChatBubble",
+        "TypingIndicator"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [
+        "Includes incoming/outgoing/loading, rich links, sources disclosure, actions, suggestions and controlled feedback. It is UI, not a chatbot model, messaging transport or public-service integration."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "chatbubble/ChatBubble.kt",
+          "chatbubble/ChatBubbleData.kt",
+          "chatbubble/DotsTyping.kt",
+          "chatbubble/provider/ChatBubblePreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "checkbox",
+      "label": "Single checkbox",
+      "reactExports": [
+        "Checkbox"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Checkbox/CheckBoxToggleStyle.swift"
+        ],
+        "android": [
+          "checkbox/common/CheckBoxBottomText.kt",
+          "checkbox/common/CheckBoxRow.kt",
+          "checkbox/common/model/CheckBoxRowData.kt",
+          "checkbox/common/model/CheckBoxType.kt",
+          "checkbox/common/model/CheckboxContentType.kt",
+          "checkbox/common/model/UrlData.kt",
+          "checkbox/single/CheckBoxSingle.kt",
+          "checkbox/single/CheckBoxSinglePPP.kt",
+          "checkbox/single/model/CheckBoxSingleData.kt"
+        ]
+      }
+    },
+    {
+      "id": "checkbox-group",
+      "label": "Checkbox group",
+      "reactExports": [
+        "CheckboxGroup"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "checkbox/group/GroupCheckBox.kt",
+          "checkbox/group/GroupCheckBoxPPP.kt",
+          "checkbox/group/model/CheckBoxGroupData.kt",
+          "checkbox/group/model/CheckBoxHeaderData.kt"
+        ]
+      }
+    },
+    {
+      "id": "content-box",
+      "label": "Content box / surface container",
+      "reactExports": [
+        "MobileContentBox"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "contentbox/ContentBox.kt"
+        ]
+      }
+    },
+    {
+      "id": "segmented-controller",
+      "label": "Two-item segmented controller",
+      "reactExports": [
+        "SegmentedControl"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "controllers/ControllerSwitch.kt",
+          "controllers/ControllersData.kt",
+          "controllers/provider/ControllerSwitchPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "filter-controller",
+      "label": "Filter controller",
+      "reactExports": [
+        "FilterControl"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "controllers/ControllerFilter.kt",
+          "controllers/ControllersData.kt",
+          "controllers/provider/ControllerFilterPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "file-bottom-sheet-item",
+      "label": "File-source bottom-sheet item",
+      "reactExports": [
+        "FileSourceItem"
+      ],
+      "status": "adapter",
+      "previousStatus": "missing",
+      "limitations": [
+        "File/camera/gallery actions are explicit onClick adapters supplied by the host application. No hidden native permission requests or camera upload backend."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/FileBottomSheetItem.kt"
+        ]
+      }
+    },
+    {
+      "id": "bullet-point",
+      "label": "Bullet point row",
+      "reactExports": [
+        "BulletPoint",
+        "InfoRow"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "InfoRow/BulletLabelStyle.swift"
+        ],
+        "android": [
+          "custom/bulletpoint/BulletPoint.kt"
+        ]
+      }
+    },
+    {
+      "id": "clickable-rich-text",
+      "label": "Clickable rich text with linked spans",
+      "reactExports": [
+        "RichText"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/clickabletext/CustomClickableText.kt",
+          "custom/clickabletext/SemanticsData.kt"
+        ]
+      }
+    },
+    {
+      "id": "document-row",
+      "label": "Single-card document row",
+      "reactExports": [
+        "DocumentRow"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/documentrow/DocumentRowData.kt",
+          "custom/documentrow/SingleCardDocumentRow.kt",
+          "custom/documentrow/provider/SingleCardDocumentRowPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "icon",
+      "label": "Native icon and icon-background wrapper",
+      "reactExports": [
+        "NativeIcon",
+        "OfficialIcon",
+        "ServiceIcon",
+        "IconSurface"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [
+        "OfficialIcon exposes all355 available original SVG files from the pinned mirror; NativeIcon keeps53 short aliases. This is the available source catalogue, not a claim to every unpublished production drawable."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/icon/Icon.kt",
+          "custom/icon/IconData.kt",
+          "custom/icon/provider/IconPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "barcode-card",
+      "label": "Barcode custom card content",
+      "reactExports": [
+        "BarcodeCard",
+        "BarcodeGraphic"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [
+        "Real CODE128/EAN/UPC/CODE39 encoding uses jsbarcode. Data provisioning/scanning hardware remains host-owned."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/singlecard/barcode/BarCodeSingleCard.kt",
+          "custom/singlecard/barcode/BarCodeSingleCardData.kt"
+        ]
+      }
+    },
+    {
+      "id": "label-button-image-card",
+      "label": "Label / button / generated image custom card content",
+      "reactExports": [
+        "QRCodeCard",
+        "QRCodeGraphic"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [
+        "QR modules are generated from actual payload using qrcode; no decorative QR glyph is substituted. Payload/signing/verification services remain host-owned."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/singlecard/labelbuttonimage/LabelButtonImageSingleCard.kt",
+          "custom/singlecard/labelbuttonimage/LabelButtonImageSingleCardData.kt"
+        ]
+      }
+    },
+    {
+      "id": "date-picker",
+      "label": "Date picker dialog",
+      "reactExports": [
+        "MobileDatePicker",
+        "MobileCalendar"
+      ],
+      "status": "adapter",
+      "previousStatus": "missing",
+      "limitations": [
+        "DOM calendar implements min/max/custom disabled dates, keyboard navigation, draft/cancel/confirm and date-only values. Android Material DatePicker rendering and DatePickerDataVMS are adapted; new family has not been verified against a press-screen pixel reference."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "datepicker/DatePickerDataVMS.kt",
+          "datepicker/DatePickerDialogComponent.kt",
+          "datepicker/DatePickerDialogData.kt"
+        ]
+      }
+    },
+    {
+      "id": "dialog",
+      "label": "Modal dialog family",
+      "reactExports": [
+        "MobileDialog",
+        "MobileDialogClose",
+        "MobileDialogActions"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "dialog/Dialog.kt",
+          "dialog/DialogData.kt",
+          "dialog/provider/DialogPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "dropdown",
+      "label": "Dropdown selector / selection list",
+      "reactExports": [
+        "MobileDropdown"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Dropdown/DropdownButtonStyle.swift",
+          "Dropdown/DropdownList.swift"
+        ],
+        "android": [
+          "dropdownbutton/DropDownButton.kt",
+          "dropdownbutton/DropDownButtonData.kt",
+          "dropdownbutton/DropDownButtonPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "empty-state",
+      "label": "Empty state",
+      "reactExports": [
+        "MobileEmptyState",
+        "EmptyState"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "EmptyState/EmptyStateGroupBoxStyle.swift"
+        ],
+        "android": [
+          "emptystate/EmptyState.kt",
+          "emptystate/EmptyStateData.kt",
+          "emptystate/provider/EmptyStatePreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "error-text",
+      "label": "Field error text",
+      "reactExports": [
+        "FieldError"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "errortext/ErrorText.kt"
+        ]
+      }
+    },
+    {
+      "id": "file-picker",
+      "label": "File picker",
+      "reactExports": [
+        "MobileFilePicker"
+      ],
+      "status": "adapter",
+      "previousStatus": "missing",
+      "limitations": [
+        "Local File objects and browser file chooser; shared validation accepts formats/size/count/name/custom rules. onRequestSource and onPreview are explicit host adapters for camera/gallery/native preview or server-existing files. No file upload endpoint, persistence or permission implementation is included."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "filepicker/FilePicker.kt",
+          "filepicker/model/FilePickerData.kt",
+          "filepicker/model/PickerFile.kt",
+          "filepicker/provider/FilePickerPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "hero-header",
+      "label": "Icon / title / description hero header",
+      "reactExports": [
+        "MobileHeader"
+      ],
+      "status": "implemented",
+      "previousStatus": "example-only",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Header/HeaderView.swift"
+        ],
+        "android": [
+          "header/Header.kt",
+          "header/HeaderData.kt",
+          "header/provider/HeaderPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "helper-text",
+      "label": "Field helper text",
+      "reactExports": [
+        "FieldHelper"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "helpertext/HelperText.kt"
+        ]
+      }
+    },
+    {
+      "id": "icon-page",
+      "label": "Centered icon page template",
+      "reactExports": [
+        "IconPage"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "IconPage/IconPage.swift"
+        ],
+        "android": [
+          "iconpage/IconPage.kt",
+          "iconpage/IconPageBottomContentData.kt",
+          "iconpage/IconPageData.kt",
+          "iconpage/IconPagePreviewProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "info-row",
+      "label": "Information row / information row list",
+      "reactExports": [
+        "InfoRow",
+        "InfoRowList"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "InfoRow/InfoRowLabelStyle.swift"
+        ],
+        "android": [
+          "inforow/InfoRow.kt",
+          "inforow/InfoRowList.kt",
+          "inforow/model/InfoRowData.kt",
+          "inforow/model/InfoRowListData.kt",
+          "inforow/provider/InfoRowPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "date-time-input",
+      "label": "Date / time trigger input",
+      "reactExports": [
+        "InputDateTime",
+        "MobileDatePicker",
+        "MobileTimePicker"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "inputdatetime/InputDateTime.kt",
+          "inputdatetime/InputDateTimeData.kt",
+          "inputdatetime/provider/InputDateTimePreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "link",
+      "label": "Inline link",
+      "reactExports": [
+        "MobileLink"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Link/Link+ButtonStyle.swift"
+        ],
+        "android": [
+          "link/Link.kt",
+          "link/LinkData.kt",
+          "link/LinkPreviewProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "menu",
+      "label": "Popup menu",
+      "reactExports": [
+        "MobileMenu"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "menus/Menu.kt",
+          "menus/MenuData.kt",
+          "menus/provider/MenuPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "page-controller",
+      "label": "Swipeable page controller / onboarding pager",
+      "reactExports": [
+        "Pager",
+        "Onboarding"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [
+        "Swipe/pointer and keyboard page navigation, page-specific actions and completion are implemented. Native pager animation/OS gesture arbitration is adapted to DOM."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "pagecontroller/PageController.kt",
+          "pagecontroller/PageControllerData.kt",
+          "pagecontroller/provider/PageControllerPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "page-indicator",
+      "label": "Pager dot indicator",
+      "reactExports": [
+        "PageIndicator"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "pageindicator/PageIndicator.kt"
+        ]
+      }
+    },
+    {
+      "id": "progress-bar",
+      "label": "Progress bar and labeled indicator",
+      "reactExports": [
+        "Progress"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "progressbar/ProgressBar.kt",
+          "progressbar/ProgressBarData.kt",
+          "progressbar/provider/ProgressBarPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "radio",
+      "label": "Single radio item",
+      "reactExports": [
+        "Radio"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "RadioButton/RadioButton.swift",
+          "RadioButton/RadioButtonSnapshotTests.swift"
+        ],
+        "android": [
+          "radiobutton/common/radiobuttonitem/RadioButtonItem.kt",
+          "radiobutton/common/radiobuttonitem/RadioButtonItemPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "radio-group",
+      "label": "Radio group with header and support content",
+      "reactExports": [
+        "RadioGroup"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "radiobutton/RadioButton.kt",
+          "radiobutton/RadioButtonData.kt",
+          "radiobutton/common/model/RadioButtonItemData.kt",
+          "radiobutton/common/model/RadioButtonRow.kt",
+          "radiobutton/common/model/RadioButtonSupportText.kt",
+          "radiobutton/common/model/RadioButtonVariant.kt",
+          "radiobutton/common/radiobuttoncontent/RadioButtonContent.kt",
+          "radiobutton/common/radiobuttondescription/RadioButtonDescription.kt",
+          "radiobutton/common/radiobuttonrow/RadioButtonRow.kt",
+          "radiobutton/common/radiobuttons/RadioButtons.kt",
+          "radiobutton/provider/RadioButtonPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "result-modal",
+      "label": "Structured result modal",
+      "reactExports": [
+        "ResultModal"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "resultmodal/ResultModal.kt",
+          "resultmodal/ResultModalData.kt",
+          "resultmodal/provider/ResultModalPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "search-bar",
+      "label": "Search field / search bar",
+      "reactExports": [
+        "SearchField"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "searchbar/SearchBar.kt",
+          "searchbar/SearchBarData.kt",
+          "searchbar/provider/SearchBarPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "service-welcome-page",
+      "label": "Service welcome page",
+      "reactExports": [
+        "ServiceWelcomePage"
+      ],
+      "status": "adapter",
+      "previousStatus": "missing",
+      "limitations": [
+        "Refresh is exposed through an explicit callback and an accessible refresh control. Android pull-to-refresh gesture/host Scaffold is a web adaptation; native network/business service implementation belongs to the host."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "servicewelcomepage/ServiceWelcomePage.kt",
+          "servicewelcomepage/ServiceWelcomePageData.kt",
+          "servicewelcomepage/provider/ServiceWelcomePagePreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "single-card",
+      "label": "Single card variants",
+      "reactExports": [
+        "NativeSingleCard"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "SingleCard/LeadingLabelStyle.swift",
+          "SingleCard/SingleCardGroupBoxStyle.swift",
+          "SingleCard/TrailingLabelStyle.swift"
+        ],
+        "android": [
+          "singlecard/SingleCard.kt",
+          "singlecard/SingleCardClickable.kt",
+          "singlecard/SingleCardData.kt",
+          "singlecard/SingleCardInfo.kt",
+          "singlecard/SingleCardSelectableCheckbox.kt",
+          "singlecard/SingleCardSelectableRadioButton.kt",
+          "singlecard/SingleCardStatusBadge.kt",
+          "singlecard/SingleCardStatusBadgeData.kt",
+          "singlecard/provider/SingleCardPreviewParameterProvider.kt",
+          "singlecard/provider/SingleCardStatusBadgePreviewProvider.kt",
+          "singlecard/radiobutton/OldRadioButton.kt",
+          "singlecard/radiobutton/OldRadioButtonData.kt"
+        ]
+      }
+    },
+    {
+      "id": "small-card",
+      "label": "Large squircle shortcut card",
+      "reactExports": [
+        "SmallServiceCard"
+      ],
+      "status": "adapter",
+      "previousStatus": "missing",
+      "limitations": [
+        "Source references smallCardBackground.svg, absent from the available local SVG mirror. Geometry80px/32px/92px caption is implemented; default squircle background is a declared CSS adaptation. backgroundImage accepts the original artwork if supplied; no claim of exact unavailable texture."
+      ],
+      "sourcePaths": {
+        "ios": [
+          "SmallCard/SmallCard.swift"
+        ],
+        "android": [
+          "smallcard/SmallCard.kt",
+          "smallcard/SmallCardData.kt",
+          "smallcard/provider/SmallCardPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "shortcut-card",
+      "label": "Small circular shortcut card",
+      "reactExports": [
+        "ShortcutTile"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "ShortcutCard/ShortcutCard.swift"
+        ],
+        "android": [
+          "smallcards/SmallCardS.kt",
+          "smallcards/SmallCardSData.kt",
+          "smallcards/provider/SmallCardSPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "snackbar",
+      "label": "Snackbar / toast",
+      "reactExports": [
+        "MobileSnackbar",
+        "SnackbarProvider",
+        "useSnackbar"
+      ],
+      "status": "implemented",
+      "previousStatus": "example-only",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Snackbar/SnackBarView.swift",
+          "Snackbar/View+SnackBar.swift"
+        ],
+        "android": [
+          "snackbar/SnackBar.kt",
+          "snackbar/SnackBarData.kt",
+          "snackbar/provider/SnackBarPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "status-badge",
+      "label": "Status badge dot / icon / bordered",
+      "reactExports": [
+        "MobileStatusBadge",
+        "Badge"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "StatusBadge/StatusBadge.swift"
+        ],
+        "android": [
+          "statusbadge/StatusBadge.kt",
+          "statusbadge/StatusBadgeData.kt",
+          "statusbadge/StatusBadgePreviewProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "support-page",
+      "label": "Support / outcome page",
+      "reactExports": [
+        "SupportPage"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [
+        "Available Android SupportPage is marked deprecated; compatibility template implemented without claiming it is the current replacement scaffold."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "supportpage/SupportPage.kt",
+          "supportpage/SupportPageData.kt",
+          "supportpage/provider/SupportPagePreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "switch",
+      "label": "Switch with label / extras",
+      "reactExports": [
+        "MobileSwitch"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "switchcomponent/Switch.kt",
+          "switchcomponent/SwitchData.kt",
+          "switchcomponent/SwitchOnly.kt",
+          "switchcomponent/SwitchWithExtras.kt",
+          "switchcomponent/SwitchWithText.kt",
+          "switchcomponent/provider/SwitchPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "text-area",
+      "label": "Text area",
+      "reactExports": [
+        "MobileTextArea"
+      ],
+      "status": "implemented",
+      "previousStatus": "partial",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Inputs/TextArea/TextArea.swift"
+        ],
+        "android": [
+          "textarea/TextArea.kt",
+          "textarea/TextAreaData.kt",
+          "textarea/provider/TextAreaPPP.kt"
+        ]
+      }
+    },
+    {
+      "id": "text-input",
+      "label": "Text / numeric / password input",
+      "reactExports": [
+        "TextField"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Inputs/InputTextFieldBackgroundViewModifier.swift",
+          "Inputs/Text/InputTextField+FieldType.swift",
+          "Inputs/Text/InputTextField.swift"
+        ],
+        "android": [
+          "textinput/TextField.kt",
+          "textinput/TextInput.kt",
+          "textinput/model/TextInputData.kt",
+          "textinput/provider/TextInputPreviewParameterProvider.kt"
+        ]
+      }
+    },
+    {
+      "id": "phone-input",
+      "label": "Phone number with country prefix",
+      "reactExports": [
+        "PhoneField"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [
+        "Country-code and local-number values, focus, clear and separate errors are implemented. Caller performs product-specific number validation; no remote lookup or phone verification is included."
+      ],
+      "sourcePaths": {
+        "ios": [
+          "Inputs/PhoneNumber/PhoneNumberInputTextField.swift"
+        ],
+        "android": [
+          "textinput/TextFieldPhoneNumber.kt"
+        ]
+      }
+    },
+    {
+      "id": "pin-input",
+      "label": "PIN / OTP cell input",
+      "reactExports": [
+        "PinInput"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [
+        "Uses one secure DOM input with numeric inputMode and one-time-code autocomplete, matching native single-field/cell architecture. OTP delivery and actual OS keyboard suggestions are browser/host behavior."
+      ],
+      "sourcePaths": {
+        "ios": [
+          "Inputs/Pin/PinInputTextField+Cell.swift",
+          "Inputs/Pin/PinInputTextField.swift",
+          "Inputs/Pin/PinInputTextFieldStyle.swift"
+        ],
+        "android": [
+          "textinput/TextFieldPin.kt"
+        ]
+      }
+    },
+    {
+      "id": "masked-input",
+      "label": "Masked formatted input",
+      "reactExports": [
+        "MaskedField",
+        "formatMaskedValue"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [
+        "BLIK, POST_CODE and PHONE_COUNTRY_CODE masks plus custom token masks; formatted and raw callbacks are explicit. Native OffsetMapping is replaced with DOM text selection/Backspace handling."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "textinput/visualtransformation/MaskType.kt",
+          "textinput/visualtransformation/MaskVisualTransformation.kt"
+        ]
+      }
+    },
+    {
+      "id": "top-app-bar",
+      "label": "Small / medium / large top app bar",
+      "reactExports": [
+        "MobileTopAppBar"
+      ],
+      "status": "adapter",
+      "previousStatus": "partial",
+      "limitations": [
+        "Small/medium/large, alignment, brand/navigation/actions and collapsed rendering are reusable DOM UI. Native Material TopAppBarScrollBehavior and status-bar safe area require host state/insets; do not infer all-platform pixel parity."
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "topappbar/TopAppBar.kt",
+          "topappbar/TopAppBarButton.kt",
+          "topappbar/TopAppBarData.kt",
+          "topappbar/TopAppBarPPP.kt",
+          "topappbar/TopAppBarUtil.kt",
+          "topappbar/large/LargeTopAppBar.kt",
+          "topappbar/medium/MediumTopAppBar.kt",
+          "topappbar/small/SmallTopAppBar.kt"
+        ]
+      }
+    },
+    {
+      "id": "cards-stack",
+      "label": "Overlapping cards stack layout",
+      "reactExports": [
+        "CardStack"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "CardsStack/CardsStack.swift"
+        ],
+        "android": []
+      }
+    },
+    {
+      "id": "document-card",
+      "label": "Full document card",
+      "reactExports": [
+        "DocumentCard"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "DocumentCard/DocumentCard.swift"
+        ],
+        "android": []
+      }
+    },
+    {
+      "id": "small-document-card",
+      "label": "Small document tile",
+      "reactExports": [
+        "DocumentTile",
+        "DocumentArtwork"
+      ],
+      "status": "implemented",
+      "previousStatus": "exported",
+      "limitations": [
+        "Four supplied current document-artwork variants are shipped. Callers may inject other original backgrounds/icons; this is not the entire production document catalogue."
+      ],
+      "sourcePaths": {
+        "ios": [
+          "DocumentCard/SmallDocumentCard.swift"
+        ],
+        "android": []
+      }
+    },
+    {
+      "id": "illustration-page",
+      "label": "Illustration page template",
+      "reactExports": [
+        "IllustrationPage"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "IllustrationPage/IllustrationPage.swift"
+        ],
+        "android": []
+      }
+    },
+    {
+      "id": "list-header",
+      "label": "List header title / description",
+      "reactExports": [
+        "ListHeader"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "ListHeader/ListHeaderGroupBoxStyle.swift"
+        ],
+        "android": []
+      }
+    },
+    {
+      "id": "section-header",
+      "label": "Section header and content",
+      "reactExports": [
+        "SectionHeader"
+      ],
+      "status": "implemented",
+      "previousStatus": "example-only",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "SectionHeader/SectionHeaderGroupBoxStyle.swift"
+        ],
+        "android": []
+      }
+    },
+    {
+      "id": "timeline",
+      "label": "Timeline",
+      "reactExports": [
+        "Timeline"
+      ],
+      "status": "implemented",
+      "previousStatus": "missing",
+      "limitations": [],
+      "sourcePaths": {
+        "ios": [
+          "Timeline/Timeline+Item.swift",
+          "Timeline/Timeline.swift"
+        ],
+        "android": []
+      }
+    }
+  ],
+  "tests": [
+    "src/kit/mobile/mobile.test.tsx"
+  ],
+  "sourceRevisionLimit": "The official viewer does not expose a source commit. Scope is the saved available mirror; source-date and whole-app completeness are not inferred.",
+  "hostAdapters": [
+    "Native camera/gallery chooser and permission handling",
+    "OTP delivery and OS keyboard suggestions",
+    "Network/backend operations and file upload persistence",
+    "Native navigation/window insets and Material scroll-state integration",
+    "QR/barcode payload signing, scanning and domain verification"
+  ]
+}

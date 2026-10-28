@@ -1,0 +1,9 @@
+.portal-shell-example-frame {
+  display: block;
+  width: 100%;
+  height: min(900px, 80dvh);
+  min-height: 602px;
+  border: 1px solid #d0d4db;
+  background: #f0f5fa;
+  color-scheme: light;
+}
