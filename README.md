@@ -1,8 +1,10 @@
+[Polski](README.md) | [English](README.en.md)
+
 <p align="center">
-  <img src="public/brand/mdesign-readme.png?v=tile-fd42efc967c9" alt="Logo mDesign" width="160" />
+  <img src="public/brand/mdesign-readme.png?v=art-e755f0525b53" alt="Logo mDesign" width="160" />
 </p>
 
-# mDesign React — UI kit inspirowany aplikacją mObywatel
+# mDesign React: UI kit inspirowany aplikacją mObywatel
 
 Niezależna biblioteka React i TypeScript inspirowana systemami interfejsu aplikacji
 mObywatel, portalu i strony informacyjnej. Zawiera komponenty oraz dokumentację
@@ -15,7 +17,7 @@ To nieoficjalny, niezależny projekt. Nie jest powiązany z Ministerstwem Cyfryz
 **[Otwórz Storybook →](https://slominskiwiktor.github.io/mdesign-react/)**
 
 Przeglądaj komponenty, zmieniaj ich właściwości w **Controls**, przełączaj motyw
-i szerokość ekranu oraz kopiuj kod przykładów — bez instalacji i konta.
+i szerokość ekranu oraz kopiuj kod przykładów. Nie potrzebujesz instalacji ani konta.
 [Pełne przykładowe ekrany](https://slominskiwiktor.github.io/mdesign-react/showcase/#screens)
 pokazują komponenty w kontekście aplikacji.
 
@@ -57,24 +59,33 @@ Instrukcja pracy i testów: [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 ## Użycie w aplikacji
 
-Pakiet zbudujesz lokalnie jako archiwum TGZ:
+Pobierz [paczkę TGZ z wydania 1.0.0](https://github.com/slominskiwiktor/mdesign-react/releases/tag/v1.0.0)
+i zainstaluj ją w aplikacji:
+
+```sh
+npm install ./mdesign-react-1.0.0.tgz
+```
+
+Możesz też zbudować paczkę z bieżących źródeł:
 
 ```sh
 bun run pack:lib
 ```
 
-Archiwum TGZ powstaje w `artifacts/current/`. Zainstaluj je w aplikacji konsumenta.
+Archiwum TGZ powstaje w `artifacts/current/`. Pakiet nie jest obecnie publikowany w rejestrze npm.
 
 ```tsx
 import { Button, Card, TextField } from '@mdesign/react';
 import '@mdesign/react/styles.css';
 
-export function Example() {
+export function Example({ onContinue }: { onContinue: () => void }) {
   return (
     <div data-platform="web" data-theme="light">
       <Card title="Dane demonstracyjne">
         <TextField label="Imię" autoComplete="given-name" />
-        <Button type="submit">Zapisz</Button>
+        <Button type="button" onClick={onContinue}>
+          Kontynuuj
+        </Button>
       </Card>
     </div>
   );
@@ -85,6 +96,9 @@ Dostępne punkty importu: `@mdesign/react`, `/mobile`, `/portal`, `/landing` i `
 Style importuj jawnie przez `@mdesign/react/styles.css`. Komponenty landingu
 umieszczaj w `LandingProvider`; wspólne komponenty mobilne w kontekście
 `data-platform="mobile"`. Obsługiwany React: 18.3.1 i 19.x.
+
+`data-theme="light"` i `data-theme="dark"` wybierają motyw wspólnych komponentów.
+Landing zachowuje własną jasną paletę. Routing, backend i dane dostarcza aplikacja.
 
 ## Testy i build
 

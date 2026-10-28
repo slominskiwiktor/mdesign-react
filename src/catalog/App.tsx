@@ -381,11 +381,11 @@ export default function App() {
         <button
           className="brand"
           onClick={() => go('overview')}
-          aria-label="mDesign — strona główna"
+          aria-label="mDesign: strona główna"
         >
           <img
             className="brand-symbol"
-            src={docsPath('/brand/mdesign-symbol.svg?v=tile-fd42efc967c9')}
+            src={docsPath('/brand/mdesign-symbol.svg?v=art-e755f0525b53')}
             alt=""
           />
           <span>
@@ -588,7 +588,7 @@ export default function App() {
           <span>
             <img
               className="footer-brand-symbol"
-              src={docsPath('/brand/mdesign-symbol.svg?v=tile-fd42efc967c9')}
+              src={docsPath('/brand/mdesign-symbol.svg?v=art-e755f0525b53')}
               alt=""
             />
             mDesign <span>·</span> React UI Kit

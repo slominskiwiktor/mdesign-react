@@ -3,6 +3,7 @@ import { markdownFiles, brokenDocumentationLinks } from './documentation-links.m
 const root = process.cwd();
 const files = [
   'README.md',
+  'README.en.md',
   'CHANGELOG.md',
   'THIRD_PARTY_NOTICES.md',
   'SECURITY.md',

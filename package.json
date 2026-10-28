@@ -126,6 +126,7 @@
     "src/kit/web-tokens.css",
     "src/kit/fonts/OFL-OpenSans.txt",
     "README.md",
+    "README.en.md",
     "THIRD_PARTY_NOTICES.md",
     "docs/REFERENCES.md",
     "public/provenance.json",

@@ -8,8 +8,8 @@ function theme(dark: boolean) {
     brandTitle: 'mDesign · React UI Kit',
     brandUrl: './?path=/docs/start-wprowadzenie--docs',
     brandImage: dark
-      ? './storybook-mark-dark.svg?v=tile-fd42efc967c9'
-      : './storybook-mark.svg?v=tile-fd42efc967c9',
+      ? './storybook-mark-dark.svg?v=art-e755f0525b53'
+      : './storybook-mark.svg?v=art-e755f0525b53',
     brandTarget: '_self',
     colorPrimary: '#d4213d',
     colorSecondary: dark ? '#75b7ff' : '#0452a8',
