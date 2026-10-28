@@ -1,0 +1,1171 @@
+{
+  "version": "1.0.0",
+  "sourceAudit": "scripts/fixtures/source-inventory/landing-0.4.0.json",
+  "verifiedAt": "2026-10-19",
+  "scope": "Reusable public landing API. Every one of the28 audited family IDs maps to implementation/styles/source; status is implementation coverage, not a declaration that every viewport and animation is visually certified.",
+  "theme": {
+    "attribute": "data-platform=landing",
+    "wrapper": "LandingProvider",
+    "font": "Lato 400/700/900",
+    "palette": "Light landing palette; black primary pills with radius 120px and horizontal padding 24px.",
+    "scoping": "Component descendants use the .m-landing scope."
+  },
+  "items": [
+    {
+      "id": "landing-foundation",
+      "name": "Typografia Lato, skala i motyw marketingowy",
+      "reactExports": [
+        "LandingProvider",
+        "LandingIcon"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public landing is light-only, matching the observed site. No speculative marketing dark theme. Original asset and font provenance are recorded separately from the native COI MIT assets."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".m-landing",
+          ".ml-h1",
+          ".ml-h2",
+          ".ml-h3",
+          ".ml-lead",
+          "@font-face Lato400/700/900"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "body",
+            ".heading-1",
+            ".heading-2"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "marketing-actions",
+      "name": "Przyciski i linki marketingowe",
+      "reactExports": [
+        "LandingButton",
+        "LandingLink"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-button",
+          ".ml-button--primary",
+          ".ml-button--secondary"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            ".button",
+            ".button-primary",
+            ".button-secondary"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "marketing-navigation",
+      "name": "Nagłówek, rozwijane menu i nawigacja mobilna",
+      "reactExports": [
+        "LandingHeader"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Application routing, navigation data and locale changes are consumer callbacks. The reusable overlay header reproduces the initial public layout; automatic hide/show navigation during page scrolling is left to the host."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-header",
+          ".ml-header--overlay",
+          ".ml-mega-menu",
+          ".ml-mobile-menu"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-nav",
+            ".menu-collapse-trigger",
+            ".menu-mobile-header-item"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-nav",
+          "offset": 251356
+        }
+      ]
+    },
+    {
+      "id": "utility-accessibility-bar",
+      "name": "Pasek pomocniczy, animacje, PJM i odnośniki społecznościowe",
+      "reactExports": [
+        "LandingUtilityBar",
+        "LandingIcon"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-utility",
+          ".ml-animation-toggle",
+          ".ml-sign-language"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-nav-top-bar",
+            "app-sign-language-link",
+            "app-social-media-links",
+            ".toggle-button"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-nav-top-bar",
+          "offset": 234265
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-sign-language-link",
+          "offset": 232641
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-social-media-links",
+          "offset": 237129
+        }
+      ]
+    },
+    {
+      "id": "language-select",
+      "name": "Wybór języka",
+      "reactExports": [
+        "LandingCombobox",
+        "LandingHeader"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Selection is functional; the consumer supplies translated content and routing."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-combobox",
+          ".ml-header-tools"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-select",
+            ".change-language-button",
+            ".dropdown-menu"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-select",
+          "offset": 217812
+        }
+      ]
+    },
+    {
+      "id": "marketing-hero",
+      "name": "Hero strony głównej i podstron",
+      "reactExports": [
+        "LandingHero"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-hero",
+          ".ml-hero--home",
+          ".ml-hero--detail",
+          ".ml-hero--listing"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-header",
+            "app-sub-header",
+            "app-hero-section",
+            ".text-container"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty/mdowod",
+          "selectors": [
+            "app-header",
+            "app-sub-header",
+            "app-hero-section",
+            ".text-container"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-header",
+          "offset": 317338
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-sub-header",
+          "offset": 320780
+        }
+      ]
+    },
+    {
+      "id": "statistics",
+      "name": "Statystyki liczbowe",
+      "reactExports": [
+        "LandingStatistics"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-statistics",
+          ".ml-statistics-grid"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-statistics",
+            "app-statistic"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-statistics",
+          "offset": 300566
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-statistic",
+          "offset": 298565
+        }
+      ]
+    },
+    {
+      "id": "awards",
+      "name": "Sekcja wyróżnień",
+      "reactExports": [
+        "LandingAwards"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-awards"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-awards-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-awards-section",
+          "offset": 311977
+        }
+      ]
+    },
+    {
+      "id": "marketing-document-carousel",
+      "name": "Prezentacja i przewijana kolekcja dokumentów",
+      "reactExports": [
+        "LandingDocumentCarousel"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Semantic keyboard and pointer carousel with original card images. The original page-specific GSAP scroll choreography of floating document rows is not reproduced as a dependency; resting responsive card geometry and accessible controls are provided."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-document-track",
+          ".ml-document-slide"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-documents",
+            "app-document-cards",
+            ".document-cards-mobile",
+            ".document-cards-row"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-documents",
+          "offset": 295039
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-document-cards",
+          "offset": 288051
+        }
+      ]
+    },
+    {
+      "id": "service-feature-cards",
+      "name": "Marketingowe karty usług",
+      "reactExports": [
+        "LandingServiceCard"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-service-card",
+          ".ml-service-card-content",
+          ".ml-service-card--wide"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-services-section",
+            "app-service-card",
+            ".service-card",
+            ".img-layer",
+            ".text-layer"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-services-section",
+          "offset": 280045
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-service-card",
+          "offset": 273769
+        }
+      ]
+    },
+    {
+      "id": "listing-hero",
+      "name": "Nagłówek katalogu z licznikiem i układem wyszukiwania",
+      "reactExports": [
+        "LandingCatalogListing",
+        "LandingHero"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-listing-hero",
+          ".ml-filters"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty",
+          "selectors": [
+            "app-listing-hero",
+            "app-document-list-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi",
+          "selectors": [
+            "app-listing-hero",
+            "app-document-list-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty-lokalne",
+          "selectors": [
+            "app-listing-hero",
+            "app-document-list-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "catalog-search",
+      "name": "Dynamiczna wyszukiwarka katalogu i FAQ",
+      "reactExports": [
+        "LandingSearchField",
+        "LandingCatalogListing",
+        "LandingFAQ"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Filtering is implemented over supplied items. A production CMS/search endpoint is supplied by the consumer rather than called by the UI kit."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-search",
+          ".ml-search-icon",
+          ".ml-results-count"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty",
+          "selectors": [
+            "app-search-input",
+            ".filters-form"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi",
+          "selectors": [
+            "app-search-input",
+            ".filters-form"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty-lokalne",
+          "selectors": [
+            "app-search-input",
+            ".filters-form"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/pytania-odpowiedzi",
+          "selectors": [
+            "app-search-input",
+            ".filters-form"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "catalog-content-cards",
+      "name": "Karty w katalogach dokumentów i usług",
+      "reactExports": [
+        "LandingCatalogCard",
+        "LandingCatalogListing"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-catalog-grid",
+          ".ml-catalog-card"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty",
+          "selectors": [
+            "app-card",
+            "app-new-post"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi",
+          "selectors": [
+            "app-card",
+            "app-new-post"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-card",
+          "offset": 60637
+        }
+      ]
+    },
+    {
+      "id": "breadcrumbs",
+      "name": "Ścieżka nawigacji marketingowej",
+      "reactExports": [
+        "LandingBreadcrumbs"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-breadcrumbs"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty",
+          "selectors": [
+            "app-breadcrumb"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci/nowosc-w-usludze-sprawdz-OC",
+          "selectors": [
+            "app-breadcrumb"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "news-list-and-cards",
+      "name": "Aktualności, karta wyróżniona i karty artykułów",
+      "reactExports": [
+        "LandingNewsCard",
+        "LandingNewsList"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "News data and pagination/load-more fetches are supplied through props and callbacks."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-news-grid",
+          ".ml-news-card",
+          ".ml-news-card--featured"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-news-section",
+            "app-card-news",
+            "app-news-page",
+            "app-news-list"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci",
+          "selectors": [
+            "app-news-section",
+            "app-card-news",
+            "app-news-page",
+            "app-news-list"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-news-section",
+          "offset": 282368
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-card-news",
+          "offset": 58231
+        }
+      ]
+    },
+    {
+      "id": "news-filter",
+      "name": "Filtr kategorii aktualności",
+      "reactExports": [
+        "LandingCombobox",
+        "LandingNewsList"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-combobox",
+          ".ml-news-list"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci",
+          "selectors": [
+            "app-news-filter",
+            "app-combobox",
+            ".drop-button"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "article-template",
+      "name": "Treść artykułu i rekomendacje",
+      "reactExports": [
+        "LandingArticle"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Article body is safe React content supplied by the consumer; no unsanitized CMS HTML is inserted."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-article",
+          ".ml-richtext"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci/nowosc-w-usludze-sprawdz-OC",
+          "selectors": [
+            "app-article",
+            "app-card-news"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-card-news",
+          "offset": 58231
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "name": "Kategorie FAQ i rozwijane odpowiedzi",
+      "reactExports": [
+        "LandingFAQ",
+        "LandingTabs"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-faq",
+          ".ml-faq-item",
+          ".ml-faq-answer",
+          ".ml-tabs"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/pytania-odpowiedzi",
+          "selectors": [
+            "app-faq-page",
+            "app-faq-section",
+            "app-faq-subsection",
+            "app-faq",
+            ".faq-accordion",
+            ".question"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi/zastrzez-pesel",
+          "selectors": [
+            "app-faq-page",
+            "app-faq-section",
+            "app-faq-subsection",
+            "app-faq",
+            ".faq-accordion",
+            ".question"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-faq-section",
+          "offset": 65728
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-faq-subsection",
+          "offset": 77829
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-faq",
+          "offset": 73017
+        }
+      ]
+    },
+    {
+      "id": "product-information",
+      "name": "Sekcje szczegółów dokumentu lub usługi i bannery",
+      "reactExports": [
+        "LandingInfoSection"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Responsive split/banner/text recipes are reusable; page-specific CMS content and animated illustration choreography are supplied by the host."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-info--split",
+          ".ml-info--banner",
+          ".ml-info--text"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty/mdowod",
+          "selectors": [
+            "app-basic-info-section",
+            "app-banner-section",
+            "app-detail-info-section",
+            "app-side-banner-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi/zastrzez-pesel",
+          "selectors": [
+            "app-basic-info-section",
+            "app-banner-section",
+            "app-detail-info-section",
+            "app-side-banner-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-basic-info-section",
+            "app-banner-section",
+            "app-detail-info-section",
+            "app-side-banner-section"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-side-banner-section",
+          "offset": 82153
+        }
+      ]
+    },
+    {
+      "id": "tap-tooltip",
+      "name": "Podpowiedź dotykowa w szczegółach",
+      "reactExports": [
+        "LandingTooltip"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-tooltip"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty/mdowod",
+          "selectors": [
+            "app-tap-tooltip"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi/zastrzez-pesel",
+          "selectors": [
+            "app-tap-tooltip"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "video",
+      "name": "Kafel filmu, player i modal",
+      "reactExports": [
+        "LandingVideo"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "External embed or video resource loads after play and optional permission. Media hosting, captions and consent source are consumer inputs."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-video-poster",
+          ".ml-video-frame",
+          ".ml-video-dialog"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/dokumenty/mdowod",
+          "selectors": [
+            "app-video-section",
+            "app-video-item",
+            "app-video-player",
+            ".video-play"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/uslugi/zastrzez-pesel",
+          "selectors": [
+            "app-video-section",
+            "app-video-item",
+            "app-video-player",
+            ".video-play"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-video-item",
+          "offset": 86052
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-video-player",
+          "offset": 104309
+        }
+      ]
+    },
+    {
+      "id": "app-download",
+      "name": "CTA pobrania aplikacji i panel pobierania",
+      "reactExports": [
+        "LandingDownloadCTA",
+        "LandingDownloadPanel"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Original official store badges and QR are bundled with provenance. Custom applications should provide their own store/QR props."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-download-cta",
+          ".ml-download-panel",
+          ".ml-download-dark-card"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-modal-download-app",
+            "app-download-app",
+            ".offcanvas-body",
+            ".store-icon"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        },
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci",
+          "selectors": [
+            "app-modal-download-app",
+            "app-download-app",
+            ".offcanvas-body",
+            ".store-icon"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-modal-download-app",
+          "offset": 231041
+        }
+      ]
+    },
+    {
+      "id": "social-follow-banner",
+      "name": "Sekcja śledzenia aktualności i dołączenia",
+      "reactExports": [
+        "LandingSocialBanner"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-social-banner-links",
+          ".ml-info--blue"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-join-to"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-join-to",
+          "offset": 304253
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "name": "Stopka marketingowa i karta pobrania",
+      "reactExports": [
+        "LandingFooter",
+        "LandingDownloadCTA"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Footer groups, legal links and logos are data-driven; the consumer controls the cookie-settings action."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-footer",
+          ".ml-footer-groups",
+          ".ml-footer-legal",
+          ".ml-footer-organizations"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "app-footer",
+            ".footer-container",
+            ".footer-card",
+            ".footer-static"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": [
+        {
+          "url": "https://info.mobywatel.gov.pl/main.5957482e28ae41e1.js",
+          "selector": "app-footer",
+          "offset": 190717
+        }
+      ]
+    },
+    {
+      "id": "cookie-consent",
+      "name": "Cookiebot i ustawienia cookies",
+      "reactExports": [
+        "LandingCookieConsent"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Local functional adapter of the observed Cookiebot appearance, not the third-party Cookiebot service. All optional categories default off; no analytics or marketing scripts are loaded. Domain scanning, vendor inventory and cross-domain consent are not part of this component. Privacy copy is configurable through description/policyHref."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-cookie-consent",
+          ".ml-cookie-header",
+          ".ml-cookie-tabs",
+          ".ml-cookie-actions"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/",
+          "selectors": [
+            "#CybotCookiebotDialog",
+            ".CybotCookiebotDialogBodyButton"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "press-downloads",
+      "name": "Karty plików i materiałów prasowych",
+      "reactExports": [
+        "LandingPressCard"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-press-card"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/prasa",
+          "selectors": [
+            "app-press-page"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "sitemap",
+      "name": "Mapa strony z grupami linków i rozwijaniem",
+      "reactExports": [
+        "LandingSitemap"
+      ],
+      "status": "implemented",
+      "limitations": [],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-sitemap"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/mapa-strony",
+          "selectors": [
+            "app-sitemap-page",
+            ".accordion"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    },
+    {
+      "id": "loading",
+      "name": "Wskaźnik ładowania listingu aktualności",
+      "reactExports": [
+        "LandingLoader"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Loader has accessible status and reduced-motion behavior. The consumer controls asynchronous loading."
+      ],
+      "styles": {
+        "file": "src/kit/landing/landing.css",
+        "selectors": [
+          ".ml-loader"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://info.mobywatel.gov.pl/aktualnosci",
+          "selectors": [
+            "app-loader"
+          ],
+          "kind": "official page DOM / shared served Angular template"
+        }
+      ],
+      "sourceComponentDefinitions": []
+    }
+  ],
+  "catalog": "src/catalog/LandingCatalog.tsx",
+  "fixtures": [
+    "LandingCatalog",
+    "LandingHome"
+  ],
+  "assetProvenance": "src/kit/landing/provenance.json",
+  "fontLicense": "src/kit/landing/fonts/OFL-Lato.txt",
+  "tests": {
+    "file": "src/kit/landing/landing.test.tsx",
+    "cases": 13,
+    "lastRun": "passed",
+    "covers": [
+      "controlled search clear/ref/name",
+      "combobox keyboard/typeahead/disabled/Escape",
+      "catalogue query/category results",
+      "controlled FAQ search/expanded",
+      "tabs keyboard",
+      "controlled carousel keyboard/status",
+      "mobile menu focus restoration",
+      "offcanvas focus trap/Escape and inherited reduced motion",
+      "video permission and lazy embed",
+      "opt-in consent defaults/persistence/rejection",
+      "explicit optional category selection",
+      "controlled download panel returns to the correct external header/hero opener",
+      "cookie settings returns to the external footer opener after consent/rejection"
+    ]
+  },
+  "visualEvidence": {
+    "homeHero": "Source-confirmed bounding boxes and Lato typography at375px and1280px; parent independently measured exact h1/lead/actions rectangles.",
+    "cookie": "Source-configured PNGlogo, sans15/24,900px desktop/359px at375,599.5px mobile dialog, source header/tab/action geometry. Local consent service and configurable body copy remain an adapter.",
+    "searchAndCatalog": "Live source78px/r16 search with original searchSVG; catalog20pxradius,24pxbody,4:1 media,13px700 read-more; grid gaps40px50px."
+  },
+  "remainingLimits": [
+    "No claim of exhaustive content coverage or certification of every upstream dynamic state. The28 entries are audited families, not a percentage of all upstream internals.",
+    "Page-specific CMS payloads, routing, locale strings and official service backends are outside a React presentation library. Controlled APIs and callbacks expose the corresponding integration points.",
+    "Cookiebot backend and source-specific GSAP document choreography remain explicitly identified adapters; no hidden tracking is introduced."
+  ]
+}

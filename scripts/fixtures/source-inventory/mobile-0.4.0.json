@@ -1,0 +1,5751 @@
+{
+  "schemaVersion": 1,
+  "version": "0.4.0",
+  "auditDate": "2026-10-19",
+  "kind": "read-only-native-mobile-source-coverage-audit",
+  "scope": "All locally available iOS Sources/Components Swift files and all Android component-tree Kotlin files. Cross-platform semantic UI families are deduplicated; this is not a claim about every component in the shipped app.",
+  "sourceAuthorities": [
+    {
+      "platform": "ios",
+      "url": "https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/ios",
+      "localRoot": "/tmp/mdesign-native/iOS/Sources/Components"
+    },
+    {
+      "platform": "android",
+      "url": "https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/android",
+      "localRoot": "/tmp/mdesign-native/Android"
+    }
+  ],
+  "countingUnit": "One semantic UI family, deduplicated across iOS/Android. Button color/size/state variants are one family; separately exposed controls with distinct user interaction (PIN, phone, masked input, pager, sheet) are separate. Source files, preview fixtures, model classes, internal rendering functions and adapters are not counted as extra UI families.",
+  "statusDefinitions": {
+    "exported": "A dedicated matching reusable semantic family exists in the public React barrel. This does not assert complete variant coverage or pixel-level visual parity.",
+    "partial": "A related reusable API or embedded implementation exists, with explicit important source variants/behavior or standalone API still absent.",
+    "example-only": "The pattern is implemented only within example screen markup/state/CSS; it is not an exported reusable family.",
+    "missing": "No implementation of this family was found. Generic children/ReactNode slots or raw HTML composition are not credited as completed source components."
+  },
+  "summary": {
+    "sourceCodeFiles": 238,
+    "iosSwiftFiles": 46,
+    "androidKotlinFiles": 192,
+    "semanticUiFamilies": 65,
+    "byStatus": {
+      "partial": 21,
+      "exported": 11,
+      "missing": 29,
+      "example-only": 4
+    },
+    "fileRolesByPlatform": {
+      "ios": {
+        "ui-or-public-visual-style-implementation": 35,
+        "native-style-or-behavior-helper": 3,
+        "model-or-variant-definition": 6,
+        "ui-child-implementation": 1,
+        "test": 1
+      },
+      "android": {
+        "ui-or-public-visual-style-implementation": 82,
+        "preview-fixture": 44,
+        "model-or-variant-definition": 63,
+        "native-platform-adapter": 1,
+        "native-style-or-behavior-helper": 2
+      }
+    },
+    "crossPlatformFamilyCount": 23,
+    "unmappedUiCodeFiles": 0,
+    "sharedModelFilesWithoutUiFamily": [
+      "android/image/ImageData.kt"
+    ]
+  },
+  "treeCompleteness": [
+    {
+      "platform": "android",
+      "tree": "/tmp/mdesign-artwork-round2/official-tree-P.json",
+      "treeSha256": "39e3b7bcc5c177e95e85bc29811d6e2f1250cdfee98bfbeb185c651ff77cdd32",
+      "scope": "Android component tree",
+      "officialCodeFiles": 192,
+      "localCodeFiles": 192,
+      "missingFromMirror": [],
+      "extraInMirror": []
+    },
+    {
+      "platform": "ios",
+      "tree": "/tmp/mdesign-artwork-round2/official-tree-T.json",
+      "treeSha256": "f0603c34fb2cb312488a6423f1d3d5d2bd9c67521fdc84d1ac45653f40443cb7",
+      "scope": "Sources/Components/",
+      "officialCodeFiles": 46,
+      "localCodeFiles": 46,
+      "missingFromMirror": [],
+      "extraInMirror": []
+    }
+  ],
+  "limitations": [
+    "The official viewer does not disclose a source revision/commit. Audit date is not source-release date.",
+    "The local mirror matches the saved official component trees by path. This proves scope completeness for those saved trees, not every screen, internal module or production component in mObywatel.",
+    "iOS standard system controls such as native alert, navigation and switches may be consumed outside Sources/Components and are not exhaustively represented here.",
+    "Native resource/drawable catalogues, typography, colors, illustrations, logos, app business flows and backend integrations are not counted as component families.",
+    "Matching public API presence is not proof of all states, all platforms, accessibility permutations or native pixel-perfect parity.",
+    "Only six press-reference mobile fixtures were visually reviewed; that cannot verify the appearance of all source families.",
+    "Desktop portal and public landing-page inventories are outside this mobile audit and require separate source inventories.",
+    "SingleCard has many rendering combinations. They are documented as missing variants under one family rather than inflated into separate component counts.",
+    "No official percentage-of-entire-product completeness is justified."
+  ],
+  "kitSnapshotSha256": {
+    "src/kit/index.ts": "11aa05d8927b53c9b550006ed6441d24c6eb651e330c844ff79ed94e49100ac3",
+    "src/kit/components.tsx": "364eb921e6bf5182ed50e02565706b2225c78a185eed9136f37016e42b8ee731",
+    "src/kit/patterns.tsx": "8ef5d7295369f21ca3d58d899119bf6e43eda39d440a1edb128b82510e51150a",
+    "src/kit/NativeIcon.tsx": "e0958fc7a3aea24ed2cca10bae9b77561e22d20a31e3445978b157fb03876645",
+    "src/kit/ServiceIcon.tsx": "eb3fa7435fc6e13486f2ef3ac0cebe09912c5e51a79a8a1d94cfd32330b117b4",
+    "src/kit/DocumentArtwork.tsx": "c50440be7b421bfd56fc093c98dd1a58f921ae5eaad1c3b42115a96fc8374cb5",
+    "src/kit/SearchField.tsx": "566e89cbfbed3d9fd6d4ea42bac7c9bf973e2694a799a9aadc540b22c34d1a1e",
+    "src/examples/Screens.tsx": "6e83c302cf2fb72b2a0e920cae664c4f7340a59f0769e9554d537b41c9b86095"
+  },
+  "families": [
+    {
+      "id": "accordion",
+      "label": "Accordion",
+      "status": "partial",
+      "reactExports": [
+        "Accordion"
+      ],
+      "iosSelectors": [
+        "Accordion/"
+      ],
+      "androidSelectors": [
+        "accordion/"
+      ],
+      "assessment": "Dedicated reusable accordion exists; native onListExpanded callback and per-item content-padding option are absent.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Accordion/Accordion.swift"
+        ],
+        "android": [
+          "accordion/Accordion.kt",
+          "accordion/AccordionData.kt",
+          "accordion/provider/AccordionPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": [
+        {
+          "exportName": "Accordion",
+          "path": "src/kit/components.tsx",
+          "line": 184
+        }
+      ]
+    },
+    {
+      "id": "inline-alert",
+      "label": "Inline alert",
+      "status": "exported",
+      "reactExports": [
+        "Alert"
+      ],
+      "iosSelectors": [
+        "InlineAlert/"
+      ],
+      "androidSelectors": [
+        "alert/"
+      ],
+      "assessment": "Alert exposes semantic tones, title/body, action and trailing slots. Source close control is supplied by caller through trailing; presence does not certify every native state visually.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "InlineAlert/InlineAlert.swift"
+        ],
+        "android": [
+          "alert/Alert.kt",
+          "alert/AlertButtonData.kt",
+          "alert/AlertData.kt",
+          "alert/provider/AlertPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 5,
+      "reactEvidence": [
+        {
+          "exportName": "Alert",
+          "path": "src/kit/components.tsx",
+          "line": 143
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "label": "Notification badge / dot",
+      "status": "partial",
+      "reactExports": [
+        "Badge"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "badge/"
+      ],
+      "assessment": "Native Android Badge is a small unlabeled notification marker. React Badge is primarily labeled; dot exists inside a labeled badge rather than a dedicated marker API.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "badge/Badge.kt",
+          "badge/BadgeData.kt",
+          "badge/provider/BadgePreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": [
+        {
+          "exportName": "Badge",
+          "path": "src/kit/components.tsx",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "id": "banner",
+      "label": "Banner / high-emphasis banner",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "banner/"
+      ],
+      "assessment": "No reusable Banner with low/high-emphasis variants and close action. The desktop e-delivery hero is a separate domain example, not this family.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "banner/Banner.kt",
+          "banner/BannerData.kt",
+          "banner/provider/BannerPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": []
+    },
+    {
+      "id": "bottom-navigation",
+      "label": "Bottom navigation",
+      "status": "exported",
+      "reactExports": [
+        "BottomNavigation"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "bottomnavigation/"
+      ],
+      "assessment": "Reusable current/active icon, badges, selection callback, disabled items and optional home indicator. Used by mobile screens.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "bottomnavigation/BottomNavigation.kt",
+          "bottomnavigation/BottomNavigationData.kt",
+          "bottomnavigation/BottomNavigationItem.kt",
+          "bottomnavigation/provider/BottomNavigationPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": [
+        {
+          "exportName": "BottomNavigation",
+          "path": "src/kit/patterns.tsx",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "id": "bottom-sheet",
+      "label": "Modal bottom sheet",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "bottomsheet/"
+      ],
+      "assessment": "No bottom-sheet component, sheet state, drag interaction, content/footer layout or sheet-specific accessibility contract.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "bottomsheet/ModalBottomSheet.kt",
+          "bottomsheet/ModalBottomSheetData.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 2,
+      "reactEvidence": []
+    },
+    {
+      "id": "button",
+      "label": "Primary / secondary / tertiary button family",
+      "status": "partial",
+      "reactExports": [
+        "Button"
+      ],
+      "iosSelectors": [
+        "Buttons/PrimaryButtonStyle.swift",
+        "Buttons/SecondaryButtonStyle.swift",
+        "Buttons/TertiaryButtonStyle.swift",
+        "Buttons/ButtonType.swift",
+        "Buttons/ButtonStyleConfiguration+Extensions.swift",
+        "Buttons/View+RippleEffect.swift"
+      ],
+      "androidSelectors": [
+        "button/Button.kt",
+        "button/ButtonData.kt",
+        "button/ButtonPPP.kt",
+        "button/common/"
+      ],
+      "assessment": "Primary, secondary, tertiary and filled danger plus large/small exist. Native destructive secondary/tertiary and reversed secondary variants are not exposed.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Buttons/ButtonStyleConfiguration+Extensions.swift",
+          "Buttons/ButtonType.swift",
+          "Buttons/PrimaryButtonStyle.swift",
+          "Buttons/SecondaryButtonStyle.swift",
+          "Buttons/TertiaryButtonStyle.swift",
+          "Buttons/View+RippleEffect.swift"
+        ],
+        "android": [
+          "button/Button.kt",
+          "button/ButtonData.kt",
+          "button/ButtonPPP.kt",
+          "button/common/ButtonSize.kt",
+          "button/common/ButtonState.kt",
+          "button/common/ButtonType.kt",
+          "button/common/ButtonVariant.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 13,
+      "reactEvidence": [
+        {
+          "exportName": "Button",
+          "path": "src/kit/components.tsx",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "id": "icon-button",
+      "label": "Icon button",
+      "status": "partial",
+      "reactExports": [
+        "IconButton"
+      ],
+      "iosSelectors": [
+        "Buttons/IconButtonStyle.swift"
+      ],
+      "androidSelectors": [
+        "button/buttonicon/"
+      ],
+      "assessment": "Dedicated icon button exposes glyph/small/large and several tones. No proof of every source ButtonVariant/State combination; native reversed and destructive combinations not all exposed.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Buttons/IconButtonStyle.swift"
+        ],
+        "android": [
+          "button/buttonicon/ButtonIcon.kt",
+          "button/buttonicon/ButtonIconData.kt",
+          "button/buttonicon/ButtonIconPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": [
+        {
+          "exportName": "IconButton",
+          "path": "src/kit/components.tsx",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "id": "text-button",
+      "label": "Text button",
+      "status": "partial",
+      "reactExports": [
+        "Button"
+      ],
+      "iosSelectors": [
+        "Buttons/TextButtonStyle.swift"
+      ],
+      "androidSelectors": [
+        "button/buttontext/"
+      ],
+      "assessment": "Button variant=tertiary is the nearest API but has the large/small button box. Native TextButtonStyle is distinct, minHeight18, including destructiveText; no exact dedicated API.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Buttons/TextButtonStyle.swift"
+        ],
+        "android": [
+          "button/buttontext/ButtonText.kt",
+          "button/buttontext/ButtonTextData.kt",
+          "button/buttontext/ButtonTextPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": [
+        {
+          "exportName": "Button",
+          "path": "src/kit/components.tsx",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "id": "navigation-link-row",
+      "label": "Navigation link row style",
+      "status": "exported",
+      "reactExports": [
+        "ListRow"
+      ],
+      "iosSelectors": [
+        "Buttons/NavigationLinkButtonStyle.swift"
+      ],
+      "androidSelectors": [],
+      "assessment": "ListRow onClick supplies title/content and trailing chevron. React uses a button rather than a native NavigationLink; routing is caller-owned.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Buttons/NavigationLinkButtonStyle.swift"
+        ],
+        "android": []
+      },
+      "sourcePlatforms": [
+        "ios"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": [
+        {
+          "exportName": "ListRow",
+          "path": "src/kit/components.tsx",
+          "line": 165
+        }
+      ]
+    },
+    {
+      "id": "card-list",
+      "label": "Grouped card list",
+      "status": "example-only",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "cardlist/"
+      ],
+      "assessment": "Grouped mobile cards, inset dividers and rows are hand-composed in sample-mobile-card/PhoneRow. There is no exported CardList with source COLUMN/LAZY modes.",
+      "exampleEvidence": [
+        "src/examples/Screens.tsx: PhoneRow; sample-mobile-card",
+        "src/examples/screens.css: .sample-phone-row"
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "cardlist/CardList.kt",
+          "cardlist/provider/CardListPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 2,
+      "reactEvidence": []
+    },
+    {
+      "id": "chat-bubble",
+      "label": "Chat bubble with typing/CTA/footer",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "chatbubble/"
+      ],
+      "assessment": "No ChatBubble, typing dots, message-footer actions or CTA family.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "chatbubble/ChatBubble.kt",
+          "chatbubble/ChatBubbleData.kt",
+          "chatbubble/DotsTyping.kt",
+          "chatbubble/provider/ChatBubblePreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": []
+    },
+    {
+      "id": "checkbox",
+      "label": "Single checkbox",
+      "status": "partial",
+      "reactExports": [
+        "Checkbox"
+      ],
+      "iosSelectors": [
+        "Checkbox/"
+      ],
+      "androidSelectors": [
+        "checkbox/single/",
+        "checkbox/common/"
+      ],
+      "assessment": "Checked, disabled, label, hint and error exist. No indeterminate state, all linked-content variants or native group/shared error contract.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Checkbox/CheckBoxToggleStyle.swift"
+        ],
+        "android": [
+          "checkbox/common/CheckBoxBottomText.kt",
+          "checkbox/common/CheckBoxRow.kt",
+          "checkbox/common/model/CheckBoxRowData.kt",
+          "checkbox/common/model/CheckBoxType.kt",
+          "checkbox/common/model/CheckboxContentType.kt",
+          "checkbox/common/model/UrlData.kt",
+          "checkbox/single/CheckBoxSingle.kt",
+          "checkbox/single/CheckBoxSinglePPP.kt",
+          "checkbox/single/model/CheckBoxSingleData.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 10,
+      "reactEvidence": [
+        {
+          "exportName": "Checkbox",
+          "path": "src/kit/components.tsx",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "id": "checkbox-group",
+      "label": "Checkbox group",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "checkbox/group/"
+      ],
+      "assessment": "Only individual Checkbox is exported; no group header/helper/group validation implementation.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "checkbox/group/GroupCheckBox.kt",
+          "checkbox/group/GroupCheckBoxPPP.kt",
+          "checkbox/group/model/CheckBoxGroupData.kt",
+          "checkbox/group/model/CheckBoxHeaderData.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": []
+    },
+    {
+      "id": "content-box",
+      "label": "Content box / surface container",
+      "status": "partial",
+      "reactExports": [
+        "Card"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "contentbox/"
+      ],
+      "assessment": "Card provides a surface/container, but its header/content padding API differs from native ContentBox and no named equivalent is exported.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "contentbox/ContentBox.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": [
+        {
+          "exportName": "Card",
+          "path": "src/kit/components.tsx",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "id": "segmented-controller",
+      "label": "Two-item segmented controller",
+      "status": "partial",
+      "reactExports": [
+        "Tabs"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "controllers/ControllerSwitch.kt",
+        "controllers/ControllersData.kt",
+        "controllers/provider/ControllerSwitchPreviewParameterProvider.kt"
+      ],
+      "assessment": "Tabs provide selection, but no native ControllerSwitch variant/layout contract; generic tabs are not proof of exact segmented-controller parity.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "controllers/ControllerSwitch.kt",
+          "controllers/ControllersData.kt",
+          "controllers/provider/ControllerSwitchPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": [
+        {
+          "exportName": "Tabs",
+          "path": "src/kit/components.tsx",
+          "line": 171
+        }
+      ]
+    },
+    {
+      "id": "filter-controller",
+      "label": "Filter controller",
+      "status": "partial",
+      "reactExports": [
+        "Tabs",
+        "Badge"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "controllers/ControllerFilter.kt",
+        "controllers/ControllersData.kt",
+        "controllers/provider/ControllerFilterPreviewParameterProvider.kt"
+      ],
+      "assessment": "Generic tabs/chips can supply primitives; no source ControllerFilter styling/selection component is present.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "controllers/ControllerFilter.kt",
+          "controllers/ControllersData.kt",
+          "controllers/provider/ControllerFilterPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": [
+        {
+          "exportName": "Tabs",
+          "path": "src/kit/components.tsx",
+          "line": 171
+        },
+        {
+          "exportName": "Badge",
+          "path": "src/kit/components.tsx",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "id": "file-bottom-sheet-item",
+      "label": "File-source bottom-sheet item",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "custom/FileBottomSheetItem.kt"
+      ],
+      "assessment": "No reusable file-source item UI; Android debounce and platform URI plumbing are adapters, not extra missing UI families.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/FileBottomSheetItem.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": []
+    },
+    {
+      "id": "bullet-point",
+      "label": "Bullet point row",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "InfoRow/BulletLabelStyle.swift"
+      ],
+      "androidSelectors": [
+        "custom/bulletpoint/"
+      ],
+      "assessment": "No dedicated bullet-label/bullet-point implementation. Generic HTML lists are possible but do not count as a matching library family.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "InfoRow/BulletLabelStyle.swift"
+        ],
+        "android": [
+          "custom/bulletpoint/BulletPoint.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 2,
+      "reactEvidence": []
+    },
+    {
+      "id": "clickable-rich-text",
+      "label": "Clickable rich text with linked spans",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "custom/clickabletext/"
+      ],
+      "assessment": "No annotated span/link semantics parser or dedicated rich clickable-text component.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/clickabletext/CustomClickableText.kt",
+          "custom/clickabletext/SemanticsData.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 2,
+      "reactEvidence": []
+    },
+    {
+      "id": "document-row",
+      "label": "Single-card document row",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "custom/documentrow/"
+      ],
+      "assessment": "DocumentTile and DocumentCard have different layouts; no source document-thumbnail row family.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/documentrow/DocumentRowData.kt",
+          "custom/documentrow/SingleCardDocumentRow.kt",
+          "custom/documentrow/provider/SingleCardDocumentRowPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": []
+    },
+    {
+      "id": "icon",
+      "label": "Native icon and icon-background wrapper",
+      "status": "partial",
+      "reactExports": [
+        "NativeIcon",
+        "ServiceIcon"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "custom/icon/"
+      ],
+      "assessment": "53 named original native SVG assets and derived reference variants are exported. This is a selected asset set, not every Android drawable nor every IconData background/size/state variant.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/icon/Icon.kt",
+          "custom/icon/IconData.kt",
+          "custom/icon/provider/IconPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": [
+        {
+          "exportName": "NativeIcon",
+          "path": "src/kit/NativeIcon.tsx",
+          "line": 182
+        },
+        {
+          "exportName": "ServiceIcon",
+          "path": "src/kit/ServiceIcon.tsx",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "id": "barcode-card",
+      "label": "Barcode custom card content",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "custom/singlecard/barcode/"
+      ],
+      "assessment": "No barcode generator/custom single-card content family.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/singlecard/barcode/BarCodeSingleCard.kt",
+          "custom/singlecard/barcode/BarCodeSingleCardData.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 2,
+      "reactEvidence": []
+    },
+    {
+      "id": "label-button-image-card",
+      "label": "Label / button / generated image custom card content",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "custom/singlecard/labelbuttonimage/"
+      ],
+      "assessment": "No matching custom label/button/QR-image card family. Demo QR glyph is not a payload-encoding QR generator.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "custom/singlecard/labelbuttonimage/LabelButtonImageSingleCard.kt",
+          "custom/singlecard/labelbuttonimage/LabelButtonImageSingleCardData.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 2,
+      "reactEvidence": []
+    },
+    {
+      "id": "date-picker",
+      "label": "Date picker dialog",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "datepicker/"
+      ],
+      "assessment": "No exported calendar/date picker. Browser input type=date would not reproduce this dialog. ViewModel/picker-state bridge is platform adapter, not another UI family.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "datepicker/DatePickerDataVMS.kt",
+          "datepicker/DatePickerDialogComponent.kt",
+          "datepicker/DatePickerDialogData.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": []
+    },
+    {
+      "id": "dialog",
+      "label": "Modal dialog family",
+      "status": "partial",
+      "reactExports": [
+        "Dialog",
+        "DialogClose"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "dialog/"
+      ],
+      "assessment": "Accessible generic dialog is exported. Native WithText/WithIcon/WithThreeButtons layouts are not named variants; exact iOS-style compact PESEL alert lives in private PhoneDialog example.",
+      "exampleEvidence": [
+        "src/examples/Screens.tsx: PhoneDialog; confirm-pesel"
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "dialog/Dialog.kt",
+          "dialog/DialogData.kt",
+          "dialog/provider/DialogPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": [
+        {
+          "exportName": "Dialog",
+          "path": "src/kit/components.tsx",
+          "line": 177
+        },
+        {
+          "exportName": "DialogClose",
+          "path": "src/kit/components.tsx",
+          "line": 176
+        }
+      ]
+    },
+    {
+      "id": "dropdown",
+      "label": "Dropdown selector / selection list",
+      "status": "partial",
+      "reactExports": [
+        "Select"
+      ],
+      "iosSelectors": [
+        "Dropdown/"
+      ],
+      "androidSelectors": [
+        "dropdownbutton/"
+      ],
+      "assessment": "Native HTML select with labels/help/errors is exported. iOS selected-row checkmark list/dismiss behavior and Android click-trigger presentation are not recreated by Select.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Dropdown/DropdownButtonStyle.swift",
+          "Dropdown/DropdownList.swift"
+        ],
+        "android": [
+          "dropdownbutton/DropDownButton.kt",
+          "dropdownbutton/DropDownButtonData.kt",
+          "dropdownbutton/DropDownButtonPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 5,
+      "reactEvidence": [
+        {
+          "exportName": "Select",
+          "path": "src/kit/components.tsx",
+          "line": 98
+        }
+      ]
+    },
+    {
+      "id": "empty-state",
+      "label": "Empty state",
+      "status": "exported",
+      "reactExports": [
+        "EmptyState"
+      ],
+      "iosSelectors": [
+        "EmptyState/"
+      ],
+      "androidSelectors": [
+        "emptystate/"
+      ],
+      "assessment": "Title, description, icon and action slots exist. Native platform optional-title/visual differences remain outside a proof of all-state parity.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "EmptyState/EmptyStateGroupBoxStyle.swift"
+        ],
+        "android": [
+          "emptystate/EmptyState.kt",
+          "emptystate/EmptyStateData.kt",
+          "emptystate/provider/EmptyStatePreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": [
+        {
+          "exportName": "EmptyState",
+          "path": "src/kit/components.tsx",
+          "line": 207
+        }
+      ]
+    },
+    {
+      "id": "error-text",
+      "label": "Field error text",
+      "status": "partial",
+      "reactExports": [
+        "TextField",
+        "TextArea",
+        "Select",
+        "Checkbox",
+        "Radio"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "errortext/"
+      ],
+      "assessment": "Error text and announcement are implemented inside fields/choices. No standalone exported ErrorText.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "errortext/ErrorText.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": [
+        {
+          "exportName": "TextField",
+          "path": "src/kit/components.tsx",
+          "line": 48
+        },
+        {
+          "exportName": "TextArea",
+          "path": "src/kit/components.tsx",
+          "line": 87
+        },
+        {
+          "exportName": "Select",
+          "path": "src/kit/components.tsx",
+          "line": 98
+        },
+        {
+          "exportName": "Checkbox",
+          "path": "src/kit/components.tsx",
+          "line": 109
+        },
+        {
+          "exportName": "Radio",
+          "path": "src/kit/components.tsx",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "id": "file-picker",
+      "label": "File picker",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "filepicker/"
+      ],
+      "assessment": "No file attachment UI, selected-file states, delete action or chooser API. Native launcher/URI handling is a platform adapter inside this one family.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "filepicker/FilePicker.kt",
+          "filepicker/model/FilePickerData.kt",
+          "filepicker/model/PickerFile.kt",
+          "filepicker/provider/FilePickerPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": []
+    },
+    {
+      "id": "hero-header",
+      "label": "Icon / title / description hero header",
+      "status": "example-only",
+      "reactExports": [],
+      "iosSelectors": [
+        "Header/"
+      ],
+      "androidSelectors": [
+        "header/"
+      ],
+      "assessment": "PESEL example reproduces HeaderView circle72/icon40/title/description. Exported AppHeader is navigation chrome, not this hero family.",
+      "exampleEvidence": [
+        "src/examples/Screens.tsx: sample-pesel-symbol; sample-pesel>h2; sample-pesel-intro"
+      ],
+      "sourcePaths": {
+        "ios": [
+          "Header/HeaderView.swift"
+        ],
+        "android": [
+          "header/Header.kt",
+          "header/HeaderData.kt",
+          "header/provider/HeaderPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": []
+    },
+    {
+      "id": "helper-text",
+      "label": "Field helper text",
+      "status": "partial",
+      "reactExports": [
+        "TextField",
+        "TextArea",
+        "Select",
+        "Checkbox",
+        "Radio",
+        "Switch"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "helpertext/"
+      ],
+      "assessment": "Helper text exists through hint props; no standalone exported HelperText.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "helpertext/HelperText.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": [
+        {
+          "exportName": "TextField",
+          "path": "src/kit/components.tsx",
+          "line": 48
+        },
+        {
+          "exportName": "TextArea",
+          "path": "src/kit/components.tsx",
+          "line": 87
+        },
+        {
+          "exportName": "Select",
+          "path": "src/kit/components.tsx",
+          "line": 98
+        },
+        {
+          "exportName": "Checkbox",
+          "path": "src/kit/components.tsx",
+          "line": 109
+        },
+        {
+          "exportName": "Radio",
+          "path": "src/kit/components.tsx",
+          "line": 116
+        },
+        {
+          "exportName": "Switch",
+          "path": "src/kit/components.tsx",
+          "line": 123
+        }
+      ]
+    },
+    {
+      "id": "icon-page",
+      "label": "Centered icon page template",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "IconPage/"
+      ],
+      "androidSelectors": [
+        "iconpage/"
+      ],
+      "assessment": "No reusable IconPage with title/description/subDescription/content/bottom-content contract. Generic EmptyState and demo QR page are not the full template.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "IconPage/IconPage.swift"
+        ],
+        "android": [
+          "iconpage/IconPage.kt",
+          "iconpage/IconPageBottomContentData.kt",
+          "iconpage/IconPageData.kt",
+          "iconpage/IconPagePreviewProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 5,
+      "reactEvidence": []
+    },
+    {
+      "id": "info-row",
+      "label": "Information row / information row list",
+      "status": "partial",
+      "reactExports": [
+        "ListRow"
+      ],
+      "iosSelectors": [
+        "InfoRow/InfoRowLabelStyle.swift"
+      ],
+      "androidSelectors": [
+        "inforow/"
+      ],
+      "assessment": "ListRow covers icon/title/description. Native dedicated info-row typography, row-list spacing and all bullet variants are not exposed.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "InfoRow/InfoRowLabelStyle.swift"
+        ],
+        "android": [
+          "inforow/InfoRow.kt",
+          "inforow/InfoRowList.kt",
+          "inforow/model/InfoRowData.kt",
+          "inforow/model/InfoRowListData.kt",
+          "inforow/provider/InfoRowPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 6,
+      "reactEvidence": [
+        {
+          "exportName": "ListRow",
+          "path": "src/kit/components.tsx",
+          "line": 165
+        }
+      ]
+    },
+    {
+      "id": "date-time-input",
+      "label": "Date / time trigger input",
+      "status": "partial",
+      "reactExports": [
+        "TextField"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "inputdatetime/"
+      ],
+      "assessment": "TextField accepts native HTML date/time types and leading/trailing slots. No dedicated source trigger control with DD.MM.RRRR/GG:MM placeholder and onClick picker behavior.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "inputdatetime/InputDateTime.kt",
+          "inputdatetime/InputDateTimeData.kt",
+          "inputdatetime/provider/InputDateTimePreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": [
+        {
+          "exportName": "TextField",
+          "path": "src/kit/components.tsx",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "id": "link",
+      "label": "Inline link",
+      "status": "partial",
+      "reactExports": [
+        "Button",
+        "Breadcrumbs"
+      ],
+      "iosSelectors": [
+        "Link/"
+      ],
+      "androidSelectors": [
+        "link/"
+      ],
+      "assessment": "No exported Link component. Breadcrumbs render anchors only inside breadcrumb navigation; tertiary Button remains a button and does not provide href semantics.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Link/Link+ButtonStyle.swift"
+        ],
+        "android": [
+          "link/Link.kt",
+          "link/LinkData.kt",
+          "link/LinkPreviewProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": [
+        {
+          "exportName": "Button",
+          "path": "src/kit/components.tsx",
+          "line": 18
+        },
+        {
+          "exportName": "Breadcrumbs",
+          "path": "src/kit/components.tsx",
+          "line": 212
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "label": "Popup menu",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "menus/"
+      ],
+      "assessment": "No menu trigger, menu items, focus/arrow-key handling or popup-menu API. Select is a different control.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "menus/Menu.kt",
+          "menus/MenuData.kt",
+          "menus/provider/MenuPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": []
+    },
+    {
+      "id": "page-controller",
+      "label": "Swipeable page controller / onboarding pager",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "pagecontroller/"
+      ],
+      "assessment": "No horizontal pager, page-specific next action or onboarding content controller. Pagination controls result pages and is a different family.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "pagecontroller/PageController.kt",
+          "pagecontroller/PageControllerData.kt",
+          "pagecontroller/provider/PageControllerPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": []
+    },
+    {
+      "id": "page-indicator",
+      "label": "Pager dot indicator",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "pageindicator/"
+      ],
+      "assessment": "No dot indicator bound to a horizontal pager.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "pageindicator/PageIndicator.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": []
+    },
+    {
+      "id": "progress-bar",
+      "label": "Progress bar and labeled indicator",
+      "status": "exported",
+      "reactExports": [
+        "Progress"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "progressbar/"
+      ],
+      "assessment": "Reusable bounded value0–100 and optional label exist. Native rendered variants are not all independently visually verified.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "progressbar/ProgressBar.kt",
+          "progressbar/ProgressBarData.kt",
+          "progressbar/provider/ProgressBarPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": [
+        {
+          "exportName": "Progress",
+          "path": "src/kit/components.tsx",
+          "line": 195
+        }
+      ]
+    },
+    {
+      "id": "radio",
+      "label": "Single radio item",
+      "status": "exported",
+      "reactExports": [
+        "Radio"
+      ],
+      "iosSelectors": [
+        "RadioButton/"
+      ],
+      "androidSelectors": [
+        "radiobutton/common/radiobuttonitem/"
+      ],
+      "assessment": "Reusable native radio semantics, name grouping, checked/disabled, label/hint/error exist.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "RadioButton/RadioButton.swift",
+          "RadioButton/RadioButtonSnapshotTests.swift"
+        ],
+        "android": [
+          "radiobutton/common/radiobuttonitem/RadioButtonItem.kt",
+          "radiobutton/common/radiobuttonitem/RadioButtonItemPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": [
+        {
+          "exportName": "Radio",
+          "path": "src/kit/components.tsx",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "id": "radio-group",
+      "label": "Radio group with header and support content",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "radiobutton/RadioButton.kt",
+        "radiobutton/RadioButtonData.kt",
+        "radiobutton/provider/",
+        "radiobutton/common/model/",
+        "radiobutton/common/radiobuttoncontent/",
+        "radiobutton/common/radiobuttondescription/",
+        "radiobutton/common/radiobuttonrow/",
+        "radiobutton/common/radiobuttons/"
+      ],
+      "assessment": "Only individual Radio is exported. No source group header/helper icon, supported row variants or group-level error API.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "radiobutton/RadioButton.kt",
+          "radiobutton/RadioButtonData.kt",
+          "radiobutton/common/model/RadioButtonItemData.kt",
+          "radiobutton/common/model/RadioButtonRow.kt",
+          "radiobutton/common/model/RadioButtonSupportText.kt",
+          "radiobutton/common/model/RadioButtonVariant.kt",
+          "radiobutton/common/radiobuttoncontent/RadioButtonContent.kt",
+          "radiobutton/common/radiobuttondescription/RadioButtonDescription.kt",
+          "radiobutton/common/radiobuttonrow/RadioButtonRow.kt",
+          "radiobutton/common/radiobuttons/RadioButtons.kt",
+          "radiobutton/provider/RadioButtonPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 11,
+      "reactEvidence": []
+    },
+    {
+      "id": "result-modal",
+      "label": "Structured result modal",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "resultmodal/"
+      ],
+      "assessment": "Generic Dialog can host children but no structured result icon/data pairs/three-actions result template is implemented.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "resultmodal/ResultModal.kt",
+          "resultmodal/ResultModalData.kt",
+          "resultmodal/provider/ResultModalPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": []
+    },
+    {
+      "id": "search-bar",
+      "label": "Search field / search bar",
+      "status": "exported",
+      "reactExports": [
+        "SearchField"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "searchbar/"
+      ],
+      "assessment": "Dedicated exported search control with native search/clear icons, value handling and label; used by reference mobile services fixture.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "searchbar/SearchBar.kt",
+          "searchbar/SearchBarData.kt",
+          "searchbar/provider/SearchBarPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": [
+        {
+          "exportName": "SearchField",
+          "path": "src/kit/SearchField.tsx",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "id": "service-welcome-page",
+      "label": "Service welcome page",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "servicewelcomepage/"
+      ],
+      "assessment": "No reusable source welcome-page composition with its image/text/data/actions.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "servicewelcomepage/ServiceWelcomePage.kt",
+          "servicewelcomepage/ServiceWelcomePageData.kt",
+          "servicewelcomepage/provider/ServiceWelcomePagePreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": []
+    },
+    {
+      "id": "single-card",
+      "label": "Single card variants",
+      "status": "partial",
+      "reactExports": [
+        "ListRow",
+        "Card",
+        "ServiceTile"
+      ],
+      "iosSelectors": [
+        "SingleCard/"
+      ],
+      "androidSelectors": [
+        "singlecard/"
+      ],
+      "assessment": "Basic info/clickable rows exist. Source selectable-checkbox/selectable-radio, reversed title/detail, delete/action and status-badge combinations are not packaged as source-equivalent variants.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "SingleCard/LeadingLabelStyle.swift",
+          "SingleCard/SingleCardGroupBoxStyle.swift",
+          "SingleCard/TrailingLabelStyle.swift"
+        ],
+        "android": [
+          "singlecard/SingleCard.kt",
+          "singlecard/SingleCardClickable.kt",
+          "singlecard/SingleCardData.kt",
+          "singlecard/SingleCardInfo.kt",
+          "singlecard/SingleCardSelectableCheckbox.kt",
+          "singlecard/SingleCardSelectableRadioButton.kt",
+          "singlecard/SingleCardStatusBadge.kt",
+          "singlecard/SingleCardStatusBadgeData.kt",
+          "singlecard/provider/SingleCardPreviewParameterProvider.kt",
+          "singlecard/provider/SingleCardStatusBadgePreviewProvider.kt",
+          "singlecard/radiobutton/OldRadioButton.kt",
+          "singlecard/radiobutton/OldRadioButtonData.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 15,
+      "reactEvidence": [
+        {
+          "exportName": "ListRow",
+          "path": "src/kit/components.tsx",
+          "line": 165
+        },
+        {
+          "exportName": "Card",
+          "path": "src/kit/components.tsx",
+          "line": 150
+        },
+        {
+          "exportName": "ServiceTile",
+          "path": "src/kit/components.tsx",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "id": "small-card",
+      "label": "Large squircle shortcut card",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "SmallCard/"
+      ],
+      "androidSelectors": [
+        "smallcard/"
+      ],
+      "assessment": "No80px squircle background with32px icon, centered caption and native small-card dimensions. ServiceTile is a horizontal row, not this card.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "SmallCard/SmallCard.swift"
+        ],
+        "android": [
+          "smallcard/SmallCard.kt",
+          "smallcard/SmallCardData.kt",
+          "smallcard/provider/SmallCardPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": []
+    },
+    {
+      "id": "shortcut-card",
+      "label": "Small circular shortcut card",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "ShortcutCard/"
+      ],
+      "androidSelectors": [
+        "smallcards/"
+      ],
+      "assessment": "Unifies equivalent iOS ShortcutCard and Android SmallCardS:80px column,48px icon background,24px icon. No exported implementation.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "ShortcutCard/ShortcutCard.swift"
+        ],
+        "android": [
+          "smallcards/SmallCardS.kt",
+          "smallcards/SmallCardSData.kt",
+          "smallcards/provider/SmallCardSPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": []
+    },
+    {
+      "id": "snackbar",
+      "label": "Snackbar / toast",
+      "status": "example-only",
+      "reactExports": [],
+      "iosSelectors": [
+        "Snackbar/"
+      ],
+      "androidSelectors": [
+        "snackbar/"
+      ],
+      "assessment": "Timed toast exists inside MobileScreen state. No exported snackbar host, controller, duration/dismiss-action API.",
+      "exampleEvidence": [
+        "src/examples/Screens.tsx: toast state/effect; sample-mobile-toast",
+        "src/examples/screens.css: .sample-mobile-toast"
+      ],
+      "sourcePaths": {
+        "ios": [
+          "Snackbar/SnackBarView.swift",
+          "Snackbar/View+SnackBar.swift"
+        ],
+        "android": [
+          "snackbar/SnackBar.kt",
+          "snackbar/SnackBarData.kt",
+          "snackbar/provider/SnackBarPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 5,
+      "reactEvidence": []
+    },
+    {
+      "id": "status-badge",
+      "label": "Status badge dot / icon / bordered",
+      "status": "exported",
+      "reactExports": [
+        "Badge"
+      ],
+      "iosSelectors": [
+        "StatusBadge/"
+      ],
+      "androidSelectors": [
+        "statusbadge/"
+      ],
+      "assessment": "Badge tone/dot/icon and status/bordered variants cover the source semantic family. This mapping is presence, not a full snapshot matrix.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "StatusBadge/StatusBadge.swift"
+        ],
+        "android": [
+          "statusbadge/StatusBadge.kt",
+          "statusbadge/StatusBadgeData.kt",
+          "statusbadge/StatusBadgePreviewProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": [
+        {
+          "exportName": "Badge",
+          "path": "src/kit/components.tsx",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "id": "support-page",
+      "label": "Support / outcome page",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "supportpage/"
+      ],
+      "assessment": "No reusable support result page with native illustration/icon/title/description/actions.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "supportpage/SupportPage.kt",
+          "supportpage/SupportPageData.kt",
+          "supportpage/provider/SupportPagePreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 3,
+      "reactEvidence": []
+    },
+    {
+      "id": "switch",
+      "label": "Switch with label / extras",
+      "status": "partial",
+      "reactExports": [
+        "Switch"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "switchcomponent/"
+      ],
+      "assessment": "Controlled/uncontrolled checked, disabled, label/hint exist. Native standalone switch and extras link/text-button plus validation contract are not separate supported variants.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "switchcomponent/Switch.kt",
+          "switchcomponent/SwitchData.kt",
+          "switchcomponent/SwitchOnly.kt",
+          "switchcomponent/SwitchWithExtras.kt",
+          "switchcomponent/SwitchWithText.kt",
+          "switchcomponent/provider/SwitchPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 6,
+      "reactEvidence": [
+        {
+          "exportName": "Switch",
+          "path": "src/kit/components.tsx",
+          "line": 123
+        }
+      ]
+    },
+    {
+      "id": "text-area",
+      "label": "Text area",
+      "status": "partial",
+      "reactExports": [
+        "TextArea"
+      ],
+      "iosSelectors": [
+        "Inputs/TextArea/"
+      ],
+      "androidSelectors": [
+        "textarea/"
+      ],
+      "assessment": "Label, value, native textarea attrs, hint/error and fixed rows exist. Native automatic character counter and flexible max-lines mode are not implemented.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Inputs/TextArea/TextArea.swift"
+        ],
+        "android": [
+          "textarea/TextArea.kt",
+          "textarea/TextAreaData.kt",
+          "textarea/provider/TextAreaPPP.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": [
+        {
+          "exportName": "TextArea",
+          "path": "src/kit/components.tsx",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "id": "text-input",
+      "label": "Text / numeric / password input",
+      "status": "exported",
+      "reactExports": [
+        "TextField"
+      ],
+      "iosSelectors": [
+        "Inputs/Text/",
+        "Inputs/InputTextFieldBackgroundViewModifier.swift"
+      ],
+      "androidSelectors": [
+        "textinput/TextInput.kt",
+        "textinput/TextField.kt",
+        "textinput/model/",
+        "textinput/provider/"
+      ],
+      "assessment": "TextField covers base/text/numeric/password, labels, hints/errors, leading/trailing, clear action and password visibility. Native IME/focus APIs are platform adapters, not extra components.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Inputs/InputTextFieldBackgroundViewModifier.swift",
+          "Inputs/Text/InputTextField+FieldType.swift",
+          "Inputs/Text/InputTextField.swift"
+        ],
+        "android": [
+          "textinput/TextField.kt",
+          "textinput/TextInput.kt",
+          "textinput/model/TextInputData.kt",
+          "textinput/provider/TextInputPreviewParameterProvider.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 7,
+      "reactEvidence": [
+        {
+          "exportName": "TextField",
+          "path": "src/kit/components.tsx",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "id": "phone-input",
+      "label": "Phone number with country prefix",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "Inputs/PhoneNumber/"
+      ],
+      "androidSelectors": [
+        "textinput/TextFieldPhoneNumber.kt"
+      ],
+      "assessment": "TextField type=tel is only a raw single field. No separate prefix/number values, validation and composed PhoneNumber input.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Inputs/PhoneNumber/PhoneNumberInputTextField.swift"
+        ],
+        "android": [
+          "textinput/TextFieldPhoneNumber.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 2,
+      "reactEvidence": []
+    },
+    {
+      "id": "pin-input",
+      "label": "PIN / OTP cell input",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "Inputs/Pin/"
+      ],
+      "androidSelectors": [
+        "textinput/TextFieldPin.kt"
+      ],
+      "assessment": "No multi-cell PIN entry, masking, focus movement or length handling.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Inputs/Pin/PinInputTextField+Cell.swift",
+          "Inputs/Pin/PinInputTextField.swift",
+          "Inputs/Pin/PinInputTextFieldStyle.swift"
+        ],
+        "android": [
+          "textinput/TextFieldPin.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "ios",
+        "android"
+      ],
+      "sourceFileCount": 4,
+      "reactEvidence": []
+    },
+    {
+      "id": "masked-input",
+      "label": "Masked formatted input",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "textinput/visualtransformation/"
+      ],
+      "assessment": "No formatter/mask integration. Native transformation object is platform-specific, but the user-visible masked-input behavior is a missing variant.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "textinput/visualtransformation/MaskType.kt",
+          "textinput/visualtransformation/MaskVisualTransformation.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 2,
+      "reactEvidence": []
+    },
+    {
+      "id": "top-app-bar",
+      "label": "Small / medium / large top app bar",
+      "status": "partial",
+      "reactExports": [
+        "AppHeader"
+      ],
+      "iosSelectors": [],
+      "androidSelectors": [
+        "topappbar/"
+      ],
+      "assessment": "AppHeader offers brand/title/leading/actions slots. No source small/medium/large or scroll/collapse variants; exact back/large-title headers are hand-composed in examples.",
+      "exampleEvidence": [
+        "src/examples/Screens.tsx: sample-phone-brand; sample-phone-title; sample-phone-subheader"
+      ],
+      "sourcePaths": {
+        "ios": [],
+        "android": [
+          "topappbar/TopAppBar.kt",
+          "topappbar/TopAppBarButton.kt",
+          "topappbar/TopAppBarData.kt",
+          "topappbar/TopAppBarPPP.kt",
+          "topappbar/TopAppBarUtil.kt",
+          "topappbar/large/LargeTopAppBar.kt",
+          "topappbar/medium/MediumTopAppBar.kt",
+          "topappbar/small/SmallTopAppBar.kt"
+        ]
+      },
+      "sourcePlatforms": [
+        "android"
+      ],
+      "sourceFileCount": 8,
+      "reactEvidence": [
+        {
+          "exportName": "AppHeader",
+          "path": "src/kit/patterns.tsx",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "id": "cards-stack",
+      "label": "Overlapping cards stack layout",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "CardsStack/"
+      ],
+      "androidSelectors": [],
+      "assessment": "No reusable overlapping card-stack layout with source spacing/proposal behavior. It is a real visual layout, not merely a native adapter.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "CardsStack/CardsStack.swift"
+        ],
+        "android": []
+      },
+      "sourcePlatforms": [
+        "ios"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": []
+    },
+    {
+      "id": "document-card",
+      "label": "Full document card",
+      "status": "exported",
+      "reactExports": [
+        "DocumentCard"
+      ],
+      "iosSelectors": [
+        "DocumentCard/DocumentCard.swift"
+      ],
+      "androidSelectors": [],
+      "assessment": "Dedicated226px card with supplied artwork/title/trailing slot and matching layout constants is exported.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "DocumentCard/DocumentCard.swift"
+        ],
+        "android": []
+      },
+      "sourcePlatforms": [
+        "ios"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": [
+        {
+          "exportName": "DocumentCard",
+          "path": "src/kit/patterns.tsx",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "id": "small-document-card",
+      "label": "Small document tile",
+      "status": "exported",
+      "reactExports": [
+        "DocumentTile",
+        "DocumentArtwork"
+      ],
+      "iosSelectors": [
+        "DocumentCard/SmallDocumentCard.swift"
+      ],
+      "androidSelectors": [],
+      "assessment": "Dedicated tile with title/icon/custom background or four current artwork variants is exported. Four artwork variants are not the complete app document catalogue.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "DocumentCard/SmallDocumentCard.swift"
+        ],
+        "android": []
+      },
+      "sourcePlatforms": [
+        "ios"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": [
+        {
+          "exportName": "DocumentTile",
+          "path": "src/kit/patterns.tsx",
+          "line": 18
+        },
+        {
+          "exportName": "DocumentArtwork",
+          "path": "src/kit/DocumentArtwork.tsx",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "id": "illustration-page",
+      "label": "Illustration page template",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "IllustrationPage/"
+      ],
+      "androidSelectors": [],
+      "assessment": "No reusable centered illustration/title/description/content page template.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "IllustrationPage/IllustrationPage.swift"
+        ],
+        "android": []
+      },
+      "sourcePlatforms": [
+        "ios"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": []
+    },
+    {
+      "id": "list-header",
+      "label": "List header title / description",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "ListHeader/"
+      ],
+      "androidSelectors": [],
+      "assessment": "No exported ListHeader. Card title alone and section headings lack this distinct22pt title/13pt description layout contract.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "ListHeader/ListHeaderGroupBoxStyle.swift"
+        ],
+        "android": []
+      },
+      "sourcePlatforms": [
+        "ios"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": []
+    },
+    {
+      "id": "section-header",
+      "label": "Section header and content",
+      "status": "example-only",
+      "reactExports": [],
+      "iosSelectors": [
+        "SectionHeader/"
+      ],
+      "androidSelectors": [],
+      "assessment": "Service sections and PESEL history manually render this pattern. No exported SectionHeader with the source title/content spacing.",
+      "exampleEvidence": [
+        "src/examples/Screens.tsx: sample-mobile-section-title; sample-pesel>h3"
+      ],
+      "sourcePaths": {
+        "ios": [
+          "SectionHeader/SectionHeaderGroupBoxStyle.swift"
+        ],
+        "android": []
+      },
+      "sourcePlatforms": [
+        "ios"
+      ],
+      "sourceFileCount": 1,
+      "reactEvidence": []
+    },
+    {
+      "id": "timeline",
+      "label": "Timeline",
+      "status": "missing",
+      "reactExports": [],
+      "iosSelectors": [
+        "Timeline/"
+      ],
+      "androidSelectors": [],
+      "assessment": "No timeline dots, connecting line, date/header, title and description list API. PESEL history navigation rows are not a timeline.",
+      "exampleEvidence": [],
+      "sourcePaths": {
+        "ios": [
+          "Timeline/Timeline+Item.swift",
+          "Timeline/Timeline.swift"
+        ],
+        "android": []
+      },
+      "sourcePlatforms": [
+        "ios"
+      ],
+      "sourceFileCount": 2,
+      "reactEvidence": []
+    }
+  ],
+  "files": [
+    {
+      "platform": "ios",
+      "path": "Accordion/Accordion.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Accordion/Accordion.swift",
+      "sha256": "b53718329aa0b104964eee991343aa3880e33be8e8c7216d016b5b5befe27b4b",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "accordion"
+      ],
+      "declarations": [
+        "Accordion",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Buttons/ButtonStyleConfiguration+Extensions.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Buttons/ButtonStyleConfiguration+Extensions.swift",
+      "sha256": "f801b8dcf54fc0a77e1dff57f40723c09037812d835a5a55a31830f46bff86d5",
+      "role": "native-style-or-behavior-helper",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "ios",
+      "path": "Buttons/ButtonType.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Buttons/ButtonType.swift",
+      "sha256": "75e149665c9539d5a6332d00061380a8ab797398229d5935f9237f7fe4fd4b8a",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": [
+        "ButtonType"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Buttons/IconButtonStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Buttons/IconButtonStyle.swift",
+      "sha256": "77c02ef1401af7da9285119e3190bdf49f5ef6dcde622e9a704621640b4c2e56",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "icon-button"
+      ],
+      "declarations": [
+        "IconButtonStyle",
+        "DestructiveIconButtonStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Buttons/NavigationLinkButtonStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Buttons/NavigationLinkButtonStyle.swift",
+      "sha256": "8417076c1c36e422c86fa7572fba073d14f02fffc21466386af2dc32b712890a",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "navigation-link-row"
+      ],
+      "declarations": [
+        "NavigationLinkButtonStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Buttons/PrimaryButtonStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Buttons/PrimaryButtonStyle.swift",
+      "sha256": "ed793ba846c1379e8d638209a9b77d015b1ecf7e111c4c78c8d599117a85082b",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": [
+        "PrimaryButtonStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Buttons/SecondaryButtonStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Buttons/SecondaryButtonStyle.swift",
+      "sha256": "3ccbf167b97a58e0859c7a9c9014e57bd8b13316e1eab9be5540aad149f41969",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": [
+        "SecondaryButtonStyle",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Buttons/TertiaryButtonStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Buttons/TertiaryButtonStyle.swift",
+      "sha256": "f360cea82ede0a976ff3cf0610a65ce7cc8f71f78c76823275680b9f4e11e155",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": [
+        "TertiaryButtonStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Buttons/TextButtonStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Buttons/TextButtonStyle.swift",
+      "sha256": "3d0a53491245d2846b271098a201ee7a4dd580295644fc09fbba7aa121cf6849",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "text-button"
+      ],
+      "declarations": [
+        "TextButtonStyle",
+        "DestructiveTextButtonStyle",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Buttons/View+RippleEffect.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Buttons/View+RippleEffect.swift",
+      "sha256": "4b49380254fb94a976268e4597f09fb17d21c81078d71dd69593d095c42e8a17",
+      "role": "native-style-or-behavior-helper",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": [
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "CardsStack/CardsStack.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/CardsStack/CardsStack.swift",
+      "sha256": "f0e3d08df9e256c9b4cadec1e51e9d9fcc9bdfa88df0f6a746ab4c13d8c13c21",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "cards-stack"
+      ],
+      "declarations": [
+        "CardsStack"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Checkbox/CheckBoxToggleStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Checkbox/CheckBoxToggleStyle.swift",
+      "sha256": "9ddf5c8fa5c08075a968cfc1da3306212549a0327a114f423360f6f6870b40f3",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": [
+        "CheckBoxToggleStyle",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "DocumentCard/DocumentCard.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/DocumentCard/DocumentCard.swift",
+      "sha256": "794b25dd9a4659bf7dabc4d3222192ab89a49079dc50b3909233ac8bc594901b",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "document-card"
+      ],
+      "declarations": [
+        "DocumentCard",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "DocumentCard/SmallDocumentCard.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/DocumentCard/SmallDocumentCard.swift",
+      "sha256": "a4b80797cc0c0e599e6ed2d9f25965d0f6f9bca0b00d573af3d4a28f88d4d3d6",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "small-document-card"
+      ],
+      "declarations": [
+        "SmallDocumentCard",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Dropdown/DropdownButtonStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Dropdown/DropdownButtonStyle.swift",
+      "sha256": "c186c3bba1410b3317cf9eb39b0e92738f3a0033a4ff7de5babe93548466ff72",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "dropdown"
+      ],
+      "declarations": [
+        "DropdownButtonStyle",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Dropdown/DropdownList.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Dropdown/DropdownList.swift",
+      "sha256": "1f1f41f92ba62cdf7d9b531acbf6b2307cfad80453b635631cc2c85b745feb35",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "dropdown"
+      ],
+      "declarations": [
+        "DropdownList"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "EmptyState/EmptyStateGroupBoxStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/EmptyState/EmptyStateGroupBoxStyle.swift",
+      "sha256": "7aab7a21e13af1eb766e0b1eba1dcba6e1283c115f1b58f77fad5cd7d251b518",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "empty-state"
+      ],
+      "declarations": [
+        "EmptyStateGroupBoxStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Header/HeaderView.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Header/HeaderView.swift",
+      "sha256": "ca446d34cbebcb668e7faf01e29f8706bd1d0a84500fd34ad265c18e9c66a6bc",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "hero-header"
+      ],
+      "declarations": [
+        "HeaderView",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "IconPage/IconPage.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/IconPage/IconPage.swift",
+      "sha256": "5aa3f3eec97f18c1ac6b1b383a21cf60005f20b08f006c7251297864d90eecb5",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "icon-page"
+      ],
+      "declarations": [
+        "IconPage"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "IllustrationPage/IllustrationPage.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/IllustrationPage/IllustrationPage.swift",
+      "sha256": "bb48380fa732e4cbe7a4be2cd25137ec1f6234838315ecf7590a0f8177b69e15",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "illustration-page"
+      ],
+      "declarations": [
+        "IllustrationPage",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "InfoRow/BulletLabelStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/InfoRow/BulletLabelStyle.swift",
+      "sha256": "d110c6d56d9e4ad86136d91e8832cab54b0c7d6cb5ebf37f3c5376b0d8e8ee23",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "bullet-point"
+      ],
+      "declarations": [
+        "BulletLabelStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "InfoRow/InfoRowLabelStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/InfoRow/InfoRowLabelStyle.swift",
+      "sha256": "644d09de743824089882153374b05588cb82f7836f884915a3d05af35836cea3",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "info-row"
+      ],
+      "declarations": [
+        "InfoRowLabelStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "InlineAlert/InlineAlert.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/InlineAlert/InlineAlert.swift",
+      "sha256": "012814b89aca129d24e631fbaad5af9223e51647684af6b7e685877402c07f06",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "inline-alert"
+      ],
+      "declarations": [
+        "InlineAlert",
+        "Style"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Inputs/InputTextFieldBackgroundViewModifier.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Inputs/InputTextFieldBackgroundViewModifier.swift",
+      "sha256": "fcca6555bca7360a20e71b5bed3938dff35a6000d14b16de361028bbec399d6d",
+      "role": "native-style-or-behavior-helper",
+      "familyIds": [
+        "text-input"
+      ],
+      "declarations": [
+        "InputTextFieldBackgroundViewModifier",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Inputs/PhoneNumber/PhoneNumberInputTextField.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Inputs/PhoneNumber/PhoneNumberInputTextField.swift",
+      "sha256": "77469554985fbc5f550cb5858ce2095ea6d15a4188bc03bab742805031af04b2",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "phone-input"
+      ],
+      "declarations": [
+        "PhoneNumberFieldsConfiguration",
+        "FieldConfiguration",
+        "PhoneNumberInputTextField",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Inputs/Pin/PinInputTextField+Cell.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Inputs/Pin/PinInputTextField+Cell.swift",
+      "sha256": "c985effc5ff78f0056a8d1b968643b59551455744f30f10795da818802cd8d35",
+      "role": "ui-child-implementation",
+      "familyIds": [
+        "pin-input"
+      ],
+      "declarations": [
+        "Cell",
+        "State",
+        "Configuration",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Inputs/Pin/PinInputTextField.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Inputs/Pin/PinInputTextField.swift",
+      "sha256": "6ea5a13d1bc65a96c29cbdc2ca7dcf8c2d44c29af104b933839416ab8e269861",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "pin-input"
+      ],
+      "declarations": [
+        "PinInputTextField"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Inputs/Pin/PinInputTextFieldStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Inputs/Pin/PinInputTextFieldStyle.swift",
+      "sha256": "4db3b8a10e913dda87e1ff0b027cdbef74b172e35ca3ef75c3ab8d8da870be86",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "pin-input"
+      ],
+      "declarations": [
+        "PinInputTextFieldStyle",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Inputs/Text/InputTextField+FieldType.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Inputs/Text/InputTextField+FieldType.swift",
+      "sha256": "276e97d52a239c4978368d808e33dfdea7d62804884972aef23637c131d99e01",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "text-input"
+      ],
+      "declarations": [
+        "FieldType"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Inputs/Text/InputTextField.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Inputs/Text/InputTextField.swift",
+      "sha256": "0e9b054231f732ca8439403b93fcee5b020c4ea13878fb5adae9fc5e1d818416",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "text-input"
+      ],
+      "declarations": [
+        "InputTextField",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Inputs/TextArea/TextArea.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Inputs/TextArea/TextArea.swift",
+      "sha256": "f73e14157440de70478f4d559f4e15316c6c59bd2842512d7e74201dda35ff97",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "text-area"
+      ],
+      "declarations": [
+        "TextArea",
+        "Mode",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Link/Link+ButtonStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Link/Link+ButtonStyle.swift",
+      "sha256": "1eba05fe0661e36e500e311349c4bce6bf04f38dbc9b73bfdf301659b5fbc6c0",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "link"
+      ],
+      "declarations": [
+        "LinkButtonStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "ListHeader/ListHeaderGroupBoxStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/ListHeader/ListHeaderGroupBoxStyle.swift",
+      "sha256": "3a5b69a69aa39aeb2524644d1c4297c367b1d03cf48d4940266d35ccbb33b8ae",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "list-header"
+      ],
+      "declarations": [
+        "ListHeaderGroupBoxStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "RadioButton/RadioButton.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/RadioButton/RadioButton.swift",
+      "sha256": "e41e48bc13ee7eadbcd6035c6f43264b2867ca531146b7cd412563a5a2c84ed2",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "radio"
+      ],
+      "declarations": [
+        "RadioButton"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "RadioButton/RadioButtonSnapshotTests.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/RadioButton/RadioButtonSnapshotTests.swift",
+      "sha256": "7c7c482a8f44cc52ff60a3d8a0d5c7bb1f90d2f1d0a14ea7246e0069d88e788d",
+      "role": "test",
+      "familyIds": [
+        "radio"
+      ],
+      "declarations": [
+        "RadioButtonSnapshotTests",
+        "RadioButtonTestView"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "SectionHeader/SectionHeaderGroupBoxStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/SectionHeader/SectionHeaderGroupBoxStyle.swift",
+      "sha256": "cd0df511809bf0dd9214b7822d6fe83ff7cbad106f9d7caeba99722e808f5f44",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "section-header"
+      ],
+      "declarations": [
+        "SectionHeaderStyle"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "ShortcutCard/ShortcutCard.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/ShortcutCard/ShortcutCard.swift",
+      "sha256": "937938b30187adea1cb94dd8b3bd73e931bd3238bb554e293c5cbc2338ea0a32",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "shortcut-card"
+      ],
+      "declarations": [
+        "ShortcutCard",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "SingleCard/LeadingLabelStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/SingleCard/LeadingLabelStyle.swift",
+      "sha256": "a7b4545e07a579e5ec8f40ed9afe5369e8e187878e48d874307d3a79b09da8f1",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "LeadingLabelStyle",
+        "LeadingStyle",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "SingleCard/SingleCardGroupBoxStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/SingleCard/SingleCardGroupBoxStyle.swift",
+      "sha256": "085a89d452a0d3e5f402ec82f74a0be9fb65d898a1ee16f47f4a3422fa1f5783",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "SingleCardGroupBoxStyle",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "SingleCard/TrailingLabelStyle.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/SingleCard/TrailingLabelStyle.swift",
+      "sha256": "b39e4cee6f0192c442d6a35b09eec8c5dd539f18b5765511958d69b2ea75d495",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "TrailingLabelStyle",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "SmallCard/SmallCard.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/SmallCard/SmallCard.swift",
+      "sha256": "8312f8b4c3a9602c42fc4293ea4d34863e4ba43e94cc4f2fce56642de41b9a42",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "small-card"
+      ],
+      "declarations": [
+        "SmallCard",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Snackbar/SnackBarView.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Snackbar/SnackBarView.swift",
+      "sha256": "71c0a466cbdd73f299c7d2e29ca1d5f99c33735597d85847e6edb877dea2b44a",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "snackbar"
+      ],
+      "declarations": [
+        "SnackBarView",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Snackbar/View+SnackBar.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Snackbar/View+SnackBar.swift",
+      "sha256": "4f78b3a1682b03bf7dc887d575d3fdee08523d239f40719540f471d3be2899eb",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "snackbar"
+      ],
+      "declarations": [
+        "SnackBar",
+        "SnackBarViewModifier"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "StatusBadge/StatusBadge.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/StatusBadge/StatusBadge.swift",
+      "sha256": "1f3d6b6ea8c9e0d900edb732e116f05b682b18c51186eefc0739ad8a62c52537",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "status-badge"
+      ],
+      "declarations": [
+        "StatusBadge",
+        "StatusBadgeLabelStyle",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Timeline/Timeline+Item.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Timeline/Timeline+Item.swift",
+      "sha256": "b0abcede4c90822389be170e6170c2b50dd6eb027123bf11fe0d721d19dd56c0",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "timeline"
+      ],
+      "declarations": [
+        "Item"
+      ]
+    },
+    {
+      "platform": "ios",
+      "path": "Timeline/Timeline.swift",
+      "absolutePath": "/tmp/mdesign-native/iOS/Sources/Components/Timeline/Timeline.swift",
+      "sha256": "d96a68440d452dbfee3f61922d1440f4c561980dd9bab6f5b93408b2711e2d29",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "timeline"
+      ],
+      "declarations": [
+        "Timeline",
+        "Constants"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "accordion/Accordion.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/accordion/Accordion.kt",
+      "sha256": "f1881485d5f8463c532bae8552d630fdd92eb6839eb360dd727c19f357fc6d06",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "accordion"
+      ],
+      "declarations": [
+        "Accordion",
+        "AccordionSingle",
+        "AccordionDivider",
+        "AccordionPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "accordion/AccordionData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/accordion/AccordionData.kt",
+      "sha256": "be70caa5b5b6fe63dbe8469b4ffcac46943a39eef2ea4feb49d0ac3a3d1dccc8",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "accordion"
+      ],
+      "declarations": [
+        "CustomAccordionContent",
+        "Content"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "accordion/provider/AccordionPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/accordion/provider/AccordionPreviewParameterProvider.kt",
+      "sha256": "66a384bde211bd94fde07dcacb832f80527dabf0ffc302b19dbe6abec657fbc4",
+      "role": "preview-fixture",
+      "familyIds": [
+        "accordion"
+      ],
+      "declarations": [
+        "AccordionPreviewParameterProvider",
+        "provideAccordionSingleCardPreviewData",
+        "provideAccordionSinglePreviewData",
+        "provideAccordionSingleExpandedPreviewData",
+        "provideAccordionSingleHistoryExpandedPreviewData",
+        "provideAccordionListPreviewData",
+        "provideAccordionListOneExpandedPreviewData",
+        "CustomTextAccordionContent",
+        "CustomTimelineAccordionContent"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "alert/Alert.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/alert/Alert.kt",
+      "sha256": "358d447d133c5d0d6e17761166079f7f5be4863b67e4d6d25cc69b895a5e28fe",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "inline-alert"
+      ],
+      "declarations": [
+        "Alert",
+        "AlertFullPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "alert/AlertButtonData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/alert/AlertButtonData.kt",
+      "sha256": "2f4a8d3f48816f50484c7e412bca0f19fa26b4c20bc22f29130cc76c1bce2bda",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "inline-alert"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "alert/AlertData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/alert/AlertData.kt",
+      "sha256": "bfd2612f5d5b5383b5eab3310bed14c8f96c545a55abceda6e433006f8167e1d",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "inline-alert"
+      ],
+      "declarations": [
+        "Info",
+        "Warning",
+        "Success",
+        "Error"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "alert/provider/AlertPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/alert/provider/AlertPreviewParameterProvider.kt",
+      "sha256": "091b16fa614e17bd9d3dcfefcc604b334f977c1e50ba4c085da83a0281539684",
+      "role": "preview-fixture",
+      "familyIds": [
+        "inline-alert"
+      ],
+      "declarations": [
+        "AlertPreviewParameterProvider",
+        "provideAlertInfoOnlyDescription",
+        "provideAlertInfoTitleDescription",
+        "provideAlertInfoDescriptionTextBtn",
+        "provideAlertInfoDescriptionLink",
+        "provideAlertInfoTitleDescrTextBtn",
+        "provideAlertInfoDescrTextBtnCloseBtn",
+        "provideAlertInfoFull",
+        "provideAlertErrorOnlyDescription",
+        "provideAlertErrorTitleDescription",
+        "provideAlertErrorDescriptionTextBtn",
+        "provideAlertErrorDescriptionLink",
+        "provideAlertErrorTitleDescrTextBtn",
+        "provideAlertErrorDescrTextBtnCloseBtn",
+        "provideAlertErrorFull",
+        "provideAlertWarningOnlyDescription",
+        "provideAlertWarningTitleDescription",
+        "provideAlertWarningDescriptionTextBtn",
+        "provideAlertWarningDescriptionLink",
+        "provideAlertWarningTitleDescrTextBtn",
+        "provideAlertWarningDescrTextBtnCloseBtn",
+        "provideAlertWarningFull",
+        "provideAlertSuccessOnlyDescription",
+        "provideAlertSuccessTitleDescription",
+        "provideAlertSuccessDescriptionTextBtn",
+        "provideAlertSuccessDescriptionLink",
+        "provideAlertSuccessTitleDescrTextBtn",
+        "provideAlertSuccessDescrTextBtnCloseBtn",
+        "provideAlertSuccessFull"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "badge/Badge.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/badge/Badge.kt",
+      "sha256": "006a27cf2be7e8f5ab0719098055257a23695bbd9a54f9fc2e6432dab49497da",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "badge"
+      ],
+      "declarations": [
+        "Badge",
+        "BadgePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "badge/BadgeData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/badge/BadgeData.kt",
+      "sha256": "0110cf73df381ebb27680f277456c9d97053b06df6af3a673f21caadd2af49ba",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "badge"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "badge/provider/BadgePreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/badge/provider/BadgePreviewParameterProvider.kt",
+      "sha256": "49c33f11ade61b473ef5b7952c240982d2c63bf547c7c4617cd071cbe3b3e1ef",
+      "role": "preview-fixture",
+      "familyIds": [
+        "badge"
+      ],
+      "declarations": [
+        "BadgePreviewParameterProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "banner/Banner.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/banner/Banner.kt",
+      "sha256": "0e97448f2ccfa1e356bb3c83519f4646cef2b963a554aff03b76a79f3753dc1a",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "banner"
+      ],
+      "declarations": [
+        "Banner",
+        "BannerHighEmphasisErrorFullPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "banner/BannerData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/banner/BannerData.kt",
+      "sha256": "a462b2de0938702d0857b5a76aadbb139292bde0eb7ea7b4bdaa1a119b060f2f",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "banner"
+      ],
+      "declarations": [
+        "Info",
+        "Error",
+        "HighEmphasisInfo",
+        "HighEmphasisError"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "banner/provider/BannerPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/banner/provider/BannerPreviewParameterProvider.kt",
+      "sha256": "d1db36e9a5093af693831e9ba6120d52da2af5ef88746575a32463048c7add72",
+      "role": "preview-fixture",
+      "familyIds": [
+        "banner"
+      ],
+      "declarations": [
+        "BannerPreviewParameterProvider",
+        "provideBannerInfoWithoutTitle",
+        "provideBannerInfo",
+        "provideBannerInfoFull",
+        "provideBannerErrorWithoutTitle",
+        "provideBannerError",
+        "provideBannerErrorFull",
+        "provideBannerHighEmphasisInfoWithoutTitle",
+        "provideBannerHighEmphasisInfo",
+        "provideBannerHighEmphasisInfoFull",
+        "provideBannerHighEmphasisErrorWithoutTitle",
+        "provideBannerHighEmphasisError",
+        "provideBannerHighEmphasisErrorFull"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "bottomnavigation/BottomNavigation.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/bottomnavigation/BottomNavigation.kt",
+      "sha256": "5e9ce78735d1f0f2dbd5beb282be24174f0921259ae913248b3f1019eec9e1b9",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "bottom-navigation"
+      ],
+      "declarations": [
+        "BottomNavigation",
+        "RowScope.BottomNavigationItem"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "bottomnavigation/BottomNavigationData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/bottomnavigation/BottomNavigationData.kt",
+      "sha256": "118d0b99412881cce0e1e2468bb418fce4aff50c3dd6d9f7e6fd419d767ac1a6",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "bottom-navigation"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "bottomnavigation/BottomNavigationItem.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/bottomnavigation/BottomNavigationItem.kt",
+      "sha256": "129c96d18959a1e410ff1cb0bd7c86b1be1037192ed7d6fc28cb87f3ccbfd6ed",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "bottom-navigation"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "bottomnavigation/provider/BottomNavigationPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/bottomnavigation/provider/BottomNavigationPreviewParameterProvider.kt",
+      "sha256": "26f37ec78939a573f7fd54b138e229254d67c2659858a662c2226ac770595c5e",
+      "role": "preview-fixture",
+      "familyIds": [
+        "bottom-navigation"
+      ],
+      "declarations": [
+        "BottomNavigationPreviewParameterProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "bottomsheet/ModalBottomSheet.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/bottomsheet/ModalBottomSheet.kt",
+      "sha256": "d2a75b2bd0cfcd3afceb1537aee5760aebf218e27a4e7ecaa53a17d76f20e30c",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "bottom-sheet"
+      ],
+      "declarations": [
+        "ModalBottomSheet",
+        "ModalBottomSheetPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "bottomsheet/ModalBottomSheetData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/bottomsheet/ModalBottomSheetData.kt",
+      "sha256": "97225c47e81824316b5916236b2a2e628462f1d1ddf955d3cc89d8bf5d4da8a2",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "bottom-sheet"
+      ],
+      "declarations": [
+        "class"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "button/Button.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/Button.kt",
+      "sha256": "eeb7f4dc6fc5c1cf07ca06a1299f98c23cfcd98b8eab52d0770296eb9f3599b7",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": [
+        "Button",
+        "getButtonColors",
+        "ButtonIcon",
+        "ButtonText",
+        "getButtonTypeModifier",
+        "getPaddingValues",
+        "getBorderStroke",
+        "getContainerColor",
+        "getContentColor",
+        "getSecondaryDestructiveButtonColor",
+        "getSecondaryEnabledButtonColor",
+        "getButtonWithIconSize",
+        "getButtonShape",
+        "getButtonWithTextModifier",
+        "getButtonWithIconModifier",
+        "LayoutWithoutMinimumInteractiveComponentPadding",
+        "ButtonPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "button/ButtonData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/ButtonData.kt",
+      "sha256": "317377c68d40dacf14a013936ab567456db30d49c6be52220a248ac8a0fd7b0b",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "button/ButtonPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/ButtonPPP.kt",
+      "sha256": "bab38f0ce8e2632e08ef15bb0b51188b955dcfeb90c9015b94c95030373cb63f",
+      "role": "preview-fixture",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": [
+        "ButtonPPP"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "button/buttonicon/ButtonIcon.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/buttonicon/ButtonIcon.kt",
+      "sha256": "82c7c0e97695b5a04e585e8bd89ad0fe717f4b6fb0c67b7fe156374137b20b30",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "icon-button"
+      ],
+      "declarations": [
+        "ButtonIcon",
+        "ButtonPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "button/buttonicon/ButtonIconData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/buttonicon/ButtonIconData.kt",
+      "sha256": "499763b00b2660358fa6badff967c12e7d86ff577f480ab20dcf8f94051a2f1c",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "icon-button"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "button/buttonicon/ButtonIconPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/buttonicon/ButtonIconPPP.kt",
+      "sha256": "a8b404f3b97bb0e3e1d6c51ef4beb347ca3f3b3686f25ea2ffb46ac4bf6fd976",
+      "role": "preview-fixture",
+      "familyIds": [
+        "icon-button"
+      ],
+      "declarations": [
+        "ButtonIconPPP"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "button/buttontext/ButtonText.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/buttontext/ButtonText.kt",
+      "sha256": "e34492b8f22d63bd1db5fada97503e0b83a816c0625355974dad05315c0a6b17",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "text-button"
+      ],
+      "declarations": [
+        "ButtonText",
+        "ButtonPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "button/buttontext/ButtonTextData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/buttontext/ButtonTextData.kt",
+      "sha256": "61248a0f6625f87d790c84d7b2ce611376d9dc7ee7cb6ff36d283a329b9db49e",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "text-button"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "button/buttontext/ButtonTextPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/buttontext/ButtonTextPPP.kt",
+      "sha256": "d319abe9877d15d54ada5e689b684da84b35152869e39c4132f87b43e5f40701",
+      "role": "preview-fixture",
+      "familyIds": [
+        "text-button"
+      ],
+      "declarations": [
+        "ButtonTextPPP"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "button/common/ButtonSize.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/common/ButtonSize.kt",
+      "sha256": "a568c752c7c184a5b5c9a869df57e8cc0c854af9fbe948b83137a82a6c2f0b62",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "button/common/ButtonState.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/common/ButtonState.kt",
+      "sha256": "138027f5d1f09fdeaad9d7cf3b712b9b27ae4088b997a220238d0572034a371a",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "button/common/ButtonType.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/common/ButtonType.kt",
+      "sha256": "e7d084d2173636ddd631579aba4a250830830e69911193046c3b375e928dd43c",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "button/common/ButtonVariant.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/button/common/ButtonVariant.kt",
+      "sha256": "2173d8e86c3ee0eb27fefc159f444e4520d7d417af981d3a80759dedded0d94d",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "button"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "cardlist/CardList.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/cardlist/CardList.kt",
+      "sha256": "9870a0a6beea73d8684f7b929d148e974cfd1e410306d3899fb2ca8283e3ba18",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "card-list"
+      ],
+      "declarations": [
+        "CardList",
+        "ItemContent",
+        "ListDivider",
+        "CardListPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "cardlist/provider/CardListPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/cardlist/provider/CardListPreviewParameterProvider.kt",
+      "sha256": "3975d7a82b9d5efae7e23a002d6470d882ebeec6631f7722b42c9a504069464d",
+      "role": "preview-fixture",
+      "familyIds": [
+        "card-list"
+      ],
+      "declarations": [
+        "CardListPreviewProvider",
+        "getCardListInfoTitle",
+        "getCardListInfoTitleLong",
+        "getCardListInfoTitleDescription",
+        "getCardListInfoTitleDescriptionLong",
+        "getCardListInfoTitleInfo",
+        "getCardListInfoTitleInfoLong",
+        "getCardListInfoTitleIcon",
+        "getCardListInfoTitleIconBigger",
+        "getCardListInfoTitleDescriptionIcon",
+        "getCardListInfoTitleDescriptionIconDisabledState",
+        "getCardListInfoTitleWithButton",
+        "getCardListInfoTitleWithSwitch",
+        "getCardListClickableTitle",
+        "getCardListClickableTitleLong",
+        "getCardListClickableTitleDescription",
+        "getCardListClickableTitleDescriptionLong",
+        "getCardListClickableInfoTitle",
+        "getCardListClickableInfoTitleLong",
+        "getCardListClickableIconTitle",
+        "getCardListClickableIconTitleLong",
+        "getCardListClickableIconTitleDescription",
+        "getCardListClickableIconTitleDescriptionLong",
+        "getCardListClickableIconTitleDescriptionLongIconOnOneLineWithTitle",
+        "getCardListClickableIconTitleDescriptionLongFocusState",
+        "getCardListClickableIconTitleDescriptionLongDisabledState",
+        "getCardListClickableTitleDescriptionStatusBadge",
+        "getCardListClickableButtonIconTitle",
+        "getCardListClickableDeleteButtonIconTitle",
+        "getCardListSelectableRadioButtonTitleUnselected",
+        "getCardListSelectableRadioButtonTitleUnselectedFocusState",
+        "getCardListSelectableRadioButtonTitleUnselectedDisabledState",
+        "getCardListSelectableRadioButtonTitleUnselectedLong",
+        "getCardListSelectableRadioButtonTitleSelected",
+        "getCardListSelectableRadioButtonIconTitleUnselected",
+        "getCardListSelectableRadioButtonIconTitleUnselectedLong",
+        "getCardListSelectableRadioButtonIconTitleSelected",
+        "getCardListSelectableRadioButtonBiggerIconTitleSelected",
+        "getCardListSelectableRadioButtonTitleDescriptionUnselected",
+        "getCardListSelectableRadioButtonTitleDescriptionUnselectedLong",
+        "getCardListSelectableRadioButtonTitleDescriptionSelected"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "chatbubble/ChatBubble.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/chatbubble/ChatBubble.kt",
+      "sha256": "9bb84deb564925af766b1240db24e7bc6aeedb54852065b2d4d642d5836ef62b",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "chat-bubble"
+      ],
+      "declarations": [
+        "ChatBubble",
+        "MessageFooter",
+        "CtaSection",
+        "ChatBubblePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "chatbubble/ChatBubbleData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/chatbubble/ChatBubbleData.kt",
+      "sha256": "78fa28c3b2bdc8ccc475dd1e40dc6adc15616b2e0f5e70f309591cf9446c44a0",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "chat-bubble"
+      ],
+      "declarations": [
+        "class",
+        "FooterActionData.Toggleable.contentDescription"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "chatbubble/DotsTyping.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/chatbubble/DotsTyping.kt",
+      "sha256": "cb9ad0293fc5e96aa3de951705598182885cc1eaccc44fd316809c8c128b024c",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "chat-bubble"
+      ],
+      "declarations": [
+        "DotsTyping",
+        "Dot",
+        "animateOffsetWithDelay"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "chatbubble/provider/ChatBubblePreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/chatbubble/provider/ChatBubblePreviewParameterProvider.kt",
+      "sha256": "9464ca0d989449cb7cb5cce572402bf4cfa0e953fb9078bd0674b0d4eabc0320",
+      "role": "preview-fixture",
+      "familyIds": [
+        "chat-bubble"
+      ],
+      "declarations": [
+        "ChatBubblePreviewParameterProvider",
+        "provideChatBubbleBotLoadingPreviewData",
+        "provideChatBubbleBotPreviewData",
+        "provideChatBubbleUserPreviewData",
+        "provideChatBubbleBotWithOptionsPreviewData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/common/CheckBoxBottomText.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/common/CheckBoxBottomText.kt",
+      "sha256": "d1be9cc421ae673d4166400b0b0cddaf0c2cbce5cdd73c2f283690effc9e9668",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": [
+        "CheckBoxBottomText"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/common/CheckBoxRow.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/common/CheckBoxRow.kt",
+      "sha256": "d93695648efe76439e6b6f32760e0e788b33be05cb0fc7996eb3fab8beb8fa40",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": [
+        "CheckboxRow",
+        "CheckBoxClickableText",
+        "getLabelColor",
+        "CheckBoxType.getBackgroundColor",
+        "CheckBoxType.getBorderStrokeColor"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/common/model/CheckBoxRowData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/common/model/CheckBoxRowData.kt",
+      "sha256": "6f4ff75e83c4911f70a6ca450d8180ed62db464c171ae5e029431d5419e5ad24",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/common/model/CheckBoxType.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/common/model/CheckBoxType.kt",
+      "sha256": "022e2d7be578ee7e405409a8bf1271d118d430786982499b30df2ec4cb7bcd6e",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/common/model/CheckboxContentType.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/common/model/CheckboxContentType.kt",
+      "sha256": "c30132c84cdee73eb417471f24b63bc93bae45b4e5789fb7305a043b0fc067aa",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": [
+        "class"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/common/model/UrlData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/common/model/UrlData.kt",
+      "sha256": "d6523f90bd0e6d056d9e23b76fcfaf5e1672ebbefc2da86dad58999df1ba1aa2",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/group/GroupCheckBox.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/group/GroupCheckBox.kt",
+      "sha256": "c96043273aa417590fd75b50d5e6b6994a3adeeb0711fc4f7f3a44a07886f470",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "checkbox-group"
+      ],
+      "declarations": [
+        "CheckBoxGroup",
+        "GroupCheckBoxContainerContent",
+        "ColumnScope.LabelRow",
+        "GroupCheckBoxPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/group/GroupCheckBoxPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/group/GroupCheckBoxPPP.kt",
+      "sha256": "77eeccbc14d14796b6d8e159d7cefbd95a66aec558af58e6417463ba63bc679f",
+      "role": "preview-fixture",
+      "familyIds": [
+        "checkbox-group"
+      ],
+      "declarations": [
+        "GroupCheckBoxPPP",
+        "getCheckBoxData",
+        "getCheckBoxHeader"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/group/model/CheckBoxGroupData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/group/model/CheckBoxGroupData.kt",
+      "sha256": "f63bcb53801574c4e74acd59a4bef0852e485ceb73b3cf3d5aa322d5d392a968",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "checkbox-group"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/group/model/CheckBoxHeaderData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/group/model/CheckBoxHeaderData.kt",
+      "sha256": "6565eeff060c9c41018eaffd9c9af1aa98420ce9e83e44ccfb0b1c38064880f3",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "checkbox-group"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/single/CheckBoxSingle.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/single/CheckBoxSingle.kt",
+      "sha256": "85359be753447a5cda10f618b0ebeffa752759fc4ebb7c7af700afecb67f9a91",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": [
+        "CheckBoxSingle",
+        "CheckBoxSinglePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/single/CheckBoxSinglePPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/single/CheckBoxSinglePPP.kt",
+      "sha256": "5216d6434ebc5334bf3354f3c6f901ce69103bf2b2f6911411ce983fe55cfb1d",
+      "role": "preview-fixture",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": [
+        "CheckBoxSinglePPP",
+        "getCheckBoxData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "checkbox/single/model/CheckBoxSingleData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/checkbox/single/model/CheckBoxSingleData.kt",
+      "sha256": "fc017c2f4205aa835f7e969736cca92e892affc5d49a149538fc225fc2261615",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "checkbox"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "contentbox/ContentBox.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/contentbox/ContentBox.kt",
+      "sha256": "b3f23a2054a3acd9b8691b0773228b571bcc531f177c5d9c794ee797a548d38b",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "content-box"
+      ],
+      "declarations": [
+        "ContentBox",
+        "ContentBoxPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "controllers/ControllerFilter.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/controllers/ControllerFilter.kt",
+      "sha256": "0ceb9ac992b348be66d63d7f0e8154d2fdc223e16a0ff8efb08d27cb75b48ecc",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "filter-controller"
+      ],
+      "declarations": [
+        "ControllerFilter",
+        "ControllerFilterPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "controllers/ControllerSwitch.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/controllers/ControllerSwitch.kt",
+      "sha256": "7c943c7fb34ea8e9ccffd32423276a53a790c72b412069b7cb92dc779bb8dc4f",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "segmented-controller"
+      ],
+      "declarations": [
+        "ControllerSwitch",
+        "ControllerSwitchPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "controllers/ControllersData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/controllers/ControllersData.kt",
+      "sha256": "bc4eba20fa1da6701ed7b4a244c6781d96261dec50bc808b88a8d7d3305aad74",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "segmented-controller",
+        "filter-controller"
+      ],
+      "declarations": [
+        "class"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "controllers/provider/ControllerFilterPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/controllers/provider/ControllerFilterPreviewParameterProvider.kt",
+      "sha256": "c56f0a21d1c7d346a69f6ce3a9ae1643e8ae64134fa362ba0060e27c855d36e8",
+      "role": "preview-fixture",
+      "familyIds": [
+        "filter-controller"
+      ],
+      "declarations": [
+        "ControllerFilterPreviewParameterProvider",
+        "provideControllerFilterFirstSelectedPreviewData",
+        "provideControllerFilterThirdSelectedPreviewData",
+        "provideControllerFilterShortLabelPreviewData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "controllers/provider/ControllerSwitchPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/controllers/provider/ControllerSwitchPreviewParameterProvider.kt",
+      "sha256": "e6ddfb7726f9eedcef6fb0adcb7e0204d831434875dace830a050e1cf656bf1d",
+      "role": "preview-fixture",
+      "familyIds": [
+        "segmented-controller"
+      ],
+      "declarations": [
+        "ControllerSwitchPreviewParameterProvider",
+        "provideControllerSwitchTabLeftSelectedPreviewData",
+        "provideControllerSwitchTabRightSelectedPreviewData",
+        "provideControllerSwitchTabLongLabelsPreviewData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/FileBottomSheetItem.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/FileBottomSheetItem.kt",
+      "sha256": "c4908e135a5310934aaa9b74972908de942d0658081311c1ad13de2789ffa047",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "file-bottom-sheet-item"
+      ],
+      "declarations": [
+        "FileBottomSheetItem",
+        "Modifier.debounceClick"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/bulletpoint/BulletPoint.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/bulletpoint/BulletPoint.kt",
+      "sha256": "6ce3337b81f32ea041add1068b72f59a2af12e6ff9cc86eb4fc150e5263fe7e3",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "bullet-point"
+      ],
+      "declarations": [
+        "BulletPoint"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/clickabletext/CustomClickableText.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/clickabletext/CustomClickableText.kt",
+      "sha256": "f878791450ce86d41828d6c829da171460fa8709c956c61a21388683e046d12f",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "clickable-rich-text"
+      ],
+      "declarations": [
+        "CustomClickableText"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/clickabletext/SemanticsData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/clickabletext/SemanticsData.kt",
+      "sha256": "1b4ce40c90e9a05d022a9ead73b34ded2e87756e3d8ec01efe31558b77671933",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "clickable-rich-text"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "custom/documentrow/DocumentRowData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/documentrow/DocumentRowData.kt",
+      "sha256": "66686b13931fac8efdd5cdba60c76d4999bc432815328f0ef931f23d5928fe31",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "document-row"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "custom/documentrow/SingleCardDocumentRow.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/documentrow/SingleCardDocumentRow.kt",
+      "sha256": "e7c9b011111c33e467af8550ee05c5c1982b5448f950d8d65a57772ee718a500",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "document-row"
+      ],
+      "declarations": [
+        "SingleCardDocumentRow",
+        "RowScope.SingleCardClickableContent",
+        "SingleCardDocumentRowPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/documentrow/provider/SingleCardDocumentRowPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/documentrow/provider/SingleCardDocumentRowPPP.kt",
+      "sha256": "99ed12a81eb2ff632c802b1b16ad932be9f5e3e81ed3a601d153972237c8f6de",
+      "role": "preview-fixture",
+      "familyIds": [
+        "document-row"
+      ],
+      "declarations": [
+        "SingleCardDocumentRowPPP",
+        "getSingleCardDocument",
+        "getSingleCardDocumentWithDescription",
+        "getSingleCardDocumentWithStatus",
+        "getSingleCardDocumentWithDescriptionStatus"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/icon/Icon.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/icon/Icon.kt",
+      "sha256": "b809adec923c75462a3fa96ab2336dbfb438aff6cc697cffba8b97f28f1edc97",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "icon"
+      ],
+      "declarations": [
+        "Icon",
+        "IconPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/icon/IconData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/icon/IconData.kt",
+      "sha256": "b7269f34c792c21d1fa62364d4480b2dc50b1d7c4fc36ac8804da14076d96465",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "icon"
+      ],
+      "declarations": [
+        "Standard",
+        "Background",
+        "class",
+        "RoundedSquare",
+        "class"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/icon/provider/IconPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/icon/provider/IconPreviewParameterProvider.kt",
+      "sha256": "cea60c31d6d8dd251e00f613f16fc5d27cc0bb2637ee396fd55ea3cb9eb98a17",
+      "role": "preview-fixture",
+      "familyIds": [
+        "icon"
+      ],
+      "declarations": [
+        "IconPreviewParameterProvider",
+        "providerIconDataStandard",
+        "providerIconDataBackgroundRounded",
+        "providerIconDataBackgroundSquare",
+        "providerIconDataBackgroundRoundedSquare",
+        "providerIconDataBackgroundRoundedExample"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/singlecard/barcode/BarCodeSingleCard.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/singlecard/barcode/BarCodeSingleCard.kt",
+      "sha256": "365ba5582258cf292567a2355327963c16e5475fc4628e5cb3f041ed75bad346",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "barcode-card"
+      ],
+      "declarations": [
+        "BarCodeSingleCard",
+        "BarCodeSingleCardPreview",
+        "provideBitmap"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/singlecard/barcode/BarCodeSingleCardData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/singlecard/barcode/BarCodeSingleCardData.kt",
+      "sha256": "4fd27360d12e168b18a5d4b9de6d93b2bc4fe341805632f532b7416d426627eb",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "barcode-card"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "custom/singlecard/labelbuttonimage/LabelButtonImageSingleCard.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/singlecard/labelbuttonimage/LabelButtonImageSingleCard.kt",
+      "sha256": "c215de792f9e88607a8859581cadc1f07ca4815698d3cb00b7922531561cf948",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "label-button-image-card"
+      ],
+      "declarations": [
+        "LabelButtonImageSingleCard",
+        "QrCodeCustomSingleCardPreview",
+        "provideBitmap"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "custom/singlecard/labelbuttonimage/LabelButtonImageSingleCardData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/custom/singlecard/labelbuttonimage/LabelButtonImageSingleCardData.kt",
+      "sha256": "01f8720818403b6a0c740c50c3323b06062e2d22e33efc14fafde34358070763",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "label-button-image-card"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "datepicker/DatePickerDataVMS.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/datepicker/DatePickerDataVMS.kt",
+      "sha256": "da38278cad69c91972d9e3cf6fa14114d1f5a7ea95ec050f3b4d423000acac3c",
+      "role": "native-platform-adapter",
+      "familyIds": [
+        "date-picker"
+      ],
+      "declarations": [
+        "DatePickerDataVMS",
+        "isDateSelectable",
+        "getInitialSelectedDate",
+        "DatePickerDataVMSImpl"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "datepicker/DatePickerDialogComponent.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/datepicker/DatePickerDialogComponent.kt",
+      "sha256": "27607d4dc7a9470ca7b21bd48d483ff4f4efd58fef1e94c4a2a701db6daba9a4",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "date-picker"
+      ],
+      "declarations": [
+        "DatePickerDialogComponent",
+        "DatePickerDialogComponentPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "datepicker/DatePickerDialogData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/datepicker/DatePickerDialogData.kt",
+      "sha256": "c5f9bece6a9865d31ed6999330641fed2006a92aa46f21c3fd0453b696547dee",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "date-picker"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "dialog/Dialog.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/dialog/Dialog.kt",
+      "sha256": "df78a6021188a531337f2e90494b7c4502f7250abda55e8805812d7fe042d982",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "dialog"
+      ],
+      "declarations": [
+        "Dialog",
+        "DialogPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "dialog/DialogData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/dialog/DialogData.kt",
+      "sha256": "49c7c28e31df0d2efe8f4cd9af181e7f7a867f4fa517e3805a05808ee52c4321",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "dialog"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "dialog/provider/DialogPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/dialog/provider/DialogPreviewParameterProvider.kt",
+      "sha256": "9e8920a22647dabf2e4befd35d98e520ae42fb6966b69c87834263e084145802",
+      "role": "preview-fixture",
+      "familyIds": [
+        "dialog"
+      ],
+      "declarations": [
+        "DialogPreviewParameterProvider",
+        "provideLongText",
+        "provideDialogLongTextOneButton",
+        "provideDialogLongTextTwoButtons",
+        "provideDialogLongTextThreeButtons",
+        "provideDialogOnlyTitleOneButton",
+        "provideDialogShortTextColoredButton",
+        "provideDialogShortTextWithIcon",
+        "provideDialogHighlightedTextTwoButtons",
+        "getAnnotatedString"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "dropdownbutton/DropDownButton.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/dropdownbutton/DropDownButton.kt",
+      "sha256": "5a987bd42181a02199bfc0a3114419a698438b902cfc66aae74457c211f1c854",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "dropdown"
+      ],
+      "declarations": [
+        "DropDownButton",
+        "DropDownBottomText",
+        "DropDownHelperText",
+        "DropDownButtonState.getLabelColor",
+        "DropDownButtonState.getPlaceholderColor",
+        "DropDownButtonState.getIconColor",
+        "DropDownButtonState.getFilledTextColor",
+        "DropDownButtonState.getBorderStroke",
+        "DropDownClickableRow",
+        "DropDownButtonData.contentDescription",
+        "DropDownButtonPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "dropdownbutton/DropDownButtonData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/dropdownbutton/DropDownButtonData.kt",
+      "sha256": "84793032e09c240b7c11b34f6128c17018ee70ebc11b4f38bdb0f861ba9c1e89",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "dropdown"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "dropdownbutton/DropDownButtonPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/dropdownbutton/DropDownButtonPPP.kt",
+      "sha256": "3468b471e2055bb2447c10b6a997b059e4f44ca51c2036f91fdd49a3c4833609",
+      "role": "preview-fixture",
+      "familyIds": [
+        "dropdown"
+      ],
+      "declarations": [
+        "DropDownButtonPPP"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "emptystate/EmptyState.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/emptystate/EmptyState.kt",
+      "sha256": "d6344def69dfbd556948c7d8907b042493fe560282e156a8c45c03848286227f",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "empty-state"
+      ],
+      "declarations": [
+        "EmptyState",
+        "EmptyStatePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "emptystate/EmptyStateData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/emptystate/EmptyStateData.kt",
+      "sha256": "b176bd1167020be830a83aa5f777ce8bde9b0e749f90c5ad750719b7b6622c5c",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "empty-state"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "emptystate/provider/EmptyStatePreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/emptystate/provider/EmptyStatePreviewParameterProvider.kt",
+      "sha256": "5b83866c65f99e3f0953d43ae32d1804c3a97ab2fd117ea2eb2b20d86acbfc9d",
+      "role": "preview-fixture",
+      "familyIds": [
+        "empty-state"
+      ],
+      "declarations": [
+        "EmptyStatePreviewParameterProvider",
+        "provideEmptyStateDataWithTitle",
+        "provideEmptyStateDataNoTitle",
+        "provideEmptyStateDataWithButton",
+        "provideEmptyStateDataNoTitleWithButton"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "errortext/ErrorText.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/errortext/ErrorText.kt",
+      "sha256": "b7241f5b8e05b3cf401d88cb7ae9f3034537d5653fddb1e3108776e672ce328a",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "error-text"
+      ],
+      "declarations": [
+        "ErrorText"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "filepicker/FilePicker.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/filepicker/FilePicker.kt",
+      "sha256": "36a460ed6012e0620955eca4a271563cfcb521f4de55df65316814c20ead1910",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "file-picker"
+      ],
+      "declarations": [
+        "FilePicker",
+        "FilePickerPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "filepicker/model/FilePickerData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/filepicker/model/FilePickerData.kt",
+      "sha256": "a50d2dd9da529b04ddbce853b1816510cf9fe2221461c1284b2b03a5f5b83751",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "file-picker"
+      ],
+      "declarations": [
+        "FilePickerData.contentDescription"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "filepicker/model/PickerFile.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/filepicker/model/PickerFile.kt",
+      "sha256": "49a1a086a5557f2f2c16d306e4d7bc1942eab03c55af24deef847f3293d133ce",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "file-picker"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "filepicker/provider/FilePickerPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/filepicker/provider/FilePickerPreviewParameterProvider.kt",
+      "sha256": "aed564d45667160c60d8604ff0ccc60dca553b748f5c7a438f69691e532f8700",
+      "role": "preview-fixture",
+      "familyIds": [
+        "file-picker"
+      ],
+      "declarations": [
+        "FilePickerPreviewParameterProvider",
+        "testScreenshotProvider",
+        "createMixedFiles",
+        "createRegularFile",
+        "createTitle",
+        "createImageFile"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "header/Header.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/header/Header.kt",
+      "sha256": "9b1e47e28122ec08a960f06dce55cc53ecf90334ea52fd6af64ba81e0ee7ee9b",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "hero-header"
+      ],
+      "declarations": [
+        "Header",
+        "HeaderPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "header/HeaderData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/header/HeaderData.kt",
+      "sha256": "3abdb18ed85bca2854d2ff3bad2cb7acd30c63742216bac97e35b84c1add8060",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "hero-header"
+      ],
+      "declarations": [
+        "HeaderData",
+        "CustomHeaderIconData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "header/provider/HeaderPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/header/provider/HeaderPreviewParameterProvider.kt",
+      "sha256": "f7ded079b42b71e5ae7ab6ddbe9ce09345b30a90df54759b3b6710a76095bfef",
+      "role": "preview-fixture",
+      "familyIds": [
+        "hero-header"
+      ],
+      "declarations": [
+        "HeaderPreviewParameterProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "helpertext/HelperText.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/helpertext/HelperText.kt",
+      "sha256": "1aa6a7b9e71b55e3cdf8d1fa860abcf8d9a087a713a42103f74a6686890f00c5",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "helper-text"
+      ],
+      "declarations": [
+        "HelperText"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "iconpage/IconPage.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/iconpage/IconPage.kt",
+      "sha256": "00bc43d4a050b028bce93b0bcaaadd0be6ce2fbbb8e9fa251bb8419ff222fa3d",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "icon-page"
+      ],
+      "declarations": [
+        "IconPage",
+        "IconPagePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "iconpage/IconPageBottomContentData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/iconpage/IconPageBottomContentData.kt",
+      "sha256": "cd9d18f76484bea91012c3ff4e7a54029d7b8405b97b72149103191f6ee8cd1b",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "icon-page"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "iconpage/IconPageData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/iconpage/IconPageData.kt",
+      "sha256": "44f1c68e310ae091b70b37f49bcff07632509b37f49d6206fb7068fe69ce78e8",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "icon-page"
+      ],
+      "declarations": [
+        "Empty"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "iconpage/IconPagePreviewProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/iconpage/IconPagePreviewProvider.kt",
+      "sha256": "258a0b373d7eb565bd17d729d0fcf90e1ffbb36d36b8560084b54620a9c352b6",
+      "role": "preview-fixture",
+      "familyIds": [
+        "icon-page"
+      ],
+      "declarations": [
+        "IconPagePreviewProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "image/ImageData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/image/ImageData.kt",
+      "sha256": "5657f25ac6ac9cbfa1d8b046a6d4bb6029704e8f0df0f23f84066c72794ec77d",
+      "role": "model-or-variant-definition",
+      "familyIds": [],
+      "declarations": [],
+      "supportOnlyReason": "Shared Bitmap/image configuration model; this source file declares no composable Image implementation, so it does not create another UI family."
+    },
+    {
+      "platform": "android",
+      "path": "inforow/InfoRow.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/inforow/InfoRow.kt",
+      "sha256": "91560e7dd97836aca3d8207387952e1ee38d5981a3c80c7b7ea172f88a0151a5",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "info-row"
+      ],
+      "declarations": [
+        "DefaultInfoRow",
+        "BulletInfoRow"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "inforow/InfoRowList.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/inforow/InfoRowList.kt",
+      "sha256": "b85b81db508b1e80d013ba1f887165865490b6e5170ba67ea15c5b801e5dcaa0",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "info-row"
+      ],
+      "declarations": [
+        "InfoRowList",
+        "InfoRowListPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "inforow/model/InfoRowData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/inforow/model/InfoRowData.kt",
+      "sha256": "af79ef0f67de66aa0210b3136da6336dd577f3157c9445ece78eaa02de1a926f",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "info-row"
+      ],
+      "declarations": [
+        "Bullet",
+        "Default"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "inforow/model/InfoRowListData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/inforow/model/InfoRowListData.kt",
+      "sha256": "b59b5a0820bba5fa970e11f01b46dc6de65ac0bd2d0b1c8496c0e5e611687b7b",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "info-row"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "inforow/provider/InfoRowPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/inforow/provider/InfoRowPPP.kt",
+      "sha256": "3418848703e5288ba6fe77884c1b74c2dbec77f016b58908652a3bdfa75525b5",
+      "role": "preview-fixture",
+      "familyIds": [
+        "info-row"
+      ],
+      "declarations": [
+        "InfoRowPPP"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "inputdatetime/InputDateTime.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/inputdatetime/InputDateTime.kt",
+      "sha256": "d52d4fd442471a6e8a9fa3070f7c20004b32d4326d871a72ae84a7735cc1df85",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "date-time-input"
+      ],
+      "declarations": [
+        "InputDateTime",
+        "InputDateTimePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "inputdatetime/InputDateTimeData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/inputdatetime/InputDateTimeData.kt",
+      "sha256": "aae8b76808078ecb66164f8752d0c84082969290d81151af8d0e7b9e901aed25",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "date-time-input"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "inputdatetime/provider/InputDateTimePreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/inputdatetime/provider/InputDateTimePreviewParameterProvider.kt",
+      "sha256": "f22f4b00fdfc7e4d1808cc713234b196cb2fd8be7473b0bf401c658b33e41526",
+      "role": "preview-fixture",
+      "familyIds": [
+        "date-time-input"
+      ],
+      "declarations": [
+        "InputDateTimePreviewParameterProvider",
+        "provideInputDateEnabledPlaceholderPreviewData",
+        "provideInputDateEnabledSelectedDatePreviewData",
+        "provideInputDateErrorPlaceholderPreviewData",
+        "provideInputDateErrorSelectedDatePreviewData",
+        "provideInputDateErrorLongMessagePreviewData",
+        "provideInputDateDisabledPlaceholderPreviewData",
+        "provideInputDateDisabledSelectedDatePreviewData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "link/Link.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/link/Link.kt",
+      "sha256": "fd24ce3b4297a6627055b1a0b648e5fb1a8c9a04f0189a719ae4b196ed10ab9b",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "link"
+      ],
+      "declarations": [
+        "Link",
+        "LinkPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "link/LinkData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/link/LinkData.kt",
+      "sha256": "2e16bc7a263c5e4aad0c734d78ecb4dea4879b71b45a36f8ff039f1ee77cc27e",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "link"
+      ],
+      "declarations": [
+        "class"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "link/LinkPreviewProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/link/LinkPreviewProvider.kt",
+      "sha256": "ccb202cc5c3862c8a11be25566ccef8c9dcc0c1b28716c7472ebbec7eb18cfff",
+      "role": "preview-fixture",
+      "familyIds": [
+        "link"
+      ],
+      "declarations": [
+        "LinkPreviewProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "menus/Menu.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/menus/Menu.kt",
+      "sha256": "e42de7872b6179e1e103857e6d0681600d26a8a26afacbb0369ab74e35f36a1d",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "menu"
+      ],
+      "declarations": [
+        "Menu",
+        "MenuPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "menus/MenuData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/menus/MenuData.kt",
+      "sha256": "1faf09bbe83b16fac5b9c84f6fc822ef27efb01975666b6d57165342bd00f10a",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "menu"
+      ],
+      "declarations": [
+        "MenuItem"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "menus/provider/MenuPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/menus/provider/MenuPreviewParameterProvider.kt",
+      "sha256": "33bf45d18af85b844df57aa499caf267c0215a1cb6a9b86559e099c0eef8f37e",
+      "role": "preview-fixture",
+      "familyIds": [
+        "menu"
+      ],
+      "declarations": [
+        "MenuPreviewParameterProvider",
+        "provideMenuData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "pagecontroller/PageController.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/pagecontroller/PageController.kt",
+      "sha256": "5ba14e0c740a94e6245413eb251913cb18c62b92288820f14cca6d4712feed37",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "page-controller"
+      ],
+      "declarations": [
+        "PageController",
+        "PageControllerPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "pagecontroller/PageControllerData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/pagecontroller/PageControllerData.kt",
+      "sha256": "cccc1ed4282792e2ca5e6f1dedf7bf30fb71499252ab12e9abf2bb3e82feabc3",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "page-controller"
+      ],
+      "declarations": [
+        "interface"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "pagecontroller/provider/PageControllerPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/pagecontroller/provider/PageControllerPreviewParameterProvider.kt",
+      "sha256": "e23e9885898a9dc702d4f11f09467976f4affe71060d68b4ace150bccc5e34dd",
+      "role": "preview-fixture",
+      "familyIds": [
+        "page-controller"
+      ],
+      "declarations": [
+        "PageControllerPreviewParameterProvider",
+        "providePageControllerOnboardingPageDataNoButton",
+        "providePageControllerSmallCardDataNoButton",
+        "providePageControllerSmallCardData",
+        "providePageControllerOnboardingPageData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "pageindicator/PageIndicator.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/pageindicator/PageIndicator.kt",
+      "sha256": "c9ee6c2942cf3211968b350dc63a50cde47f7950e7b680c026325f08a9e346ed",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "page-indicator"
+      ],
+      "declarations": [
+        "PageIndicator",
+        "PageIndicatorPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "progressbar/ProgressBar.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/progressbar/ProgressBar.kt",
+      "sha256": "c3263bd985e0415efab6751eb70b6681a9c39081c03d3cfb8d79bb108a5fc22e",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "progress-bar"
+      ],
+      "declarations": [
+        "ProgressBar",
+        "ProgressBarPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "progressbar/ProgressBarData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/progressbar/ProgressBarData.kt",
+      "sha256": "f8780f2d982e8d38f1160d9404bce56149d9fa2bdb1e3696d1ecaabee8b8c4e8",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "progress-bar"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "progressbar/provider/ProgressBarPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/progressbar/provider/ProgressBarPreviewParameterProvider.kt",
+      "sha256": "44ab083fad9344c621479ab545443660a07ca543025c77203e84c4f78a51b81b",
+      "role": "preview-fixture",
+      "familyIds": [
+        "progress-bar"
+      ],
+      "declarations": [
+        "ProgressBarPreviewParameterProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/RadioButton.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/RadioButton.kt",
+      "sha256": "9e817f5f4a81505183ecb83ac20bc6b9f694db0ee88e5ced0570913cdc4d29dd",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": [
+        "RadioButton",
+        "RadioButtonContentBox",
+        "RadioButtonDefault",
+        "RadioButtonHeader",
+        "RadioButtonSupportText",
+        "RadioButtonError",
+        "RadioButtonHelperText",
+        "RadioButtonPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/RadioButtonData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/RadioButtonData.kt",
+      "sha256": "055a1f5ef00aed50c455642c89c2fd258d25eafa427353d5b58c83c949b96532",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/model/RadioButtonItemData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/model/RadioButtonItemData.kt",
+      "sha256": "5b350a32d23e98430e478ad204ab12dfb88ddfc9a7c7a2aa1feffd2c961d59a4",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/model/RadioButtonRow.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/model/RadioButtonRow.kt",
+      "sha256": "222298555a4714a910ea0ff2060c2ba671216f9168dc086096afbf3b483b19d8",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": [
+        "RadioButtonCustomContent",
+        "content"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/model/RadioButtonSupportText.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/model/RadioButtonSupportText.kt",
+      "sha256": "776b944eb372058cbd147f644928251c5375b7d9a166dc7dfc48079e48893fa1",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/model/RadioButtonVariant.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/model/RadioButtonVariant.kt",
+      "sha256": "7a5dda0b4e4c7bb3749c7cf5db39e8adb26729218e411623590cdb06c51b4afa",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/radiobuttoncontent/RadioButtonContent.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/radiobuttoncontent/RadioButtonContent.kt",
+      "sha256": "a0e4d7d4c84fb372a38794149661d369795ec7a89aa46fab8f1ed91c132e01ee",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": [
+        "RadioButtonContent"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/radiobuttondescription/RadioButtonDescription.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/radiobuttondescription/RadioButtonDescription.kt",
+      "sha256": "7c9f96a009aff4316cbd33880f3e44de4ffec2bc3ded76d615c2fa17e4866710",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": [
+        "RadioButtonDescription"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/radiobuttonitem/RadioButtonItem.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/radiobuttonitem/RadioButtonItem.kt",
+      "sha256": "349b731ab6991759e85b2dd21c7bc750cd6369adfdfcd60d60ff175b71e29d04",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "radio"
+      ],
+      "declarations": [
+        "RadioButtonItem",
+        "Color.orRedIfError",
+        "RadioButtonItemPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/radiobuttonitem/RadioButtonItemPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/radiobuttonitem/RadioButtonItemPPP.kt",
+      "sha256": "a334cd1aaeb7882894f0beaba48f7e35ed7ad5c61b2d5bf038a6f4b1067bc15b",
+      "role": "preview-fixture",
+      "familyIds": [
+        "radio"
+      ],
+      "declarations": [
+        "RadioButtonItemPPP",
+        "provideRadioButtonItemData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/radiobuttonrow/RadioButtonRow.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/radiobuttonrow/RadioButtonRow.kt",
+      "sha256": "2e99180fe1f6a1d1651fbd0efa9a719336634a16b9662e192335ee5c94f4aa21",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": [
+        "RadioButtonRow"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/common/radiobuttons/RadioButtons.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/common/radiobuttons/RadioButtons.kt",
+      "sha256": "9afcbdecb904f288bf1478feb1f0379e641c4bd4fedfd9246a67321094fc3711",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": [
+        "RadioButtons",
+        "RadioButtonRow.setValidationState"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "radiobutton/provider/RadioButtonPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/radiobutton/provider/RadioButtonPPP.kt",
+      "sha256": "63256c49b752980ca1e1259675325bbc61a484dd46f8921af2554b03a9cbe82a",
+      "role": "preview-fixture",
+      "familyIds": [
+        "radio-group"
+      ],
+      "declarations": [
+        "RadioButtonPPP",
+        "provideRadioButton",
+        "provideLabel",
+        "provideDescription",
+        "provideHelperText",
+        "provideError",
+        "CustomContent"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "resultmodal/ResultModal.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/resultmodal/ResultModal.kt",
+      "sha256": "e15f409b05a01c5760abc747fcd672409884c6274a0d132162200d2777269fb2",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "result-modal"
+      ],
+      "declarations": [
+        "ResultModal",
+        "ResultModalPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "resultmodal/ResultModalData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/resultmodal/ResultModalData.kt",
+      "sha256": "8f02c47b3e187331a37e673da1ddc1be45bc605286dffafecb9051402c069122",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "result-modal"
+      ],
+      "declarations": [
+        "ResultModalData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "resultmodal/provider/ResultModalPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/resultmodal/provider/ResultModalPreviewParameterProvider.kt",
+      "sha256": "563f26d2f0ca6213143c0164c322b76f20e050a21a83760c08738b46aaeae5b5",
+      "role": "preview-fixture",
+      "familyIds": [
+        "result-modal"
+      ],
+      "declarations": [
+        "ResultModalPreviewParameterProvider",
+        "provideResultModalData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "searchbar/SearchBar.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/searchbar/SearchBar.kt",
+      "sha256": "785941d914e596c375341596d78f121477c3df084a76f8e1911c772a7fbf1bab",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "search-bar"
+      ],
+      "declarations": [
+        "SearchBar",
+        "SearchBarLeadingIcon",
+        "SearchBarTrailingIcon",
+        "SearchBarPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "searchbar/SearchBarData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/searchbar/SearchBarData.kt",
+      "sha256": "7446c8b3452c8745131b30fa73fc4af51e1460c32025e387e0dfaa63cfa2949e",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "search-bar"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "searchbar/provider/SearchBarPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/searchbar/provider/SearchBarPPP.kt",
+      "sha256": "d5ca2b0fa90d3bf6c170622c839fdda01418a03236f87c95fd52068075308b54",
+      "role": "preview-fixture",
+      "familyIds": [
+        "search-bar"
+      ],
+      "declarations": [
+        "SearchBarPPP",
+        "createInitializedState"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "servicewelcomepage/ServiceWelcomePage.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/servicewelcomepage/ServiceWelcomePage.kt",
+      "sha256": "a27c3ccbcc8a4de12b52b76f14f993cd91eaf272f5b3acb4069ed7a8b653c23a",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "service-welcome-page"
+      ],
+      "declarations": [
+        "ServiceWelcomePage",
+        "ServiceWelcomePagePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "servicewelcomepage/ServiceWelcomePageData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/servicewelcomepage/ServiceWelcomePageData.kt",
+      "sha256": "18bf856521fe8af5e128f7e326bf0b17c29a06c20d64dcd22f6260d4c6947e9e",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "service-welcome-page"
+      ],
+      "declarations": [
+        "ServiceWelcomePageData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "servicewelcomepage/provider/ServiceWelcomePagePreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/servicewelcomepage/provider/ServiceWelcomePagePreviewParameterProvider.kt",
+      "sha256": "c957732709e9b5e2aae4712f81939806232ec4654a614c4dc124fb0d158ede12",
+      "role": "preview-fixture",
+      "familyIds": [
+        "service-welcome-page"
+      ],
+      "declarations": [
+        "ServiceWelcomePagePreviewParameterProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/SingleCard.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/SingleCard.kt",
+      "sha256": "87f9e42fb284f6ec2c965bb79a6dd8df2b669a12f33f7ff4cf65dbb98defb8ef",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "SingleCard",
+        "SingleCardPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/SingleCardClickable.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/SingleCardClickable.kt",
+      "sha256": "823311ccde63c39ab617678ab084c889ec3619f53e0f838d66902b058c890a29",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "SingleCardClickable",
+        "RowScope.SingleCardClickableTitleContent",
+        "RowScope.SingleCardClickableTitleDescriptionContent",
+        "RowScope.SingleCardClickableInfoTitleContent",
+        "RowScope.SingleCardClickableIconTitleContent",
+        "RowScope.SingleCardClickableIconTitleColoredContent",
+        "RowScope.SingleCardClickableIconTitleDescriptionContent",
+        "RowScope.SingleCardClickableButtonIconTitleContent",
+        "RowScope.SingleCardClickableButtonIconTitleDescriptionContent",
+        "RowScope.SingleCardClickableDeleteButtonIconTitleContent",
+        "RowScope.SingleCardClickableTitleDescriptionStatusBadgeContent"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/SingleCardData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/SingleCardData.kt",
+      "sha256": "15ea0f0b08defb06cc4ad72d8695d04ccc4c1becdb31d11f1bc1982254fe6452",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "class",
+        "class",
+        "ButtonMore",
+        "Switch",
+        "Title",
+        "TitleDescription",
+        "InfoTitle",
+        "IconTitle",
+        "IconTitleDescription",
+        "TitleStatusBadge",
+        "IconTitleDescriptionLeadingButton",
+        "ImageTitleDescriptionLeadingButton",
+        "Title",
+        "TitleDescription",
+        "InfoTitle",
+        "IconTitle",
+        "IconTitleColored",
+        "ButtonIconTitle",
+        "ButtonIconTitleDescription",
+        "DeleteButtonIconTitle",
+        "IconTitleDescription",
+        "TitleDescriptionStatusBadge",
+        "Title",
+        "IconTitle",
+        "TitleDescription",
+        "Title",
+        "IconTitle",
+        "TitleDescription",
+        "SingleCardInfoState.toIconState",
+        "SingleCardClickableRadioButtonState.toIconState"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/SingleCardInfo.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/SingleCardInfo.kt",
+      "sha256": "6fece7d1f5e02d498ea6219661488d704dc5799019e5d90cb53700640314a975",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "SingleCardInfo",
+        "SingleCardInfoTitleContent",
+        "toggleableModifier",
+        "RowScope.SingleCardInfoTitleDescriptionContent",
+        "RowScope.SingleCardInfoTitleInfoContent",
+        "RowScope.SingleCardInfoTitleIconContent",
+        "RowScope.SingleCardInfoTitleDescriptionIconContent",
+        "RowScope.SingleCardInfoTitleStatusBadgeContent",
+        "RowScope.SingleCardInfoIconTitleDescriptionLeadingButtonContent",
+        "RowScope.SingleCardInfoImageTitleDescriptionLeadingButtonContent"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/SingleCardSelectableCheckbox.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/SingleCardSelectableCheckbox.kt",
+      "sha256": "6800191b76e9db2ca08a597a88c20596ecb9f6d1bef384b1ccbc8f0f45c46840",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "SingleCardSelectableCheckbox",
+        "RowScope.SingleCardSelectableCheckboxTitleContent",
+        "RowScope.SingleCardSelectableCheckboxTitleDescriptionContent",
+        "RowScope.SingleCardSelectableCheckboxIconTitleContent"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/SingleCardSelectableRadioButton.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/SingleCardSelectableRadioButton.kt",
+      "sha256": "b39f945e78d2fbdce9bd019f29e0bf823fde1c55d384cf085cbba434823cbe01",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "SingleCardSelectableRadioButton",
+        "RowScope.SingleCardSelectableRadioButtonTitleContent",
+        "RowScope.SingleCardSelectableRadioButtonTitleDescriptionContent",
+        "RowScope.SingleCardSelectableRadioButtonIconTitleContent"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/SingleCardStatusBadge.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/SingleCardStatusBadge.kt",
+      "sha256": "6139ec443045c5c72f7decc89526d0a0e5501e581f66c5f3901d7c8e09e739ae",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "SingleCardStatusBadge",
+        "StatusBadge",
+        "StatusBadge",
+        "StatusBadge",
+        "StatusBadge",
+        "StatusBadge",
+        "StatusBadge",
+        "StatusBadgePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/SingleCardStatusBadgeData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/SingleCardStatusBadgeData.kt",
+      "sha256": "6ad5f4416339289ec86ef362cf3e66ade4f7a8a33f9d55bff92980470854c4b5",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "Success",
+        "Error",
+        "Warning",
+        "Info",
+        "Active",
+        "Failure",
+        "ActionNeeded",
+        "Canceled",
+        "Green",
+        "Red",
+        "Yellow",
+        "Blue",
+        "Green",
+        "Yellow",
+        "Red",
+        "Blue"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/provider/SingleCardPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/provider/SingleCardPreviewParameterProvider.kt",
+      "sha256": "50165d052b7e7d2d1e1604331103ccc3d5f56623908d898e49454eedbbec2d05",
+      "role": "preview-fixture",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "SingleCardPreviewParameterProvider",
+        "provideSingleCardInfoTitle",
+        "provideSingleCardInfoTitleLong",
+        "provideSingleCardInfoTitleDescription",
+        "provideSingleCardInfoTitleDescriptionLong",
+        "provideSingleCardInfoTitleInfo",
+        "provideSingleCardInfoTitleInfoLong",
+        "provideSingleCardInfoTitleIcon",
+        "provideSingleCardInfoTitleIconBigger",
+        "provideSingleCardInfoTitleDescriptionIcon",
+        "provideSingleCardInfoTitleDescriptionIconDisabledState",
+        "provideSingleCardInfoTitleWithButton",
+        "provideSingleCardInfoTitleWithSwitch",
+        "provideSingleCardInfoDraggableTitle",
+        "provideSingleCardInfoDraggableTitleDescription",
+        "provideSingleCardClickableTitle",
+        "provideSingleCardClickableTitleWithoutTrailingIcon",
+        "provideSingleCardClickableTitleLong",
+        "provideSingleCardClickableTitleDescription",
+        "provideSingleCardClickableTitleDescriptionLong",
+        "provideSingleCardClickableInfoTitle",
+        "provideSingleCardClickableInfoTitleLong",
+        "provideSingleCardClickableIconTitle",
+        "provideSingleCardClickableIconTitleLong",
+        "provideSingleCardClickableIconTitleDescription",
+        "provideSingleCardClickableIconTitleDescriptionLong",
+        "provideSingleCardClickableIconTitleDescriptionLongIconOnOneLineWithTitle",
+        "provideSingleCardClickableIconTitleDescriptionLongFocusState",
+        "provideSingleCardClickableIconTitleDescriptionLongDisabledState",
+        "provideSingleCardClickableTitleDescriptionStatusBadge",
+        "provideSingleCardButtonIconTitle",
+        "provideSingleCardButtonIconTitleDescription",
+        "provideSingleCardDeleteButtonIconTitle",
+        "provideSingleCardSelectableRadioButtonTitleUnselected",
+        "provideSingleCardSelectableRadioButtonTitleUnselectedFocusState",
+        "provideSingleCardSelectableRadioButtonTitleUnselectedDisabledState",
+        "provideSingleCardSelectableRadioButtonTitleUnselectedLong",
+        "provideSingleCardSelectableRadioButtonTitleSelected",
+        "provideSingleCardSelectableRadioButtonIconTitleUnselected",
+        "provideSingleCardSelectableRadioButtonIconTitleUnselectedLong",
+        "provideSingleCardSelectableRadioButtonIconTitleSelected",
+        "provideSingleCardSelectableRadioButtonBiggerIconTitleSelected",
+        "provideSingleCardSelectableRadioButtonTitleDescriptionUnselected",
+        "provideSingleCardSelectableRadioButtonTitleDescriptionUnselectedLong",
+        "provideSingleCardSelectableRadioButtonTitleDescriptionSelected",
+        "provideSingleCardInfoTitleDescriptionStatusBadge"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/provider/SingleCardStatusBadgePreviewProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/provider/SingleCardStatusBadgePreviewProvider.kt",
+      "sha256": "d0cbec882eef0d8611daeb607e87d9075c5c4fb954b17121cde5af4e1f7e5864",
+      "role": "preview-fixture",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "SingleCardStatusBadgePreviewProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/radiobutton/OldRadioButton.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/radiobutton/OldRadioButton.kt",
+      "sha256": "3e5eb5eee20d1291a7ce5dc685aa5bdce25f45a99b2b3a136951b0fecd45b0aa",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "OldRadioButton",
+        "Color.orRedIfInvalid"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "singlecard/radiobutton/OldRadioButtonData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/singlecard/radiobutton/OldRadioButtonData.kt",
+      "sha256": "9ca5768afbcda11a07b6374c1afee37d022abd9f84d9ff574af6a39f73bb2380",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "single-card"
+      ],
+      "declarations": [
+        "RadioButtonId"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "smallcard/SmallCard.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/smallcard/SmallCard.kt",
+      "sha256": "1c19efd9ed1c1cd81328a3b0890bc740e171acdccde20613d7bdcbf0191277d3",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "small-card"
+      ],
+      "declarations": [
+        "SmallCard",
+        "SmallCardSquircle",
+        "SmallCardPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "smallcard/SmallCardData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/smallcard/SmallCardData.kt",
+      "sha256": "0a8a5cf7d63409d443471eb8e14f676b98c8a9b666df156c72636c9279e7d117",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "small-card"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "smallcard/provider/SmallCardPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/smallcard/provider/SmallCardPreviewParameterProvider.kt",
+      "sha256": "e4c777e276cfa0ddab1ce369c21de47478b8972b1afef6eff650977a1d41364f",
+      "role": "preview-fixture",
+      "familyIds": [
+        "small-card"
+      ],
+      "declarations": [
+        "SmallCardPreviewParameterProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "smallcards/SmallCardS.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/smallcards/SmallCardS.kt",
+      "sha256": "8e4f04757dc7da07fe4e2afa7bd2bd60262cb95d0bc1818386dd65925b7c0080",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "shortcut-card"
+      ],
+      "declarations": [
+        "SmallCardS",
+        "SmallCardSPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "smallcards/SmallCardSData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/smallcards/SmallCardSData.kt",
+      "sha256": "67cd764a18712caec57bfe6ee99694ca3ccad10f7361b474f8f8a902e13c53ba",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "shortcut-card"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "smallcards/provider/SmallCardSPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/smallcards/provider/SmallCardSPPP.kt",
+      "sha256": "64683172b49fb70b97ba786b0f46b70e3630689183fe572634b787917ac20398",
+      "role": "preview-fixture",
+      "familyIds": [
+        "shortcut-card"
+      ],
+      "declarations": [
+        "SmallCardSPPP"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "snackbar/SnackBar.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/snackbar/SnackBar.kt",
+      "sha256": "f53382dabfc61f1288cca709b5884b2426d233d7fb57a851ce06818ad1e8c8d5",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "snackbar"
+      ],
+      "declarations": [
+        "SnackBar",
+        "SnackBarPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "snackbar/SnackBarData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/snackbar/SnackBarData.kt",
+      "sha256": "52c101ba17b594db41df0be5c8ae2eca62ee948fdfe8fc3072c9f39889e4be7e",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "snackbar"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "snackbar/provider/SnackBarPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/snackbar/provider/SnackBarPreviewParameterProvider.kt",
+      "sha256": "d10b7fd30583cc6baca4074c8a3dd628669e1f9a3a2deab366a3dc4b33cc6b3d",
+      "role": "preview-fixture",
+      "familyIds": [
+        "snackbar"
+      ],
+      "declarations": [
+        "SnackBarPreviewParameterProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "statusbadge/StatusBadge.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/statusbadge/StatusBadge.kt",
+      "sha256": "546ca635377d82d56a86a3d6166c488c7cb1187469604a7bfc5021e24bd17997",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "status-badge"
+      ],
+      "declarations": [
+        "StatusBadge",
+        "DotIcon",
+        "StatusBadgeWithIconStatus.getIconResId",
+        "StatusBadgeWithIconStatus.getIconColor",
+        "StatusBadgeWithDotStatus.getIconColor",
+        "StatusBadgePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "statusbadge/StatusBadgeData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/statusbadge/StatusBadgeData.kt",
+      "sha256": "ef4367578889eb6d180528eb1dc8a32ca4e31964f723eae83a77e9beac0ea080",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "status-badge"
+      ],
+      "declarations": [
+        "class",
+        "class"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "statusbadge/StatusBadgePreviewProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/statusbadge/StatusBadgePreviewProvider.kt",
+      "sha256": "939bca0707f6736bad05bd80932cfc986b2117dacc8814ab42c568e9e20dcc00",
+      "role": "preview-fixture",
+      "familyIds": [
+        "status-badge"
+      ],
+      "declarations": [
+        "StatusBadgePreviewProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "supportpage/SupportPage.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/supportpage/SupportPage.kt",
+      "sha256": "5998d2efffbabe395ec6af636734de823278622a8280b570ca649c9a8a3ad144",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "support-page"
+      ],
+      "declarations": [
+        "SupportPage",
+        "SupportPagePreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "supportpage/SupportPageData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/supportpage/SupportPageData.kt",
+      "sha256": "130d233acbdd6e2fe4e4e2bd5cdbe60fd0959b9967fc6831232fcc26edb41231",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "support-page"
+      ],
+      "declarations": [
+        "SupportPageData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "supportpage/provider/SupportPagePreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/supportpage/provider/SupportPagePreviewParameterProvider.kt",
+      "sha256": "b53817faa9b20b6d224ae2413a9111f617505eb379fd7a67b1271de638170042",
+      "role": "preview-fixture",
+      "familyIds": [
+        "support-page"
+      ],
+      "declarations": [
+        "SupportPagePreviewParameterProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "switchcomponent/Switch.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/switchcomponent/Switch.kt",
+      "sha256": "7e2d66576a867d5e079d01262048521f8b4d36c023602108d539901a59d65940",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "switch"
+      ],
+      "declarations": [
+        "Switch",
+        "SwitchPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "switchcomponent/SwitchData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/switchcomponent/SwitchData.kt",
+      "sha256": "f01ed8c5a64bd414227700f4179af0588fefb12c5f1e825b04aa9d59bcf71bcc",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "switch"
+      ],
+      "declarations": [
+        "SwitchOnly",
+        "SwitchWithText",
+        "SwitchWithExtras"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "switchcomponent/SwitchOnly.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/switchcomponent/SwitchOnly.kt",
+      "sha256": "ee8a8b57df6548019788e31aa41a85bc8240722b5383b64ad4a7aa33d93aa19e",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "switch"
+      ],
+      "declarations": [
+        "SwitchOnly"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "switchcomponent/SwitchWithExtras.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/switchcomponent/SwitchWithExtras.kt",
+      "sha256": "8405d39639470c8346a76872c0a4ffc79eaf1c4e80ccac47b5083ea718d303b5",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "switch"
+      ],
+      "declarations": [
+        "SwitchWithExtras",
+        "getSwitchLabel"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "switchcomponent/SwitchWithText.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/switchcomponent/SwitchWithText.kt",
+      "sha256": "56fc370fad6224b4f5ac37b2d7564c2803bf076c12763fed736354ac46225dfb",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "switch"
+      ],
+      "declarations": [
+        "SwitchWithText"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "switchcomponent/provider/SwitchPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/switchcomponent/provider/SwitchPreviewParameterProvider.kt",
+      "sha256": "2f4ea7ea364c9aefa673ec484875ebe1a94cdcf0f575d19bef0056af92daa797",
+      "role": "preview-fixture",
+      "familyIds": [
+        "switch"
+      ],
+      "declarations": [
+        "SwitchPreviewParameterProvider"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "textarea/TextArea.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textarea/TextArea.kt",
+      "sha256": "178877037ba5555df87e8e4b1345f0a8156bafafdc57e0162d2c58d482a23629",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "text-area"
+      ],
+      "declarations": [
+        "TextArea",
+        "getBorderWidth",
+        "getCursorBrushColor",
+        "getMinLines",
+        "getMaxLines",
+        "getCardBorderColor",
+        "buildCounter",
+        "TextAreaData.contentDescription",
+        "TextAreaPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "textarea/TextAreaData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textarea/TextAreaData.kt",
+      "sha256": "6608205e47ac5e626646bfb3a0f759a3d4470d52e049b131b27c60fdeb13fab4",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "text-area"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "textarea/provider/TextAreaPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textarea/provider/TextAreaPPP.kt",
+      "sha256": "26bebe260b9c9001fbeeba8017fe6f68683aa3aef62274bcb8609149d1492f8a",
+      "role": "preview-fixture",
+      "familyIds": [
+        "text-area"
+      ],
+      "declarations": [
+        "TextAreaPPP"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "textinput/TextField.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textinput/TextField.kt",
+      "sha256": "c43e6769c55b520ef9b84a94c349fb209dc3b3c86ebfd18804afd4e11b92a7cf",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "text-input"
+      ],
+      "declarations": [
+        "TextField",
+        "TextInputData.contentDescription",
+        "LeftIcon",
+        "RightIcon",
+        "Hint",
+        "Placeholder",
+        "SearchIcon",
+        "RemoveIconButton",
+        "PasswordIconButton"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "textinput/TextFieldPhoneNumber.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textinput/TextFieldPhoneNumber.kt",
+      "sha256": "6cbc7dcd7d9ddbc7b63f0bebc7cd5ee4c0f4cddf3459f9a203508a5924e8f943",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "phone-input"
+      ],
+      "declarations": [
+        "TextFieldPhoneNumber",
+        "Preview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "textinput/TextFieldPin.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textinput/TextFieldPin.kt",
+      "sha256": "4df268385478260c0429db3b18011590d2b6765a09809528d6f3506d076875e8",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "pin-input"
+      ],
+      "declarations": [
+        "TextFieldPin",
+        "PinCharField"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "textinput/TextInput.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textinput/TextInput.kt",
+      "sha256": "f752599122573b73c78a0a2c0f2f2581312552b6e71df238fc2debe55370a099",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "text-input"
+      ],
+      "declarations": [
+        "TextInput",
+        "TextInputPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "textinput/model/TextInputData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textinput/model/TextInputData.kt",
+      "sha256": "0a8814154a13c459b5f0e9ec5290157177f436bb85bc50b39910a7cda2c72dfa",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "text-input"
+      ],
+      "declarations": []
+    },
+    {
+      "platform": "android",
+      "path": "textinput/provider/TextInputPreviewParameterProvider.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textinput/provider/TextInputPreviewParameterProvider.kt",
+      "sha256": "8244f2f97675cfe3d4e20a461de00d1b01ef1ecf58e41320c51bcddcd8571b98",
+      "role": "preview-fixture",
+      "familyIds": [
+        "text-input"
+      ],
+      "declarations": [
+        "TextInputPreviewParameterProvider",
+        "provideTextInputText",
+        "provideTextInputTextWithOptionals",
+        "provideTextInputTextError",
+        "provideTextInputTextDisabled",
+        "provideTextInputNumber",
+        "provideTextInputPassword",
+        "provideTextInputSearch",
+        "provideTextInputPin",
+        "provideTextInputPinError",
+        "provideTextInputPinDisabled",
+        "provideTextInputPhoneNumberFilled",
+        "provideTextInputPhoneNumberInvalidNumber",
+        "provideTextInputPhoneNumberInvalidCountryCode",
+        "provideTextInputPhoneNumberLong",
+        "provideTextInputSearchLong"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "textinput/visualtransformation/MaskType.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textinput/visualtransformation/MaskType.kt",
+      "sha256": "db3c780403f5b40ff4601d944ba2970a1c112609e76a1bb7b70ac9238faa315b",
+      "role": "model-or-variant-definition",
+      "familyIds": [
+        "masked-input"
+      ],
+      "declarations": [
+        "class"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "textinput/visualtransformation/MaskVisualTransformation.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/textinput/visualtransformation/MaskVisualTransformation.kt",
+      "sha256": "d02457c52e1e0e4b296ed19a4e227e76622f1a19ace9cf3f438ceb3c107252f1",
+      "role": "native-style-or-behavior-helper",
+      "familyIds": [
+        "masked-input"
+      ],
+      "declarations": [
+        "MaskVisualTransformation"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "topappbar/TopAppBar.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/topappbar/TopAppBar.kt",
+      "sha256": "ae636b98c2d74643a58d33b35b4450c9fea4c356c5ceab94b4a8f20dafccf25b",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "top-app-bar"
+      ],
+      "declarations": [
+        "TopAppBar",
+        "TopAppBarPreview"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "topappbar/TopAppBarButton.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/topappbar/TopAppBarButton.kt",
+      "sha256": "55c407c74941e2db6e324ce3b47c6b9f0c5ca108a3b8b5a27d83ee016f44e8a4",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "top-app-bar"
+      ],
+      "declarations": [
+        "TopAppBarButton",
+        "MenuType",
+        "NavigationButtonData"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "topappbar/TopAppBarData.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/topappbar/TopAppBarData.kt",
+      "sha256": "bea8570b37856ef629e9ff61fe1322fa193ddeb1b9de6f7833f63b5b7f7ac043",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "top-app-bar"
+      ],
+      "declarations": [
+        "Default",
+        "Sygnet",
+        "Logo",
+        "class",
+        "getButton",
+        "MenuIcon",
+        "class"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "topappbar/TopAppBarPPP.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/topappbar/TopAppBarPPP.kt",
+      "sha256": "da57fb3b36edd1c4eaa37219471913b660fe10cc0fd2102a1981051985c142d0",
+      "role": "preview-fixture",
+      "familyIds": [
+        "top-app-bar"
+      ],
+      "declarations": [
+        "TopAppBarPPP",
+        "getSmallDefaultNoTitleTopAppBar",
+        "getSmallDefaultNoActionsTopAppBar",
+        "getSmallDefaultNoNavigationTopAppBar",
+        "getSmallDefaultWithProgressTopAppBar",
+        "getSmallSygnetTopAppBar",
+        "getSmallLogoTopAppBar",
+        "getSmallDefaultTopAppBar",
+        "getSmallDefaultIconListTopAppBar",
+        "getLargeTopAppBar",
+        "getMediumTopAppBar"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "topappbar/TopAppBarUtil.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/topappbar/TopAppBarUtil.kt",
+      "sha256": "77b58563ab5063901c475f1dcb9956ca40bad8292daff757cee3a1dcb4634b68",
+      "role": "native-style-or-behavior-helper",
+      "familyIds": [
+        "top-app-bar"
+      ],
+      "declarations": [
+        "forceFocusOnStart"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "topappbar/large/LargeTopAppBar.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/topappbar/large/LargeTopAppBar.kt",
+      "sha256": "0119a94cf57b852648a1ea586890868c0b5c18c2e5ec2675d290a2c246a784a3",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "top-app-bar"
+      ],
+      "declarations": [
+        "LargeTopAppBar"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "topappbar/medium/MediumTopAppBar.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/topappbar/medium/MediumTopAppBar.kt",
+      "sha256": "4ad33da8cc576e0b5b4c68d5177adcaec777671cf55d3230af55fb4461d9e726",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "top-app-bar"
+      ],
+      "declarations": [
+        "MediumTopAppBar"
+      ]
+    },
+    {
+      "platform": "android",
+      "path": "topappbar/small/SmallTopAppBar.kt",
+      "absolutePath": "/tmp/mdesign-native/Android/topappbar/small/SmallTopAppBar.kt",
+      "sha256": "96541ff3cb0898af04d2386edaafce5dfe806fda24bfb841753186df1db3597e",
+      "role": "ui-or-public-visual-style-implementation",
+      "familyIds": [
+        "top-app-bar"
+      ],
+      "declarations": [
+        "SmallTopAppBar"
+      ]
+    }
+  ]
+}

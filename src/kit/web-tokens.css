@@ -1,0 +1,12 @@
+/*
+ * mDesign compatibility adapter for the four legacy web color roles still used
+ * by components.css. Values describe observed UI colors; this file is authored
+ * for mDesign and does not contain the portal stylesheet or library presets.
+ * Use the --m-* semantic roles for new components and theme customization.
+ */
+:root {
+  --md-color-grey-10: #f6f8f9;
+  --md-color-grey-40: #d0d4db;
+  --md-color-red-200: #a12408;
+  --md-color-red-300: #7c1502;
+}

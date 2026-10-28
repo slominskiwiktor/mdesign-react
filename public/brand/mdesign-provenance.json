@@ -1,0 +1,43 @@
+{
+  "source": "Project owner supplied replacement artwork",
+  "sourceFile": "public/brand/mdesign-logo.png",
+  "sourceSha256": "705f2e6762efc76521ebb76eead2d30f30140a6f2fd9c8c60f621955a0996b3d",
+  "adaptation": "Resized to 512px and encoded as WebP for runtime use. Composition, background and supplied outline are retained without an additional shape mask.",
+  "texture": {
+    "file": "public/brand/mdesign-blueprint.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 80262,
+    "sha256": "4881d7e65b82f8775cb16481aba24c74d64c49956acf99d72099c9c2a73ab6ab"
+  },
+  "marks": [
+    {
+      "file": "public/brand/mdesign-symbol.svg",
+      "bytes": 107251,
+      "sha256": "41393fb8ee28e295d838cc3b95c8bf032dc634f2c22e157af40e068ac18dd6d7"
+    },
+    {
+      "file": "public/storybook-mark.svg",
+      "bytes": 107364,
+      "sha256": "6dc7a2018e369ebf799e0493ba8ad8b74d37b02152b165057931e3dbdb01396e"
+    },
+    {
+      "file": "public/storybook-mark-dark.svg",
+      "bytes": 107364,
+      "sha256": "3f83f7fd1db39e3f5a0b474dd0a3cc447e6fd30c95aa3d947a7a37324ece04bf"
+    },
+    {
+      "file": "public/favicon.svg",
+      "bytes": 107251,
+      "sha256": "41393fb8ee28e295d838cc3b95c8bf032dc634f2c22e157af40e068ac18dd6d7"
+    }
+  ],
+  "socialPreview": {
+    "file": "public/social-preview.png",
+    "width": 1280,
+    "height": 640,
+    "bytes": 130910,
+    "sha256": "2548bc4f87ac988a22d99b4c80f3119e2bd09ddd5d6f41a18b576cf67cc9bf8d",
+    "origin": "mDesign layout using the project logo"
+  }
+}

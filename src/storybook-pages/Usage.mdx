@@ -1,0 +1,60 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Start/Korzystanie z biblioteki" />
+
+# Korzystanie z biblioteki
+
+## Uruchomienie projektu
+
+Wersja Node znajduje się w `.nvmrc`. Po `nvm use` uruchom `bun install --frozen-lockfile` i `bun run dev`. Główny katalog Storybook działa na porcie 5173. `bun run dev:showcase` uruchamia dodatkowy katalog przykładowych ekranów na porcie 5174.
+
+## Instalacja paczki
+
+Pakiet jest obecnie dystrybuowany lokalnie. Utwórz archiwum poleceniem `bun run pack:lib`. W aplikacji konsumenta zainstaluj wytworzony plik `.tgz`.
+
+```tsx
+import { Button, TextField } from '@mdesign/react';
+import '@mdesign/react/styles.css';
+
+export function ContactForm() {
+  return (
+    <form data-platform="web" data-theme="light">
+      <TextField label="Adres e-mail" name="email" type="email" required />
+      <Button type="submit">Zapisz</Button>
+    </form>
+  );
+}
+```
+
+React oraz React DOM są zależnościami peer. Przed aktualizacją biblioteki sprawdź zakres zgodności w `package.json`.
+
+## Platforma i motyw
+
+Wspólne komponenty korzystają z `data-platform="web"` lub `data-platform="mobile"`. `data-theme="light"` i `data-theme="dark"` ustawiają motyw we własnym poddrzewie interfejsu. Nawigacja, routing, dane i integracje należą do aplikacji konsumenta.
+
+```tsx
+import { LandingButton, LandingProvider } from '@mdesign/react/landing';
+import '@mdesign/react/styles.css';
+
+export function DownloadAction() {
+  return (
+    <LandingProvider>
+      <LandingButton onClick={() => console.info('Pobieranie aplikacji')}>
+        Pobierz aplikację
+      </LandingButton>
+    </LandingProvider>
+  );
+}
+```
+
+Landing ma osobny provider i własny jasny motyw. Formularze, dialogi i grupy złożone mają dokumentację kontekstu przy konkretnym komponencie.
+
+## Podgląd i kod
+
+Controls zmieniają propsy przykładu. Kod w dokumentacji odzwierciedla te ustawienia. Części kompozycyjne, takie jak nagłówek dialogu, są prezentowane razem z wymaganym rodzicem i sąsiednimi elementami. Pola z własnym stanem pokazują również obsługę callbacków. Kolumna wartości domyślnych opisuje implementację API, a Controls bieżące ustawienia przykładu. Wywołania obserwowanych callbacków znajdziesz w panelu Actions. Opcjonalne grafiki w Controls przyjmują obiekt `{ src: "adres obrazu", alt: "opis obrazu" }`; pusty `alt` oznacza dekorację.
+
+## Weryfikacja zmian
+
+`bun run verify` sprawdza generowane tokeny, mapowanie źródeł, stories, typy i testy jednostkowe. `bun run test:stories` uruchamia przykłady i automatyczną kontrolę dostępności w przeglądarce. `bun run test:browser` sprawdza interakcje i geometrię, a `bun run test:visual:retained` porównuje zatwierdzone ujęcia z zapisanymi wzorcami. Ich spis znajduje się w `src/browser/visual-baselines.json`; brak pliku blokuje test. Pełny zestaw `test:visual` obejmuje też przypadki oczekujące na wzorce z macOS Intel.
+
+Snapshoty aktualizuj świadomie po obejrzeniu zmian. Automatyczne testy dostępności uzupełnia ręczna kontrola klawiatury i technologii asystujących.

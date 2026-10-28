@@ -1,0 +1,248 @@
+{
+  "updatedAt": "2026-10-28",
+  "scope": "mDesign illustrations and interface symbols.",
+  "files": [
+    {
+      "file": "demo-app-store.svg",
+      "sha256": "b336b637d71e10316360a8dc4f5606431e02abe706f681e309fb9e1bb09f2b67",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-awards-desktop.svg",
+      "sha256": "52e242b9e34824041ac49943304316a09cfe5e73410600b4ca21fc8a5cf2f2d7",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-awards-mobile.svg",
+      "sha256": "52e242b9e34824041ac49943304316a09cfe5e73410600b4ca21fc8a5cf2f2d7",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-catalog-family.svg",
+      "sha256": "a7dc41c06a7c4984dca8320948945657b7f5cf0db350886a71e9debb0bf02e89",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-catalog-id.svg",
+      "sha256": "e1e67157083d0c025bb7cee85e1cf759c9e8e9b70e56ed10181a81d9a68d0575",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-catalog-pension.svg",
+      "sha256": "fd8551f1c210204c69938c8a0c6efdc6ba33b6b6eac46124e87f35d4360ecd2c",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-catalog-vehicles.svg",
+      "sha256": "b2a6ed6b5072dbe1be03a49573cabfdec201d16d349c82ea21a876a764f1d03e",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-community.svg",
+      "sha256": "b4e7d52f087cfe4256d7c417085cbb745058c2f8a1d4dcfccb6ca3d86613b977",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-cookie-logo.svg",
+      "sha256": "e726a600d0d710bf468f193ebac28f82b8922908fb16ea42b5411720095817fe",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-document-family.svg",
+      "sha256": "033c5d6194a01cff4a462edb75afccc4c3c3e1a9ec2e354bcbf31d69cc6e477e",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-document-id.svg",
+      "sha256": "605ac174d3b55bb5f166bc917303405a488de62eb0dcc9d5a738bdae7720640d",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-document-pension.svg",
+      "sha256": "22f9f58ecaecd8260671bb954f2b7a93c90aacf66d6d5d90535ba3f8873a9f07",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-document-vehicles.svg",
+      "sha256": "79a3b40f215ffe60045308c46c254118fdf7b98bc06d035d6bc72fb6894e2fac",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-download-qr.svg",
+      "sha256": "9dae4ef61dcdbc598e572175acf704c8d15e8579efa631b02af7c516d9086f60",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-emblem.svg",
+      "sha256": "e726a600d0d710bf468f193ebac28f82b8922908fb16ea42b5411720095817fe",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-globe-white.svg",
+      "sha256": "e58e644b728b91efbffcf9169b725e9778a4f7b25ef0910628e12e99a8112a35",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-globe.svg",
+      "sha256": "848eb0d47aabdeb6878f12cde1f5482b541a2a753779f28ea47164ae2b9a0a94",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-google-play.svg",
+      "sha256": "4260f843fffcfe0847f12e5fe07baa4df867198c626b7de87163b0925de8f128",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-hero-background.svg",
+      "sha256": "39ded8c1048b4011b571b670230539e0fe565450937810a1e5188f321fd369af",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-hero-ellipse.svg",
+      "sha256": "39ded8c1048b4011b571b670230539e0fe565450937810a1e5188f321fd369af",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-hero-mobile-background.svg",
+      "sha256": "39ded8c1048b4011b571b670230539e0fe565450937810a1e5188f321fd369af",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-hero.svg",
+      "sha256": "741001f47db47b64c690431ff1c2e0409b98731e765d8989ab068e3c218402ef",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-logo-coi.svg",
+      "sha256": "e726a600d0d710bf468f193ebac28f82b8922908fb16ea42b5411720095817fe",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-logo-mc.svg",
+      "sha256": "e726a600d0d710bf468f193ebac28f82b8922908fb16ea42b5411720095817fe",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-logo.svg",
+      "sha256": "a52a19d1f5d8f89098ec0ab38eaecf2d4f2ef593107c287d4b5dd5f94fb6924b",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-news-1.svg",
+      "sha256": "0db7ac1db3474cc3e1909af9899f0b8d3b23c767a9f255916982cf2e41e3f53f",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-news-2.svg",
+      "sha256": "f990911998b62a213036704e935facff4876764be363f2b659a06ec6b7f10ea9",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-news-3.svg",
+      "sha256": "90334b018e0b9aace39469227d2337b6fb1049500ab401df0714ccbf7e03c117",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-portal-promotion.svg",
+      "sha256": "f1d84f6a513da6cdfa0f6a2e773a5b5e4d75608ae78aba35c373927c1a1d1c45",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-search.svg",
+      "sha256": "52e37a8586bae3aa7a601044184652b73d6e883bbd6453f5249941d5b32e63c4",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-service-1.svg",
+      "sha256": "13132c78ac3d691e3ed508170845739132ed9678fe71696d17a8b69254b07bac",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-service-2.svg",
+      "sha256": "1f75835a708fb5954b57ff1a810c69f021b596bd61813f6b1d9ec702dcb4e972",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-service-all.svg",
+      "sha256": "4b691a16666013613fd3952fd7562aebfb38edb8944f32dc44101253507f200e",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-service-cybersecurity-icon.svg",
+      "sha256": "2487c64a4d6ae519527e622829154d1f2f77af2bc67764afaf0af9c05905f557",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-service-flood-icon.svg",
+      "sha256": "68ef98e6ed6a2037ee70136d574137ebf0e39f3fa0c9fab49a007c0a2df72c95",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-service-pesel-icon.svg",
+      "sha256": "2487c64a4d6ae519527e622829154d1f2f77af2bc67764afaf0af9c05905f557",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-service-pesel.svg",
+      "sha256": "f990911998b62a213036704e935facff4876764be363f2b659a06ec6b7f10ea9",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-service-points-icon.svg",
+      "sha256": "675eddb5256323681f5b2f39084f3ba087dc5e8eccac7f9493c9631fb1b237d5",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-service-points.svg",
+      "sha256": "b2a6ed6b5072dbe1be03a49573cabfdec201d16d349c82ea21a876a764f1d03e",
+      "origin": "mDesign",
+      "license": "MIT"
+    },
+    {
+      "file": "demo-sign-language.svg",
+      "sha256": "1f75835a708fb5954b57ff1a810c69f021b596bd61813f6b1d9ec702dcb4e972",
+      "origin": "mDesign",
+      "license": "MIT"
+    }
+  ],
+  "fonts": "Lato remains under SIL OFL 1.1.",
+  "icons": "Lucide ISC replaces 18 original landing SVGs; names retained for API compatibility."
+}

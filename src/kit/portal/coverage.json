@@ -1,0 +1,1217 @@
+{
+  "version": "1.0.0",
+  "sourceAudit": "scripts/fixtures/source-inventory/portal-0.4.0.json",
+  "verifiedAt": "2026-10-19",
+  "scope": "Public React APIs mapped to desktop source units. Identity-card and photo-preview compositions are outside the component scope.",
+  "items": [
+    {
+      "id": "md:FooterComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "FooterComponent",
+      "sourceSelector": "md-footer",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFooter"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:HeaderUserComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "HeaderUserComponent",
+      "sourceSelector": "md-header-user",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalAccountMenu"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:HeaderComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "HeaderComponent",
+      "sourceSelector": "md-header",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalHeader"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:SidebarComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "SidebarComponent",
+      "sourceSelector": "md-sidebar",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalSidebar"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:LayoutComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "LayoutComponent",
+      "sourceSelector": "md-layout",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalShell"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:ErrorViewComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "ErrorViewComponent",
+      "sourceSelector": "md-error-view",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalErrorView"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:MdFormMessage",
+      "sourceSystem": "md",
+      "sourceUnit": "MdFormMessage",
+      "sourceSelector": "md-form-message",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFormMessage"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:MdFileUploadComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "MdFileUploadComponent",
+      "sourceSelector": "md-file-upload",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFileUpload"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:MdFormField",
+      "sourceSystem": "md",
+      "sourceUnit": "MdFormField",
+      "sourceSelector": "md-form-field",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFormField"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:MdFormLabel",
+      "sourceSystem": "md",
+      "sourceUnit": "MdFormLabel",
+      "sourceSelector": "md-form-label",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFormLabel"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:MdFormCharactersCounter",
+      "sourceSystem": "md",
+      "sourceUnit": "MdFormCharactersCounter",
+      "sourceSelector": "md-form-characters-counter",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalCharacterCounter"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:MdFormHelperText",
+      "sourceSystem": "md",
+      "sourceUnit": "MdFormHelperText",
+      "sourceSelector": "md-form-helper-text",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFormHelperText"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:PanelComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "PanelComponent",
+      "sourceSelector": "md-panel",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalPanel"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:PanelContentComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "PanelContentComponent",
+      "sourceSelector": "md-panel-content",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalPanelContent"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:PanelHeaderComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "PanelHeaderComponent",
+      "sourceSelector": "md-panel-header",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalPanelHeader"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:PanelFooterComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "PanelFooterComponent",
+      "sourceSelector": "md-panel-footer",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalPanelFooter"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:MessageComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "MessageComponent",
+      "sourceSelector": "md-message",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalMessage"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:BreadcrumbComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "BreadcrumbComponent",
+      "sourceSelector": "md-breadcrumb",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalBreadcrumbs"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:ChipComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "ChipComponent",
+      "sourceSelector": "md-chip",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalChip"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:MenuComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "MenuComponent",
+      "sourceSelector": "md-menu",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalMenu"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:DialogFooterComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "DialogFooterComponent",
+      "sourceSelector": "md-dialog-footer",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalDialogFooter"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:DialogContentComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "DialogContentComponent",
+      "sourceSelector": "md-dialog-content",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalDialogContent"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:DialogComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "DialogComponent",
+      "sourceSelector": "md-dialog",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalDialog",
+        "PortalDialogRoot",
+        "PortalDialogSurface",
+        "PortalDialogProvider",
+        "usePortalDialog"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md:DialogHeaderComponent",
+      "sourceSystem": "md",
+      "sourceUnit": "DialogHeaderComponent",
+      "sourceSelector": "md-dialog-header",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalDialogHeader"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "md-directive:MdFileValidatorExtensionDirective",
+      "sourceSystem": "md-directive",
+      "sourceUnit": "MdFileValidatorExtensionDirective",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFileUpload",
+        "validatePortalFiles"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "accept option; validation is implemented in React callbacks, not an Angular directive."
+      ]
+    },
+    {
+      "id": "md-directive:MdFileValidatorMaxFilesizeDirective",
+      "sourceSystem": "md-directive",
+      "sourceUnit": "MdFileValidatorMaxFilesizeDirective",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFileUpload",
+        "validatePortalFiles"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "maxFileSize in bytes."
+      ]
+    },
+    {
+      "id": "md-directive:MdFileValidatorResolutionDirective",
+      "sourceSystem": "md-directive",
+      "sourceUnit": "MdFileValidatorResolutionDirective",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFileUpload"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "imageRules with min/max width/height; browser image decoding is asynchronous."
+      ]
+    },
+    {
+      "id": "md-directive:MdFileValidatorSignatureDirective",
+      "sourceSystem": "md-directive",
+      "sourceUnit": "MdFileValidatorSignatureDirective",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFileUpload"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "validateSignatures supports PNG/JPEG/GIF/PDF/WebP signatures; other types can use validateAsync."
+      ]
+    },
+    {
+      "id": "md-directive:MdFileValidatorUniqueFilenameDirective",
+      "sourceSystem": "md-directive",
+      "sourceUnit": "MdFileValidatorUniqueFilenameDirective",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFileUpload",
+        "validatePortalFiles"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "uniqueNames and existingFiles; case-insensitive comparison."
+      ]
+    },
+    {
+      "id": "md-directive:MdFileValidatorDamagedImageDirective",
+      "sourceSystem": "md-directive",
+      "sourceUnit": "MdFileValidatorDamagedImageDirective",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalFileUpload"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "validateImages uses createImageBitmap with Image fallback; decoders depend on the browser."
+      ]
+    },
+    {
+      "id": "md-directive:BreadcrumbAriaCurrentDirective",
+      "sourceSystem": "md-directive",
+      "sourceUnit": "BreadcrumbAriaCurrentDirective",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalBreadcrumbs"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "aria-current is built into the breadcrumb; no MutationObserver directive is required."
+      ]
+    },
+    {
+      "id": "md-directive:DialogCloseDirective",
+      "sourceSystem": "md-directive",
+      "sourceUnit": "DialogCloseDirective",
+      "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "reactExports": [
+        "PortalDialogClose"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Radix close primitive replaces Angular directive binding."
+      ]
+    },
+    {
+      "id": "gds:accordion",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/accordion",
+      "sourceExports": [
+        "AccordionComponent",
+        "AccordionSectionComponent",
+        "GdsAccordionModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_accordion.FlsefDVmzA.js",
+      "reactExports": [
+        "Accordion"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "React item configuration replaces Angular content projection; sections support controlled expansion through the existing Accordion API."
+      ]
+    },
+    {
+      "id": "gds:alert",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/alert",
+      "sourceExports": [
+        "ALERT_TO_GDS_ICON_MAP",
+        "AlertComponent",
+        "GdsAlertModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_alert.dO8dIA26A6.js",
+      "reactExports": [
+        "Alert",
+        "PortalMessage"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:badge",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/badge",
+      "sourceExports": [
+        "BADGE_TYPES",
+        "BadgeComponent",
+        "GdsBadgeModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_badge.ftU5gm_OcD.js",
+      "reactExports": [
+        "Badge"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:button",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/button",
+      "sourceExports": [
+        "ButtonComponent",
+        "GdsButtonModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_button.e06awy6cq2.js",
+      "reactExports": [
+        "Button",
+        "IconButton"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:card",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/card",
+      "sourceExports": [
+        "CardComponent",
+        "GdsCardModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_card.qX4Id6A1a-.js",
+      "reactExports": [
+        "PortalCard",
+        "PortalCardHeader",
+        "PortalCardContent",
+        "PortalCardFooter"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:checkbox",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/checkbox",
+      "sourceExports": [
+        "CheckboxComponent",
+        "GdsCheckboxModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_checkbox.7yBOxWfinb.js",
+      "reactExports": [
+        "Checkbox"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:datepicker",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/datepicker",
+      "sourceExports": [
+        "DatepickerComponent",
+        "GdsDatepickerModule",
+        "validationMessages"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_datepicker.qO9Xa3u1Qs.js",
+      "reactExports": [
+        "PortalDatePicker",
+        "PortalCalendar"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Date-only values are ISO strings; browser/React implementation replaces Moment/Angular Material adapter contracts."
+      ]
+    },
+    {
+      "id": "gds:dialog",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/dialog",
+      "sourceExports": [
+        "BaseDialogConfig",
+        "ConfirmType",
+        "CustomDefaultValues",
+        "DIALOG_DATA",
+        "DialogCloseDirective",
+        "DialogComponent",
+        "DialogConfig",
+        "DialogContentComponent",
+        "DialogFooterComponent",
+        "DialogHeaderComponent",
+        "DialogRef",
+        "DialogService",
+        "DialogSize",
+        "GdsDialogModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_dialog.3lpM1LNYlh.js",
+      "reactExports": [
+        "PortalDialog",
+        "PortalDialogRoot",
+        "PortalDialogSurface",
+        "PortalDialogHeader",
+        "PortalDialogContent",
+        "PortalDialogFooter",
+        "PortalDialogClose",
+        "PortalDialogProvider",
+        "usePortalDialog"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "React controlled state/context/promise API replaces Angular injection/template/service contracts."
+      ]
+    },
+    {
+      "id": "gds:file-upload",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/file-upload",
+      "sourceExports": [
+        "FileProcessingEventType",
+        "FileSizePipe",
+        "FileUploadService",
+        "GdsFileUploadComponent",
+        "GdsFileUploadModule",
+        "GdsFileValidatorDamagedImageDirective",
+        "GdsFileValidatorExtensionDirective",
+        "GdsFileValidatorMaxFilesizeDirective",
+        "GdsFileValidatorResolutionDirective",
+        "GdsFileValidatorSignatureDirective",
+        "GdsFileValidatorUniqueFilenameDirective",
+        "UploadedFileModel"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_file_upload.Y3MVlVP8g1.js",
+      "reactExports": [
+        "PortalFileUpload",
+        "validatePortalFiles"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "No automatic server transport; provide upload callback and its actual progress. Additional type signatures can be checked with validateAsync."
+      ]
+    },
+    {
+      "id": "gds:footer",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/footer",
+      "sourceExports": [
+        "GdsFooterComponent",
+        "GdsFooterModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_footer.32NZmJAeSU.js",
+      "reactExports": [
+        "PortalFooter"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:header",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/header",
+      "sourceExports": [
+        "GdsHeaderComponent",
+        "GdsHeaderModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_header.a1-5YO9jso.js",
+      "reactExports": [
+        "PortalHeader",
+        "PortalAccountMenu"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:icons",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/icons",
+      "sourceExports": [
+        "GDS_ICONS",
+        "GDS_ICONS_LEGACY",
+        "GdsIconComponent",
+        "GdsIconEnum",
+        "GdsIconModule",
+        "GdsIconNameEnum",
+        "ICON_DEFAULT_COLOR",
+        "IconSize"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_icons.SD2bImB3Eo.js",
+      "reactExports": [
+        "PortalIcon",
+        "portalIconNames"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Original 287 portal SVGs withdrawn on 2026-10-28 because redistribution under MIT was not confirmed. 44 compatibility aliases use native COI MIT icons; geometry differs and other former names are no longer supported."
+      ]
+    },
+    {
+      "id": "gds:identity-card-preview",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/identity-card-preview",
+      "sourceExports": [
+        "GdsIdentityCardPreviewModule",
+        "IdentityCardPreviewComponent"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_identity_card_preview.2yd1erUWNy.js",
+      "reactExports": [],
+      "status": "excluded",
+      "limitations": [
+        "Deliberately outside the product scope: no public React component, document-preview template or photo-editing UI is supplied for this source family. The source inventory entry is retained for traceability and is not counted as implemented or adapted coverage."
+      ],
+      "removedReactExports": [
+        "PortalIdentityCardPreview"
+      ],
+      "scopeDecision": {
+        "kind": "product-scope",
+        "decidedAt": "2026-10-20",
+        "reason": "Identity-document previews and photo editing are outside the component scope of this library."
+      }
+    },
+    {
+      "id": "gds:identity-card",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/identity-card",
+      "sourceExports": [
+        "GdsIdentityCardModule",
+        "IdentityCardComponent"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_identity_card.-LFdPSNNd7.js",
+      "reactExports": [],
+      "status": "excluded",
+      "limitations": [
+        "Deliberately outside the product scope: no public React component, document-preview template or photo-editing UI is supplied for this source family. The source inventory entry is retained for traceability and is not counted as implemented or adapted coverage."
+      ],
+      "removedReactExports": [
+        "PortalIdentityCard"
+      ],
+      "scopeDecision": {
+        "kind": "product-scope",
+        "decidedAt": "2026-10-20",
+        "reason": "Identity-document previews and photo editing are outside the component scope of this library."
+      }
+    },
+    {
+      "id": "gds:info-tip",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/info-tip",
+      "sourceExports": [
+        "GdsInfoTipModule",
+        "InfoTipComponent"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_info_tip.whRYRqumh9.js",
+      "reactExports": [
+        "PortalInfoTip"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:input",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/input",
+      "sourceExports": [
+        "GdsInputComponent",
+        "GdsInputModule",
+        "InputTypes"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_input.yLuNY3pdps.js",
+      "reactExports": [
+        "TextField",
+        "PortalFormField"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Native HTML input/ref and field callbacks replace Angular ControlValueAccessor/formatter integration."
+      ]
+    },
+    {
+      "id": "gds:link",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/link",
+      "sourceExports": [
+        "ExternalLinkComponent",
+        "GdsExternalLinkModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_link.fAIdMRQ9Np.js",
+      "reactExports": [
+        "PortalExternalLink"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:loader",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/loader",
+      "sourceExports": [
+        "GdsLoaderModule",
+        "LoaderComponent"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_loader.RXV7A8gV-u.js",
+      "reactExports": [
+        "PortalLoader"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "A controlled loading prop replaces the Angular loader service."
+      ]
+    },
+    {
+      "id": "gds:logo-information",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/logo-information",
+      "sourceExports": [
+        "GdsLogoInformationComponent",
+        "GdsLogoInformationModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_logo_information._HbThbbs8G.js",
+      "reactExports": [
+        "PortalLogoInformation"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:menu",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/menu",
+      "sourceExports": [
+        "GdsMenuComponent",
+        "GdsMenuItemComponent",
+        "GdsMenuModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_menu.oefHZUETq8.js",
+      "reactExports": [
+        "PortalMenu"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:paginator",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/paginator",
+      "sourceExports": [
+        "GdsPaginatorModule",
+        "PaginatorComponent"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_paginator.pffgqnujOZ.js",
+      "reactExports": [
+        "PortalPagination"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:progress-bar",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/progress-bar",
+      "sourceExports": [
+        "GdsProgressBarModule",
+        "ProgressBarComponent",
+        "ProgressBarModes",
+        "ProgressBarSizes"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_progress_bar.TFFe4mFgCp.js",
+      "reactExports": [
+        "PortalProgress"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:radio-group",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/radio-group",
+      "sourceExports": [
+        "GdsRadioGroupModule",
+        "RadioGroupComponent"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_radio_group.9iPgxFYB8e.js",
+      "reactExports": [
+        "PortalRadioGroup"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:radiobutton",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/radiobutton",
+      "sourceExports": [
+        "GdsRadiobuttonModule",
+        "RadiobuttonComponent"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_radiobutton.FAKkx5OLg8.js",
+      "reactExports": [
+        "Radio"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:select",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/select",
+      "sourceExports": [
+        "GdsSelectModule",
+        "GdsSelectOptionComponent",
+        "SelectComponent",
+        "SelectTypeEnum"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_select.1yDIDkEZfK.js",
+      "reactExports": [
+        "PortalSelect"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "React callback values replace Angular forms. Single/multiple custom listbox, disabled, search, required, error and keyboard behavior are implemented."
+      ]
+    },
+    {
+      "id": "gds:sidenav-wrapper",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/sidenav-wrapper",
+      "sourceExports": [
+        "GdsSidenavWrapperComponent",
+        "GdsSidenavWrapperModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_sidenav_wrapper.hf9wdWHwJy.js",
+      "reactExports": [
+        "PortalShell",
+        "PortalSidebar"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Routing is consumer-owned via value/onValueChange, href and item callbacks."
+      ]
+    },
+    {
+      "id": "gds:sidenav",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/sidenav",
+      "sourceExports": [
+        "GdsSidenavItemComponent",
+        "GdsSidenavModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_sidenav.qxgBbslwtg.js",
+      "reactExports": [
+        "PortalSidebar"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Data-driven React leaf/group items replace Angular component projection."
+      ]
+    },
+    {
+      "id": "gds:snackbar",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/snackbar",
+      "sourceExports": [
+        "DEFAULT_CONFIG",
+        "GdsSnackbarModule",
+        "SNACKBAR_ICON_MAP",
+        "SnackbarComponent",
+        "SnackbarService"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_snackbar.exGzldyRcs.js",
+      "reactExports": [
+        "PortalSnackbar",
+        "PortalSnackbarProvider",
+        "usePortalSnackbar"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Context queue and callbacks replace Angular overlay service."
+      ]
+    },
+    {
+      "id": "gds:status-text",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/status-text",
+      "sourceExports": [
+        "GdsStatusTextComponent",
+        "GdsStatusTextModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_status_text.OL705AcavP.js",
+      "reactExports": [
+        "PortalStatusText"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "gds:table",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/table",
+      "sourceExports": [
+        "GdsCellDefDirective",
+        "GdsCellDirective",
+        "GdsColumnDefDirective",
+        "GdsHeaderCellDefDirective",
+        "GdsHeaderCellDirective",
+        "GdsHeaderRowComponent",
+        "GdsHeaderRowDefDirective",
+        "GdsNoDataRowDirective",
+        "GdsRowComponent",
+        "GdsRowDefDirective",
+        "GdsTableComponent",
+        "GdsTableModule",
+        "ResizeColumnDirective"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_table.siA0YxhJTe.js",
+      "reactExports": [
+        "PortalDataTable"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "React columns/accessors/render callbacks replace Angular CDK column/cell definitions. No CDK directive compatibility is claimed.",
+        "Responsive table defaults to minWidth600px with internal horizontal scrolling; minWidth/layout are configurable. Original GDS exposes auto table layout/min-width tokens."
+      ]
+    },
+    {
+      "id": "gds:tabs",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/tabs",
+      "sourceExports": [
+        "GdsTabsModule",
+        "TabComponent",
+        "TabsComponent",
+        "TabsModes"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_tabs.q-6MhdhLGw.js",
+      "reactExports": [
+        "Tabs"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "React/Radix tab values replace Angular projected tab components."
+      ]
+    },
+    {
+      "id": "gds:textarea",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/textarea",
+      "sourceExports": [
+        "GdsTextareaComponent",
+        "GdsTextareaModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_textarea.B-_6GEn-6F.js",
+      "reactExports": [
+        "TextArea",
+        "PortalFormField"
+      ],
+      "status": "adapter",
+      "limitations": [
+        "Native HTML ref/attributes replace Angular ControlValueAccessor."
+      ]
+    },
+    {
+      "id": "gds:validation-error-message",
+      "sourceSystem": "gds",
+      "sourceUnit": "gov-layout-lib/components/validation-error-message",
+      "sourceExports": [
+        "GdsValidationErrorMessageComponent",
+        "GdsValidationErrorMessageModule"
+      ],
+      "sourceUrl": "https://www.mobywatel.gov.pl/gov_layout_lib_components_validation_error_message.qTeotl36IE.js",
+      "reactExports": [
+        "PortalFormMessage"
+      ],
+      "status": "implemented",
+      "limitations": []
+    },
+    {
+      "id": "portal-widget:mogp-banner",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-banner",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+      "reactExports": [
+        "PortalBanner"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-calendar-header",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-calendar-header",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+      "reactExports": [
+        "PortalCalendar"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-calendar",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-calendar",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+      "reactExports": [
+        "PortalCalendar"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-catalog-specified-services",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-catalog-specified-services",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+      "reactExports": [
+        "PortalServiceLinks",
+        "PortalDashboardTile"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-dashboard-tile",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-dashboard-tile",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+      "reactExports": [
+        "PortalDashboardTile"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-popular-specified-services",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-popular-specified-services",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+      "reactExports": [
+        "PortalServiceLinks",
+        "PortalDashboardTile"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-my-gov",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-my-gov",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+      "reactExports": [
+        "PortalDashboard",
+        "PortalShell"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-tile-navigation",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-tile-navigation",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/chunk-LBZYZMWQ.js",
+      "reactExports": [
+        "PortalServiceLinks"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-page-title",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-page-title",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/chunk-3DH4QRYK.js",
+      "reactExports": [
+        "PortalPageTitle"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-info-banner",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-info-banner",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/dashboard-W7S665AT.js",
+      "reactExports": [
+        "PortalMessage",
+        "PortalServiceCatalog"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-list",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-list",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/dashboard-W7S665AT.js",
+      "reactExports": [
+        "PortalServiceCatalog"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    },
+    {
+      "id": "portal-widget:mogp-dashboard",
+      "sourceSystem": "portal-widget",
+      "sourceUnit": "mogp-dashboard",
+      "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/dashboard-W7S665AT.js",
+      "reactExports": [
+        "PortalServiceCatalog",
+        "PortalPageTitle"
+      ],
+      "status": "implemented",
+      "limitations": [
+        "Public composition; routing, account/session data and service execution are provided by the consumer."
+      ]
+    }
+  ],
+  "counts": {
+    "md": 24,
+    "mdDirective": 8,
+    "gds": 33,
+    "portalWidget": 12,
+    "total": 77
+  },
+  "internalComponents": {
+    "count": 4,
+    "sourceSelectors": [
+      "md-footer-nav",
+      "md-sidebar-menu-item",
+      "md-sidebar-leaf-menu-item",
+      "md-sidebar-group-menu-item"
+    ],
+    "composition": "Internal footer navigation and sidebar leaf/group behavior are included in PortalFooter/PortalSidebar; they were not separate public source exports."
+  },
+  "commonComponents": "Existing Button/IconButton/Checkbox/Radio/TextField/TextArea/Accordion/Badge/Tabs are reused through direct ESM paths; the portal module does not create a main-index import cycle.",
+  "globalLimitations": [
+    "These entries describe implemented APIs, React adapters and explicit product-scope exclusions; they do not claim that all upstream props or Angular runtime contracts are identical.",
+    "Source geometry is based on the deployed MD21.1.27/GDS1.1.75 modules and previously sanitized portal layout evidence. Not every state/view/viewport has an independent screenshot comparison.",
+    "Original web asset rights are distinct from native MIT assets; see portal/provenance.json."
+  ],
+  "tests": "src/kit/portal/portal.test.tsx",
+  "catalog": "src/catalog/PortalCatalog.tsx",
+  "catalogFixtures": "portalCatalogExamples / [data-portal-example]",
+  "coverageCounts": {
+    "inventoried": 77,
+    "inScope": 75,
+    "implemented": 53,
+    "adapters": 22,
+    "excluded": 2
+  }
+}

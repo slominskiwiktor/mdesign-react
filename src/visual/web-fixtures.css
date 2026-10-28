@@ -1,0 +1,15 @@
+/* Host settings observed on the original portal. Kit geometry remains in mp-* styles. */
+html:has(.web-portal-fixture)::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+html:has(.web-portal-fixture)::-webkit-scrollbar-track {
+  background: #d6e1ec;
+}
+html:has(.web-portal-fixture)::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #85acd4;
+}
+.web-portal-fixture {
+  min-height: 100vh;
+}

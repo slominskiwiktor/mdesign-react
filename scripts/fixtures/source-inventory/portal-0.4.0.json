@@ -1,0 +1,2396 @@
+{
+  "version": "0.4.0",
+  "verifiedAt": "2026-10-19",
+  "scope": "Current desktop portal component coverage audit only; no implementation or visual parity claim.",
+  "answerToAllComponentsIncluded": false,
+  "reactApi": {
+    "componentCount": 34,
+    "componentNames": [
+      "Accordion",
+      "Alert",
+      "AppHeader",
+      "Avatar",
+      "Badge",
+      "BottomNavigation",
+      "Breadcrumbs",
+      "Button",
+      "Card",
+      "Checkbox",
+      "Dialog",
+      "Divider",
+      "DocumentArtwork",
+      "DocumentCard",
+      "DocumentTile",
+      "EmptyState",
+      "IconButton",
+      "ListRow",
+      "NativeIcon",
+      "Pagination",
+      "Progress",
+      "Radio",
+      "SearchField",
+      "Select",
+      "ServiceIcon",
+      "ServiceTile",
+      "Sidebar",
+      "Skeleton",
+      "Spinner",
+      "Switch",
+      "Tabs",
+      "TextArea",
+      "TextField",
+      "Tooltip"
+    ],
+    "helpers": [
+      "DialogClose"
+    ],
+    "evidence": "artifacts/coverage/api-0.4.0.json",
+    "unit": "Public React component exports, covering web and mobile together; not an upstream-completeness count."
+  },
+  "statusDefinitions": {
+    "exported-counterpart": "An analogous reusable functional family is exported. This is NOT a claim of exhaustive upstream props, states, layout or behavioral parity.",
+    "partial": "Only part of the source contract exists, or source subparts are integrated into another component.",
+    "example-only": "Present in DesktopScreen demonstration markup, absent from the library public component API.",
+    "missing": "No dedicated exported counterpart for the source unit."
+  },
+  "counting": {
+    "mdPublicComponentTypes": 24,
+    "mdPublicDirectives": 8,
+    "mdInternalComponentTypes": 4,
+    "mdPublicComponentStatusCounts": {
+      "example-only": 3,
+      "partial": 13,
+      "missing": 5,
+      "exported-counterpart": 3
+    },
+    "mdPublicDirectiveStatusCounts": {
+      "missing": 6,
+      "partial": 1,
+      "exported-counterpart": 1
+    },
+    "gdsComponentEntrypointFamilies": 33,
+    "gdsFamilyStatusCounts": {
+      "exported-counterpart": 10,
+      "missing": 10,
+      "partial": 11,
+      "example-only": 2
+    },
+    "primeNgTopLevelSharedEntrypoints": 116,
+    "note": "Do not sum MD/GDS/PrimeNG counts: generations overlap, subcomponent boundaries differ, and PrimeNG includes utilities/directives. PrimeNG availability alone is not a portal-widget inventory."
+  },
+  "sources": [
+    {
+      "url": "https://www.mobywatel.gov.pl/remoteEntry.json",
+      "file": "/tmp/mdesign-coverage-portal/shell-remoteEntry.json",
+      "status": 200,
+      "bytes": 117521,
+      "sha256": "72eec2624329affbb17da0c1aa39c61ebdf711ecc635089136fc368bae26d0f2",
+      "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT"
+    },
+    {
+      "url": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/remoteEntry.json",
+      "file": "/tmp/mdesign-coverage-portal/mfe-remoteEntry.json",
+      "status": 200,
+      "bytes": 458896,
+      "sha256": "470512de9dc7f7d92c2e14abf572093660a002d3e79d9231ca41518313b98e1b",
+      "lastModified": "Thu, 24 Sep 2026 09:51:02 GMT"
+    },
+    {
+      "url": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+      "file": "/tmp/mdesign-coverage-portal/md-components.js",
+      "status": 200,
+      "bytes": 274504,
+      "sha256": "0b04994758b8e6b7ea8eecbb92c00e3c221e1dfbe52f00d440e0d2bbe7804201",
+      "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT"
+    }
+  ],
+  "md": {
+    "library": "primeng-mobywatel-lib",
+    "version": "21.1.27",
+    "componentTypes": [
+      {
+        "variable": "ct",
+        "export": "FooterComponent",
+        "kind": "Component",
+        "selector": "\"md-footer\"",
+        "selectorParts": [
+          "md-footer"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "example-only",
+        "reactExports": [],
+        "note": "Current portal footer is inline in DesktopScreen, not a public Footer export."
+      },
+      {
+        "variable": "ut",
+        "export": "HeaderUserComponent",
+        "kind": "Component",
+        "selector": "\"md-header-user\"",
+        "selectorParts": [
+          "md-header-user"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "example-only",
+        "reactExports": [
+          "Avatar"
+        ],
+        "note": "Account/user menu is private DesktopScreen markup. Avatar is not the complete account widget."
+      },
+      {
+        "variable": "mt",
+        "export": "HeaderComponent",
+        "kind": "Component",
+        "selector": "\"md-header\"",
+        "selectorParts": [
+          "md-header"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "AppHeader"
+        ],
+        "note": "Generic brand/title/leading/actions slots; actual portal header/account behavior remains in DesktopScreen."
+      },
+      {
+        "variable": "vt",
+        "export": "SidebarComponent",
+        "kind": "Component",
+        "selector": "\"md-sidebar\"",
+        "selectorParts": [
+          "md-sidebar"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "Sidebar"
+        ],
+        "note": "Flat controlled item API; upstream router-aware leaf/group/expandable sidebar contracts are not all represented."
+      },
+      {
+        "variable": "Un",
+        "export": "LayoutComponent",
+        "kind": "Component",
+        "selector": "\"md-layout\"",
+        "selectorParts": [
+          "md-layout"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "example-only",
+        "reactExports": [],
+        "note": "Responsive authenticated shell is implemented in DesktopScreen; no public Layout export."
+      },
+      {
+        "variable": "$n",
+        "export": "ErrorViewComponent",
+        "kind": "Component",
+        "selector": "\"md-error-view\"",
+        "selectorParts": [
+          "md-error-view"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "No dedicated md-error-view counterpart/configuration API; EmptyState is a generic empty-state primitive."
+      },
+      {
+        "variable": "xt",
+        "export": "MdFormMessage",
+        "kind": "Component",
+        "selector": "\"md-form-message\"",
+        "selectorParts": [
+          "md-form-message"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "TextField",
+          "TextArea",
+          "Select",
+          "Checkbox",
+          "Radio"
+        ],
+        "note": "Error/hint text is integrated into controls; no standalone MdFormMessage export."
+      },
+      {
+        "variable": "M",
+        "export": "MdFileUploadComponent",
+        "kind": "Component",
+        "selector": "\"md-file-upload\"",
+        "selectorParts": [
+          "md-file-upload"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "No upload/dropzone/file progress/validation component or upload service API."
+      },
+      {
+        "variable": "Jn",
+        "export": "MdFormField",
+        "kind": "Component",
+        "selector": "\"md-form-field\"",
+        "selectorParts": [
+          "md-form-field"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "TextField",
+          "TextArea",
+          "Select"
+        ],
+        "note": "Integrated field wrappers exist; no reusable content-projection field container API."
+      },
+      {
+        "variable": "ea",
+        "export": "MdFormLabel",
+        "kind": "Component",
+        "selector": "\"md-form-label\"",
+        "selectorParts": [
+          "md-form-label"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "TextField",
+          "TextArea",
+          "Select",
+          "Checkbox",
+          "Radio"
+        ],
+        "note": "Labels are integrated into individual controls; no standalone form-label export."
+      },
+      {
+        "variable": "oa",
+        "export": "MdFormCharactersCounter",
+        "kind": "Component",
+        "selector": "\"md-form-characters-counter\"",
+        "selectorParts": [
+          "md-form-characters-counter"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "No character counter export or integrated remaining-character feature."
+      },
+      {
+        "variable": "ra",
+        "export": "MdFormHelperText",
+        "kind": "Component",
+        "selector": "\"md-form-helper-text\"",
+        "selectorParts": [
+          "md-form-helper-text"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "TextField",
+          "TextArea",
+          "Select",
+          "Checkbox",
+          "Radio"
+        ],
+        "note": "Hints are integrated into controls; no independent helper-text export."
+      },
+      {
+        "variable": "ta",
+        "export": "PanelComponent",
+        "kind": "Component",
+        "selector": "\"md-panel\"",
+        "selectorParts": [
+          "md-panel"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "Card",
+          "Accordion"
+        ],
+        "note": "Card/Accordion provide related surfaces, not the complete md-panel composition/API."
+      },
+      {
+        "variable": "ia",
+        "export": "PanelContentComponent",
+        "kind": "Component",
+        "selector": "\"md-panel-content\"",
+        "selectorParts": [
+          "md-panel-content"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "Card"
+        ],
+        "note": "Card children cover a content slot; no separate PanelContent API."
+      },
+      {
+        "variable": "na",
+        "export": "PanelHeaderComponent",
+        "kind": "Component",
+        "selector": "\"md-panel-header\"",
+        "selectorParts": [
+          "md-panel-header"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "Card"
+        ],
+        "note": "Card title/subtitle cover some header content; no full PanelHeader API."
+      },
+      {
+        "variable": "aa",
+        "export": "PanelFooterComponent",
+        "kind": "Component",
+        "selector": "\"md-panel-footer\"",
+        "selectorParts": [
+          "md-panel-footer"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "Card"
+        ],
+        "note": "Card footer slot exists; no separate PanelFooter API."
+      },
+      {
+        "variable": "da",
+        "export": "MessageComponent",
+        "kind": "Component",
+        "selector": "\"md-message\"",
+        "selectorParts": [
+          "md-message"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "exported-counterpart",
+        "reactExports": [
+          "Alert"
+        ],
+        "note": "Related severity/message component is exported; full upstream API parity is not asserted."
+      },
+      {
+        "variable": "la",
+        "export": "BreadcrumbComponent",
+        "kind": "Component",
+        "selector": "\"md-breadcrumb\"",
+        "selectorParts": [
+          "md-breadcrumb"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "exported-counterpart",
+        "reactExports": [
+          "Breadcrumbs"
+        ],
+        "note": "Exported breadcrumb family; full router/model and all upstream variants are not audited."
+      },
+      {
+        "variable": "ca",
+        "export": "ChipComponent",
+        "kind": "Component",
+        "selector": "\"md-chip\"",
+        "selectorParts": [
+          "md-chip"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "No Chip/removable-chip export; Badge is a different primitive."
+      },
+      {
+        "variable": "sa",
+        "export": "MenuComponent",
+        "kind": "Component",
+        "selector": "\"md-menu\"",
+        "selectorParts": [
+          "md-menu"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "No popup/action-menu export; DesktopScreen account menu is private example markup."
+      },
+      {
+        "variable": "pa",
+        "export": "DialogFooterComponent",
+        "kind": "Component",
+        "selector": "\"md-dialog-footer\"",
+        "selectorParts": [
+          "md-dialog-footer"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "Dialog"
+        ],
+        "note": "Dialog footer slot exists; no separate public DialogFooter."
+      },
+      {
+        "variable": "fa",
+        "export": "DialogContentComponent",
+        "kind": "Component",
+        "selector": "\"md-dialog-content\"",
+        "selectorParts": [
+          "md-dialog-content"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "Dialog"
+        ],
+        "note": "Dialog children represent body content; no separately exported DialogContent."
+      },
+      {
+        "variable": "cn",
+        "export": "DialogComponent",
+        "kind": "Component",
+        "selector": "\"md-dialog\"",
+        "selectorParts": [
+          "md-dialog"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "exported-counterpart",
+        "reactExports": [
+          "Dialog",
+          "DialogClose"
+        ],
+        "note": "Reusable dialog family exists; not all md dialog sizes/service/template configuration contracts are exported."
+      },
+      {
+        "variable": "ba",
+        "export": "DialogHeaderComponent",
+        "kind": "Component",
+        "selector": "\"md-dialog-header\"",
+        "selectorParts": [
+          "md-dialog-header"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "Dialog"
+        ],
+        "note": "Title/description/close are integrated in Dialog; no separate public DialogHeader."
+      }
+    ],
+    "directives": [
+      {
+        "variable": "Xn",
+        "export": "MdFileValidatorExtensionDirective",
+        "kind": "Directive",
+        "selector": "\"md-file-upload\",\"validateExtension\",\"\"",
+        "selectorParts": [
+          "md-file-upload",
+          "validateExtension",
+          ""
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "File validator is absent together with FileUpload."
+      },
+      {
+        "variable": "Gn",
+        "export": "MdFileValidatorMaxFilesizeDirective",
+        "kind": "Directive",
+        "selector": "\"md-file-upload\",\"validateMaxFilesize\",\"\"",
+        "selectorParts": [
+          "md-file-upload",
+          "validateMaxFilesize",
+          ""
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "File validator is absent together with FileUpload."
+      },
+      {
+        "variable": "Yn",
+        "export": "MdFileValidatorResolutionDirective",
+        "kind": "Directive",
+        "selector": "\"md-file-upload\",\"validateResolution\",\"\"",
+        "selectorParts": [
+          "md-file-upload",
+          "validateResolution",
+          ""
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "File validator is absent together with FileUpload."
+      },
+      {
+        "variable": "Kn",
+        "export": "MdFileValidatorSignatureDirective",
+        "kind": "Directive",
+        "selector": "\"md-file-upload\",\"validateSignature\",\"\"",
+        "selectorParts": [
+          "md-file-upload",
+          "validateSignature",
+          ""
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "File validator is absent together with FileUpload."
+      },
+      {
+        "variable": "Qn",
+        "export": "MdFileValidatorUniqueFilenameDirective",
+        "kind": "Directive",
+        "selector": "\"md-file-upload\",\"validateUniqueFilename\",\"\"",
+        "selectorParts": [
+          "md-file-upload",
+          "validateUniqueFilename",
+          ""
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "File validator is absent together with FileUpload."
+      },
+      {
+        "variable": "Zn",
+        "export": "MdFileValidatorDamagedImageDirective",
+        "kind": "Directive",
+        "selector": "\"md-file-upload\",\"validateDamagedImage\",\"\"",
+        "selectorParts": [
+          "md-file-upload",
+          "validateDamagedImage",
+          ""
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "missing",
+        "reactExports": [],
+        "note": "File validator is absent together with FileUpload."
+      },
+      {
+        "variable": "ga",
+        "export": "BreadcrumbAriaCurrentDirective",
+        "kind": "Directive",
+        "selector": "\"\",\"mdBreadcrumbAriaCurrent\",\"\"",
+        "selectorParts": [
+          "",
+          "mdBreadcrumbAriaCurrent",
+          ""
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "partial",
+        "reactExports": [
+          "Breadcrumbs"
+        ],
+        "note": "Current-page semantics are embedded in Breadcrumbs; no independent directive API."
+      },
+      {
+        "variable": "ha",
+        "export": "DialogCloseDirective",
+        "kind": "Directive",
+        "selector": "\"\",\"mdDialogClose\",\"\"",
+        "selectorParts": [
+          "",
+          "mdDialogClose",
+          ""
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js",
+        "status": "exported-counterpart",
+        "reactExports": [
+          "DialogClose"
+        ],
+        "note": "Radix DialogClose helper covers the close action; not Angular directive compatibility."
+      }
+    ],
+    "internalComponentTypes": [
+      {
+        "variable": "lt",
+        "export": null,
+        "kind": "Component",
+        "selector": "\"md-footer-nav\"",
+        "selectorParts": [
+          "md-footer-nav"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js"
+      },
+      {
+        "variable": "Be",
+        "export": null,
+        "kind": "Component",
+        "selector": "\"md-sidebar-menu-item\"",
+        "selectorParts": [
+          "md-sidebar-menu-item"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js"
+      },
+      {
+        "variable": "Ee",
+        "export": null,
+        "kind": "Component",
+        "selector": "\"md-sidebar-leaf-menu-item\"",
+        "selectorParts": [
+          "md-sidebar-leaf-menu-item"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js"
+      },
+      {
+        "variable": "ht",
+        "export": null,
+        "kind": "Component",
+        "selector": "\"md-sidebar-group-menu-item\"",
+        "selectorParts": [
+          "md-sidebar-group-menu-item"
+        ],
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_mobywatel_lib.QUbpFM6fB_.js"
+      }
+    ],
+    "excludedNonVisualExports": "Services, tokens, enums, models, helper functions and pipes are not counted as UI component types."
+  },
+  "gds": {
+    "library": "gov-layout-lib",
+    "versions": [
+      "1.1.75"
+    ],
+    "families": [
+      {
+        "module": "gov-layout-lib/components/accordion",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_accordion.FlsefDVmzA.js",
+        "status": "exported-counterpart",
+        "sha256": "4240025afc4e0bbb1550a653017e40735f20b79f7c2e96271d72cb156b66198b",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 9292,
+        "exports": [
+          "AccordionComponent",
+          "AccordionSectionComponent",
+          "GdsAccordionModule"
+        ],
+        "selectors": [
+          "\"gds-accordion-section\"",
+          "\"gds-accordion\""
+        ],
+        "family": "accordion",
+        "reactExports": [
+          "Accordion"
+        ],
+        "note": "Reusable accordion family.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/alert",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_alert.dO8dIA26A6.js",
+        "status": "exported-counterpart",
+        "sha256": "928f14f512321fc2d622ff6f49905b424c07fe8eeb228df2fe9576809425dac0",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 8000,
+        "exports": [
+          "ALERT_TO_GDS_ICON_MAP",
+          "AlertComponent",
+          "GdsAlertModule"
+        ],
+        "selectors": [
+          "\"gds-alert\""
+        ],
+        "family": "alert",
+        "reactExports": [
+          "Alert"
+        ],
+        "note": "Reusable severity alert family.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/badge",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_badge.ftU5gm_OcD.js",
+        "status": "exported-counterpart",
+        "sha256": "00e94968246e1f3684ec388c44137c3c288a64e5850dfacbd1216980b66344bb",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 7566,
+        "exports": [
+          "BADGE_TYPES",
+          "BadgeComponent",
+          "GdsBadgeModule"
+        ],
+        "selectors": [
+          "\"gds-badge\""
+        ],
+        "family": "badge",
+        "reactExports": [
+          "Badge"
+        ],
+        "note": "Reusable badge family.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/button",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_button.e06awy6cq2.js",
+        "status": "exported-counterpart",
+        "sha256": "7862bd140f7b2d420a88e945ec289f6eeb6ad65c22fa298b64395b1ba5047e71",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 19187,
+        "exports": [
+          "ButtonComponent",
+          "GdsButtonModule"
+        ],
+        "selectors": [
+          "\"gds-button\""
+        ],
+        "family": "button",
+        "reactExports": [
+          "Button",
+          "IconButton"
+        ],
+        "note": "Reusable button family.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/card",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_card.qX4Id6A1a-.js",
+        "status": "exported-counterpart",
+        "sha256": "fe15c1e56eaa8f8765096726610013c66963fd607ac7ed0cb386e35e2bebe783",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 4333,
+        "exports": [
+          "CardComponent",
+          "GdsCardModule"
+        ],
+        "selectors": [
+          "\"gds-card\""
+        ],
+        "family": "card",
+        "reactExports": [
+          "Card"
+        ],
+        "note": "Reusable card family.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/checkbox",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_checkbox.7yBOxWfinb.js",
+        "status": "exported-counterpart",
+        "sha256": "47342bdc664deb4aa0597282de297f18442d67814698b88db2752524c51aa88e",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 25511,
+        "exports": [
+          "CheckboxComponent",
+          "GdsCheckboxModule"
+        ],
+        "selectors": [
+          "\"gds-checkbox\""
+        ],
+        "family": "checkbox",
+        "reactExports": [
+          "Checkbox"
+        ],
+        "note": "Reusable checkbox family.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/datepicker",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_datepicker.qO9Xa3u1Qs.js",
+        "status": "missing",
+        "sha256": "05aba0f633bf6328ee5cac4aaf9e6909a3c63589e42bd99a6b34875995811f2d",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 29342,
+        "exports": [
+          "DatepickerComponent",
+          "GdsDatepickerModule",
+          "validationMessages"
+        ],
+        "selectors": [
+          "\"gds-datepicker-header\"",
+          "\"gds-datepicker\""
+        ],
+        "family": "datepicker",
+        "reactExports": [],
+        "note": "No DatePicker. The private dashboard calendar is not an input/date-picker API.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/dialog",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_dialog.3lpM1LNYlh.js",
+        "status": "partial",
+        "sha256": "36d9c27f67f6fad413bd3914810892547ab4228b5a6b4afb0b0a3b437f70a18c",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 14298,
+        "exports": [
+          "BaseDialogConfig",
+          "ConfirmType",
+          "CustomDefaultValues",
+          "DIALOG_DATA",
+          "DialogCloseDirective",
+          "DialogComponent",
+          "DialogConfig",
+          "DialogContentComponent",
+          "DialogFooterComponent",
+          "DialogHeaderComponent",
+          "DialogRef",
+          "DialogService",
+          "DialogSize",
+          "GdsDialogModule"
+        ],
+        "selectors": [
+          "\"gds-dialog\"",
+          "\"gds-dialog-content\"",
+          "\"gds-dialog-footer\"",
+          "\"gds-dialog-header\"",
+          "\"\",\"gdsDialogClose\",\"\""
+        ],
+        "family": "dialog",
+        "reactExports": [
+          "Dialog",
+          "DialogClose"
+        ],
+        "note": "Dialog family exists, but header/content/footer/service/size contracts are not fully exported.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/file-upload",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_file_upload.Y3MVlVP8g1.js",
+        "status": "missing",
+        "sha256": "f8c90ab81caeaf9bc15386921fae149f74b99bcc9a27a8bef98c162691ba2b2b",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 304083,
+        "exports": [
+          "FileProcessingEventType",
+          "FileSizePipe",
+          "FileUploadService",
+          "GdsFileUploadComponent",
+          "GdsFileUploadModule",
+          "GdsFileValidatorDamagedImageDirective",
+          "GdsFileValidatorExtensionDirective",
+          "GdsFileValidatorMaxFilesizeDirective",
+          "GdsFileValidatorResolutionDirective",
+          "GdsFileValidatorSignatureDirective",
+          "GdsFileValidatorUniqueFilenameDirective",
+          "UploadedFileModel"
+        ],
+        "selectors": [
+          "\"gds-file-upload\"",
+          "\"gds-file-upload\",\"validateDamagedImage\",\"\"",
+          "\"gds-file-upload\",\"validateExtension\",\"\"",
+          "\"gds-file-upload\",\"validateMaxFilesize\",\"\"",
+          "\"gds-file-upload\",\"validateResolution\",\"\"",
+          "\"gds-file-upload\",\"validateSignature\",\"\"",
+          "\"gds-file-upload\",\"validateUniqueFilename\",\"\""
+        ],
+        "family": "file-upload",
+        "reactExports": [],
+        "note": "No file upload, dropzone, progress queue or six validator APIs.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/footer",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_footer.32NZmJAeSU.js",
+        "status": "example-only",
+        "sha256": "9f51b7fae7acbcf8c9da48d7f0c294b8f9be0ce5235633efa17baae4accb12f4",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 12031,
+        "exports": [
+          "GdsFooterComponent",
+          "GdsFooterModule"
+        ],
+        "selectors": [
+          "\"gds-footer\",\"footerConfig\",\"\""
+        ],
+        "family": "footer",
+        "reactExports": [],
+        "note": "Portal footer exists only in DesktopScreen.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/header",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_header.a1-5YO9jso.js",
+        "status": "partial",
+        "sha256": "666339c45148eed8403ce75b6d1f648aa55c945cce6f6ecc4b5f2aa20b93e6e1",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 20785,
+        "exports": [
+          "GdsHeaderComponent",
+          "GdsHeaderModule"
+        ],
+        "selectors": [
+          "\"gds-header-user\"",
+          "\"gds-header\",\"headerConfig\",\"\""
+        ],
+        "family": "header",
+        "reactExports": [
+          "AppHeader"
+        ],
+        "note": "Generic slots exist; source portal account/header composition is private example markup.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/icons",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_icons.SD2bImB3Eo.js",
+        "status": "partial",
+        "sha256": "c29a1506f9fbfc141ad1d12a104883155f4eaf0258d454460000cde45bebd7fd",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 214578,
+        "exports": [
+          "GDS_ICONS",
+          "GDS_ICONS_LEGACY",
+          "GdsIconComponent",
+          "GdsIconEnum",
+          "GdsIconModule",
+          "GdsIconNameEnum",
+          "ICON_DEFAULT_COLOR",
+          "IconSize"
+        ],
+        "selectors": [
+          "\"gds-icon\""
+        ],
+        "family": "icons",
+        "reactExports": [
+          "NativeIcon",
+          "ServiceIcon"
+        ],
+        "note": "These expose native mobile icons. DesktopScreen contains a private subset of official web SVG; no full GDS icon registry export.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/identity-card-preview",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_identity_card_preview.2yd1erUWNy.js",
+        "status": "missing",
+        "sha256": "3b537a1b819879a64da288ad74e32832affc84334b006f7b0634ef45bc1af785",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 1823443,
+        "exports": [
+          "GdsIdentityCardPreviewModule",
+          "IdentityCardPreviewComponent"
+        ],
+        "selectors": [
+          "\"gds-identity-card-preview\""
+        ],
+        "family": "identity-card-preview",
+        "reactExports": [],
+        "note": "No desktop IdentityCardPreview; mobile DocumentTile/DocumentCard are different components.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/identity-card",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_identity_card.-LFdPSNNd7.js",
+        "status": "missing",
+        "sha256": "92c3fc5d7b54fe9017b981704f16abd8c808c87a23f1ce6352321a1bd58d72aa",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 8392,
+        "exports": [
+          "GdsIdentityCardModule",
+          "IdentityCardComponent"
+        ],
+        "selectors": [
+          "\"gds-identity-card\""
+        ],
+        "family": "identity-card",
+        "reactExports": [],
+        "note": "No desktop IdentityCard widget; mobile document artwork is not this GDS API.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/info-tip",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_info_tip.whRYRqumh9.js",
+        "status": "partial",
+        "sha256": "8050c0ebe4154706fba16dcf44c898d62df22aa04d19ee447639d4c5b9370dda",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 2017,
+        "exports": [
+          "GdsInfoTipModule",
+          "InfoTipComponent"
+        ],
+        "selectors": [
+          "\"gds-info-tip\""
+        ],
+        "family": "info-tip",
+        "reactExports": [
+          "Tooltip"
+        ],
+        "note": "Generic Tooltip exists, not all source InfoTip behavior/configuration.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/input",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_input.yLuNY3pdps.js",
+        "status": "exported-counterpart",
+        "sha256": "01e0bb200e8bf9e452e40a44a67d8d7e46bd79b4684ab810a33fd0606b2d2e6c",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 31930,
+        "exports": [
+          "GdsInputComponent",
+          "GdsInputModule",
+          "InputTypes"
+        ],
+        "selectors": [
+          "\"gds-input\""
+        ],
+        "family": "input",
+        "reactExports": [
+          "TextField"
+        ],
+        "note": "Reusable input family; no exhaustive upstream API claim.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/link",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_link.fAIdMRQ9Np.js",
+        "status": "missing",
+        "sha256": "6244607640d2c3dc746f5c4b1222ceeece9b93e69fbb28958511603194a29a82",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 7160,
+        "exports": [
+          "ExternalLinkComponent",
+          "GdsExternalLinkModule"
+        ],
+        "selectors": [
+          "\"gds-external-link\",\"label\",\"\""
+        ],
+        "family": "link",
+        "reactExports": [],
+        "note": "No standalone ExternalLink export with its source contract.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/loader",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_loader.RXV7A8gV-u.js",
+        "status": "partial",
+        "sha256": "a9a44c540d6140f8312eebd3085a66c6be3195b9957a1f1e3729100a0c897dd0",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 2870,
+        "exports": [
+          "GdsLoaderModule",
+          "LoaderComponent"
+        ],
+        "selectors": [
+          "\"gds-loader\""
+        ],
+        "family": "loader",
+        "reactExports": [
+          "Spinner"
+        ],
+        "note": "Spinner exists; complete GDS loader overlay/service behavior is absent.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/logo-information",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_logo_information._HbThbbs8G.js",
+        "status": "missing",
+        "sha256": "af843c61ea1714c0621aedca08c4b130f88b0bdfc938f25f214c3e8014f2f5e4",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 1795,
+        "exports": [
+          "GdsLogoInformationComponent",
+          "GdsLogoInformationModule"
+        ],
+        "selectors": [
+          "\"gds-logo-information\""
+        ],
+        "family": "logo-information",
+        "reactExports": [],
+        "note": "No LogoInformation component export.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/menu",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_menu.oefHZUETq8.js",
+        "status": "missing",
+        "sha256": "684c9bb22fbcb45dfeeed69e7e46a45e6c3924cca556e5b873ce93a84801cb22",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 13759,
+        "exports": [
+          "GdsMenuComponent",
+          "GdsMenuItemComponent",
+          "GdsMenuModule"
+        ],
+        "selectors": [
+          "\"gds-menu-item\"",
+          "\"gds-menu\""
+        ],
+        "family": "menu",
+        "reactExports": [],
+        "note": "No reusable action/popup menu export.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/paginator",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_paginator.pffgqnujOZ.js",
+        "status": "partial",
+        "sha256": "f0dbc9c5a6c7fc5d27485282943b4c7f8ef24defd1357ff3f1ee86b940af7a7f",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 5178,
+        "exports": [
+          "GdsPaginatorModule",
+          "PaginatorComponent"
+        ],
+        "selectors": [
+          "\"gds-paginator\""
+        ],
+        "family": "paginator",
+        "reactExports": [
+          "Pagination"
+        ],
+        "note": "Page navigation exists; source paginator page-size/options contract is not fully represented.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/progress-bar",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_progress_bar.TFFe4mFgCp.js",
+        "status": "partial",
+        "sha256": "27f2f61886f1bd162d6f3631055a79df0c17a46b3165cf4de96e557dfbedbc61",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 12140,
+        "exports": [
+          "GdsProgressBarModule",
+          "ProgressBarComponent",
+          "ProgressBarModes",
+          "ProgressBarSizes"
+        ],
+        "selectors": [
+          "\"gds-progress-bar\""
+        ],
+        "family": "progress-bar",
+        "reactExports": [
+          "Progress"
+        ],
+        "note": "Basic progress exists, not all upstream modes/sizes.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/radio-group",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_radio_group.9iPgxFYB8e.js",
+        "status": "missing",
+        "sha256": "d333d0b00b907171b792298a8ab94694eb864f4b262aa854a99c4254df37c90f",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 4708,
+        "exports": [
+          "GdsRadioGroupModule",
+          "RadioGroupComponent"
+        ],
+        "selectors": [
+          "\"gds-radio-group\""
+        ],
+        "family": "radio-group",
+        "reactExports": [
+          "Radio"
+        ],
+        "note": "Individual Radio exists; no reusable RadioGroup API.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/radiobutton",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_radiobutton.FAKkx5OLg8.js",
+        "status": "exported-counterpart",
+        "sha256": "bedfe450ee7749fb4e4acb76e3d2d59185be7fadebe9a4b3ff4afa34c19cd43a",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 14014,
+        "exports": [
+          "GdsRadiobuttonModule",
+          "RadiobuttonComponent"
+        ],
+        "selectors": [
+          "\"gds-radiobutton\""
+        ],
+        "family": "radiobutton",
+        "reactExports": [
+          "Radio"
+        ],
+        "note": "Reusable individual radio family.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/select",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_select.1yDIDkEZfK.js",
+        "status": "partial",
+        "sha256": "e8c13e9c5c3658e90f8d4ee43e3ec45178654789fc4e6e0ecd304e1e112e6fe9",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 73745,
+        "exports": [
+          "GdsSelectModule",
+          "GdsSelectOptionComponent",
+          "SelectComponent",
+          "SelectTypeEnum"
+        ],
+        "selectors": [
+          "\"gds-select-option\"",
+          "\"gds-select\""
+        ],
+        "family": "select",
+        "reactExports": [
+          "Select"
+        ],
+        "note": "Native HTML select adapter; not the custom GDS option/popup behavior.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/sidenav-wrapper",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_sidenav_wrapper.hf9wdWHwJy.js",
+        "status": "example-only",
+        "sha256": "12c38ef5228edf5064b2b04cc2117878bc213479ea820fcd8858b40ec2965d27",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 34535,
+        "exports": [
+          "GdsSidenavWrapperComponent",
+          "GdsSidenavWrapperModule"
+        ],
+        "selectors": [
+          "\"gds-sidenav-menu-item\",\"menuItem\",\"\"",
+          "\"gds-sidenav\",\"menuItemsTop\",\"\",\"menuItemsBottom\",\"\",\"sidenavStateAndIsMobile\",\"\"",
+          "\"gds-sidenav-wrapper\""
+        ],
+        "family": "sidenav-wrapper",
+        "reactExports": [
+          "Sidebar"
+        ],
+        "note": "Responsive portal shell composition exists in DesktopScreen, not as a reusable wrapper.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/sidenav",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_sidenav.qxgBbslwtg.js",
+        "status": "partial",
+        "sha256": "76011da792a1521692c4f573d1034db23f642a951234e6fd57b41afb6cb5fdf2",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 19608,
+        "exports": [
+          "GdsSidenavItemComponent",
+          "GdsSidenavModule"
+        ],
+        "selectors": [
+          "\"gds-sidenav-item\""
+        ],
+        "family": "sidenav",
+        "reactExports": [
+          "Sidebar"
+        ],
+        "note": "Basic controlled sidebar exists; source grouped/router/expandable item contracts are incomplete.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/snackbar",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_snackbar.exGzldyRcs.js",
+        "status": "missing",
+        "sha256": "86429794b2223cb6c5b927215a0bbfae2977050a7c24004c9fb7283ea2a5da25",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 10133,
+        "exports": [
+          "DEFAULT_CONFIG",
+          "GdsSnackbarModule",
+          "SNACKBAR_ICON_MAP",
+          "SnackbarComponent",
+          "SnackbarService"
+        ],
+        "selectors": [
+          "\"gds-snackbar\""
+        ],
+        "family": "snackbar",
+        "reactExports": [],
+        "note": "No Snackbar/Toast component or queue service. Source home module imports the GDS snackbar module.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/status-text",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_status_text.OL705AcavP.js",
+        "status": "partial",
+        "sha256": "e806e7308bd70ce035570c64f0b3e485281784b74a443d56dc00d11465d870a5",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 4146,
+        "exports": [
+          "GdsStatusTextComponent",
+          "GdsStatusTextModule"
+        ],
+        "selectors": [
+          "\"gds-status-text\",\"innerId\",\"\""
+        ],
+        "family": "status-text",
+        "reactExports": [
+          "Badge"
+        ],
+        "note": "Badge is related status display; no dedicated source icon+text StatusText API.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/table",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_table.siA0YxhJTe.js",
+        "status": "missing",
+        "sha256": "c31a387ad387cbf6396bd06d35f1ce9b51c4aaba629f39e963e5ea0bf2a9a97d",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 13093,
+        "exports": [
+          "GdsCellDefDirective",
+          "GdsCellDirective",
+          "GdsColumnDefDirective",
+          "GdsHeaderCellDefDirective",
+          "GdsHeaderCellDirective",
+          "GdsHeaderRowComponent",
+          "GdsHeaderRowDefDirective",
+          "GdsNoDataRowDirective",
+          "GdsRowComponent",
+          "GdsRowDefDirective",
+          "GdsTableComponent",
+          "GdsTableModule",
+          "ResizeColumnDirective"
+        ],
+        "selectors": [
+          "\"td\",\"gds-cell\",\"\"",
+          "\"\",\"gdsCellDef\",\"\"",
+          "\"th\",\"gds-header-cell\",\"\"",
+          "\"\",\"gdsHeaderCellDef\",\"\"",
+          "\"\",\"gdsColumnDef\",\"\"",
+          "\"\",\"resizeColumn\",\"\"",
+          "\"tr\",\"gds-row\",\"\"",
+          "\"tr\",\"gds-header-row\",\"\"",
+          "\"\",\"gdsRowDef\",\"\"",
+          "\"\",\"gdsHeaderRowDef\",\"\"",
+          "\"ng-template\",\"gdsNoDataRow\",\"\"",
+          "\"table\",\"gds-table\",\"\""
+        ],
+        "family": "table",
+        "reactExports": [],
+        "note": "No reusable Table with header/row/cell/column definitions, empty rows or resize behavior.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/tabs",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_tabs.q-6MhdhLGw.js",
+        "status": "exported-counterpart",
+        "sha256": "8c3d6edb284c9ac1bfedfd74ffee52f4e20b0efae6098e4b989f87bf3dc08995",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 14893,
+        "exports": [
+          "GdsTabsModule",
+          "TabComponent",
+          "TabsComponent",
+          "TabsModes"
+        ],
+        "selectors": [
+          "\"gds-tab\"",
+          "\"gds-tabs\""
+        ],
+        "family": "tabs",
+        "reactExports": [
+          "Tabs"
+        ],
+        "note": "Reusable keyboard-accessible tab family.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/textarea",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_textarea.B-_6GEn-6F.js",
+        "status": "exported-counterpart",
+        "sha256": "81a3a1ed53fec348750ae0ab97d0eb1a71eef08c660578ec32431a0170270505",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 16698,
+        "exports": [
+          "GdsTextareaComponent",
+          "GdsTextareaModule"
+        ],
+        "selectors": [
+          "\"gds-textarea\""
+        ],
+        "family": "textarea",
+        "reactExports": [
+          "TextArea"
+        ],
+        "note": "Reusable textarea family.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      },
+      {
+        "module": "gov-layout-lib/components/validation-error-message",
+        "version": "1.1.75",
+        "url": "https://www.mobywatel.gov.pl/gov_layout_lib_components_validation_error_message.qTeotl36IE.js",
+        "status": "partial",
+        "sha256": "ab159bdba49a2e6bc3302d3480fb7067c90562691fcf8e931e119766c2fe9960",
+        "lastModified": "Mon, 21 Sep 2026 13:13:26 GMT",
+        "bytes": 1685,
+        "exports": [
+          "GdsValidationErrorMessageComponent",
+          "GdsValidationErrorMessageModule"
+        ],
+        "selectors": [
+          "\"gds-validation-error-message\""
+        ],
+        "family": "validation-error-message",
+        "reactExports": [
+          "TextField",
+          "TextArea",
+          "Select",
+          "Checkbox",
+          "Radio"
+        ],
+        "note": "Validation copy is integrated into controls; no standalone message export.",
+        "availabilityEvidence": "Deployed shared module and HTTP200 export/selector inspection; availability does not prove use on every route."
+      }
+    ]
+  },
+  "portalFeatureWidgets": {
+    "evidence": "Compiled official page selectors; corresponding sanitized local demonstration reviewed. Widgets are not separately exported from src/kit/index.ts.",
+    "widgets": [
+      {
+        "selector": "mogp-banner",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "e-Delivery home banner"
+      },
+      {
+        "selector": "mogp-calendar-header",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Dashboard calendar header/month navigation"
+      },
+      {
+        "selector": "mogp-calendar",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Dashboard calendar; source imports Angular Material datepicker, not a kit DatePicker export"
+      },
+      {
+        "selector": "mogp-catalog-specified-services",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Home service category links"
+      },
+      {
+        "selector": "mogp-dashboard-tile",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Twoje sprawy/ePayments/dashboard tile"
+      },
+      {
+        "selector": "mogp-popular-specified-services",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Popular service links"
+      },
+      {
+        "selector": "mogp-my-gov",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/my-gov-EDGTFG6S.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Home page composition"
+      },
+      {
+        "selector": "mogp-tile-navigation",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/chunk-LBZYZMWQ.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Navigation tiles/links"
+      },
+      {
+        "selector": "mogp-page-title",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/chunk-3DH4QRYK.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Page title and description"
+      },
+      {
+        "selector": "mogp-info-banner",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/dashboard-W7S665AT.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Catalog information banner"
+      },
+      {
+        "selector": "mogp-list",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/dashboard-W7S665AT.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Service catalog list/cards"
+      },
+      {
+        "selector": "mogp-dashboard",
+        "sourceUrl": "https://www.mobywatel.gov.pl/eu-mogp-mfe-remote/dashboard-W7S665AT.js",
+        "status": "example-only",
+        "reactFile": "src/examples/DesktopScreen.tsx",
+        "note": "Service catalog page composition"
+      }
+    ],
+    "additionalPrivateComposites": [
+      "Header account menu",
+      "Current portal footer",
+      "Dashboard empty-cases and empty-payments composites"
+    ]
+  },
+  "upstreamPrimeNg": {
+    "version": "21.1.6",
+    "entrypointCount": 116,
+    "entrypoints": [
+      {
+        "package": "primeng/accordion",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_accordion.ESJhgRBkRQ.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/animateonscroll",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_animateonscroll.xcDWvMfCTB.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/api",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_api.2eJ_EyW2vP.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/autocomplete",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_autocomplete.Vbj811n0hZ.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/autofocus",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_autofocus.Kq6WaDj5xl.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/avatar",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_avatar.kKgNaL8lw9.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/avatargroup",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_avatargroup.IkVtGOhjOH.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/badge",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_badge.fjgzYHwHGw.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/base",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_base.qEHTPdg1nq.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/basecomponent",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_basecomponent.3Qkmun1EiS.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/baseeditableholder",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_baseeditableholder.p96tUm3DCJ.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/baseinput",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_baseinput.uJ5RWxheVg.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/basemodelholder",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_basemodelholder.MWoUso3Y_m.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/bind",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_bind.qR1TF_R2Jj.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/blockui",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_blockui.Kwl2HqBL-v.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/breadcrumb",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_breadcrumb.gCghBSb-n8.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": true
+      },
+      {
+        "package": "primeng/button",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_button.P9su1kjk7W.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": true
+      },
+      {
+        "package": "primeng/buttongroup",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_buttongroup.EzMRDrY5Ke.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/card",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_card.INQKku7ys6.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/carousel",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_carousel.FEIB4RtfN-.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/cascadeselect",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_cascadeselect.JJM-6LuB3I.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/chart",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_chart.WNOVWylxQN.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/checkbox",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_checkbox.xI_YHbcuZY.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/chip",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_chip.nmKqfnx-VK.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": true
+      },
+      {
+        "package": "primeng/classnames",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_classnames.rt7JPRPNMm.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/colorpicker",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_colorpicker.munaUlnWWk.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/config",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_config.S-Ci4KxYMr.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/confirmdialog",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_confirmdialog.eRJPzNm-dK.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/confirmpopup",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_confirmpopup.b5B18sj-oK.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/contextmenu",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_contextmenu.OQmBF7LWKH.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/dataview",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_dataview.1QY-wvYUEo.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/datepicker",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_datepicker.HcHplUzzjv.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/dialog",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_dialog.3fIFYlF4m-.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/divider",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_divider.y5pjpg3GvH.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/dock",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_dock.EQVHSUkFhb.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/dom",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_dom.Ya4qlXprDF.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/dragdrop",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_dragdrop.S2kgxy9idN.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/drawer",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_drawer.IZ9tsSdBi9.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/dynamicdialog",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_dynamicdialog.-jJ23vav2b.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/editor",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_editor.ssX0dOd8qY.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/fieldset",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_fieldset.aQ30uqFyde.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/fileupload",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_fileupload.HdKmZAFyF4.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/floatlabel",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_floatlabel.UvxswezWOV.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/fluid",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_fluid.kndNET3q-D.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/focustrap",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_focustrap.HKGbiLc_eK.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/galleria",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_galleria.KqD16xpniN.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/iconfield",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_iconfield.xq5Wil6axI.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/icons",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_icons.HIz1frLGAR.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/iftalabel",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_iftalabel.2XRv4EREEU.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/image",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_image.xNAwaELWyB.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/imagecompare",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_imagecompare.2s_MEizR_o.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/inplace",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_inplace.bjZh37MoNG.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/inputgroup",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_inputgroup.0h9ANEj8NL.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/inputgroupaddon",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_inputgroupaddon.urN_EZLpAs.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/inputicon",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_inputicon.cOZlJPuQ8s.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/inputmask",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_inputmask.y2tVsZ7Oqg.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/inputnumber",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_inputnumber.HlgRy4uhQE.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/inputotp",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_inputotp.3aCZbO7y7n.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/inputtext",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_inputtext.RBHP_1IA1R.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/keyfilter",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_keyfilter.kiNQ4GHUED.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/knob",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_knob.2WaQ8-2od-.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/listbox",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_listbox.eiTfqHrMeP.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/megamenu",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_megamenu.0IVfAaLnx2.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/menu",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_menu.JBV22JY9vM.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": true
+      },
+      {
+        "package": "primeng/menubar",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_menubar.xwZzlIfbn6.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/message",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_message.2eZ2yGhAgs.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": true
+      },
+      {
+        "package": "primeng/metergroup",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_metergroup.ubBT4QQmuX.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/motion",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_motion.CPD-qrKTFM.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/multiselect",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_multiselect.NsX3ZvKDoX.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/orderlist",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_orderlist.Gy4m0kSPd3.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/organizationchart",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_organizationchart.KW9IPIBnsH.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/overlay",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_overlay.cv_EuhRj10.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/overlaybadge",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_overlaybadge.Wzn3FsRuwS.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/paginator",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_paginator.X706Fsgebw.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/panel",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_panel.hzHJ45uZf0.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": true
+      },
+      {
+        "package": "primeng/panelmenu",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_panelmenu.YwdC1MEgkw.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/passthrough",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_passthrough.EZWCPH9VSp.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/password",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_password.Yhs4PwvwVa.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/picklist",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_picklist.H_lfIVg679.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/popover",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_popover.99Q953iGJ_.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/progressbar",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_progressbar.GJIntLLulT.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": true
+      },
+      {
+        "package": "primeng/progressspinner",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_progressspinner.KddIAkTan9.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/radiobutton",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_radiobutton.vHpiqZxQED.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/rating",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_rating.9naRXfrn2M.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/ripple",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_ripple.6tQsuST0aR.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/scroller",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_scroller.16ew-Y4xFp.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/scrollpanel",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_scrollpanel.qOWzXWunFT.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/scrolltop",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_scrolltop.leRk19-hwX.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/select",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_select.kRlmG3fI-4.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/selectbutton",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_selectbutton.RgdgEA3Wg7.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/skeleton",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_skeleton.714aWhPBHZ.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/slider",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_slider._RNn4io5bL.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/speeddial",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_speeddial.gv4EaSEwFZ.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/splitbutton",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_splitbutton.3UpK2s0cBo.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/splitter",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_splitter.vqRZMEOvE2.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/stepper",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_stepper.BOGGfdBrZM.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/steps",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_steps.0OsLHEYhSQ.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/styleclass",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_styleclass.zMPAZBIpke.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/table",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_table.X08Loqv6Kp.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/tabs",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_tabs.xRRz0z8dJw.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/tag",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_tag.sDxW3ss8dg.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/terminal",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_terminal.73gEMVoUZq.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/textarea",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_textarea.fnYsjhKF_d.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/tieredmenu",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_tieredmenu.gsExBUTQp-.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/timeline",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_timeline.4c5wDqAss5.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/toast",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_toast.iXEaPUMopP.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/togglebutton",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_togglebutton.ppGsJUP_Y4.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/toggleswitch",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_toggleswitch.7JcO_IUHkX.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/toolbar",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_toolbar.nfrNgzuC98.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/tooltip",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_tooltip.GNhgBTqw4-.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/tree",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_tree.W6JZ45CB8P.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/treeselect",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_treeselect.VKPbtBc8Wf.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/treetable",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_treetable.6i2dr6rsFt.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/ts-helpers",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_ts_helpers.Ik5jeK9R_H.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/usestyle",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_usestyle.RQlPdQrH_P.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      },
+      {
+        "package": "primeng/utils",
+        "version": "21.1.6",
+        "sourceUrl": "https://www.mobywatel.gov.pl/primeng_utils.o3Wbm9dsrC.js",
+        "evidence": "shared-dependency-entrypoint",
+        "directlyImportedByMdWrapperModule": false
+      }
+    ],
+    "warning": "Shared generic dependencies, including Stepper and Toast, are not evidence of custom md wrappers or confirmed rendered use. Datepicker/Table/FileUpload additionally have concrete GDS/MD source evidence above."
+  },
+  "importantMissing": [
+    {
+      "name": "DatePicker",
+      "sourceUnit": "gov-layout-lib/components/datepicker: DatepickerComponent"
+    },
+    {
+      "name": "Table",
+      "sourceUnit": "gov-layout-lib/components/table: GdsTableComponent and row/cell/column definitions"
+    },
+    {
+      "name": "FileUpload with validators",
+      "sourceUnit": "MdFileUploadComponent / GdsFileUploadComponent + six validation directives"
+    },
+    {
+      "name": "Snackbar/Toast family",
+      "sourceUnit": "gov-layout-lib/components/snackbar: SnackbarComponent/SnackbarService; not inferred only from generic primeng/toast"
+    },
+    {
+      "name": "Menu and Chip",
+      "sourceUnit": "md-menu MenuComponent / md-chip ChipComponent"
+    },
+    {
+      "name": "Character counter",
+      "sourceUnit": "md-form-characters-counter: MdFormCharactersCounter"
+    },
+    {
+      "name": "Desktop identity-card and preview",
+      "sourceUnit": "GDS IdentityCardComponent / IdentityCardPreviewComponent"
+    }
+  ],
+  "limitations": [
+    "Only public deployed modules and previously retained sanitized code/layout evidence were inspected; no private account/case content retained.",
+    "Availability in the module federation manifest does not prove every component is used on the audited home/catalog routes.",
+    "This inventory does not enumerate all functionality of all portal routes or assert a complete upstream design-system specification."
+  ]
+}

@@ -1,0 +1,61 @@
+/* Native contentBox uses light200: two neutral500 shadows at 2pt and 8pt. */
+.sample-phone[data-theme='light'] .sample-mobile-card {
+  box-shadow:
+    0 2px 4px rgb(16 19 23 / 2%),
+    0 8px 16px rgb(16 19 23 / 4%);
+}
+
+/* The reference alert is a neutral translucent material over the dimmed screen. */
+.sample-phone[data-theme='light'] .sample-phone-dialog--compact {
+  background: rgb(235 235 235 / 85.5%);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+/* Keep the native half-point separator independent of the text baseline. */
+.sample-phone[data-theme='light'] .sample-phone-dialog--compact > .sample-dialog-action {
+  border-top-color: transparent;
+  padding-bottom: 1px;
+}
+.sample-phone[data-theme='light'] .sample-phone-dialog--compact > .sample-dialog-action::before {
+  content: '';
+  position: absolute;
+  top: 0.5px;
+  left: 0;
+  right: 0;
+  height: 0.5px;
+  background: #808893;
+  pointer-events: none;
+}
+
+/* Status battery has a separate translucent rim, inset fill and terminal. */
+.sample-phone .sample-battery {
+  width: 25px;
+  height: 12.5px;
+  flex-shrink: 0;
+  margin-left: -1.3px;
+  padding: 0;
+  border: 0;
+  transform: translateY(0.5px);
+}
+.sample-phone .sample-battery i,
+.sample-phone .sample-battery::after {
+  display: none;
+}
+.sample-phone .sample-battery::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 13px;
+  background: var(--sample-reference-battery) left top / 28px 13px no-repeat;
+}
+
+/* Reference system-chrome mock; canvas28×13 includes the terminal. */
+.sample-phone[data-theme='light'] {
+  --sample-reference-battery: url('./system-assets/battery-light.svg');
+}
+.sample-phone[data-theme='dark'] {
+  --sample-reference-battery: url('./system-assets/battery-dark.svg');
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "project": "mDesign React UI Kit",
+  "license": "MIT",
+  "sources": [
+    {
+      "kind": "native-icons",
+      "url": "https://github.com/fajfer/mObywatel",
+      "commit": "d39d2f947b1078332d758de086cb3cb7dd163940",
+      "license": "LicenseRef-COI-MIT-PL",
+      "copyright": "2025 Centralny Ośrodek Informatyki",
+      "catalogues": [
+        "src/kit/native-icons/provenance.json",
+        "src/kit/official-icons/provenance.json"
+      ]
+    },
+    {
+      "kind": "web-compatibility-values",
+      "url": "https://www.mobywatel.gov.pl/",
+      "stylesheet": "https://www.mobywatel.gov.pl/styles-WFLGJ6F5.css",
+      "stylesheetSha256": "a1878e28e4bfc62f7cabd97cb5bc94c84a0cf613695cdfdef022f3772f35fac4",
+      "tokensFile": "src/kit/web-tokens.css",
+      "scope": "mDesign-authored adapter containing only four observed functional color values consumed by the kit. The referenced portal stylesheet and complete third-party preset objects are not distributed."
+    },
+    {
+      "kind": "mobile-palette",
+      "url": "https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/ios",
+      "dataFile": "src/kit/official-mobile-colors.json"
+    },
+    {
+      "kind": "landing-design-reference",
+      "url": "https://info.mobywatel.gov.pl/",
+      "fontFamily": "Lato",
+      "assetCatalogue": "src/kit/landing/provenance.json"
+    }
+  ],
+  "assetCatalogues": {
+    "portal": "src/kit/portal/provenance.json",
+    "services": "src/kit/service-icons/provenance.json",
+    "documentBackgrounds": "src/kit/document-assets/demo/provenance.json",
+    "branding": "public/brand/mdesign-provenance.json",
+    "smallDocumentBackground": "src/kit/document-assets/provenance.json"
+  },
+  "fonts": [
+    {
+      "family": "Open Sans",
+      "license": "OFL-1.1",
+      "licenseFile": "src/kit/fonts/OFL-OpenSans.txt"
+    },
+    {
+      "family": "Lato",
+      "license": "OFL-1.1",
+      "licenseFile": "src/kit/landing/fonts/OFL-Lato.txt"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+.sample-document--purple {
+  background: #4e47b2 url('../kit/document-assets/demo/family.svg') center/cover no-repeat;
+}
+.sample-document--purple:before {
+  display: none;
+}
+/* Artwork is rendered by the reusable kit component. */
+.sample-document:has(.m-document-artwork):before {
+  display: none;
+}
+.sample-phone[data-screen='documents'] .sample-document-actions > button {
+  transform: translateY(-2.75px);
+}
+.sample-phone[data-screen='documents'] .sample-phone-brand > button {
+  transform: translate(3px, -1px);
+}
+/* The examples use the exported navigation/search components. Only placement
+   belongs to this fixed-size reference canvas. */
+.sample-phone > .m-bottom-navigation.sample-bottom-nav {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+}
+.sample-phone-search-field {
+  margin-top: 5.25px;
+  margin-bottom: 15px;
+}
+.sample-phone[data-theme='dark'][data-screen='services'] .sample-phone-search-field {
+  margin-bottom: 23px;
+}

@@ -1,0 +1,274 @@
+name: UI kit CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ui-kit-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: 'true'
+  STORYBOOK_DISABLE_TELEMETRY: '1'
+
+jobs:
+  quality:
+    name: Tokens, API, stories, types and unit coverage
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: 1.4.4
+      - run: bun install --frozen-lockfile
+      - run: mkdir -p artifacts/ci
+      # Check generated source BEFORE any build that regenerates it.
+      - name: Verify source contracts and unit behavior
+        run: bun run verify 2>&1 | tee artifacts/ci/verify.log
+      - name: Reject regenerated API or stories drift
+        run: git diff --exit-code -- src/catalog/component-manifest.json src/stories src/kit/generated src/kit/tokens.dtcg.json
+      - name: Measure and enforce configured unit coverage
+        run: bun run test:coverage --reporter=default --reporter=json --outputFile=artifacts/ci/unit-tests.json
+      - name: Preserve quality reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: quality-reports
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            artifacts/ci/
+            coverage/unit/
+            src/catalog/component-manifest.json
+            src/stories/coverage.json
+
+  build:
+    name: Production builds and fresh package consumers
+    needs: quality
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: 1.4.4
+      - run: bun install --frozen-lockfile
+      # Storybook staticDirs include this build and its /preview routes.
+      - run: bun run build:showcase
+      - run: bun run build:storybook
+      - name: Pack the current library without publishing
+        run: |
+          mkdir -p artifacts/ci
+          bun run pack:lib > artifacts/ci/pack-build.log 2>&1
+          node --input-type=module <<'JS'
+          import fs from 'node:fs/promises';
+          import path from 'node:path';
+          const pkg = JSON.parse(await fs.readFile('package.json', 'utf8'));
+          const filename = `${pkg.name.replace(/^@/, '').replaceAll('/', '-')}-${pkg.version}.tgz`;
+          await fs.stat(path.join('artifacts/current', filename));
+          await fs.writeFile('artifacts/ci/pack.json', JSON.stringify([{filename}]) + '\n');
+          JS
+      - name: Verify frozen TGZ in independent React consumers
+        run: bun run verify:package --workdir "$RUNNER_TEMP/mdesign-consumers" --report artifacts/ci/package.json
+      - name: Collect independent consumer diagnostics
+        if: always()
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs/promises';
+          import path from 'node:path';
+          const parent = path.join(process.env.RUNNER_TEMP, 'mdesign-consumers');
+          const target = 'artifacts/ci/consumers';
+          async function copy(from, to) {
+            try { await fs.mkdir(path.dirname(to), { recursive: true }); await fs.cp(from, to, { recursive: true }); }
+            catch (error) { if (error.code !== 'ENOENT') throw error; }
+          }
+          let entries = [];
+          try { entries = await fs.readdir(parent, { withFileTypes: true }); }
+          catch (error) { if (error.code !== 'ENOENT') throw error; }
+          for (const entry of entries.filter(entry => entry.isDirectory())) {
+            await copy(path.join(parent, entry.name, 'logs'), path.join(target, entry.name, 'logs'));
+            for (const consumer of ['react18', 'react19']) for (const result of ['ssr-all-result.json', 'export-result.json', 'client-ref-result.json', 'production-result.json', 'package.json', 'package-lock.json'])
+              await copy(path.join(parent, entry.name, consumer, result), path.join(target, entry.name, consumer, result));
+          }
+          JS
+      - name: Preserve production builds
+        if: success()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: production-builds
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Preserve package and consumer reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: package-consumer-reports
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            artifacts/current/*.tgz
+            artifacts/ci/
+
+  browser:
+    name: Chromium component contracts and explorer
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: 1.4.4
+      - run: bun install --frozen-lockfile
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: production-builds
+          path: dist/
+      - run: bun run -- playwright install --with-deps chromium
+      - run: mkdir -p artifacts/ci
+      - name: Browser component regressions
+        run: bun run test:browser --attachmentsDir=artifacts/ci/browser-attachments --reporter=default --reporter=json --outputFile=artifacts/ci/browser-tests.json
+      - name: Production explorer workflow
+        run: |
+          bun run preview --host 127.0.0.1 > artifacts/ci/explorer-server.log 2>&1 &
+          explorer_server=$!
+          trap 'kill "$explorer_server" 2>/dev/null || true' EXIT
+          node --input-type=module <<'JS'
+          const deadline = Date.now() + 30000;
+          while (true) {
+            try { if ((await fetch('http://127.0.0.1:4173/index.json')).ok) break; } catch {}
+            if (Date.now() > deadline) throw new Error('Explorer server did not start');
+            await new Promise(resolve => setTimeout(resolve, 250));
+          }
+          JS
+          bun run test:explorer -- http://127.0.0.1:4173 artifacts/ci/explorer
+      - name: Preserve browser reports and failure screenshots
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: chromium-reports
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            artifacts/ci/
+            src/**/__screenshots__/
+            src/**/__diff_output__/
+            test-results/
+
+  stories:
+    env:
+      VITEST_PW_DEBUG: '1'
+    name: Storybook interactions and a11y (${{ matrix.shard }}/4)
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: 1.4.4
+      - run: bun install --frozen-lockfile
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: production-builds
+          path: dist/
+      - run: bun run -- playwright install --with-deps chromium
+      - run: mkdir -p artifacts/ci
+      - name: Check every assigned story
+        run: bun run test:stories --shard=${{ matrix.shard }}/4 --attachmentsDir=artifacts/ci/storybook-attachments --reporter=default --reporter=json --outputFile=artifacts/ci/storybook-tests.json
+      - name: Preserve story diagnostics
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: storybook-reports-${{ matrix.shard }}
+          path: artifacts/ci/
+          if-no-files-found: warn
+          retention-days: 14
+
+  visual:
+    name: Chromium visual regression — Darwin Intel
+    needs: quality
+    # Official standard Intel label; macos-latest/macOS15 without -intel are ARM.
+    # https://docs.github.com/en/actions/reference/runners/github-hosted-runners
+    runs-on: macos-15-intel
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: 1.4.4
+      - run: bun install --frozen-lockfile
+      - run: bun run -- playwright install chromium
+      - name: Record and require the baseline architecture
+        run: |
+          mkdir -p artifacts/ci
+          node --input-type=module <<'JS'
+          import fs from 'node:fs/promises';
+          import os from 'node:os';
+          const report = { platform: process.platform, arch: process.arch, osRelease: os.release(), node: process.version, imageOS: process.env.ImageOS, imageVersion: process.env.ImageVersion, playwright: JSON.parse(await fs.readFile('node_modules/playwright/package.json', 'utf8')).version };
+          await fs.writeFile('artifacts/ci/visual-environment.json', JSON.stringify(report, null, 2) + '\n');
+          if (report.platform !== 'darwin' || report.arch !== 'x64') throw new Error('Visual baselines require Darwin x64');
+          JS
+      - name: Compare retained approved screenshots without updating baselines
+        run: bun run test:visual:retained --attachmentsDir=artifacts/ci/visual-attachments --reporter=default
+      - name: Reject modified or newly created baselines
+        run: |
+          git diff --exit-code -- src/browser/__screenshots__
+          test -z "$(git ls-files --others --exclude-standard -- src/browser/__screenshots__)"
+      - name: Preserve visual reports, actuals and diffs
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: darwin-intel-visual-reports
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            artifacts/ci/
+            src/browser/**/__screenshots__/
+            src/browser/**/__diff_output__/
+            test-results/
