@@ -7,14 +7,12 @@ updates:
       day: monday
       time: '07:00'
       timezone: Europe/Warsaw
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
     groups:
-      bun-minor-and-patch:
+      bun-security:
+        applies-to: security-updates
         patterns:
           - '*'
-        update-types:
-          - minor
-          - patch
   - package-ecosystem: github-actions
     directory: /
     schedule:
@@ -22,11 +20,9 @@ updates:
       day: monday
       time: '07:00'
       timezone: Europe/Warsaw
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
     groups:
-      actions-minor-and-patch:
+      actions-security:
+        applies-to: security-updates
         patterns:
           - '*'
-        update-types:
-          - minor
-          - patch

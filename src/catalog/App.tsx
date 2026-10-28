@@ -385,7 +385,7 @@ export default function App() {
         >
           <img
             className="brand-symbol"
-            src={docsPath('/brand/mdesign-symbol.svg?v=grid-705f2e6762ef')}
+            src={docsPath('/brand/mdesign-symbol.svg?v=tile-fd42efc967c9')}
             alt=""
           />
           <span>
@@ -588,7 +588,7 @@ export default function App() {
           <span>
             <img
               className="footer-brand-symbol"
-              src={docsPath('/brand/mdesign-symbol.svg?v=grid-705f2e6762ef')}
+              src={docsPath('/brand/mdesign-symbol.svg?v=tile-fd42efc967c9')}
               alt=""
             />
             mDesign <span>·</span> React UI Kit

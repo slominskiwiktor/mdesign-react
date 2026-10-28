@@ -2,7 +2,7 @@
   "source": "Project owner supplied replacement artwork",
   "sourceFile": "public/brand/mdesign-logo.png",
   "sourceSha256": "705f2e6762efc76521ebb76eead2d30f30140a6f2fd9c8c60f621955a0996b3d",
-  "adaptation": "Resized to 512px and encoded as WebP for runtime use. Composition, background and supplied outline are retained without an additional shape mask.",
+  "adaptation": "Runtime SVG marks clip the unchanged texture to the red tile outline; exterior white corners are transparent. The supplied raster artwork and runtime texture remain unchanged.",
   "texture": {
     "file": "public/brand/mdesign-blueprint.webp",
     "width": 512,
@@ -13,23 +13,23 @@
   "marks": [
     {
       "file": "public/brand/mdesign-symbol.svg",
-      "bytes": 107251,
-      "sha256": "41393fb8ee28e295d838cc3b95c8bf032dc634f2c22e157af40e068ac18dd6d7"
+      "bytes": 109557,
+      "sha256": "fd42efc967c91a7f367e614a420026157109fae20d3d642ccb850c81bbc800e1"
     },
     {
       "file": "public/storybook-mark.svg",
-      "bytes": 107364,
-      "sha256": "6dc7a2018e369ebf799e0493ba8ad8b74d37b02152b165057931e3dbdb01396e"
+      "bytes": 109670,
+      "sha256": "167ffcea1cbf9ef8b9f3fb4f2b333a6e96d068ba7ebe0c910adf39a7342e2504"
     },
     {
       "file": "public/storybook-mark-dark.svg",
-      "bytes": 107364,
-      "sha256": "3f83f7fd1db39e3f5a0b474dd0a3cc447e6fd30c95aa3d947a7a37324ece04bf"
+      "bytes": 109670,
+      "sha256": "0d983abe97f92de0e06c3c1cd2ac805fefa3f38f335ac41c84bbde7c26eaf629"
     },
     {
       "file": "public/favicon.svg",
-      "bytes": 107251,
-      "sha256": "41393fb8ee28e295d838cc3b95c8bf032dc634f2c22e157af40e068ac18dd6d7"
+      "bytes": 109557,
+      "sha256": "fd42efc967c91a7f367e614a420026157109fae20d3d642ccb850c81bbc800e1"
     }
   ],
   "socialPreview": {
@@ -39,5 +39,13 @@
     "bytes": 130910,
     "sha256": "2548bc4f87ac988a22d99b4c80f3119e2bd09ddd5d6f41a18b576cf67cc9bf8d",
     "origin": "mDesign layout using the project logo"
+  },
+  "readmeMark": {
+    "file": "public/brand/mdesign-readme.png",
+    "width": 512,
+    "height": 512,
+    "bytes": 361124,
+    "sha256": "55387ddc0373d27b7c804896d69c1c6571fc7af3caa79e16026b13e9d5a1f3dc",
+    "origin": "Raster export of the clipped mDesign SVG mark"
   }
 }
