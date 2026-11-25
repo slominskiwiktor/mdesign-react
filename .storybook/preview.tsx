@@ -1,3 +1,4 @@
+import { pinNativeSource } from '../src/catalog/pin-native';
 import { snackbarProviderNativeSource } from '../src/catalog/snackbar-provider-native';
 import { snackbarNativeSource } from '../src/catalog/snackbar-native';
 import { dataTableNativeSource } from '../src/catalog/data-table-native';
@@ -221,6 +222,9 @@ const preview: Preview = {
         )
       ) {
         source = () => textInputNativeSource(name, args, choice);
+      }
+      if (name === 'PinInput') {
+        source = () => pinNativeSource(args, choice);
       }
       if (name === 'Pagination' || name === 'PortalPagination') {
         source = () => paginationNativeSource(args, name === 'PortalPagination', choice);
