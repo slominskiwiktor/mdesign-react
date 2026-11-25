@@ -259,7 +259,9 @@ export function getStoryMeta(name: string): Meta<ExampleArgs> {
           if (name === 'PortalSelect') {
             const trigger = canvas.getByRole('combobox');
             if (trigger.getAttribute('aria-expanded') !== 'true') await userEvent.click(trigger);
-            const options = await body.findAllByRole('option');
+            const listbox = await body.findByRole('listbox');
+            await expect(trigger).toHaveAttribute('aria-controls', listbox.id);
+            const options = within(listbox).getAllByRole('option');
             const option =
               options.find(
                 (element) =>
