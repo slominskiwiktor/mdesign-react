@@ -227,9 +227,14 @@ const preview: Preview = {
         source = () => choiceNativeSource(args, name.startsWith('Checkbox'), choice);
       }
       if (
-        ['SearchField', 'LandingSearchField', 'TextField', 'TextArea', 'MobileTextArea'].includes(
-          name,
-        )
+        [
+          'SearchField',
+          'LandingSearchField',
+          'TextField',
+          'TextArea',
+          'MobileTextArea',
+          'MaskedField',
+        ].includes(name)
       ) {
         source = () => textInputNativeSource(name, args, choice);
       }

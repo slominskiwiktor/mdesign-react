@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react';
+import { mobileMasks } from '../kit/mobile/inputs.js';
+import type { MobileMaskType } from '../kit/mobile/inputs.js';
 import { textOf } from './native-example-text.js';
 import type { NativePlatformChoice } from './native-export.js';
 
@@ -17,6 +19,8 @@ type TextExample = {
   clearLabel?: string;
   passwordToggle?: boolean;
   maxLength?: number;
+  mask?: string;
+  maskType?: MobileMaskType;
   characterLimit?: number;
   hardLimit?: boolean;
   mode?: 'fixed' | 'flexible';
@@ -33,14 +37,30 @@ export function textInputNativeSource(
 ) {
   const search = name === 'SearchField' || name === 'LandingSearchField';
   const multiline = name === 'TextArea' || name === 'MobileTextArea';
+  const masked = name === 'MaskedField';
+  const mask = masked
+    ? (args.mask ?? (args.maskType ? mobileMasks[args.maskType] : '###########'))
+    : '';
   const secure = !search && !multiline && args.type === 'password';
   const rawMode = search
     ? 'search'
-    : (args.inputMode ?? (args.type === 'number' ? 'decimal' : args.type));
+    : (args.inputMode ??
+      (masked && /^[#\s().+0-9/-]+$/.test(mask)
+        ? 'numeric'
+        : args.type === 'number'
+          ? 'decimal'
+          : args.type));
   const config = {
     label: textOf(args.label),
     placeholder:
-      args.placeholder ?? (name === 'LandingSearchField' ? 'Wyszukaj' : search ? 'Szukaj' : ''),
+      args.placeholder ??
+      (masked && args.maskType === 'POST_CODE'
+        ? '__-___'
+        : name === 'LandingSearchField'
+          ? 'Wyszukaj'
+          : search
+            ? 'Szukaj'
+            : ''),
     helper: textOf(args.error ?? args.hint),
     error: !!args.error,
     initialValue: secure ? '' : String(args.value ?? args.defaultValue ?? ''),
@@ -62,6 +82,51 @@ export function textInputNativeSource(
     minHeight: args.minHeight ?? 48,
     maxHeight: args.maxHeight ?? 128,
   };
+  const maskSource = masked
+    ? `
+const mask = ${JSON.stringify(mask)};
+const slot = /[#A*]/;
+function format(text: string) {
+  const prefix = mask.slice(0, Math.max(0, mask.search(slot)));
+  const source = prefix && text.startsWith(prefix) ? text.slice(prefix.length) : text;
+  const chars = Array.from(source).filter((character) => /[\\p{L}\\p{N}]/u.test(character));
+  let index = 0;
+  let formatted = '';
+  let raw = '';
+  for (const token of mask) {
+    if (slot.test(token)) {
+      const pattern = token === '#' ? /\\d/ : token === 'A' ? /\\p{L}/u : /[\\p{L}\\p{N}]/u;
+      while (index < chars.length && !pattern.test(chars[index])) index++;
+      if (index === chars.length) break;
+      const character = chars[index++];
+      formatted += character;
+      raw += character;
+    } else if (chars.length) {
+      formatted += token;
+    }
+  }
+  return { formatted, raw };
+}
+
+function normalize(text: string, previous: string) {
+  const result = format(text);
+  if (text.length !== previous.length - 1 || result.formatted !== previous) return result;
+  const old = Array.from(previous);
+  const next = Array.from(text);
+  const removed = old.findIndex((character, index) => character !== next[index]);
+  if (removed < 0) return result;
+  const tokens = Array.from(mask);
+  if (slot.test(tokens[removed] ?? '')) return result;
+  for (let index = removed - 1; index >= 0; index--) {
+    if (slot.test(tokens[index])) {
+      old.splice(index, 1);
+      return format(old.join(''));
+    }
+  }
+  return result;
+}
+`
+    : '';
   const mode = rawMode && inputModes.has(rawMode) ? rawMode : 'text';
   const ios = platform === 'auto' ? "Platform.OS === 'ios'" : String(platform === 'ios');
 
@@ -71,7 +136,7 @@ import { ${platform === 'auto' ? 'Platform, ' : ''}Pressable, StyleSheet, Text, 
 
 const config = ${JSON.stringify(config, null, 2)};
 const ios = ${ios};
-
+${maskSource}
 function characters(value: string) {
   if (typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function') {
     const segments = new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(value);
@@ -80,13 +145,14 @@ function characters(value: string) {
   return Array.from(value);
 }
 
-export default function TextInputExample({ onValueChange, onSubmit, onLimitReached }: {
+export default function TextInputExample({ onValueChange, onSubmit, onLimitReached${masked ? ', value: controlledValue, onRawValueChange' : ''} }: {
   onValueChange?: (value: string) => void;
   onSubmit?: (value: string) => void;
-  onLimitReached?: (over: boolean) => void;
+  onLimitReached?: (over: boolean) => void;${masked ? '\n  value?: string;\n  onRawValueChange?: (raw: string) => void;' : ''}
 } = {}) {
   const input = useRef<ComponentRef<typeof TextInput>>(null);
-  const [value, setValue] = useState(config.initialValue);
+  const [localValue, setValue] = useState(config.initialValue);
+  const value = ${masked ? 'format(controlledValue ?? localValue).formatted' : 'localValue'};
   const [visible, setVisible] = useState(false);
   const [height, setHeight] = useState(config.minHeight);
   const count = config.characterLimit === null ? 0 : characters(value).length;
@@ -96,10 +162,16 @@ export default function TextInputExample({ onValueChange, onSubmit, onLimitReach
   useEffect(() => { onLimitReached?.(over); }, [over, onLimitReached]);
 
   function change(text: string) {
-    const next = config.hardLimit && config.characterLimit !== null
-      ? characters(text).slice(0, config.characterLimit).join('') : text;
-    setValue(next);
+    ${masked ? 'const masked = normalize(text, value);' : ''}
+    const next = ${
+      masked
+        ? 'masked.formatted'
+        : `config.hardLimit && config.characterLimit !== null
+      ? characters(text).slice(0, config.characterLimit).join('') : text`
+    };
+    ${masked ? 'if (controlledValue === undefined) ' : ''}setValue(next);
     onValueChange?.(next);
+    ${masked ? 'onRawValueChange?.(masked.raw);' : ''}
   }
 
   return (
@@ -125,7 +197,7 @@ export default function TextInputExample({ onValueChange, onSubmit, onLimitReach
           secureTextEntry={config.secure && !visible}
           multiline={config.multiline}
           maxLength={${config.maxLength ?? 'undefined'}}
-          autoCorrect={!config.search && !config.secure}
+          autoCorrect={${masked ? 'false' : '!config.search && !config.secure'}}
           autoCapitalize={config.search || config.secure ? 'none' : 'sentences'}
           onContentSizeChange={config.multiline && config.flexible ? (event) => {
             setHeight(Math.min(config.maxHeight, Math.max(config.minHeight, event.nativeEvent.contentSize.height)));
