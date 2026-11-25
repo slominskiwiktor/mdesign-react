@@ -1,3 +1,4 @@
+import { panelPartNativeSource } from '../src/catalog/panel-part-native';
 import { portalNoticeNativeSource } from '../src/catalog/portal-notice-native';
 import { formFieldNativeSource } from '../src/catalog/form-field-native';
 import { fieldCopyNativeSource } from '../src/catalog/field-copy-native';
@@ -371,6 +372,12 @@ const preview: Preview = {
       }
       if (name === 'PortalBanner' || name === 'PortalErrorView') {
         source = () => portalNoticeNativeSource(name, args, choice);
+      }
+      if (
+        typeof name === 'string' &&
+        /^Portal(?:Card|Panel)(?:Header|Content|Footer)$/.test(name)
+      ) {
+        source = () => panelPartNativeSource(name, args.children, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
