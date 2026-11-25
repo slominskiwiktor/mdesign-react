@@ -3,6 +3,7 @@ import { useGlobals } from 'storybook/preview-api';
 import { NativePreview } from '../src/catalog/NativePreview';
 import { nativePreviewPlatform, normalizeNativePlatformChoice } from '../src/catalog/native-export';
 import { cardListNativeSource } from '../src/catalog/card-list-native';
+import { selectNativeSource } from '../src/catalog/select-native';
 import { bottomNavigationNativeSource } from '../src/catalog/bottom-navigation-native';
 import type { NavigationItem } from '../src/kit/patterns';
 import type { CardListProps } from '../src/kit/mobile/index';
@@ -151,6 +152,13 @@ const preview: Preview = {
               choice,
             );
         }
+      }
+      if ((name === 'Select' || name === 'PortalSelect') && Array.isArray(args.options)) {
+        source = () =>
+          selectNativeSource(
+            { ...args, label: String(args.label ?? 'Wybierz'), options: args.options },
+            choice,
+          );
       }
       const platform =
         category === 'mobile'

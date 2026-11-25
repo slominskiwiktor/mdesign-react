@@ -1,6 +1,7 @@
 import { afterEach, expect, test } from 'vitest';
 import ts from 'typescript';
 import { bottomNavigationNativeSource } from './bottom-navigation-native.js';
+import { selectNativeSource } from './select-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -81,3 +82,32 @@ test.each(['auto', 'ios', 'android'] as const)(
     ).toEqual([]);
   },
 );
+
+test('exports selectable options and platform-specific presentation instead of a static trigger', () => {
+  const example = {
+    label: 'Kontakt',
+    options: [
+      { value: 'email', label: 'E-mail' },
+      { value: 'phone', label: 'Telefon', disabled: true },
+    ],
+    defaultValue: ['email'],
+    searchable: true,
+    multiple: true,
+  };
+  for (const platform of ['auto', 'ios', 'android'] as const) {
+    const source = selectNativeSource(example, platform);
+    expect(source).toContain('setSelected(next)');
+    expect(source).toContain('onChangeText={setQuery}');
+    expect(source).toContain('disabled={option.disabled}');
+    expect(source).toContain(
+      platform === 'auto' ? "Platform.OS === 'ios'" : `const ios = ${platform === 'ios'}`,
+    );
+    expect(
+      ts.transpileModule(source, {
+        fileName: 'Example.tsx',
+        compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+        reportDiagnostics: true,
+      }).diagnostics,
+    ).toEqual([]);
+  }
+});

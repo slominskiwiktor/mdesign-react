@@ -302,6 +302,48 @@ function capture(root: HTMLElement, platform: NativePlatform): Node[] {
   }
 }
 
+function normalizeColors(nodes: Node[], document: Document) {
+  const colors = new Map<string, string | undefined>();
+  let context: CanvasRenderingContext2D | null | undefined;
+
+  function toRgb(color: string) {
+    if (!colors.has(color)) {
+      if (context === undefined) {
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 1;
+        context = canvas.getContext('2d', { colorSpace: 'srgb', willReadFrequently: true });
+      }
+      let converted: string | undefined;
+      if (context) {
+        context.clearRect(0, 0, 1, 1);
+        context.fillStyle = 'rgba(0, 0, 0, 0)';
+        context.fillStyle = color;
+        context.fillRect(0, 0, 1, 1);
+        const [r, g, b, a] = context.getImageData(0, 0, 1, 1).data;
+        converted = `rgba(${r}, ${g}, ${b}, ${Math.round((a / 255) * 1000) / 1000})`;
+      }
+      colors.set(color, converted);
+    }
+    return colors.get(color);
+  }
+
+  function visit(node: Node) {
+    const { style } = node;
+    if (style) {
+      for (const key of ['color', ...colorProps]) {
+        const value = style[key];
+        if (typeof value !== 'string' || !/^(color|lab|lch|oklab|oklch)\(/.test(value)) continue;
+        const converted = toRgb(value);
+        if (converted) style[key] = converted;
+        else delete style[key];
+      }
+    }
+    node.children?.forEach(visit);
+  }
+
+  nodes.forEach(visit);
+}
+
 async function rasterize(uri: string): Promise<string | undefined> {
   const image = new window.Image();
   image.src = uri;
@@ -370,6 +412,8 @@ export async function copyNativeSource(
   const ios = choice === 'android' ? undefined : capture(root, 'ios');
   const android = choice === 'ios' ? undefined : capture(root, 'android');
   if (!ios?.length && !android?.length) throw new Error('Brak widocznej treści do eksportu.');
+
+  normalizeColors([...(ios ?? []), ...(android ?? [])], root.ownerDocument);
 
   const imports = new Set<string>(['View']);
   const images = new Map<string, Promise<string | undefined>>();
