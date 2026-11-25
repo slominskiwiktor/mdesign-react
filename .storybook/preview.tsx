@@ -1,3 +1,4 @@
+import { primitiveNativeSource } from '../src/catalog/primitives-native';
 import { utilityBarNativeSource } from '../src/catalog/utility-bar-native';
 import { footerNativeSource } from '../src/catalog/footer-native';
 import { serviceCatalogNativeSource } from '../src/catalog/service-catalog-native';
@@ -392,6 +393,9 @@ const preview: Preview = {
         source = () => footerNativeSource(name, args, choice);
       }
       if (name === 'LandingUtilityBar') source = () => utilityBarNativeSource(args, choice);
+      if (name === 'Avatar' || name === 'Divider') {
+        source = () => primitiveNativeSource(name, args, choice);
+      }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
       }
