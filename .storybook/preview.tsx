@@ -1,3 +1,4 @@
+import { panelNativeSource } from '../src/catalog/panel-native';
 import { dialogNativeSource } from '../src/catalog/dialog-native';
 import { tabsNativeSource } from '../src/catalog/tabs-native';
 import { accordionNativeSource } from '../src/catalog/accordion-native';
@@ -191,6 +192,9 @@ const preview: Preview = {
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
+      }
+      if (['Card', 'PortalCard', 'PortalPanel', 'MobileContentBox'].includes(name)) {
+        source = () => panelNativeSource(args, choice);
       }
       const platform =
         category === 'mobile'

@@ -5,6 +5,7 @@ import { accordionNativeSource } from './accordion-native.js';
 import { selectNativeSource } from './select-native.js';
 import { tabsNativeSource } from './tabs-native.js';
 import { dialogNativeSource } from './dialog-native.js';
+import { panelNativeSource } from './panel-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -196,3 +197,27 @@ test.each(['auto', 'ios', 'android'] as const)(
     ).toEqual([]);
   },
 );
+
+test('exports a collapsible panel with its initial state and native slots', () => {
+  const source = panelNativeSource(
+    {
+      heading: 'Informacje',
+      collapsible: true,
+      defaultOpen: false,
+      children: 'Szczegóły',
+      shadow: 'none',
+    },
+    'ios',
+  );
+  expect(source).toContain('"open": false');
+  expect(source).toContain('onOpenChange?.(!open)');
+  expect(source).toContain('Szczegóły');
+  expect(source).toContain("config.shadow !== 'none'");
+  expect(
+    ts.transpileModule(source, {
+      fileName: 'Panel.tsx',
+      compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+      reportDiagnostics: true,
+    }).diagnostics,
+  ).toEqual([]);
+});

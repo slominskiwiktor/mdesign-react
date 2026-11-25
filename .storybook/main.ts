@@ -10,7 +10,6 @@ const config: StorybookConfig = {
   framework: { name: '@storybook/react-vite', options: {} },
   staticDirs: [
     '../public',
-    { from: '../src/kit/fonts', to: '/fonts/open-sans' },
     { from: '../dist/showcase', to: '/showcase' },
     { from: '../dist/showcase/preview', to: '/preview' },
   ],
