@@ -1,3 +1,4 @@
+import { richTextNativeSource } from '../src/catalog/rich-text-native';
 import { codeNativeSource } from '../src/catalog/code-native';
 import { sidebarNativeSource } from '../src/catalog/sidebar-native';
 import { messageNativeSource } from '../src/catalog/message-native';
@@ -341,6 +342,9 @@ const preview: Preview = {
       }
       if (['QRCodeCard', 'QRCodeGraphic', 'BarcodeCard', 'BarcodeGraphic'].includes(name)) {
         source = () => codeNativeSource(name, args, choice);
+      }
+      if (name === 'RichText' && Array.isArray(args.segments)) {
+        source = () => richTextNativeSource(args.segments, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
