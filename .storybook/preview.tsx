@@ -1,3 +1,4 @@
+import { filePickerNativeSource } from '../src/catalog/file-picker-native';
 import { badgeNativeSource } from '../src/catalog/badge-native';
 import { buttonNativeSource } from '../src/catalog/button-native';
 import { emptyStateNativeSource } from '../src/catalog/empty-state-native';
@@ -252,6 +253,9 @@ const preview: Preview = {
       }
       if (['Badge', 'MobileStatusBadge', 'NotificationBadge', 'PortalChip'].includes(name)) {
         source = () => badgeNativeSource(name, args, choice);
+      }
+      if (['MobileFilePicker', 'PortalFileUpload', 'FileSourceItem'].includes(name)) {
+        source = () => filePickerNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
