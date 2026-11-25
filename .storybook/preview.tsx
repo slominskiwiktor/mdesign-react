@@ -1,3 +1,4 @@
+import { portalNoticeNativeSource } from '../src/catalog/portal-notice-native';
 import { formFieldNativeSource } from '../src/catalog/form-field-native';
 import { fieldCopyNativeSource } from '../src/catalog/field-copy-native';
 import { chatNativeSource } from '../src/catalog/chat-native';
@@ -367,6 +368,9 @@ const preview: Preview = {
       }
       if (name === 'PortalFormField') {
         source = () => formFieldNativeSource(args, choice);
+      }
+      if (name === 'PortalBanner' || name === 'PortalErrorView') {
+        source = () => portalNoticeNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
