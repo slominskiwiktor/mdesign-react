@@ -289,6 +289,17 @@
 .m-mobile-switch[aria-checked='true'] > span {
   transform: translateX(20px);
 }
+[data-mobile-os='ios'] .m-mobile-switch-copy > label {
+  color: var(--m-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+[data-mobile-os='ios'] .m-mobile-switch[aria-checked='false'] {
+  background: var(--m-switch-off, light-dark(#e9e9eb, #39393d));
+}
+[data-mobile-os='ios'] .m-mobile-switch[aria-checked='true'] {
+  background: var(--m-native-primary);
+}
 .m-mobile-date-trigger-field > button,
 .m-mobile-dropdown-trigger {
   width: 100%;
