@@ -1,3 +1,4 @@
+import { progressNativeSource } from '../src/catalog/progress-native';
 import { switchNativeSource } from '../src/catalog/switch-native';
 import { timeNativeSource } from '../src/catalog/time-native';
 import { pinNativeSource } from '../src/catalog/pin-native';
@@ -224,6 +225,11 @@ const preview: Preview = {
         )
       ) {
         source = () => textInputNativeSource(name, args, choice);
+      }
+      if (
+        ['Progress', 'PortalProgress', 'Spinner', 'PortalLoader', 'LandingLoader'].includes(name)
+      ) {
+        source = () => progressNativeSource(name, args, choice);
       }
       if (name === 'Switch' || name === 'MobileSwitch') {
         source = () => switchNativeSource(args, choice);
