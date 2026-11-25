@@ -1,3 +1,4 @@
+import { headerNativeSource } from '../src/catalog/header-native';
 import { timelineNativeSource } from '../src/catalog/timeline-native';
 import { documentNativeSource } from '../src/catalog/document-native';
 import { rowNativeSource } from '../src/catalog/row-native';
@@ -316,6 +317,9 @@ const preview: Preview = {
       }
       if (name === 'Timeline' || name === 'BulletPoint') {
         source = () => timelineNativeSource(name, args, choice);
+      }
+      if (name === 'AppHeader' || name === 'MobileTopAppBar') {
+        source = () => headerNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
