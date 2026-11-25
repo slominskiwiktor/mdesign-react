@@ -2046,3 +2046,38 @@
 [data-mobile-os='android'] .m-tabs-trigger[data-state='active']::after {
   content: none;
 }
+
+/* Dialogs keep their content and slots when the surrounding platform changes. */
+[data-mobile-os='ios']
+  :is(
+    .m-dialog,
+    .m-mobile-dialog:not([data-variant='native-alert']),
+    .mp-dialog:not(.mp-dialog--fullscreen)
+  ) {
+  border-radius: 14px;
+}
+[data-mobile-os='ios']
+  :is(
+    .m-dialog-title,
+    .m-mobile-dialog:not([data-variant='native-alert']) > h2,
+    .mp-dialog-header h2
+  ) {
+  font-size: 17px;
+  line-height: 22px;
+}
+[data-mobile-os='android']
+  :is(
+    .m-dialog,
+    .m-mobile-dialog:not([data-variant='native-alert']),
+    .mp-dialog:not(.mp-dialog--fullscreen)
+  ) {
+  border-radius: 24px;
+}
+[data-mobile-os='android'] :is(.m-dialog-title, .mp-dialog-header h2) {
+  font-size: 22px;
+  line-height: 28px;
+}
+:is([data-mobile-os='ios'], [data-mobile-os='android']) .m-mobile-bottom-sheet {
+  border-start-start-radius: 24px;
+  border-start-end-radius: 24px;
+}

@@ -1636,6 +1636,20 @@ function PrimitiveDialog({ name, args }: { name: string; args: ExampleArgs }) {
 function Composition({ name, args }: { name: string; args: ExampleArgs }) {
   const def = getExample(name);
   const node = h(def.component, args);
+  if (name === 'DocumentArtwork')
+    return (
+      <div
+        style={{
+          position: 'relative',
+          isolation: 'isolate',
+          width: '100%',
+          maxWidth: 360,
+          aspectRatio: '1.6',
+        }}
+      >
+        {node}
+      </div>
+    );
   if (/^PortalDialog(Root|Surface|Header|Content|Footer|Trigger|Close)$/.test(name))
     return <PrimitiveDialog name={name} args={args} />;
   if (/^Portal(Card|Panel)(Header|Content|Footer)$/.test(name)) {

@@ -1,3 +1,4 @@
+import { dialogNativeSource } from '../src/catalog/dialog-native';
 import { tabsNativeSource } from '../src/catalog/tabs-native';
 import { accordionNativeSource } from '../src/catalog/accordion-native';
 import type { AccordionProps } from '../src/kit/components';
@@ -178,6 +179,10 @@ const preview: Preview = {
       ) {
         source = () =>
           tabsNativeSource({ ...args, items: args.items }, name === 'SegmentedControl', choice);
+      }
+      if (typeof name === 'string' && !source) {
+        const dialog = dialogNativeSource(name, args, choice);
+        if (dialog) source = () => dialog;
       }
       const platform =
         category === 'mobile'

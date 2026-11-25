@@ -4,6 +4,7 @@ import { bottomNavigationNativeSource } from './bottom-navigation-native.js';
 import { accordionNativeSource } from './accordion-native.js';
 import { selectNativeSource } from './select-native.js';
 import { tabsNativeSource } from './tabs-native.js';
+import { dialogNativeSource } from './dialog-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -161,6 +162,33 @@ test.each(['auto', 'ios', 'android'] as const)(
     expect(tabsNativeSource(example, true, platform)).toContain('const segmented = true');
     expect(
       ts.transpileModule(source, {
+        fileName: 'Example.tsx',
+        compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+        reportDiagnostics: true,
+      }).diagnostics,
+    ).toEqual([]);
+  },
+);
+
+test.each(['auto', 'ios', 'android'] as const)(
+  'exports a dismissible native sheet for %s',
+  (platform) => {
+    const source = dialogNativeSource(
+      'BottomSheet',
+      {
+        title: 'Opcje',
+        confirmLabel: 'Potwierdź',
+        cancelLabel: 'Wróć',
+        data: [{ label: 'Status', value: 'Gotowe' }],
+      },
+      platform,
+    );
+    expect(source).toContain('onRequestClose={() => changeOpen(false)}');
+    expect(source).toContain('onConfirm?.()');
+    expect(source).toContain('const sheet = true');
+    expect(source).toContain('Gotowe');
+    expect(
+      ts.transpileModule(source ?? '', {
         fileName: 'Example.tsx',
         compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
         reportDiagnostics: true,

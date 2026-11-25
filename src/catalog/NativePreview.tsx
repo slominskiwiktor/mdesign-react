@@ -25,16 +25,19 @@ export function NativePreview({
 }) {
   const inheritedChoice = useContext(NativePreviewPreference);
   const [localChoice, setLocalChoice] = useState<NativePlatformChoice>();
-  const [code, setCode] = useState('');
-  const [feedback, setFeedback] = useState('');
+  const [result, setResult] = useState<{
+    choice: NativePlatformChoice;
+    code: string;
+    feedback: string;
+  }>();
   const [busy, setBusy] = useState(false);
   const content = useRef<HTMLDivElement>(null);
   const choice = controlledChoice ?? localChoice ?? inheritedChoice;
   const platform = nativePreviewPlatform(choice);
+  const visibleResult = result?.choice === choice ? result : undefined;
 
   function change(value: NativePlatformChoice) {
-    setCode('');
-    setFeedback('');
+    setResult(undefined);
     if (onChoiceChange) onChoiceChange(value);
     else setLocalChoice(value);
   }
@@ -42,19 +45,21 @@ export function NativePreview({
   async function exportCode() {
     if (!content.current) return;
     setBusy(true);
-    setFeedback('');
-    setCode('');
+    setResult(undefined);
     try {
       const text = source ? source(choice) : await copyNativeSource(content.current, choice);
-      setCode(text);
       try {
         await navigator.clipboard.writeText(text);
-        setFeedback('Skopiowano kod React Native.');
+        setResult({ choice, code: text, feedback: 'Skopiowano kod React Native.' });
       } catch {
-        setFeedback('Skopiuj wygenerowany kod z pola poniżej.');
+        setResult({ choice, code: text, feedback: 'Skopiuj wygenerowany kod z pola poniżej.' });
       }
     } catch {
-      setFeedback('Brak widocznej treści. Otwórz komponent w podglądzie i spróbuj ponownie.');
+      setResult({
+        choice,
+        code: '',
+        feedback: 'Brak widocznej treści. Otwórz komponent w podglądzie i spróbuj ponownie.',
+      });
     } finally {
       setBusy(false);
     }
@@ -89,9 +94,14 @@ export function NativePreview({
             {busy ? 'Generowanie…' : 'Kopiuj kod React Native'}
           </button>
         </div>
-        {feedback && <p role="status">{feedback}</p>}
-        {!!code && (
-          <textarea readOnly aria-label="Wygenerowany kod React Native" value={code} rows={8} />
+        {visibleResult?.feedback && <p role="status">{visibleResult.feedback}</p>}
+        {!!visibleResult?.code && (
+          <textarea
+            readOnly
+            aria-label="Wygenerowany kod React Native"
+            value={visibleResult.code}
+            rows={8}
+          />
         )}
       </details>
     </>
