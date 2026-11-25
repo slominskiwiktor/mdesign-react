@@ -14,7 +14,7 @@ export function nativePreviewPlatform(choice: NativePlatformChoice): NativePlatf
 
 type Style = Record<string, string | number>;
 type Primitive = 'View' | 'Text' | 'Image' | 'Pressable' | 'TextInput' | 'Switch';
-type Picture = { uri: string; rasterize?: boolean };
+type Picture = { uri: string; rasterize?: boolean; tintColor?: string };
 type Node = {
   type: Primitive;
   style?: Style;
@@ -155,6 +155,17 @@ function pictureFor(element: Element, css: CSSStyleDeclaration): Picture | undef
         /\.svg(?:[?#]|$)/i.test(uri),
     };
   }
+  // Icons in the kit use a single SVG mask over a solid theme color.
+  if (!element.hasChildNodes()) {
+    const mask = css.maskImage || css.webkitMaskImage;
+    const match = /^url\(["']?(.*?)["']?\)$/.exec(mask);
+    if (match?.[1]) {
+      const uri = new URL(match[1], element.ownerDocument.baseURI);
+      if (uri.origin === window.location.origin || /^data:image\//i.test(uri.href)) {
+        return { uri: uri.href, rasterize: true, tintColor: css.backgroundColor };
+      }
+    }
+  }
   return undefined;
 }
 
@@ -223,10 +234,18 @@ function fromDom(node: ChildNode, parentCss: CSSStyleDeclaration): Node | undefi
     const { width, height } = node.getBoundingClientRect();
     if (width <= 0 || height <= 0) return undefined;
     if (node instanceof HTMLImageElement && node.alt) props.accessibilityLabel = node.alt;
+    const decorative = node.getAttribute('aria-hidden') === 'true';
+    props.accessible = !decorative && !!props.accessibilityLabel;
+    if (decorative) props.importantForAccessibility = 'no';
+    if (props.accessible) props.accessibilityRole = 'image';
     return {
       type: 'Image',
       picture,
-      style: { width: Math.round(width), height: Math.round(height) },
+      style: {
+        width: Math.round(width),
+        height: Math.round(height),
+        ...(picture.tintColor ? { tintColor: picture.tintColor } : {}),
+      },
       props,
     };
   }
@@ -274,6 +293,10 @@ function fromDom(node: ChildNode, parentCss: CSSStyleDeclaration): Node | undefi
 
   const children = Array.from(node.childNodes).flatMap((child) => fromDom(child, css) ?? []);
   if (!children.length && !Object.keys(style).length) return undefined;
+  if (role === 'img' && label) {
+    props.accessible = true;
+    props.accessibilityRole = 'image';
+  }
   if (role && ['header', 'link', 'button', 'tab', 'radio', 'checkbox'].includes(role))
     props.accessibilityRole = role;
   const interactive = [
@@ -345,7 +368,7 @@ function normalizeColors(nodes: Node[], document: Document) {
   function visit(node: Node) {
     const { style } = node;
     if (style) {
-      for (const key of ['color', ...colorProps]) {
+      for (const key of ['color', 'tintColor', ...colorProps]) {
         const value = style[key];
         if (typeof value !== 'string' || !/^(color|lab|lch|oklab|oklch)\(/.test(value)) continue;
         const converted = toRgb(value);
