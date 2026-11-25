@@ -33,13 +33,20 @@ const nativeVersion = typecheckRoot
 const browser = await chromium.launch();
 const results = [];
 let nextStory = 0;
+let clipboardQueue = Promise.resolve();
+
+function useClipboard(check) {
+  const next = clipboardQueue.then(check);
+  clipboardQueue = next.catch(() => {});
+  return next;
+}
 try {
   await Promise.all(
-    Array.from({ length: 4 }, async () => {
+    Array.from({ length: 2 }, async () => {
       const page = await browser.newPage({
         viewport: { width: 390, height: 844 },
         reducedMotion: 'reduce',
-        permissions: ['clipboard-write'],
+        permissions: ['clipboard-read', 'clipboard-write'],
       });
       page.setDefaultTimeout(15000);
       try {
@@ -58,10 +65,15 @@ try {
               await page
                 .locator(`[data-native-preview-content][data-mobile-os="${platform}"]`)
                 .waitFor();
-              await tools.getByRole('button', { name: 'Kopiuj kod React Native' }).click();
-              const source = await tools
-                .getByRole('textbox', { name: 'Wygenerowany kod React Native' })
-                .inputValue();
+              const source = await useClipboard(async () => {
+                await tools.getByRole('button', { name: 'Kopiuj kod React Native' }).click();
+                const code = await tools
+                  .getByRole('textbox', { name: 'Wygenerowany kod React Native' })
+                  .inputValue();
+                const copied = await page.evaluate(() => navigator.clipboard.readText());
+                assert.equal(copied, code, 'Clipboard content differs from generated code');
+                return code;
+              });
 
               assert(source.includes("from 'react-native'"), 'Missing React Native import');
               assert(source.includes('export default'), 'Missing example component');
@@ -77,7 +89,14 @@ try {
                   .map((item) => ts.flattenDiagnosticMessageText(item.messageText, '\n'))
                   .join('\n'),
               );
-              const result = { id: story.id, platform, status: 'pass' };
+              const result = {
+                id: story.id,
+                platform,
+                status: 'pass',
+                exportKind: source.includes('export default function ComponentExample(')
+                  ? 'dom-conversion'
+                  : 'component-example',
+              };
               if (typecheckRoot) {
                 const file = resolve(typecheckRoot, `${story.id}-${platform}.tsx`);
                 await writeFile(file, source);
@@ -150,5 +169,10 @@ for (const failure of failures) {
 }
 console.log(
   `React Native ${nativeVersion ? `${nativeVersion} type-checked` : 'TSX'} exports: ${results.length - failures.length}/${stories.length * 2} passed.`,
+);
+const converted = results.filter(({ exportKind }) => exportKind === 'dom-conversion').length;
+const dedicated = results.filter(({ exportKind }) => exportKind === 'component-example').length;
+console.log(
+  `Verified clipboard exports: ${dedicated} component examples, ${converted} DOM conversions.`,
 );
 process.exitCode = failures.length ? 1 : 0;
