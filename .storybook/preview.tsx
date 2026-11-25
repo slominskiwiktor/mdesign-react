@@ -1,3 +1,4 @@
+import { messageNativeSource } from '../src/catalog/message-native';
 import { sectionHeadingNativeSource } from '../src/catalog/section-heading-native';
 import { headerNativeSource } from '../src/catalog/header-native';
 import { timelineNativeSource } from '../src/catalog/timeline-native';
@@ -329,6 +330,9 @@ const preview: Preview = {
         name === 'PortalPageTitle'
       ) {
         source = () => sectionHeadingNativeSource(name, args, choice);
+      }
+      if (name === 'Alert' || name === 'PortalMessage' || name === 'MobileAnnouncement') {
+        source = () => messageNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
