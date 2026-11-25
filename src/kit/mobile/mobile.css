@@ -1270,6 +1270,14 @@
   font-size: 15px;
   line-height: 20px;
 }
+[data-mobile-os='ios'] .m-mobile-snackbar {
+  min-height: 48px;
+  font-size: 13px;
+  line-height: 18px;
+  box-shadow:
+    0 2px 4px rgb(16 19 23 / 4%),
+    0 16px 32px rgb(16 19 23 / 12%);
+}
 .m-mobile-snackbar > span {
   flex: 1;
   min-width: 0;

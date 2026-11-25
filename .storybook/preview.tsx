@@ -1,3 +1,4 @@
+import { snackbarNativeSource } from '../src/catalog/snackbar-native';
 import { dataTableNativeSource } from '../src/catalog/data-table-native';
 import { carouselNativeSource } from '../src/catalog/carousel-native';
 import { calendarNativeSource } from '../src/catalog/calendar-native';
@@ -195,6 +196,9 @@ const preview: Preview = {
       ) {
         source = () =>
           tabsNativeSource({ ...args, items: args.items }, name === 'SegmentedControl', choice);
+      }
+      if (name === 'MobileSnackbar' || name === 'PortalSnackbar' || name === 'MobileBanner') {
+        source = () => snackbarNativeSource(name, args, choice);
       }
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
