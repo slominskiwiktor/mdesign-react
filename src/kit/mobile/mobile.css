@@ -2219,3 +2219,21 @@
   height: 40px;
   border-radius: 50%;
 }
+
+/* Compact page dots, with an independent touch target in interactive mode. */
+[data-mobile-os='ios'] .m-mobile-page-indicator > button {
+  width: 30px;
+  height: 44px;
+}
+[data-mobile-os='ios'] :is(.m-mobile-page-indicator > button > span, .m-mobile-page-dot) {
+  width: 6px;
+  height: 6px;
+}
+[data-mobile-os='ios'] .m-mobile-page-dot {
+  margin: 19px 12px;
+}
+[data-mobile-os='ios'] .m-landing .ml-carousel-actions > button {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 12px;
+}

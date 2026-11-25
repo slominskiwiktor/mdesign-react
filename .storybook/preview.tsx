@@ -1,3 +1,4 @@
+import { carouselNativeSource } from '../src/catalog/carousel-native';
 import { calendarNativeSource } from '../src/catalog/calendar-native';
 import { menuNativeSource } from '../src/catalog/menu-native';
 import { paginationNativeSource } from '../src/catalog/pagination-native';
@@ -146,7 +147,7 @@ const preview: Preview = {
         ? { ...context.args, platform: itemPlatform ?? nativePreviewPlatform(choice) }
         : context.args;
       const story = <Story args={args} />;
-      let source: (() => string) | undefined;
+      let source: (() => string | Promise<string>) | undefined;
       if (Array.isArray(args.items)) {
         if (cardList) {
           source = () =>
@@ -227,6 +228,9 @@ const preview: Preview = {
         name === 'PortalDatePicker'
       ) {
         source = () => calendarNativeSource(name, args, choice);
+      }
+      if (['Pager', 'Onboarding', 'PageIndicator', 'LandingDocumentCarousel'].includes(name)) {
+        source = () => carouselNativeSource(name, args, choice);
       }
       const platform =
         category === 'mobile'

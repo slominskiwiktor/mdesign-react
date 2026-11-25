@@ -11,6 +11,7 @@ import { textInputNativeSource } from './text-input-native.js';
 import { paginationNativeSource } from './pagination-native.js';
 import { menuNativeSource } from './menu-native.js';
 import { calendarNativeSource } from './calendar-native.js';
+import { carouselNativeSource } from './carousel-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -348,4 +349,26 @@ test('exports platform calendars with bounds and a confirm step for the mobile d
       }).diagnostics,
     ).toEqual([]);
   }
+});
+
+test('exports pager gestures and starts from a bounded page', async () => {
+  const source = await carouselNativeSource(
+    'Pager',
+    {
+      defaultPage: 10,
+      pages: [{ content: 'Dokumenty' }, { content: 'Usługi', buttonLabel: 'Zamknij' }],
+    },
+    'auto',
+  );
+  expect(source).toContain('bounded(config.initial)');
+  expect(source).toContain('horizontal pagingEnabled');
+  expect(source).toContain('onFinish?.()');
+  expect(source).toContain('"Zamknij"');
+  expect(
+    ts.transpileModule(source, {
+      fileName: 'Carousel.tsx',
+      compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+      reportDiagnostics: true,
+    }).diagnostics,
+  ).toEqual([]);
 });

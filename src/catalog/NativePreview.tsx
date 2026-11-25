@@ -20,7 +20,7 @@ export function NativePreview({
   children: ReactNode;
   choice?: NativePlatformChoice;
   onChoiceChange?: (choice: NativePlatformChoice) => void;
-  source?: (choice: NativePlatformChoice) => string;
+  source?: (choice: NativePlatformChoice) => string | Promise<string>;
   className?: string;
 }) {
   const inheritedChoice = useContext(NativePreviewPreference);
@@ -47,7 +47,7 @@ export function NativePreview({
     setBusy(true);
     setResult(undefined);
     try {
-      const text = source ? source(choice) : await copyNativeSource(content.current, choice);
+      const text = source ? await source(choice) : await copyNativeSource(content.current, choice);
       try {
         await navigator.clipboard.writeText(text);
         setResult({ choice, code: text, feedback: 'Skopiowano kod React Native.' });

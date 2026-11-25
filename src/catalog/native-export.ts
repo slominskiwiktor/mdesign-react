@@ -359,7 +359,7 @@ function normalizeColors(nodes: Node[], document: Document) {
   nodes.forEach(visit);
 }
 
-async function rasterize(uri: string): Promise<string | undefined> {
+export async function rasterize(uri: string): Promise<string | undefined> {
   const image = new window.Image();
   image.src = uri;
   try {
