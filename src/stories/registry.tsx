@@ -1398,6 +1398,10 @@ function statesFor(name: string, props: ExampleProp[]): Record<string, ExampleAr
     states.Checked = { checked: true };
   if (names.has('selected')) states.Selected = { selected: true };
   if (names.has('open')) states.Open = { open: true };
+  if (name === 'CardList') {
+    states.IOS = { platform: 'ios' };
+    states.Android = { platform: 'android' };
+  }
   if (names.has('tone') && props.find((p) => p.name === 'tone')?.type.match(/Tone|"danger"/))
     states.Danger = { tone: 'danger' };
   if (props.some((p) => p.name === 'variant' && p.type.includes('"secondary"')))

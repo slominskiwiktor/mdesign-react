@@ -1,0 +1,53 @@
+.md-native-preview-tools {
+  margin-block: 12px;
+  color: var(--m-text, #101317);
+  font:
+    14px/1.5 system-ui,
+    sans-serif;
+  min-width: 0;
+}
+
+.md-native-preview-tools summary {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.md-native-preview-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 8px 12px;
+  margin-top: 8px;
+}
+
+.md-native-preview-controls label {
+  display: grid;
+  gap: 4px;
+}
+
+.md-native-preview-controls :is(select, button) {
+  min-height: 36px;
+  padding-inline: 8px;
+  color: inherit;
+  background: var(--m-surface, #fff);
+  border: 1px solid var(--m-border, #a3a6ac);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.md-native-preview-tools textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font:
+    12px/1.5 ui-monospace,
+    monospace;
+  color: inherit;
+  background: var(--m-surface, #fff);
+  border: 1px solid var(--m-border, #a3a6ac);
+}
+
+.md-native-preview-tools :is(summary, select, button, textarea):focus-visible {
+  outline: 2px solid var(--m-focus, #0452a8);
+  outline-offset: 2px;
+}

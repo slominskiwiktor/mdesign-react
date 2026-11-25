@@ -19,6 +19,25 @@ z przypisaniem dotyczącym źródłowego katalogu `iOS/`.
 | Kolory mobile                            | [Oficjalny portal źródeł](https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/ios), [zapisane dane i ścieżki kolorów](https://github.com/slominskiwiktor/mdesign-react/blob/main/src/kit/official-mobile-colors.json). |
 | Adapter wartości webowych                | [Cztery użytkowe kolory](../src/kit/web-tokens.css), [pochodzenie pomiaru](../public/provenance.json). Autorska struktura mDesign; pełny arkusz portalu i obiekty presetów nie są dystrybuowane.                               |
 
+### Warianty listy kart
+
+`CardList` przyjmuje opcjonalny props `platform="ios"` lub `platform="android"`. Bez tego propa zachowuje dotychczasowy wygląd.
+
+### Podgląd i eksport React Native
+
+W Storybooku wybór **Auto**, **iOS** lub **Android** jest wspólny dla historii komponentów. W katalogu można go ustawić dla strony i zmienić w pojedynczym przykładzie. Auto używa iOS jako wartości domyślnej, a gdy przeglądarka zgłasza Androida, podgląd dostaje wariant Android. Konkretne różnice geometrii obowiązują tam, gdzie biblioteka zawiera reguły dla danego systemu.
+
+Rozwiń panel **React Native** i wybierz **Kopiuj kod React Native**. Dla `CardList` Storybook eksportuje szablon z tekstami przykładu i opcjonalnymi `renderIcon` oraz `onSelect`. Pozostałe przykłady eksportują widoczny stan podglądu jako podstawowe komponenty React Native. Przyciski wywołują opcjonalne `onAction`. Gdy platformy mają różne style, eksport Auto wybiera je przez [`Platform.select`](https://reactnative.dev/docs/platform-specific-code).
+
+Eksport widocznego stanu zachowuje teksty, podstawowy układ i część kontrolek. Nawigacja, animacje, stan złożonych kontrolek, układ tabel i otwarte elementy renderowane poza podglądem wymagają dostosowania w aplikacji natywnej. Ikony SVG z podglądu są rasteryzowane, jeśli przeglądarka może odczytać obraz. Wygenerowany kod pozostaje też w polu do ręcznego kopiowania.
+
+### Punkty odniesienia dla CardList
+
+- **iOS.** Oficjalny `SingleCardGroupBoxStyle.swift` określa minimum 44 pt dla treści. W wariancie webowym dodajemy po 8 px odstępu pionowego, co daje minimum 60 px. Płaska grupa z promieniem 12 px i separatorem wyrównanym do tekstu to decyzje kompozycji webowej. Udostępnione źródła obejmują komponenty design systemu i ich podgląd. Wysokość całego wiersza ekranu „Więcej” nie wynika z samego komponentu.
+- **Android.** Oficjalny `CardList.kt` używa zerowej elewacji i odstępu 20 dp od krawędzi separatora. `SingleCard.kt` ustawia minimum 80 dp. Wariant webowy przekłada te wartości geometrii na piksele CSS.
+
+[Oficjalny podgląd iOS](https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/ios) · [Oficjalny podgląd Androida](https://www.mobywatel.gov.pl/kod-zrodlowy-mobywatel-mobilny/android)
+
 ## Pozostałe źródła
 
 | Materiał                            | Źródło licencji lub implementacji                                                                                                                                                                                                                                                                                                        |

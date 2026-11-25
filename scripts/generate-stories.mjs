@@ -237,6 +237,7 @@ function statesFor(record) {
     if (names.has(prop)) out.push(state);
   }
   if (names.has('open')) out.push('Open');
+  if (record.name === 'CardList') out.push('IOS', 'Android');
   if (record.props.some((prop) => prop.name === 'tone' && /Tone|"danger"/.test(prop.type)))
     out.push('Danger');
   if (record.props.some((prop) => prop.name === 'variant' && prop.type.includes('"secondary"')))

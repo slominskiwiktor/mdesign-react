@@ -728,6 +728,63 @@
 .m-mobile-card-list .m-mobile-single-card {
   border-radius: 0;
 }
+/* Platform recipes are scoped to grouped cards and opt in through CardList. */
+:is(.m-mobile-card-list[data-card-platform], [data-mobile-os] .m-mobile-card-list) {
+  box-shadow: none;
+}
+:is(
+  .m-mobile-card-list[data-card-platform='ios'],
+  [data-mobile-os='ios'] .m-mobile-card-list:not([data-card-platform])
+) {
+  border-radius: 12px;
+}
+:is(
+    .m-mobile-card-list[data-card-platform='ios'],
+    [data-mobile-os='ios'] .m-mobile-card-list:not([data-card-platform])
+  )
+  :is(.m-mobile-single-card, .m-mobile-single-main) {
+  min-height: 60px;
+}
+:is(
+    .m-mobile-card-list[data-card-platform='ios'],
+    [data-mobile-os='ios'] .m-mobile-card-list:not([data-card-platform])
+  )
+  .m-mobile-single-main {
+  padding-block: 8px;
+}
+:is(
+    .m-mobile-card-list[data-card-platform='ios'],
+    [data-mobile-os='ios'] .m-mobile-card-list:not([data-card-platform])
+  )
+  > [role='listitem']
+  + [role='listitem']::before {
+  background: var(--m-border);
+  inset-inline-end: 0;
+}
+:is(
+    .m-mobile-card-list[data-card-platform='ios'],
+    [data-mobile-os='ios'] .m-mobile-card-list:not([data-card-platform])
+  )
+  > [role='listitem']:has(.m-mobile-single-media)
+  + [role='listitem']::before {
+  inset-inline-start: 56px;
+}
+:is(
+    .m-mobile-card-list[data-card-platform='android'],
+    [data-mobile-os='android'] .m-mobile-card-list:not([data-card-platform])
+  )
+  :is(.m-mobile-single-card, .m-mobile-single-main) {
+  min-height: 80px;
+}
+:is(
+    .m-mobile-card-list[data-card-platform='android'],
+    [data-mobile-os='android'] .m-mobile-card-list:not([data-card-platform])
+  )
+  > [role='listitem']
+  + [role='listitem']::before {
+  inset-inline: 20px;
+  height: 1px;
+}
 .m-mobile-document-thumbnail {
   display: block;
   width: 40px;

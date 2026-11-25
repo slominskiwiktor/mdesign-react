@@ -1,3 +1,6 @@
+import { NativePreview, NativePreviewPreference } from './NativePreview.js';
+import { normalizeNativePlatformChoice } from './native-export.js';
+import type { NativePlatformChoice } from './native-export.js';
 import { docsPath } from '../docs-path';
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent, ReactNode } from 'react';
@@ -252,7 +255,7 @@ function Showcase({
         </div>
       </div>
       {mode === 'preview' ? (
-        <div className="showcase-preview">{children}</div>
+        <NativePreview className="showcase-preview">{children}</NativePreview>
       ) : (
         <Code>{code}</Code>
       )}
@@ -278,6 +281,7 @@ export default function App() {
     localStorage.getItem('mdesign-theme') === 'dark' ? 'dark' : 'light',
   );
   const [platform, setPlatform] = useState<'web' | 'mobile'>('web');
+  const [nativePlatform, setNativePlatform] = useState<NativePlatformChoice>('auto');
   const [query, setQuery] = useState('');
   const [navOpen, setNavOpen] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -356,7 +360,7 @@ export default function App() {
       .toLocaleLowerCase('pl')
       .includes(query.toLocaleLowerCase('pl')),
   );
-  return (
+  const view = (
     <div className="catalog-app">
       <a
         className="skip-link"
@@ -506,6 +510,34 @@ export default function App() {
             Źródła sprawdzone 19.10.2026
           </span>
         </div>
+        {[
+          'buttons',
+          'forms',
+          'navigation',
+          'cards',
+          'feedback',
+          'overlays',
+          'mobile-kit',
+          'portal-kit',
+          'landing-kit',
+          'screens',
+        ].includes(page) && (
+          <div className="md-native-preview-controls">
+            <label>
+              System podglądu React Native
+              <select
+                value={nativePlatform}
+                onChange={(event) =>
+                  setNativePlatform(normalizeNativePlatformChoice(event.currentTarget.value))
+                }
+              >
+                <option value="auto">Auto</option>
+                <option value="ios">iOS</option>
+                <option value="android">Android</option>
+              </select>
+            </label>
+          </div>
+        )}
         {page === 'overview' ? (
           <Overview go={go} />
         ) : (
@@ -599,6 +631,11 @@ export default function App() {
         </footer>
       </main>
     </div>
+  );
+  return (
+    <NativePreviewPreference.Provider value={nativePlatform}>
+      {view}
+    </NativePreviewPreference.Provider>
   );
 }
 function ArrowUpRight() {

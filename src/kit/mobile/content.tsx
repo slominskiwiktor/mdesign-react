@@ -663,12 +663,21 @@ export interface CardListProps {
   items: NativeSingleCardProps[];
   label?: string;
   maxHeight?: number;
+  /** Selects platform spacing and group treatment. Omit to keep the default mDesign presentation. */
+  platform?: 'ios' | 'android';
   className?: string;
 }
-export function CardList({ items, label = 'Lista', maxHeight, className }: CardListProps) {
+export function CardList({
+  items,
+  label = 'Lista',
+  maxHeight,
+  platform,
+  className,
+}: CardListProps) {
   return (
     <div
       className={mobileClass('card-list', className)}
+      data-card-platform={platform}
       role="list"
       aria-label={label}
       style={maxHeight ? { maxHeight, overflowY: 'auto' } : undefined}

@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Button } from '../kit/components.js';
 import { CatalogIndex, CatalogPage } from './CatalogLayout.js';
+import { NativePreview } from './NativePreview.js';
 import {
   PortalBreadcrumbs,
   PortalCalendar,
@@ -180,8 +181,8 @@ function Section({
         {note && <p>{note}</p>}
       </header>
       <div className="kit-example">
-        <div className="kit-example-preview" data-theme="light">
-          {children}
+        <div data-theme="light">
+          <NativePreview className="kit-example-preview">{children}</NativePreview>
         </div>
       </div>
     </section>
