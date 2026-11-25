@@ -1,3 +1,4 @@
+import { nativePreviewPlatform, normalizeNativePlatformChoice } from '../catalog/native-export.js';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, isMockFunction, userEvent, within } from 'storybook/test';
 import { ExampleRenderer, buildExampleSource, getExample } from './registry.js';
@@ -237,7 +238,10 @@ export function getStoryMeta(name: string): Meta<ExampleArgs> {
     render: (args) => <ExampleRenderer name={name} args={args} />,
     play: ['Button', 'PortalSelect', 'PortalMenu', 'PortalFileUpload'].includes(name)
       ? async ({ canvasElement, args }) => {
-          const canvas = within(canvasElement);
+          const canvas = within(
+            canvasElement.querySelector<HTMLElement>('[data-native-preview-content]') ??
+              canvasElement,
+          );
           if (name === 'Button') {
             if (isMockFunction(args.onClick)) args.onClick.mockClear();
             const button = canvas.getByRole('button');
@@ -304,10 +308,26 @@ export function getStoryMeta(name: string): Meta<ExampleArgs> {
             _source: string,
             context: { args: ExampleArgs; globals?: Record<string, unknown> },
           ) =>
-            buildExampleSource(name, context.args, {
-              theme: String(context.globals?.componentTheme ?? 'light'),
-              corePlatform: String(context.globals?.corePlatform ?? 'mobile'),
-            }),
+            buildExampleSource(
+              name,
+              name === 'CardList'
+                ? {
+                    ...context.args,
+                    platform: nativePreviewPlatform(
+                      normalizeNativePlatformChoice(
+                        context.globals?.nativePlatform === 'auto' ||
+                          !context.globals?.nativePlatform
+                          ? context.args.platform
+                          : context.globals.nativePlatform,
+                      ),
+                    ),
+                  }
+                : context.args,
+              {
+                theme: String(context.globals?.componentTheme ?? 'light'),
+                corePlatform: String(context.globals?.corePlatform ?? 'mobile'),
+              },
+            ),
         },
       },
     },

@@ -1,4 +1,5 @@
 import type { HTMLAttributes, ReactNode } from 'react';
+import { NativePreview } from './NativePreview.js';
 import './catalog-layout.css';
 
 interface CatalogPageProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
@@ -63,7 +64,9 @@ export function CatalogExample({
         </h3>
         {note && <p>{note}</p>}
       </header>
-      <div className={`kit-example-preview ${previewClassName}`}>{children}</div>
+      <NativePreview className={`kit-example-preview ${previewClassName}`}>
+        {children}
+      </NativePreview>
     </article>
   );
 }

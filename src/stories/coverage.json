@@ -617,7 +617,9 @@
       "category": "mobile",
       "storyFile": "src/stories/mobile/CardList.stories.tsx",
       "states": [
-        "Default"
+        "Default",
+        "IOS",
+        "Android"
       ]
     },
     {

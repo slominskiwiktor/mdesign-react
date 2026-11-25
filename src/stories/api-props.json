@@ -7708,6 +7708,7 @@
       "items",
       "label",
       "maxHeight",
+      "platform",
       "className"
     ],
     "CardStack": [
@@ -33898,11 +33899,11 @@
     "CardList": {
       "label": {
         "summary": "\"Lista\"",
-        "detail": "'Lista'\nŹródło: src/kit/mobile/content.tsx:668",
+        "detail": "'Lista'\nŹródło: src/kit/mobile/content.tsx:672",
         "expression": "'Lista'",
         "source": {
           "file": "src/kit/mobile/content.tsx",
-          "line": 668,
+          "line": 672,
           "kind": "parameter"
         }
       }
@@ -34074,31 +34075,31 @@
     "MobileBanner": {
       "tone": {
         "summary": "\"info\"",
-        "detail": "'info'\nŹródło: src/kit/mobile/content.tsx:854",
+        "detail": "'info'\nŹródło: src/kit/mobile/content.tsx:863",
         "expression": "'info'",
         "source": {
           "file": "src/kit/mobile/content.tsx",
-          "line": 854,
+          "line": 863,
           "kind": "parameter"
         }
       },
       "emphasis": {
         "summary": "\"low\"",
-        "detail": "'low'\nŹródło: src/kit/mobile/content.tsx:855",
+        "detail": "'low'\nŹródło: src/kit/mobile/content.tsx:864",
         "expression": "'low'",
         "source": {
           "file": "src/kit/mobile/content.tsx",
-          "line": 855,
+          "line": 864,
           "kind": "parameter"
         }
       },
       "dismissLabel": {
         "summary": "\"Zamknij komunikat\"",
-        "detail": "'Zamknij komunikat'\nŹródło: src/kit/mobile/content.tsx:860",
+        "detail": "'Zamknij komunikat'\nŹródło: src/kit/mobile/content.tsx:869",
         "expression": "'Zamknij komunikat'",
         "source": {
           "file": "src/kit/mobile/content.tsx",
-          "line": 860,
+          "line": 869,
           "kind": "parameter"
         }
       }
@@ -34329,31 +34330,31 @@
     "MobileStatusBadge": {
       "tone": {
         "summary": "\"neutral\"",
-        "detail": "'neutral'\nŹródło: src/kit/mobile/content.tsx:890",
+        "detail": "'neutral'\nŹródło: src/kit/mobile/content.tsx:899",
         "expression": "'neutral'",
         "source": {
           "file": "src/kit/mobile/content.tsx",
-          "line": 890,
+          "line": 899,
           "kind": "parameter"
         }
       },
       "bordered": {
         "summary": "false",
-        "detail": "false\nŹródło: src/kit/mobile/content.tsx:892",
+        "detail": "false\nŹródło: src/kit/mobile/content.tsx:901",
         "expression": "false",
         "source": {
           "file": "src/kit/mobile/content.tsx",
-          "line": 892,
+          "line": 901,
           "kind": "parameter"
         }
       },
       "dot": {
         "summary": "false",
-        "detail": "false\nŹródło: src/kit/mobile/content.tsx:893",
+        "detail": "false\nŹródło: src/kit/mobile/content.tsx:902",
         "expression": "false",
         "source": {
           "file": "src/kit/mobile/content.tsx",
-          "line": 893,
+          "line": 902,
           "kind": "parameter"
         }
       }
@@ -34821,11 +34822,11 @@
     "Timeline": {
       "label": {
         "summary": "\"Historia\"",
-        "detail": "'Historia'\nŹródło: src/kit/mobile/content.tsx:709",
+        "detail": "'Historia'\nŹródło: src/kit/mobile/content.tsx:718",
         "expression": "'Historia'",
         "source": {
           "file": "src/kit/mobile/content.tsx",
-          "line": 709,
+          "line": 718,
           "kind": "parameter"
         }
       }

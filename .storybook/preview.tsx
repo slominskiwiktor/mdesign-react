@@ -1,4 +1,9 @@
 import type { Preview } from '@storybook/react-vite';
+import { useGlobals } from 'storybook/preview-api';
+import { NativePreview } from '../src/catalog/NativePreview';
+import { nativePreviewPlatform, normalizeNativePlatformChoice } from '../src/catalog/native-export';
+import { cardListNativeSource } from '../src/catalog/card-list-native';
+import type { CardListProps } from '../src/kit/mobile/index';
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import { DocumentationContainer } from './DocumentationContainer';
 import '../src/kit/tokens.css';
@@ -13,10 +18,24 @@ const preview: Preview = {
   initialGlobals: {
     componentTheme: 'light',
     corePlatform: 'web',
+    nativePlatform: 'auto',
     viewport: { value: 'responsive' },
     backgrounds: { value: 'light' },
   },
   globalTypes: {
+    nativePlatform: {
+      name: 'System podglądu React Native',
+      description: 'Auto wykrywa Androida w przeglądarce. iOS i Android pozwalają wymusić podgląd.',
+      toolbar: {
+        icon: 'mobile',
+        dynamicTitle: true,
+        items: [
+          { value: 'auto', title: 'System: Auto' },
+          { value: 'ios', title: 'System: iOS' },
+          { value: 'android', title: 'System: Android' },
+        ],
+      },
+    },
     componentTheme: {
       name: 'Motyw komponentu',
       description:
@@ -102,8 +121,25 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story, context) => {
-      const category = context.parameters.mdesign?.category;
+    function NativeStoryDecorator(Story, context) {
+      const [globals, updateGlobals] = useGlobals();
+      const { category, name } = context.parameters.mdesign ?? {};
+      const choice = normalizeNativePlatformChoice(globals.nativePlatform);
+      const cardList = name === 'CardList';
+      const preset = cardList && choice === 'auto' ? context.args.platform : undefined;
+      const itemPlatform = preset === 'ios' || preset === 'android' ? preset : undefined;
+      const args = cardList
+        ? { ...context.args, platform: itemPlatform ?? nativePreviewPlatform(choice) }
+        : context.args;
+      const story = <Story args={args} />;
+      const source =
+        cardList && Array.isArray(args.items)
+          ? () =>
+              cardListNativeSource(
+                args.items as CardListProps['items'],
+                itemPlatform ?? (choice === 'auto' ? undefined : choice),
+              )
+          : undefined;
       const platform =
         category === 'mobile'
           ? 'mobile'
@@ -120,7 +156,17 @@ const preview: Preview = {
           data-theme={theme}
           data-story-category={category ?? 'docs'}
         >
-          <Story />
+          {name ? (
+            <NativePreview
+              choice={choice}
+              onChoiceChange={(next) => updateGlobals({ nativePlatform: next })}
+              source={source}
+            >
+              {story}
+            </NativePreview>
+          ) : (
+            story
+          )}
         </div>
       );
     },

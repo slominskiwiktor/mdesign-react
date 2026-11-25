@@ -3488,6 +3488,16 @@
           "description": "Maksymalna wysokość listy w pikselach CSS; nadmiar treści przewija się wewnątrz listy."
         },
         {
+          "name": "platform",
+          "type": "\"ios\" | \"android\" | undefined",
+          "required": false,
+          "description": "Selects platform spacing and group treatment. Omit to keep the default mDesign presentation.",
+          "options": [
+            "ios",
+            "android"
+          ]
+        },
+        {
           "name": "className",
           "type": "string | undefined",
           "required": false,
