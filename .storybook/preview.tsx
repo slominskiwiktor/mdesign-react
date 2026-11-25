@@ -3,6 +3,8 @@ import { useGlobals } from 'storybook/preview-api';
 import { NativePreview } from '../src/catalog/NativePreview';
 import { nativePreviewPlatform, normalizeNativePlatformChoice } from '../src/catalog/native-export';
 import { cardListNativeSource } from '../src/catalog/card-list-native';
+import { bottomNavigationNativeSource } from '../src/catalog/bottom-navigation-native';
+import type { NavigationItem } from '../src/kit/patterns';
 import type { CardListProps } from '../src/kit/mobile/index';
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import { DocumentationContainer } from './DocumentationContainer';
@@ -132,14 +134,24 @@ const preview: Preview = {
         ? { ...context.args, platform: itemPlatform ?? nativePreviewPlatform(choice) }
         : context.args;
       const story = <Story args={args} />;
-      const source =
-        cardList && Array.isArray(args.items)
-          ? () =>
-              cardListNativeSource(
-                args.items as CardListProps['items'],
-                itemPlatform ?? (choice === 'auto' ? undefined : choice),
-              )
-          : undefined;
+      let source: (() => string) | undefined;
+      if (Array.isArray(args.items)) {
+        if (cardList) {
+          source = () =>
+            cardListNativeSource(
+              args.items as CardListProps['items'],
+              itemPlatform ?? (choice === 'auto' ? undefined : choice),
+            );
+        } else if (name === 'BottomNavigation') {
+          source = () =>
+            bottomNavigationNativeSource(
+              args.items as NavigationItem[],
+              String(args.value ?? ''),
+              String(args.label ?? 'Nawigacja główna'),
+              choice,
+            );
+        }
+      }
       const platform =
         category === 'mobile'
           ? 'mobile'

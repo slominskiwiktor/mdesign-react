@@ -1,5 +1,6 @@
 import { afterEach, expect, test } from 'vitest';
 import ts from 'typescript';
+import { bottomNavigationNativeSource } from './bottom-navigation-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -52,3 +53,31 @@ test('uses the view styles of both platforms only for automatic export', async (
   expect(android).not.toContain('Platform.select');
   expect(root.dataset.mobileOs).toBe('ios');
 });
+
+test.each(['auto', 'ios', 'android'] as const)(
+  'exports stateful bottom navigation for %s',
+  (platform) => {
+    const source = bottomNavigationNativeSource(
+      [
+        { value: 'home', label: 'Start', icon: null },
+        { value: 'more', label: 'Więcej', icon: null, disabled: true },
+      ],
+      'home',
+      'Nawigacja główna',
+      platform,
+    );
+    expect(source).toContain('setValue(item.value)');
+    expect(source).toContain('disabled={item.disabled}');
+    expect(source).toContain('renderIcon(item.value, selected)');
+    expect(source).toContain(
+      platform === 'auto' ? "Platform.OS === 'ios'" : `const ios = ${platform === 'ios'}`,
+    );
+    expect(
+      ts.transpileModule(source, {
+        fileName: 'Example.tsx',
+        compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+        reportDiagnostics: true,
+      }).diagnostics,
+    ).toEqual([]);
+  },
+);
