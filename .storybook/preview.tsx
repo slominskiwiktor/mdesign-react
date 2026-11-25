@@ -1,3 +1,4 @@
+import { buttonNativeSource } from '../src/catalog/button-native';
 import { emptyStateNativeSource } from '../src/catalog/empty-state-native';
 import { skeletonNativeSource } from '../src/catalog/skeleton-native';
 import { linkNativeSource } from '../src/catalog/link-native';
@@ -244,6 +245,9 @@ const preview: Preview = {
       }
       if (name === 'MobileTimePicker') {
         source = () => timeNativeSource(args, choice);
+      }
+      if (['Button', 'IconButton', 'MobileTextButton', 'LandingButton'].includes(name)) {
+        source = () => buttonNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
