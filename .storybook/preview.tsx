@@ -1,3 +1,4 @@
+import { choiceNativeSource } from '../src/catalog/choice-native';
 import { panelNativeSource } from '../src/catalog/panel-native';
 import { dialogNativeSource } from '../src/catalog/dialog-native';
 import { tabsNativeSource } from '../src/catalog/tabs-native';
@@ -195,6 +196,9 @@ const preview: Preview = {
       }
       if (['Card', 'PortalCard', 'PortalPanel', 'MobileContentBox'].includes(name)) {
         source = () => panelNativeSource(args, choice);
+      }
+      if (['Checkbox', 'Radio', 'CheckboxGroup', 'RadioGroup', 'PortalRadioGroup'].includes(name)) {
+        source = () => choiceNativeSource(args, name.startsWith('Checkbox'), choice);
       }
       const platform =
         category === 'mobile'

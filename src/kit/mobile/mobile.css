@@ -2124,3 +2124,28 @@
   padding: 12px 16px;
   border-color: var(--m-border);
 }
+
+[data-mobile-os='ios'] .mp-radio-group legend {
+  color: var(--m-text);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+}
+[data-mobile-os='ios'] .mp-radio-group > div {
+  gap: 8px;
+}
+[data-mobile-os='ios'] .mp-radio-group label {
+  min-height: 44px;
+  gap: 16px;
+  align-items: center;
+  color: var(--m-text);
+}
+[data-mobile-os='ios'] .mp-radio-group input {
+  flex: none;
+  margin: 0;
+  accent-color: var(--m-brand);
+}
+[data-mobile-os='ios'] .mp-radio-group small {
+  color: var(--m-muted);
+  font-size: 13px;
+}

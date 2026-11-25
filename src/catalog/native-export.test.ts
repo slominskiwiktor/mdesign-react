@@ -6,6 +6,7 @@ import { selectNativeSource } from './select-native.js';
 import { tabsNativeSource } from './tabs-native.js';
 import { dialogNativeSource } from './dialog-native.js';
 import { panelNativeSource } from './panel-native.js';
+import { choiceNativeSource } from './choice-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -220,4 +221,32 @@ test('exports a collapsible panel with its initial state and native slots', () =
       reportDiagnostics: true,
     }).diagnostics,
   ).toEqual([]);
+});
+
+test('exports native single and multiple choice with disabled and mixed states', () => {
+  const radio = choiceNativeSource(
+    {
+      label: 'Kontakt',
+      defaultValue: 'email',
+      options: [
+        { value: 'email', label: 'E-mail' },
+        { value: 'tel', label: 'Telefon', disabled: true },
+      ],
+    },
+    false,
+    'ios',
+  );
+  const checkbox = choiceNativeSource({ label: 'Zgoda', indeterminate: true }, true, 'auto');
+  expect(radio).toContain('"disabled": true');
+  expect(radio).toContain('onValueChange?.(config.multiple ? next : value)');
+  expect(checkbox).toContain('"mixed": true');
+  for (const source of [radio, checkbox]) {
+    expect(
+      ts.transpileModule(source, {
+        fileName: 'Choice.tsx',
+        compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+        reportDiagnostics: true,
+      }).diagnostics,
+    ).toEqual([]);
+  }
 });
