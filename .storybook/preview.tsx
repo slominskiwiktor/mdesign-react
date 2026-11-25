@@ -1,3 +1,4 @@
+import { menuNativeSource } from '../src/catalog/menu-native';
 import { paginationNativeSource } from '../src/catalog/pagination-native';
 import { textInputNativeSource } from '../src/catalog/text-input-native';
 import { choiceNativeSource } from '../src/catalog/choice-native';
@@ -211,6 +212,12 @@ const preview: Preview = {
       }
       if (name === 'Pagination' || name === 'PortalPagination') {
         source = () => paginationNativeSource(args, name === 'PortalPagination', choice);
+      }
+      if (
+        ['MobileMenu', 'PortalMenu', 'PortalAccountMenu'].includes(name) &&
+        Array.isArray(args.items)
+      ) {
+        source = () => menuNativeSource({ ...args, items: args.items }, choice);
       }
       const platform =
         category === 'mobile'

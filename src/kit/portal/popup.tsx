@@ -43,6 +43,7 @@ export function PortalPopupLayer({
     host: HTMLElement;
     theme: string;
     platform: string;
+    mobileOs?: string;
     style: CSSProperties;
   }>();
   useEffect(() => {
@@ -67,6 +68,7 @@ export function PortalPopupLayer({
         host: anchor.closest<HTMLElement>('[role="dialog"]') ?? anchor.ownerDocument.body,
         theme: anchor.closest('[data-theme]')?.getAttribute('data-theme') ?? 'light',
         platform: anchor.closest('[data-platform]')?.getAttribute('data-platform') ?? 'web',
+        mobileOs: anchor.closest('[data-mobile-os]')?.getAttribute('data-mobile-os') ?? undefined,
         style,
       });
     };
@@ -75,13 +77,18 @@ export function PortalPopupLayer({
     for (let element: HTMLElement | null = anchor; element; element = element.parentElement)
       observer.observe(element, {
         attributes: true,
-        attributeFilter: ['data-theme', 'data-platform', 'style', 'class'],
+        attributeFilter: ['data-theme', 'data-platform', 'data-mobile-os', 'style', 'class'],
       });
     return () => observer.disconnect();
   }, [anchor]);
   if (!scope) return null;
   return createPortal(
-    <div data-theme={scope.theme} data-platform={scope.platform} style={scope.style}>
+    <div
+      data-theme={scope.theme}
+      data-platform={scope.platform}
+      data-mobile-os={scope.mobileOs}
+      style={scope.style}
+    >
       {children}
     </div>,
     scope.host,

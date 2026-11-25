@@ -2171,3 +2171,20 @@
   gap: 8px 12px;
   justify-content: center;
 }
+
+/* Menu actions use standard iOS tap areas and group dividers. */
+[data-mobile-os='ios'] :is(.m-mobile-menu-popup, .mp-menu-list) {
+  border-radius: 14px;
+  background: var(--m-surface);
+  color: var(--m-text);
+}
+[data-mobile-os='ios'] :is(.m-mobile-menu-popup > button, .mp-menu-list .mp-menu-item) {
+  min-height: 44px;
+  padding-inline: 16px;
+  gap: 12px;
+  color: var(--m-text);
+  font-size: 16px;
+}
+[data-mobile-os='ios'] .m-mobile-menu-popup > button[data-destructive='true'] {
+  color: var(--m-danger);
+}

@@ -9,6 +9,7 @@ import { panelNativeSource } from './panel-native.js';
 import { choiceNativeSource } from './choice-native.js';
 import { textInputNativeSource } from './text-input-native.js';
 import { paginationNativeSource } from './pagination-native.js';
+import { menuNativeSource } from './menu-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -291,6 +292,30 @@ test('exports dynamic page bounds and a portal page-size reset', () => {
   expect(
     ts.transpileModule(source, {
       fileName: 'Pagination.tsx',
+      compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+      reportDiagnostics: true,
+    }).diagnostics,
+  ).toEqual([]);
+});
+
+test('exports selectable native menu actions with initial state and role metadata', () => {
+  const source = menuNativeSource(
+    {
+      label: 'Działania',
+      items: [
+        { id: 'filter', label: 'Filtruj', type: 'checkbox', checked: true },
+        { id: 'show', label: 'Pokaż', href: '/sprawy', disabled: true },
+      ],
+    },
+    'auto',
+  );
+  expect(source).toContain('"closeOnSelect": false');
+  expect(source).toContain('"checked": true');
+  expect(source).toContain('onSelect?.(item.id, item.href || undefined)');
+  expect(source).toContain('onRequestClose={() => setVisible(false)}');
+  expect(
+    ts.transpileModule(source, {
+      fileName: 'Menu.tsx',
       compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
       reportDiagnostics: true,
     }).diagnostics,
