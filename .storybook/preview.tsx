@@ -1,3 +1,6 @@
+import { accordionNativeSource } from '../src/catalog/accordion-native';
+import type { AccordionProps } from '../src/kit/components';
+import type { LandingFAQProps } from '../src/kit/landing/content';
 import type { Preview } from '@storybook/react-vite';
 import { useGlobals } from 'storybook/preview-api';
 import { NativePreview } from '../src/catalog/NativePreview';
@@ -157,6 +160,14 @@ const preview: Preview = {
         source = () =>
           selectNativeSource(
             { ...args, label: String(args.label ?? 'Wybierz'), options: args.options },
+            choice,
+          );
+      }
+      if ((name === 'Accordion' || name === 'LandingFAQ') && Array.isArray(args.items)) {
+        source = () =>
+          accordionNativeSource(
+            args as AccordionProps | LandingFAQProps,
+            name === 'LandingFAQ',
             choice,
           );
       }

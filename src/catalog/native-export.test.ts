@@ -1,6 +1,7 @@
 import { afterEach, expect, test } from 'vitest';
 import ts from 'typescript';
 import { bottomNavigationNativeSource } from './bottom-navigation-native.js';
+import { accordionNativeSource } from './accordion-native.js';
 import { selectNativeSource } from './select-native.js';
 import { copyNativeSource } from './native-export.js';
 
@@ -110,4 +111,33 @@ test('exports selectable options and platform-specific presentation instead of a
       }).diagnostics,
     ).toEqual([]);
   }
+});
+
+test('preserves expanded FAQ and native field input modes', async () => {
+  const faq = accordionNativeSource(
+    {
+      items: [{ id: 'first', question: 'Pytanie?', answer: 'Odpowiedź' }],
+      defaultExpanded: ['first'],
+      searchable: true,
+    },
+    true,
+    'ios',
+  );
+  expect(faq).toContain('"expanded": true');
+  expect(faq).toContain('onPress={() => toggle(section.id)}');
+  expect(faq).toContain('onChangeText={setQuery}');
+  expect(
+    ts.transpileModule(faq, {
+      fileName: 'Example.tsx',
+      compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+      reportDiagnostics: true,
+    }).diagnostics,
+  ).toEqual([]);
+  const input = await copyNativeSource(
+    preview('<input type="password" inputmode="numeric" maxlength="4" value="1234">'),
+    'android',
+  );
+  expect(input).toContain('inputMode={"numeric"}');
+  expect(input).toContain('maxLength={4}');
+  expect(input).not.toContain('1234');
 });

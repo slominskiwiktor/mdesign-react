@@ -167,6 +167,17 @@ const roles: Record<string, string> = {
   h4: 'header',
 };
 
+const nativeInputModes: Record<string, string> = {
+  email: 'email',
+  tel: 'tel',
+  url: 'url',
+  search: 'search',
+  numeric: 'numeric',
+  decimal: 'decimal',
+  text: 'text',
+  number: 'decimal',
+};
+
 function fromDom(node: ChildNode, parentCss: CSSStyleDeclaration): Node | undefined {
   if (node.nodeType === 3) {
     const text = node.textContent?.replace(/\s+/g, ' ').trim();
@@ -242,6 +253,10 @@ function fromDom(node: ChildNode, parentCss: CSSStyleDeclaration): Node | undefi
     const secure = node instanceof HTMLInputElement && node.type === 'password';
     if (secure) props.secureTextEntry = true;
     if (node instanceof HTMLTextAreaElement) props.multiline = true;
+    const mode = nativeInputModes[node.inputMode || node.type];
+    if (mode) props.inputMode = mode;
+    if (node.maxLength >= 0) props.maxLength = node.maxLength;
+    if (mode === 'search') props.returnKeyType = 'search';
     if (node.placeholder) props.placeholder = node.placeholder;
     if (!secure && node.value) props.defaultValue = node.value;
     return { type: 'TextInput', style: { ...style, ...textStyle(css) }, props };

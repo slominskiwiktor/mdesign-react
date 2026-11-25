@@ -994,6 +994,35 @@
 .m-landing .ml-faq-answer {
   padding: 16px 40px 40px;
 }
+/* FAQ adapts the SwiftUI accordion geometry when shown in an iOS scope. */
+[data-mobile-os='ios'] .m-landing .ml-faq-items {
+  display: grid;
+  gap: 16px;
+  border-radius: 0;
+  background: transparent;
+}
+[data-mobile-os='ios'] .m-landing .ml-faq-item {
+  border: 0;
+  background: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+[data-mobile-os='ios'] .m-landing .ml-faq-item h4 {
+  font-size: 17px;
+  font-weight: 600;
+}
+[data-mobile-os='ios'] .m-landing .ml-faq-item h4 > button {
+  min-height: 44px;
+  padding: 0;
+  gap: 8px;
+  background: transparent;
+  color: var(--m-text);
+}
+[data-mobile-os='ios'] .m-landing .ml-faq-item h4 > button > svg {
+  color: var(--m-muted, #52575f);
+}
+[data-mobile-os='ios'] .m-landing .ml-faq-answer {
+  padding: 16px 0;
+}
 .m-landing .ml-info {
   padding-block: 48px;
 }
