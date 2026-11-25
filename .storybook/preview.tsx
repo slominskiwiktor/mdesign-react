@@ -1,3 +1,4 @@
+import { sidebarNativeSource } from '../src/catalog/sidebar-native';
 import { messageNativeSource } from '../src/catalog/message-native';
 import { sectionHeadingNativeSource } from '../src/catalog/section-heading-native';
 import { headerNativeSource } from '../src/catalog/header-native';
@@ -333,6 +334,9 @@ const preview: Preview = {
       }
       if (name === 'Alert' || name === 'PortalMessage' || name === 'MobileAnnouncement') {
         source = () => messageNativeSource(name, args, choice);
+      }
+      if ((name === 'Sidebar' || name === 'PortalSidebar') && Array.isArray(args.items)) {
+        source = () => sidebarNativeSource(name, { ...args, items: args.items }, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
