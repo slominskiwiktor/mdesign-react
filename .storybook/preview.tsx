@@ -1,3 +1,4 @@
+import { documentNativeSource } from '../src/catalog/document-native';
 import { rowNativeSource } from '../src/catalog/row-native';
 import { tooltipNativeSource } from '../src/catalog/tooltip-native';
 import { filterNativeSource } from '../src/catalog/filter-native';
@@ -308,6 +309,9 @@ const preview: Preview = {
         ].includes(name)
       ) {
         source = () => rowNativeSource(name, args, choice);
+      }
+      if (name === 'DocumentArtwork' || name === 'DocumentCard' || name === 'DocumentTile') {
+        source = () => documentNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
