@@ -1,3 +1,4 @@
+import { rowNativeSource } from '../src/catalog/row-native';
 import { tooltipNativeSource } from '../src/catalog/tooltip-native';
 import { filterNativeSource } from '../src/catalog/filter-native';
 import { phoneNativeSource } from '../src/catalog/phone-native';
@@ -285,6 +286,9 @@ const preview: Preview = {
       }
       if (name === 'Tooltip' || name === 'LandingTooltip' || name === 'PortalInfoTip') {
         source = () => tooltipNativeSource(name, args, choice);
+      }
+      if (['ListRow', 'NativeSingleCard', 'ShortcutTile', 'SmallServiceCard'].includes(name)) {
+        source = () => rowNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
