@@ -1,3 +1,4 @@
+import { formFieldNativeSource } from '../src/catalog/form-field-native';
 import { fieldCopyNativeSource } from '../src/catalog/field-copy-native';
 import { chatNativeSource } from '../src/catalog/chat-native';
 import { richTextNativeSource } from '../src/catalog/rich-text-native';
@@ -363,6 +364,9 @@ const preview: Preview = {
         ].includes(name)
       ) {
         source = () => fieldCopyNativeSource(name, args, choice);
+      }
+      if (name === 'PortalFormField') {
+        source = () => formFieldNativeSource(args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
