@@ -252,6 +252,16 @@ const preview: Preview = {
       if (name === 'Switch' || name === 'MobileSwitch') {
         source = () => switchNativeSource(args, choice);
       }
+      if (name === 'InputDateTime') {
+        source = () =>
+          args.type === 'time'
+            ? timeNativeSource({ ...args, triggerOnly: true }, choice)
+            : calendarNativeSource(
+                'MobileDatePicker',
+                { ...args, triggerOnly: true, placeholder: 'DD.MM.RRRR' },
+                choice,
+              );
+      }
       if (name === 'MobileTimePicker') {
         source = () => timeNativeSource(args, choice);
       }

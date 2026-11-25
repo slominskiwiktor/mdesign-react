@@ -21,6 +21,7 @@ type CalendarExample = {
   readOnly?: boolean;
   placeholder?: string;
   clearable?: boolean;
+  triggerOnly?: boolean;
 };
 
 export function calendarNativeSource(
@@ -42,6 +43,7 @@ export function calendarNativeSource(
     picker: name.endsWith('DatePicker'),
     confirm: name === 'MobileDatePicker',
     typed: name === 'PortalDatePicker',
+    triggerOnly: !!args.triggerOnly,
     disabled: !!(args.disabled || args.readOnly),
     placeholder: args.placeholder ?? (name === 'PortalDatePicker' ? 'rrrr-mm-dd' : 'Wybierz datę'),
     clearable: args.clearable ?? true,
@@ -83,17 +85,20 @@ function label(date: Date, options: Intl.DateTimeFormatOptions) {
   return new Intl.DateTimeFormat(config.locale, { ...options, timeZone: 'UTC' }).format(date);
 }
 
-export default function CalendarExample({ isDateDisabled, onValueChange, onMonthChange }: {
+export default function CalendarExample({ isDateDisabled, onValueChange, onMonthChange, value: controlledValue, onPress }: {
   isDateDisabled?: (date: string) => boolean;
+  value?: string;
+  onPress?: () => void;
   onValueChange?: (date: string) => void;
   onMonthChange?: (month: string) => void;
 } = {}) {
   const today = parse(config.today) ? config.today : localDay();
-  const [value, setValue] = useState(config.value);
-  const [draft, setDraft] = useState(config.value);
+  const [localValue, setValue] = useState(config.value);
+  const value = controlledValue ?? localValue;
+  const [draft, setDraft] = useState(value);
   const [open, setOpen] = useState(false);
   const [invalid, setInvalid] = useState(false);
-  const [month, setMonth] = useState(() => monthOf(parse(config.month) ?? parse(config.value) ?? parse(today)!));
+  const [month, setMonth] = useState(() => monthOf(parse(config.month) ?? parse(value) ?? parse(today)!));
   const offset = (month.getUTCDay() - config.firstDay + 7) % 7;
   const daysInMonth = offsetDays(monthOf(month, 1), -1).getUTCDate();
   const weeks = config.sixWeeks ? 6 : Math.ceil((daysInMonth + offset) / 7);
@@ -109,7 +114,7 @@ export default function CalendarExample({ isDateDisabled, onValueChange, onMonth
   }
 
   function commit(date: string) {
-    setValue(date);
+    if (controlledValue === undefined) setValue(date);
     setDraft(date);
     setInvalid(false);
     onValueChange?.(date);
@@ -124,6 +129,10 @@ export default function CalendarExample({ isDateDisabled, onValueChange, onMonth
   }
 
   function openCalendar() {
+    if (config.disabled) return;
+    if (config.triggerOnly && onPress) { onPress(); return; }
+    const selected = parse(value);
+    if (controlledValue !== undefined && selected && key(month).slice(0, 7) !== value.slice(0, 7)) setMonth(monthOf(selected));
     setDraft(value);
     setInvalid(false);
     setOpen(true);
@@ -182,9 +191,10 @@ export default function CalendarExample({ isDateDisabled, onValueChange, onMonth
           commit(draft);
         }} />}
       <View style={styles.header}>
-        <Pressable accessibilityRole="button" accessibilityLabel="Wybierz datę" disabled={config.disabled}
-          onPress={openCalendar} style={styles.action}>
-          <Text style={styles.link}>{config.typed ? 'Otwórz kalendarz' : selectedDate ? label(selectedDate, { day: 'numeric', month: 'numeric', year: 'numeric' }) : config.placeholder}</Text>
+        <Pressable accessibilityRole="button" accessibilityLabel={config.triggerOnly ? config.label + ', ' + (value || config.placeholder) : 'Wybierz datę'}
+          accessibilityState={{ disabled: config.disabled, expanded: open }} disabled={config.disabled}
+          onPress={openCalendar} style={[styles.action, config.triggerOnly && styles.trigger, config.triggerOnly && config.error && styles.invalid]}>
+          <Text style={styles.link}>{config.typed ? 'Otwórz kalendarz' : config.triggerOnly ? value || config.placeholder : selectedDate ? label(selectedDate, { day: 'numeric', month: 'numeric', year: 'numeric' }) : config.placeholder}</Text>
         </Pressable>
         {!config.confirm && config.clearable && !!value && !config.disabled &&
           <Pressable accessibilityRole="button" accessibilityLabel="Wyczyść datę"
@@ -234,6 +244,8 @@ const styles = StyleSheet.create({
   dot: { width: 4, height: 4, marginTop: 2, borderRadius: 2, backgroundColor: '#0452a8' },
   selectedDot: { backgroundColor: '#fff' },
   link: { color: '#0452a8', fontSize: 16, fontWeight: '600' },
+  trigger: { flex: 1, borderWidth: 1, borderColor: '#767c84', borderRadius: ios ? 8 : 4 },
+  invalid: { borderColor: '#b31225' },
   label: { color: '#101317', fontSize: 14, fontWeight: '600' },
   action: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 8 },
   field: { gap: 6 },

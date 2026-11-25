@@ -3,7 +3,7 @@ import { textOf } from './native-example-text.js';
 import type { NativePlatformChoice } from './native-export.js';
 
 export function timeNativeSource(
-  args: Partial<MobileTimePickerProps>,
+  args: Partial<MobileTimePickerProps> & { triggerOnly?: boolean },
   platform: NativePlatformChoice,
 ) {
   const config = {
@@ -12,6 +12,7 @@ export function timeNativeSource(
     hint: textOf(args.hint),
     error: textOf(args.error),
     disabled: args.disabled ?? false,
+    triggerOnly: !!args.triggerOnly,
   };
   const ios = platform === 'auto' ? "Platform.OS === 'ios'" : String(platform === 'ios');
 
@@ -24,10 +25,11 @@ const partIsValid = (text: string, max: number) => /^\\d{1,2}$/.test(text) && Nu
 
 type Props = {
   value?: string;
+  onPress?: () => void;
   onValueChange?: (time: string) => void;
 };
 
-export default function Example({ value, onValueChange }: Props) {
+export default function Example({ value, onValueChange, onPress }: Props) {
   const [localValue, setLocalValue] = useState(config.initialValue);
   const [open, setOpen] = useState(false);
   const [hours, setHours] = useState('12');
@@ -36,6 +38,8 @@ export default function Example({ value, onValueChange }: Props) {
   const valid = partIsValid(hours, 23) && partIsValid(minutes, 59);
 
   function start() {
+    if (config.disabled) return;
+    if (config.triggerOnly && onPress) { onPress(); return; }
     const [h, m] = selected.split(':');
     setHours(partIsValid(h, 23) ? h : '12');
     setMinutes(partIsValid(m ?? '', 59) ? m : '00');
@@ -58,7 +62,7 @@ export default function Example({ value, onValueChange }: Props) {
         accessibilityState={{ disabled: config.disabled, expanded: open }}
         disabled={config.disabled} onPress={start}
         style={[styles.trigger, !!config.error && styles.invalid, config.disabled && styles.disabled]}>
-        <Text style={styles.label}>{selected || 'Wybierz godzinę'}</Text>
+        <Text style={styles.label}>{selected || (config.triggerOnly ? 'GG:MM' : 'Wybierz godzinę')}</Text>
       </Pressable>
       {config.error ? <Text accessibilityRole="alert" style={styles.error}>{config.error}</Text>
         : config.hint ? <Text style={styles.hint}>{config.hint}</Text> : null}
