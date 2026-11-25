@@ -1,3 +1,4 @@
+import { tooltipNativeSource } from '../src/catalog/tooltip-native';
 import { filterNativeSource } from '../src/catalog/filter-native';
 import { phoneNativeSource } from '../src/catalog/phone-native';
 import { filePickerNativeSource } from '../src/catalog/file-picker-native';
@@ -281,6 +282,9 @@ const preview: Preview = {
       }
       if (['MobileFilePicker', 'PortalFileUpload', 'FileSourceItem'].includes(name)) {
         source = () => filePickerNativeSource(name, args, choice);
+      }
+      if (name === 'Tooltip' || name === 'LandingTooltip' || name === 'PortalInfoTip') {
+        source = () => tooltipNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
