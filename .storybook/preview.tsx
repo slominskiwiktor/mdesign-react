@@ -1,3 +1,4 @@
+import { phoneNativeSource } from '../src/catalog/phone-native';
 import { filePickerNativeSource } from '../src/catalog/file-picker-native';
 import { badgeNativeSource } from '../src/catalog/badge-native';
 import { buttonNativeSource } from '../src/catalog/button-native';
@@ -262,6 +263,9 @@ const preview: Preview = {
       }
       if (name === 'EmptyState' || name === 'MobileEmptyState' || name === 'PortalEmptyState') {
         source = () => emptyStateNativeSource(name, args, choice);
+      }
+      if (name === 'PhoneField') {
+        source = () => phoneNativeSource(args, choice);
       }
       if (name === 'PinInput') {
         source = () => pinNativeSource(args, choice);
