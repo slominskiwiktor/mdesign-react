@@ -8,6 +8,7 @@ import { dialogNativeSource } from './dialog-native.js';
 import { panelNativeSource } from './panel-native.js';
 import { choiceNativeSource } from './choice-native.js';
 import { textInputNativeSource } from './text-input-native.js';
+import { paginationNativeSource } from './pagination-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -279,4 +280,19 @@ test('exports native editing and grapheme limits while omitting password values'
       }).diagnostics,
     ).toEqual([]);
   }
+});
+
+test('exports dynamic page bounds and a portal page-size reset', () => {
+  const source = paginationNativeSource({ total: 124, defaultPage: 0, pageSize: 10 }, true, 'ios');
+  expect(source).toContain('"initialPage": 1');
+  expect(source).toContain('Math.ceil(config.total / size)');
+  expect(source).toContain('onPageSizeChange?.(next)');
+  expect(source).toContain('change(1)');
+  expect(
+    ts.transpileModule(source, {
+      fileName: 'Pagination.tsx',
+      compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+      reportDiagnostics: true,
+    }).diagnostics,
+  ).toEqual([]);
 });

@@ -1,3 +1,4 @@
+import { paginationNativeSource } from '../src/catalog/pagination-native';
 import { textInputNativeSource } from '../src/catalog/text-input-native';
 import { choiceNativeSource } from '../src/catalog/choice-native';
 import { panelNativeSource } from '../src/catalog/panel-native';
@@ -207,6 +208,9 @@ const preview: Preview = {
         )
       ) {
         source = () => textInputNativeSource(name, args, choice);
+      }
+      if (name === 'Pagination' || name === 'PortalPagination') {
+        source = () => paginationNativeSource(args, name === 'PortalPagination', choice);
       }
       const platform =
         category === 'mobile'

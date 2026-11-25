@@ -2149,3 +2149,25 @@
   color: var(--m-muted);
   font-size: 13px;
 }
+
+[data-mobile-os='ios'] .m-pagination {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4px;
+  background: transparent;
+}
+[data-mobile-os='ios'] .m-pagination-page,
+[data-mobile-os='ios'] .m-pagination .m-icon-button,
+[data-mobile-os='ios'] .mp-pagination :is(button, select) {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 10px;
+}
+[data-mobile-os='ios'] .m-pagination-page[aria-current='page'] {
+  color: var(--m-brand);
+  background: var(--m-brand-soft);
+}
+[data-mobile-os='ios'] .mp-pagination {
+  gap: 8px 12px;
+  justify-content: center;
+}
