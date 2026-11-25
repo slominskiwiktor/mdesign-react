@@ -1,3 +1,4 @@
+import { badgeNativeSource } from '../src/catalog/badge-native';
 import { buttonNativeSource } from '../src/catalog/button-native';
 import { emptyStateNativeSource } from '../src/catalog/empty-state-native';
 import { skeletonNativeSource } from '../src/catalog/skeleton-native';
@@ -248,6 +249,9 @@ const preview: Preview = {
       }
       if (['Button', 'IconButton', 'MobileTextButton', 'LandingButton'].includes(name)) {
         source = () => buttonNativeSource(name, args, choice);
+      }
+      if (['Badge', 'MobileStatusBadge', 'NotificationBadge', 'PortalChip'].includes(name)) {
+        source = () => badgeNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
