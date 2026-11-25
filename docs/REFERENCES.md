@@ -23,6 +23,12 @@ z przypisaniem dotyczącym źródłowego katalogu `iOS/`.
 
 `CardList` przyjmuje opcjonalny props `platform="ios"` lub `platform="android"`. Bez tego propa zachowuje dotychczasowy wygląd.
 
+### Ustawienie platformy w aplikacji webowej
+
+Ustaw `data-mobile-os="ios"` lub `data-mobile-os="android"` na kontenerze aplikacji. Wartość jest dziedziczona przez komponenty z recepturami platformowymi. `data-platform` nadal wybiera rodzinę interfejsu, a `data-theme` motyw kolorystyczny. Bez atrybutu systemu obowiązują dotychczasowe style.
+
+Konfiguracja systemu ustawia wspólny krój pisma. iOS korzysta też z dwóch neutralnych kolorów Display P3 w przeglądarkach, które obsługują tę przestrzeń. `BottomNavigation` i `CardList` mają osobne style dla obu systemów. `SearchField` w iOS korzysta z istniejącego wariantu mobilnego. Pasek Androida opiera się na [wzorcu Material 3](https://developer.android.com/develop/ui/compose/components/navigation-bar). Pozostałe komponenty korzystają ze wspólnych tokenów tam, gdzie odwołuje się do nich ich CSS.
+
 ### Podgląd i eksport React Native
 
 W Storybooku wybór **Auto**, **iOS** lub **Android** jest wspólny dla historii komponentów. W katalogu można go ustawić dla strony i zmienić w pojedynczym przykładzie. Auto używa iOS jako wartości domyślnej, a gdy przeglądarka zgłasza Androida, podgląd dostaje wariant Android. Konkretne różnice geometrii obowiązują tam, gdzie biblioteka zawiera reguły dla danego systemu.

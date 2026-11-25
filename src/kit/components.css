@@ -2547,13 +2547,15 @@ button.m-document-tile {
   line-height: 24px;
 }
 /* Native tab bar and SmallDocumentCard geometry. */
-[data-platform='mobile'] .m-bottom-navigation {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-bottom-navigation {
   border-top-color: light-dark(#c6cace, #3f444a);
 }
-[data-platform='mobile'] .m-bottom-navigation > button {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-bottom-navigation > button {
   color: light-dark(#52575f, #f6f8f9);
 }
-[data-platform='mobile'] .m-bottom-navigation > button[aria-current='page'] {
+:is([data-platform='mobile'], [data-mobile-os='ios'])
+  .m-bottom-navigation
+  > button[aria-current='page'] {
   color: var(--m-mobile-primary);
 }
 [data-platform='mobile'] .m-navigation-icon {
@@ -2718,7 +2720,7 @@ button.m-document-card {
 }
 /* The 83px frame includes the blank home/safe-area region. The interactive
    content is 45px high; its labels share the sample's baseline and icon gap. */
-[data-platform='mobile'] .m-bottom-navigation {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-bottom-navigation {
   position: relative;
   height: 83px;
   min-height: 83px;
@@ -2726,7 +2728,7 @@ button.m-document-card {
   gap: 0;
   border-top-width: 0.5px;
 }
-[data-platform='mobile'] .m-bottom-navigation > button {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-bottom-navigation > button {
   height: 45px;
   min-height: 45px;
   align-self: flex-start;
@@ -2737,22 +2739,27 @@ button.m-document-card {
   line-height: 16px;
   letter-spacing: 0;
 }
-[data-platform='mobile'] .m-bottom-navigation .m-navigation-icon {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-bottom-navigation .m-navigation-icon {
   width: 24px;
   min-width: 24px;
   height: 24px;
 }
 /* NavigationItem icons sit inside a decorative span, rather than directly
    under .m-navigation-icon. Keep SVG slots consistent with original icons. */
-[data-platform='mobile'] .m-navigation-icon > span:first-child > svg {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-navigation-icon > span:first-child > svg {
   width: 24px;
   height: 24px;
 }
-[data-platform='mobile'] .m-bottom-navigation > button > span:last-child {
+:is([data-platform='mobile'], [data-mobile-os='ios'])
+  .m-bottom-navigation
+  > button
+  > span:last-child {
   position: relative;
   top: 0;
 }
-[data-platform='mobile'] .m-bottom-navigation-home-indicator {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-bottom-navigation-home-indicator,
+[data-mobile-os='ios'] .m-bottom-navigation:not(:has(.m-bottom-navigation-home-indicator))::after {
+  content: '';
   position: absolute;
   left: 50%;
   bottom: 8px;
@@ -3013,10 +3020,10 @@ button.m-document-card {
 .m-search-field .m-native-input-control {
   display: flex;
 }
-[data-platform='mobile'] .m-search-field {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-search-field {
   gap: 0;
 }
-[data-platform='mobile'] .m-search-field .m-input {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-search-field .m-input {
   height: 36px;
   min-height: 36px;
   border: 0;
@@ -3030,21 +3037,21 @@ button.m-document-card {
   letter-spacing: normal;
   box-shadow: none;
 }
-[data-platform='mobile'] .m-search-field .m-input:focus {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-search-field .m-input:focus {
   box-shadow: none;
   outline: 2px solid var(--m-native-primary);
   outline-offset: 2px;
 }
-[data-platform='mobile'] .m-search-field .m-input::placeholder {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-search-field .m-input::placeholder {
   color: #808893;
 }
-[data-platform='mobile'] .m-search-field .m-input-leading {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-search-field .m-input-leading {
   left: 7px;
   width: 22px;
   height: 22px;
   color: #808893;
 }
-[data-platform='mobile'] .m-search-field .m-native-input-control {
+:is([data-platform='mobile'], [data-mobile-os='ios']) .m-search-field .m-native-input-control {
   right: 7px;
   width: 22px;
   height: 22px;
@@ -3189,4 +3196,37 @@ button.m-document-card {
 [data-platform='mobile']
   .m-icon-button--black.m-icon-button--sm:is(:hover, :active):not(:disabled) {
   color: #fff;
+}
+
+/* Android navigation follows the vertical Material 3 navigation-bar pattern. */
+[data-mobile-os='android'] .m-bottom-navigation {
+  height: auto;
+  min-height: calc(80px + env(safe-area-inset-bottom, 0px));
+  padding: 4px 0 env(safe-area-inset-bottom, 0px);
+  gap: 0;
+}
+[data-mobile-os='android'] .m-bottom-navigation > button {
+  align-self: stretch;
+  justify-content: center;
+  min-height: 72px;
+  height: auto;
+  padding: 4px 0;
+  gap: 4px;
+  font-size: 11px;
+  line-height: 16px;
+}
+[data-mobile-os='android'] .m-bottom-navigation .m-navigation-icon {
+  width: min(64px, 100%);
+  min-width: 0;
+  height: 32px;
+  border-radius: 999px;
+}
+[data-mobile-os='android'] .m-bottom-navigation > button[aria-current='page'] {
+  color: var(--m-brand);
+}
+[data-mobile-os='android'] .m-bottom-navigation > button[aria-current='page'] .m-navigation-icon {
+  background: var(--m-brand-soft);
+}
+[data-mobile-os='android'] .m-bottom-navigation-home-indicator {
+  display: none;
 }
