@@ -1,3 +1,4 @@
+import { chatNativeSource } from '../src/catalog/chat-native';
 import { richTextNativeSource } from '../src/catalog/rich-text-native';
 import { codeNativeSource } from '../src/catalog/code-native';
 import { sidebarNativeSource } from '../src/catalog/sidebar-native';
@@ -345,6 +346,9 @@ const preview: Preview = {
       }
       if (name === 'RichText' && Array.isArray(args.segments)) {
         source = () => richTextNativeSource(args.segments, choice);
+      }
+      if (name === 'ChatBubble' || name === 'TypingIndicator') {
+        source = () => chatNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
