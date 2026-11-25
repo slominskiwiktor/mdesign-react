@@ -1,3 +1,4 @@
+import { tabsNativeSource } from '../src/catalog/tabs-native';
 import { accordionNativeSource } from '../src/catalog/accordion-native';
 import type { AccordionProps } from '../src/kit/components';
 import type { LandingFAQProps } from '../src/kit/landing/content';
@@ -170,6 +171,13 @@ const preview: Preview = {
             name === 'LandingFAQ',
             choice,
           );
+      }
+      if (
+        (name === 'Tabs' || name === 'LandingTabs' || name === 'SegmentedControl') &&
+        Array.isArray(args.items)
+      ) {
+        source = () =>
+          tabsNativeSource({ ...args, items: args.items }, name === 'SegmentedControl', choice);
       }
       const platform =
         category === 'mobile'

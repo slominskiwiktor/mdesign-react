@@ -1,15 +1,8 @@
-import { isValidElement } from 'react';
-import type { ReactNode } from 'react';
 import type { AccordionProps } from '../kit/components.js';
 import type { LandingFAQProps } from '../kit/landing/content.js';
 import type { NativePlatformChoice } from './native-export.js';
 
-function textOf(node: ReactNode): string {
-  if (typeof node === 'string' || typeof node === 'number') return String(node);
-  if (Array.isArray(node)) return node.map(textOf).filter(Boolean).join(' ');
-  if (isValidElement<{ children?: ReactNode }>(node)) return textOf(node.props.children);
-  return '';
-}
+import { textOf } from './native-example-text.js';
 
 export function accordionNativeSource(
   example: AccordionProps | LandingFAQProps,

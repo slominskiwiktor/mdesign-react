@@ -3,6 +3,7 @@ import ts from 'typescript';
 import { bottomNavigationNativeSource } from './bottom-navigation-native.js';
 import { accordionNativeSource } from './accordion-native.js';
 import { selectNativeSource } from './select-native.js';
+import { tabsNativeSource } from './tabs-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -141,3 +142,29 @@ test('preserves expanded FAQ and native field input modes', async () => {
   expect(input).toContain('maxLength={4}');
   expect(input).not.toContain('1234');
 });
+
+test.each(['auto', 'ios', 'android'] as const)(
+  'exports usable and accessible tabs for %s',
+  (platform) => {
+    const example = {
+      items: [
+        { value: 'one', label: 'Pierwsza', content: 'Treść panelu' },
+        { value: 'two', label: 'Druga', disabled: true },
+      ],
+      defaultValue: 'one',
+    };
+    const source = tabsNativeSource(example, false, platform);
+    expect(source).toContain('Treść panelu');
+    expect(source).toContain('setValue(item.value)');
+    expect(source).toContain('disabled={item.disabled}');
+    expect(source).toContain('renderContent(value)');
+    expect(tabsNativeSource(example, true, platform)).toContain('const segmented = true');
+    expect(
+      ts.transpileModule(source, {
+        fileName: 'Example.tsx',
+        compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+        reportDiagnostics: true,
+      }).diagnostics,
+    ).toEqual([]);
+  },
+);

@@ -1940,3 +1940,109 @@
   border-radius: 12px;
   flex: none;
 }
+
+/* iOS uses a segmented selector for closely related views. */
+[data-mobile-os='ios'] :is(.m-tabs-list, .m-landing .ml-tab-list, .m-mobile-segmented-control) {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  padding: 2px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--m-border);
+}
+
+[data-mobile-os='ios']
+  :is(.m-tabs-list, .m-landing .ml-tab-list, .m-mobile-segmented-control)
+  > button {
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 44px;
+  padding: 4px 6px;
+  margin: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--m-text);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+[data-mobile-os='ios']
+  :is(.m-tabs-list, .m-landing .ml-tab-list, .m-mobile-segmented-control)
+  > button:is([data-state='active'], [aria-checked='true']) {
+  background: var(--m-surface);
+  color: var(--m-text);
+  font-weight: 600;
+  box-shadow: none;
+}
+
+[data-mobile-os='ios'] .m-tabs-trigger[data-state='active']::after {
+  content: none;
+}
+
+[data-mobile-os='android'] .m-mobile-segmented-control {
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--m-input-border);
+  background: var(--m-surface);
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button {
+  min-height: 48px;
+  border-radius: 0;
+  overflow-wrap: anywhere;
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button:first-child {
+  border-start-start-radius: 999px;
+  border-end-start-radius: 999px;
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button:last-child {
+  border-start-end-radius: 999px;
+  border-end-end-radius: 999px;
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button + button {
+  border-inline-start: 1px solid var(--m-input-border);
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button[aria-checked='true'] {
+  background: var(--m-brand-soft);
+  color: var(--m-text);
+  box-shadow: none;
+}
+
+[data-mobile-os='android'] :is(.m-tabs-list, .m-landing .ml-tab-list) {
+  flex-wrap: nowrap;
+  gap: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--m-border);
+  background: var(--m-surface);
+}
+[data-mobile-os='android'] :is(.m-tabs-list, .m-landing .ml-tab-list) > button {
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 48px;
+  padding: 4px 6px;
+  margin: 0;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--m-muted);
+  font-size: 14px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+[data-mobile-os='android']
+  :is(.m-tabs-list, .m-landing .ml-tab-list)
+  > button[data-state='active'] {
+  border-bottom-color: var(--m-brand);
+  color: var(--m-text);
+  font-weight: 600;
+}
+[data-mobile-os='android'] .m-tabs-trigger[data-state='active']::after {
+  content: none;
+}
