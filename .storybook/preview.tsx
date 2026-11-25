@@ -1,3 +1,4 @@
+import { timeNativeSource } from '../src/catalog/time-native';
 import { pinNativeSource } from '../src/catalog/pin-native';
 import { snackbarProviderNativeSource } from '../src/catalog/snackbar-provider-native';
 import { snackbarNativeSource } from '../src/catalog/snackbar-native';
@@ -222,6 +223,9 @@ const preview: Preview = {
         )
       ) {
         source = () => textInputNativeSource(name, args, choice);
+      }
+      if (name === 'MobileTimePicker') {
+        source = () => timeNativeSource(args, choice);
       }
       if (name === 'PinInput') {
         source = () => pinNativeSource(args, choice);
