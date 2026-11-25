@@ -37,9 +37,10 @@ import { ${platform === 'auto' ? 'Platform, ' : ''}Pressable, StyleSheet, Text, 
 const config = ${JSON.stringify(config, null, 2)};
 const ios = ${ios};
 
-export default function PanelExample({ children, footer, action, onOpenChange, onFooterPress, onActionPress }: {
+export default function PanelExample({ children, footer, action, icon, onOpenChange, onFooterPress, onActionPress }: {
   children?: ReactNode;
   footer?: ReactNode;
+  icon?: ReactNode;
   onOpenChange?: (open: boolean) => void;
   onFooterPress?: () => void;
   onActionPress?: () => void;
@@ -47,7 +48,12 @@ export default function PanelExample({ children, footer, action, onOpenChange, o
 } = {}) {
   const [open, setOpen] = useState(config.open);
   const showContent = !config.collapsible || open;
-  const title = <Text accessibilityRole="header" style={styles.title}>{config.title}</Text>;
+  const title = (
+    <View style={styles.titleGroup}>
+      {icon}
+      <Text accessibilityRole="header" style={styles.title}>{config.title}</Text>
+    </View>
+  );
   return (
     <View style={[styles.panel, config.shadow !== 'none' && styles.shadow]}>
       {!!config.title && (config.collapsible ? (
@@ -93,6 +99,7 @@ const styles = StyleSheet.create({
   } : { elevation: config.shadow === 'light600' ? 4 : 1 },
   heading: { flexDirection: 'row', gap: 8, alignItems: 'center', justifyContent: 'space-between' },
   trigger: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8, minHeight: 44 },
+  titleGroup: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 8 },
   title: { fontSize: ios ? 17 : 18, fontWeight: '600', color: '#101317', flexShrink: 1 },
   chevron: { fontSize: 22, color: '#52575f' },
   body: { fontSize: 16, color: '#101317' },

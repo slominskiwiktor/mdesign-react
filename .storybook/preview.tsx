@@ -223,8 +223,18 @@ const preview: Preview = {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
       }
-      if (['Card', 'PortalCard', 'PortalPanel', 'MobileContentBox'].includes(name)) {
-        source = () => panelNativeSource(args, choice);
+      if (
+        ['Card', 'PortalCard', 'PortalPanel', 'MobileContentBox', 'PortalDashboardTile'].includes(
+          name,
+        )
+      ) {
+        source = () =>
+          panelNativeSource(
+            name === 'PortalDashboardTile'
+              ? { ...args, footer: args.action, action: undefined }
+              : args,
+            choice,
+          );
       }
       if (['Checkbox', 'Radio', 'CheckboxGroup', 'RadioGroup', 'PortalRadioGroup'].includes(name)) {
         source = () => choiceNativeSource(args, name.startsWith('Checkbox'), choice);
@@ -287,7 +297,16 @@ const preview: Preview = {
       if (name === 'Tooltip' || name === 'LandingTooltip' || name === 'PortalInfoTip') {
         source = () => tooltipNativeSource(name, args, choice);
       }
-      if (['ListRow', 'NativeSingleCard', 'ShortcutTile', 'SmallServiceCard'].includes(name)) {
+      if (
+        [
+          'ListRow',
+          'NativeSingleCard',
+          'ShortcutTile',
+          'SmallServiceCard',
+          'DocumentRow',
+          'ServiceTile',
+        ].includes(name)
+      ) {
         source = () => rowNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {

@@ -2,7 +2,11 @@ import type { NativeSingleCardProps } from '../kit/mobile/content.js';
 import { textOf } from './native-example-text.js';
 import type { NativePlatformChoice } from './native-export.js';
 
-type Args = Partial<NativeSingleCardProps> & { color?: string; backgroundImage?: string };
+type Args = Partial<NativeSingleCardProps> & {
+  color?: string;
+  backgroundImage?: string;
+  thumbnail?: NativeSingleCardProps['icon'];
+};
 
 export function rowNativeSource(name: string, args: Args, platform: NativePlatformChoice) {
   const tile = name === 'ShortcutTile' || name === 'SmallServiceCard';
@@ -13,10 +17,11 @@ export function rowNativeSource(name: string, args: Args, platform: NativePlatfo
     descriptions: [args.description, ...(args.descriptions ?? [])].map(textOf).filter(Boolean),
     badge: textOf(args.badge),
     trailing: textOf(args.trailing),
-    icon: !!args.icon,
+    icon: !!(args.icon || args.thumbnail),
+    documentRow: name === 'DocumentRow',
     iconAction: !!args.onIconClick,
     iconLabel: args.iconLabel ?? 'Więcej informacji',
-    iconSize: args.iconSize ?? (artwork ? 32 : 24),
+    iconSize: args.iconSize ?? (name === 'DocumentRow' ? 48 : artwork ? 32 : 24),
     imageSize: args.imageSize ?? 44,
     image: args.image && /^https?:\/\//i.test(args.image.src) ? args.image : null,
     artwork: /^https?:\/\//i.test(args.backgroundImage ?? '') ? args.backgroundImage : null,
@@ -25,7 +30,7 @@ export function rowNativeSource(name: string, args: Args, platform: NativePlatfo
     disabled: !!args.disabled,
     selected: !!args.selected,
     reversed: !!args.reversed,
-    bordered: name === 'NativeSingleCard' && args.drawBorder !== false,
+    bordered: (name === 'NativeSingleCard' || name === 'DocumentRow') && args.drawBorder !== false,
     compact: !!args.contentOnly,
     tint: args.color ?? '#0452a8',
     titleColor: args.titleColor ?? '#161b22',
@@ -40,7 +45,7 @@ import type { ImageSourcePropType } from 'react-native';
 
 const config = ${JSON.stringify(config, null, 2)} as {
   title: string; info: string; descriptions: string[]; badge: string; trailing: string;
-  icon: boolean; iconAction: boolean; iconLabel: string; iconSize: number; imageSize: number;
+  icon: boolean; documentRow: boolean; iconAction: boolean; iconLabel: string; iconSize: number; imageSize: number;
   image: { src: string; alt: string } | null; artwork: string | null;
   tile: boolean; artworkTile: boolean; disabled: boolean; selected: boolean; reversed: boolean;
   bordered: boolean; compact: boolean; tint: string; titleColor: string;
@@ -93,7 +98,7 @@ export default function Example({
   );
   const media = (
     <View style={[styles.media, config.alignTop && styles.mediaTop, config.tile && styles.circle,
-      config.artworkTile && styles.artwork]}>
+      config.artworkTile && styles.artwork, config.documentRow && styles.thumbnail]}>
       {artwork ? <Image accessible={false} source={artwork} style={styles.background} /> : null}
       {iconContent}
     </View>
@@ -159,6 +164,7 @@ const styles = StyleSheet.create({
   mediaTop: { alignSelf: 'flex-start' },
   circle: { width: 48, height: 48, borderRadius: 24, backgroundColor: '#edf3fc' },
   artwork: { width: 80, height: 80, borderRadius: 16, overflow: 'hidden' },
+  thumbnail: { width: 48, height: 48, borderRadius: 8, backgroundColor: '#edf3fc' },
   background: { ...StyleSheet.absoluteFill, width: '100%', height: '100%' },
   iconAction: { padding: 8, minWidth: 44, minHeight: 44, justifyContent: 'center' },
   trailing: { fontSize: 20, color: '#52575f' },
