@@ -340,6 +340,15 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+[data-mobile-os='ios'] .m-mobile-link {
+  color: var(--m-native-primary);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+[data-mobile-os='ios'] .m-mobile-link[aria-disabled='true'] {
+  color: var(--m-muted);
+}
 .m-mobile-notification-badge {
   display: inline-flex;
   align-items: center;

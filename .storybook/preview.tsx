@@ -1,3 +1,4 @@
+import { linkNativeSource } from '../src/catalog/link-native';
 import { progressNativeSource } from '../src/catalog/progress-native';
 import { switchNativeSource } from '../src/catalog/switch-native';
 import { timeNativeSource } from '../src/catalog/time-native';
@@ -230,6 +231,11 @@ const preview: Preview = {
         ['Progress', 'PortalProgress', 'Spinner', 'PortalLoader', 'LandingLoader'].includes(name)
       ) {
         source = () => progressNativeSource(name, args, choice);
+      }
+      if (
+        ['MobileLink', 'LandingLink', 'PortalExternalLink', 'PortalServiceLinks'].includes(name)
+      ) {
+        source = () => linkNativeSource(name, args, choice);
       }
       if (name === 'Switch' || name === 'MobileSwitch') {
         source = () => switchNativeSource(args, choice);
