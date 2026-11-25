@@ -1,3 +1,4 @@
+import { snackbarProviderNativeSource } from '../src/catalog/snackbar-provider-native';
 import { snackbarNativeSource } from '../src/catalog/snackbar-native';
 import { dataTableNativeSource } from '../src/catalog/data-table-native';
 import { carouselNativeSource } from '../src/catalog/carousel-native';
@@ -196,6 +197,10 @@ const preview: Preview = {
       ) {
         source = () =>
           tabsNativeSource({ ...args, items: args.items }, name === 'SegmentedControl', choice);
+      }
+      if (name === 'SnackbarProvider' || name === 'PortalSnackbarProvider') {
+        source = () =>
+          snackbarProviderNativeSource(args, name === 'PortalSnackbarProvider', choice);
       }
       if (name === 'MobileSnackbar' || name === 'PortalSnackbar' || name === 'MobileBanner') {
         source = () => snackbarNativeSource(name, args, choice);
