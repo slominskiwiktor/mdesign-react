@@ -1,3 +1,4 @@
+import { utilityBarNativeSource } from '../src/catalog/utility-bar-native';
 import { footerNativeSource } from '../src/catalog/footer-native';
 import { serviceCatalogNativeSource } from '../src/catalog/service-catalog-native';
 import { panelPartNativeSource } from '../src/catalog/panel-part-native';
@@ -390,6 +391,7 @@ const preview: Preview = {
       if (name === 'PortalFooter' || name === 'LandingFooter' || name === 'LandingSitemap') {
         source = () => footerNativeSource(name, args, choice);
       }
+      if (name === 'LandingUtilityBar') source = () => utilityBarNativeSource(args, choice);
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
       }
