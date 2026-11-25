@@ -2237,3 +2237,26 @@
   min-height: 44px;
   border-radius: 12px;
 }
+
+[data-mobile-os='ios'] .mp-data-table :is(table, caption, td, th) {
+  font-family: var(--m-font);
+  color: var(--m-text);
+}
+[data-mobile-os='ios'] .mp-data-table caption {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+}
+[data-mobile-os='ios'] .mp-data-table :is(th, td) {
+  height: 48px;
+  padding-block: 8px;
+  border-bottom-color: var(--m-border);
+  font-size: 14px;
+  line-height: 20px;
+}
+[data-mobile-os='ios'] .mp-data-table th {
+  background: var(--m-bg);
+}
+[data-mobile-os='ios'] .mp-data-table tr[aria-selected='true'] td {
+  background: var(--m-brand-soft);
+}

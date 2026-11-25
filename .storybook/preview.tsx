@@ -1,3 +1,4 @@
+import { dataTableNativeSource } from '../src/catalog/data-table-native';
 import { carouselNativeSource } from '../src/catalog/carousel-native';
 import { calendarNativeSource } from '../src/catalog/calendar-native';
 import { menuNativeSource } from '../src/catalog/menu-native';
@@ -231,6 +232,19 @@ const preview: Preview = {
       }
       if (['Pager', 'Onboarding', 'PageIndicator', 'LandingDocumentCarousel'].includes(name)) {
         source = () => carouselNativeSource(name, args, choice);
+      }
+      if (name === 'PortalDataTable' && Array.isArray(args.rows) && Array.isArray(args.columns)) {
+        source = () =>
+          dataTableNativeSource(
+            {
+              ...args,
+              caption: String(args.caption ?? 'Tabela danych'),
+              rows: args.rows,
+              columns: args.columns,
+              rowKey: args.rowKey,
+            },
+            choice,
+          );
       }
       const platform =
         category === 'mobile'

@@ -12,6 +12,7 @@ import { paginationNativeSource } from './pagination-native.js';
 import { menuNativeSource } from './menu-native.js';
 import { calendarNativeSource } from './calendar-native.js';
 import { carouselNativeSource } from './carousel-native.js';
+import { dataTableNativeSource } from './data-table-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -367,6 +368,35 @@ test('exports pager gestures and starts from a bounded page', async () => {
   expect(
     ts.transpileModule(source, {
       fileName: 'Carousel.tsx',
+      compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+      reportDiagnostics: true,
+    }).diagnostics,
+  ).toEqual([]);
+});
+
+test('exports sortable rows with key-based selection and retains comparator ties', () => {
+  const source = dataTableNativeSource(
+    {
+      caption: 'Sprawy',
+      rows: [
+        { id: 'a', status: 2 },
+        { id: 'b', status: 2 },
+      ],
+      columns: [
+        { key: 'status', header: 'Status', sortable: true, compare: (a, b) => a.status - b.status },
+      ],
+      rowKey: (row) => row.id,
+      defaultSelection: ['a'],
+      selectable: true,
+    },
+    'ios',
+  );
+  expect(source.match(/"rank": 0/g)).toHaveLength(2);
+  expect(source).toContain('onSelectionChange?.(keys)');
+  expect(source).toContain('onSortChange?.(next);');
+  expect(
+    ts.transpileModule(source, {
+      fileName: 'Table.tsx',
       compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
       reportDiagnostics: true,
     }).diagnostics,
