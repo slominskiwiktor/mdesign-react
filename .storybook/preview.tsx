@@ -344,7 +344,10 @@ const preview: Preview = {
       if (name === 'Alert' || name === 'PortalMessage' || name === 'MobileAnnouncement') {
         source = () => messageNativeSource(name, args, choice);
       }
-      if ((name === 'Sidebar' || name === 'PortalSidebar') && Array.isArray(args.items)) {
+      if (
+        (name === 'Sidebar' || name === 'PortalSidebar' || name === 'LandingHeader') &&
+        Array.isArray(args.items)
+      ) {
         source = () => sidebarNativeSource(name, { ...args, items: args.items }, choice);
       }
       if (['QRCodeCard', 'QRCodeGraphic', 'BarcodeCard', 'BarcodeGraphic'].includes(name)) {

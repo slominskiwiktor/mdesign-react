@@ -21,30 +21,45 @@ type Args = {
   children?: ReactNode;
   mode?: string;
   minimized?: boolean;
+  menuOpen?: boolean;
+  downloadLabel?: string;
+  onDownload?: () => void;
+  showMobileDownload?: boolean;
+  homeHref?: string;
+  mobileSocialLinks?: Item[];
 };
 
-function normalize(items: Item[]): object[] {
+function normalize(items: Item[], parent = ''): object[] {
   return items.map((item, index) => {
     const href = item.href ? safeHref(item.href) : undefined;
+    const id = item.id ?? item.value ?? parent + String(index);
     return {
-      id: item.id ?? item.value ?? String(index),
+      id,
       label: item.label,
       href: href || null,
       disabled: !!item.disabled || (!!item.href && href === undefined),
       badge: textOf(item.badge),
-      children: item.children ? normalize(item.children) : null,
+      children: item.children ? normalize(item.children, id + '-') : null,
     };
   });
 }
 
 export function sidebarNativeSource(name: string, args: Args, platform: NativePlatformChoice) {
+  const landing = name === 'LandingHeader';
   const config = {
+    landing,
+    initiallyOpen: args.menuOpen ?? !landing,
+    download:
+      landing && args.onDownload && args.showMobileDownload !== false
+        ? (args.downloadLabel ?? 'Pobierz aplikację')
+        : '',
+    home: landing ? (safeHref(args.homeHref ?? '/') ?? '') : '',
     label: args.label ?? 'Nawigacja boczna',
     title: textOf(args.title ?? args.children),
     footer: textOf(args.footer),
     value: args.value ?? '',
-    drawer: args.mode === 'drawer',
-    closeOnSelection: name === 'PortalSidebar',
+    drawer: landing || args.mode === 'drawer',
+    closeOnSelection: landing || name === 'PortalSidebar',
     minimized: !!args.minimized,
   };
   const ios = platform === 'auto' ? "Platform.OS === 'ios'" : String(platform === 'ios');
@@ -53,7 +68,7 @@ import type { ReactNode } from 'react';
 import { ${platform === 'auto' ? 'Platform, ' : ''}Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 type Item = { id: string; label: string; href: string | null; disabled: boolean; badge: string; children: Item[] | null };
-const items: Item[] = ${JSON.stringify(normalize(args.items), null, 2)};
+const items: Item[] = ${JSON.stringify(normalize([...args.items, ...(args.mobileSocialLinks ?? [])]), null, 2)};
 const config = ${JSON.stringify(config, null, 2)};
 const isIOS = ${ios};
 
@@ -61,22 +76,28 @@ type Props = {
   value?: string; onValueChange?: (id: string) => void; onClose?: () => void;
   onNavigate?: (href: string, id: string) => void;
   renderIcon?: (id: string, selected: boolean) => ReactNode;
-  footer?: ReactNode;
+  footer?: ReactNode; onDownload?: () => void; onMenuOpenChange?: (open: boolean) => void; menuOpen?: boolean;
 };
 
 function contains(item: Item, selected: string): boolean {
   return item.id === selected || !!item.children?.some((child) => contains(child, selected));
 }
 
-export default function Example({ value, onValueChange, onClose, onNavigate, renderIcon, footer }: Props = {}) {
+export default function Example({ value, onValueChange, onClose, onNavigate, renderIcon, footer, onDownload, onMenuOpenChange, menuOpen }: Props = {}) {
   const [localValue, setValue] = useState(config.value);
-  const [show, setShow] = useState(true);
+  const [localOpen, setShow] = useState(config.initiallyOpen);
+  const show = menuOpen ?? localOpen;
   const [groups, setGroups] = useState<Record<string, boolean>>({});
   const [feedback, setFeedback] = useState('');
   const selected = value ?? localValue;
 
+  function update(open: boolean) {
+    if (menuOpen === undefined) setShow(open);
+    onMenuOpenChange?.(open);
+  }
+
   function close() {
-    setShow(false);
+    update(false);
     onClose?.();
   }
 
@@ -118,7 +139,10 @@ export default function Example({ value, onValueChange, onClose, onNavigate, ren
             {item.badge ? <Text style={styles.badge}>{item.badge}</Text> : null}
             {item.children ? <Text accessible={false} style={styles.badge}>{expanded ? '⌃' : '⌄'}</Text> : null}
           </Pressable>
-          {item.children && expanded ? render(item.children, depth + 1) : null}
+          {item.children && expanded ? render(
+            config.landing && item.href
+              ? [{ ...item, id: item.id + '-overview', label: 'Pokaż wszystko', children: null }, ...item.children]
+              : item.children, depth + 1) : null}
         </View>
       );
     });
@@ -132,12 +156,23 @@ export default function Example({ value, onValueChange, onClose, onNavigate, ren
           <Text style={styles.label}>Zamknij nawigację</Text>
         </Pressable>
       ) : null}
+      {config.home ? (
+        <Pressable accessibilityRole="link" style={styles.item} onPress={() => void select({
+          id: 'home', label: 'Strona główna', href: config.home, disabled: false, badge: '', children: null,
+        })}><Text style={styles.label}>Strona główna</Text></Pressable>
+      ) : null}
       {render(items)}
+      {config.download ? (
+        <Pressable accessibilityRole="button" style={styles.item} onPress={() => {
+          if (onDownload) onDownload();
+          else setFeedback(config.download);
+        }}><Text style={styles.label}>{config.download}</Text></Pressable>
+      ) : null}
       {footer ?? (config.footer ? <Text style={styles.label}>{config.footer}</Text> : null)}
       {feedback ? <Text accessibilityRole="alert">{feedback}</Text> : null}
     </ScrollView>
   ) : (
-    <Pressable accessibilityRole="button" style={styles.item} onPress={() => setShow(true)}>
+    <Pressable accessibilityRole="button" style={styles.item} accessibilityState={{ expanded: false }} onPress={() => update(true)}>
       <Text style={styles.label}>Otwórz nawigację</Text>
     </Pressable>
   );
