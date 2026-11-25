@@ -1,3 +1,4 @@
+import { timelineNativeSource } from '../src/catalog/timeline-native';
 import { documentNativeSource } from '../src/catalog/document-native';
 import { rowNativeSource } from '../src/catalog/row-native';
 import { tooltipNativeSource } from '../src/catalog/tooltip-native';
@@ -312,6 +313,9 @@ const preview: Preview = {
       }
       if (name === 'DocumentArtwork' || name === 'DocumentCard' || name === 'DocumentTile') {
         source = () => documentNativeSource(name, args, choice);
+      }
+      if (name === 'Timeline' || name === 'BulletPoint') {
+        source = () => timelineNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
