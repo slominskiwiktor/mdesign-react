@@ -62,13 +62,15 @@ export function dialogNativeSource(
         }))
       : [],
   };
+  const { data, ...fields } = config;
   const ios = platform === 'auto' ? "Platform.OS === 'ios'" : String(platform === 'ios');
 
   return `import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { ${platform === 'auto' ? 'Platform, ' : ''}Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-const config = ${JSON.stringify(config, null, 2)};
+const config = ${JSON.stringify(fields, null, 2)};
+const data: { label: string; value: string }[] = ${JSON.stringify(data, null, 2)};
 const ios = ${ios};
 const sheet = ${sheet};
 
@@ -103,7 +105,7 @@ export default function DialogExample({ children, onConfirm, onOpenChange }: {
               <Text accessibilityRole="header" style={styles.title}>{config.title}</Text>
               {!!config.description && <Text style={styles.description}>{config.description}</Text>}
               {!!config.body && <Text style={styles.body}>{config.body}</Text>}
-              {config.data.map((row, index) => (
+              {data.map((row, index) => (
                 <View key={index} style={styles.row}>
                   <Text style={styles.description}>{row.label}</Text>
                   <Text style={styles.body}>{row.value}</Text>

@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+import { textOf } from './native-example-text.js';
 import type { PortalSelectProps } from '../kit/portal/Forms.js';
 import type { NativePlatformChoice } from './native-export.js';
 
@@ -12,13 +14,11 @@ type SelectExample = Pick<
   | 'readOnly'
   | 'searchable'
   | 'placeholder'
-  | 'hint'
-  | 'error'
   | 'loading'
   | 'emptyMessage'
   | 'open'
   | 'defaultOpen'
->;
+> & { hint?: ReactNode; error?: ReactNode };
 
 export function selectNativeSource(example: SelectExample, platform: NativePlatformChoice) {
   const selection = example.value ?? example.defaultValue;
@@ -36,7 +36,7 @@ export function selectNativeSource(example: SelectExample, platform: NativePlatf
     disabled: !!(example.disabled || example.readOnly || example.loading),
     searchable: example.searchable ?? false,
     placeholder: example.placeholder ?? 'Wybierz',
-    message: example.error ?? example.hint ?? '',
+    message: textOf(example.error ?? example.hint),
     error: !!example.error,
     initialOpen: !!(example.open ?? example.defaultOpen),
     emptyMessage: example.emptyMessage ?? 'Brak wyników',

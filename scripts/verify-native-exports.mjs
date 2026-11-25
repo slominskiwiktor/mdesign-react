@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import { chromium } from 'playwright';
 import ts from 'typescript';
 
@@ -17,8 +18,17 @@ const defaults = Object.values(entries).filter(
 const stories = manifest.components.map(({ name }) => {
   const entry = defaults.find((story) => story.title.split('/').at(-1) === name);
   assert(entry, `Missing default story for ${name}`);
+  assert(/^[a-z0-9-]+$/.test(entry.id), `Unexpected story ID for ${name}`);
   return entry;
 });
+
+const typecheckRoot = process.argv[4] ? resolve(process.argv[4]) : undefined;
+const examples = new Map();
+const nativeVersion = typecheckRoot
+  ? JSON.parse(
+      await readFile(resolve(typecheckRoot, 'node_modules/react-native/package.json'), 'utf8'),
+    ).version
+  : undefined;
 
 const browser = await chromium.launch();
 const results = [];
@@ -67,7 +77,13 @@ try {
                   .map((item) => ts.flattenDiagnosticMessageText(item.messageText, '\n'))
                   .join('\n'),
               );
-              results.push({ id: story.id, platform, status: 'pass' });
+              const result = { id: story.id, platform, status: 'pass' };
+              if (typecheckRoot) {
+                const file = resolve(typecheckRoot, `${story.id}-${platform}.tsx`);
+                await writeFile(file, source);
+                examples.set(file, result);
+              }
+              results.push(result);
             } catch (error) {
               const feedback = await page
                 .locator('details.md-native-preview-tools [role=status]')
@@ -92,6 +108,38 @@ try {
   await browser.close();
 }
 
+if (typecheckRoot) {
+  const program = ts.createProgram([...examples.keys()], {
+    allowSyntheticDefaultImports: true,
+    jsx: ts.JsxEmit.ReactJSX,
+    lib: ['lib.esnext.d.ts'],
+    module: ts.ModuleKind.ESNext,
+    moduleResolution: ts.ModuleResolutionKind.Bundler,
+    noEmit: true,
+    skipLibCheck: true,
+    strict: true,
+    target: ts.ScriptTarget.ESNext,
+    types: ['react'],
+    typeRoots: [
+      resolve(typecheckRoot, 'node_modules/@types'),
+      resolve(typecheckRoot, 'node_modules'),
+    ],
+  });
+  const globalIssues = [];
+  for (const diagnostic of ts.getPreEmitDiagnostics(program)) {
+    const result = diagnostic.file && examples.get(diagnostic.file.fileName);
+    const message = ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n');
+    if (result) {
+      result.status = 'fail';
+      result.error = [result.error, message].filter(Boolean).join('\n');
+      result.feedback = [];
+    } else {
+      globalIssues.push(message);
+    }
+  }
+  assert.equal(globalIssues.length, 0, globalIssues.join('\n'));
+}
+
 results.sort((a, b) => a.id.localeCompare(b.id) || a.platform.localeCompare(b.platform));
 if (process.argv[3]) await writeFile(process.argv[3], JSON.stringify(results, null, 2) + '\n');
 const failures = results.filter(({ status }) => status === 'fail');
@@ -101,6 +149,6 @@ for (const failure of failures) {
   );
 }
 console.log(
-  `React Native TSX exports: ${results.length - failures.length}/${stories.length * 2} passed.`,
+  `React Native ${nativeVersion ? `${nativeVersion} type-checked` : 'TSX'} exports: ${results.length - failures.length}/${stories.length * 2} passed.`,
 );
 process.exitCode = failures.length ? 1 : 0;

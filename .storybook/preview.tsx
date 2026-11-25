@@ -158,10 +158,18 @@ const preview: Preview = {
             );
         }
       }
-      if ((name === 'Select' || name === 'PortalSelect') && Array.isArray(args.options)) {
+      if (
+        ['Select', 'PortalSelect', 'MobileDropdown', 'LandingCombobox'].includes(name) &&
+        Array.isArray(args.options)
+      ) {
         source = () =>
           selectNativeSource(
-            { ...args, label: String(args.label ?? 'Wybierz'), options: args.options },
+            {
+              placeholder: name === 'LandingCombobox' ? 'Wszystkie' : undefined,
+              ...args,
+              label: String(args.label ?? 'Wybierz'),
+              options: args.options,
+            },
             choice,
           );
       }
