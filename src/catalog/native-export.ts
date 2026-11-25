@@ -345,7 +345,7 @@ async function emitTree(
       attributes.push('resizeMode="contain"');
     }
     imports.add(node.type);
-    if (node.action) attributes.push(`onPress={() => onAction?.(${JSON.stringify(node.action)})}`);
+    if (node.action) attributes.push(`onPress={bindAction(${JSON.stringify(node.action)})}`);
     if (node.type === 'Switch') {
       return (
         indent +
@@ -398,7 +398,7 @@ function PreviewSwitch({ initialValue, ...props }: React.ComponentProps<typeof S
 
 // Eksport stanu podglądu mDesign. Podłącz nawigację i logikę aplikacji przez onAction.
 export default function ComponentExample(${imports.has('Pressable') ? '{ onAction }: { onAction?: (action: string) => void }' : ''}) {
-  return (
+  ${imports.has('Pressable') ? 'const bindAction = (action: string) => () => onAction?.(action);\n  ' : ''}return (
     <View${choice === 'auto' && iosCode === androidCode ? " accessibilityLabel={Platform.select({ ios: 'Podgląd iOS', android: 'Podgląd Android' })}" : ''}>
 ${body}
     </View>
