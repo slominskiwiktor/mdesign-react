@@ -1805,6 +1805,18 @@
   margin: 0;
   color: var(--m-muted);
 }
+[data-mobile-os='ios'] .m-mobile-empty-state {
+  gap: 8px;
+}
+[data-mobile-os='ios'] .m-mobile-empty-state > h2 {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+}
+[data-mobile-os='ios'] .m-mobile-empty-state > p {
+  font-size: 13px;
+  line-height: 18px;
+}
 .m-mobile-announcement {
   display: flex;
   align-items: flex-start;

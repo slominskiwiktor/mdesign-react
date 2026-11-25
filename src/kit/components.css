@@ -627,7 +627,7 @@
   max-width: 100%;
   animation: m-shimmer 1.7s linear infinite;
 }
-.m-skeleton--rounded {
+.m-skeleton.m-skeleton--rounded {
   border-radius: 999px;
 }
 .m-empty {

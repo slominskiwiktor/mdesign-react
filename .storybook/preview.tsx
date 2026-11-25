@@ -1,3 +1,5 @@
+import { emptyStateNativeSource } from '../src/catalog/empty-state-native';
+import { skeletonNativeSource } from '../src/catalog/skeleton-native';
 import { linkNativeSource } from '../src/catalog/link-native';
 import { progressNativeSource } from '../src/catalog/progress-native';
 import { switchNativeSource } from '../src/catalog/switch-native';
@@ -242,6 +244,12 @@ const preview: Preview = {
       }
       if (name === 'MobileTimePicker') {
         source = () => timeNativeSource(args, choice);
+      }
+      if (name === 'Skeleton') {
+        source = () => skeletonNativeSource(args, choice);
+      }
+      if (name === 'EmptyState' || name === 'MobileEmptyState' || name === 'PortalEmptyState') {
+        source = () => emptyStateNativeSource(name, args, choice);
       }
       if (name === 'PinInput') {
         source = () => pinNativeSource(args, choice);
