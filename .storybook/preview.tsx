@@ -1,3 +1,4 @@
+import { fieldCopyNativeSource } from '../src/catalog/field-copy-native';
 import { chatNativeSource } from '../src/catalog/chat-native';
 import { richTextNativeSource } from '../src/catalog/rich-text-native';
 import { codeNativeSource } from '../src/catalog/code-native';
@@ -349,6 +350,19 @@ const preview: Preview = {
       }
       if (name === 'ChatBubble' || name === 'TypingIndicator') {
         source = () => chatNativeSource(name, args, choice);
+      }
+      if (
+        [
+          'FieldError',
+          'FieldHelper',
+          'PortalFormLabel',
+          'PortalFormHelperText',
+          'PortalFormMessage',
+          'PortalCharacterCounter',
+          'PortalStatusText',
+        ].includes(name)
+      ) {
+        source = () => fieldCopyNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
