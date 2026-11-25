@@ -323,20 +323,22 @@ const footerGroups: PortalFooterGroup[] = [
     ],
   },
 ];
+export const portalDefaultAppLinks = [
+  {
+    label: 'Pobierz aplikację mObywatel z Google Play',
+    href: 'https://play.google.com/store/apps/details?id=pl.nask.mobywatel',
+    image: googlePlay,
+  },
+  {
+    label: 'Pobierz aplikację mObywatel z App Store',
+    href: 'https://apps.apple.com/pl/app/mobywatel/id1339613469',
+    image: appStore,
+  },
+];
+
 export function PortalFooter({
   groups = footerGroups,
-  appLinks = [
-    {
-      label: 'Pobierz aplikację mObywatel z Google Play',
-      href: 'https://play.google.com/store/apps/details?id=pl.nask.mobywatel',
-      image: googlePlay,
-    },
-    {
-      label: 'Pobierz aplikację mObywatel z App Store',
-      href: 'https://apps.apple.com/pl/app/mobywatel/id1339613469',
-      image: appStore,
-    },
-  ],
+  appLinks = portalDefaultAppLinks,
   appLabel = 'Pobierz aplikację demo',
   brand,
   className = '',
