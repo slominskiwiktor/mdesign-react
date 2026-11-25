@@ -6,24 +6,31 @@ import type { NativePlatformChoice } from './native-export.js';
 type LinkExample = {
   id?: string;
   href?: string;
-  label?: string;
+  label?: ReactNode;
+  current?: boolean;
+  onClick?: () => void;
   disabled?: boolean;
 };
 type LinkArgs = LinkExample & {
   children?: ReactNode;
+  label?: string;
   items?: LinkExample[];
   showIcon?: boolean;
-  variant?: 'primary' | 'secondary' | 'link';
+  variant?: 'primary' | 'secondary' | 'link' | 'path' | 'back';
   'aria-label'?: string;
 };
 
 export function linkNativeSource(name: string, args: LinkArgs, platform: NativePlatformChoice) {
+  const breadcrumbs = name.endsWith('Breadcrumbs');
+  const portal = name === 'PortalBreadcrumbs';
   const list = name === 'PortalServiceLinks';
   const config = {
     list,
-    groupLabel: list ? (args.label ?? 'Usługi') : '',
-    variant: args.variant ?? 'link',
-    items: (list
+    breadcrumbs,
+    back: breadcrumbs && args.variant === 'back',
+    groupLabel: args.label ?? (breadcrumbs ? 'Ścieżka nawigacji' : list ? 'Usługi' : ''),
+    variant: args.variant === 'primary' || args.variant === 'secondary' ? args.variant : 'link',
+    items: (list || breadcrumbs
       ? (args.items ?? [])
       : [
           {
@@ -31,11 +38,17 @@ export function linkNativeSource(name: string, args: LinkArgs, platform: NativeP
             label: textOf(args.children) || args['aria-label'] || 'Otwórz odnośnik',
           },
         ]
-    ).map((item, index) => {
+    ).map((item, index, items) => {
       const href = item.href ? safeHref(item.href) || null : null;
       return {
         id: item.id ?? String(index),
-        label: item.label ?? '',
+        label: textOf(item.label),
+        current:
+          breadcrumbs &&
+          (portal
+            ? (item.current ?? (index === items.length - 1 && !item.href && !item.onClick))
+            : index === items.length - 1),
+        actionable: !breadcrumbs || !!item.href || (portal && !!item.onClick),
         href,
         disabled: !!item.disabled || (!!item.href && !href),
         external: !!href && /^(https?:|mailto:|tel:)/i.test(href),
@@ -47,9 +60,9 @@ export function linkNativeSource(name: string, args: LinkArgs, platform: NativeP
   return `import { useState } from 'react';
 import { ${platform === 'auto' ? 'Platform, ' : ''}Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 
-type Item = { id: string; label: string; href: string | null; disabled: boolean; external: boolean };
+type Item = { id: string; label: string; href: string | null; disabled: boolean; external: boolean; current: boolean; actionable: boolean };
 const config: {
-  list: boolean; groupLabel: string; variant: 'primary' | 'secondary' | 'link'; items: Item[]; showIcon: boolean;
+  list: boolean; breadcrumbs: boolean; back: boolean; groupLabel: string; variant: 'primary' | 'secondary' | 'link'; items: Item[]; showIcon: boolean;
 } = ${JSON.stringify(config, null, 2)};
 const isIOS = ${ios};
 
@@ -61,7 +74,7 @@ export default function Example({
   const [error, setError] = useState('');
 
   async function activate(item: Item) {
-    if (item.disabled) return;
+    if (item.disabled || item.current || !item.actionable) return;
     setError('');
     if (item.external && item.href) {
       try {
@@ -93,8 +106,19 @@ export default function Example({
   return (
     <View style={styles.panel}>
       {config.list ? <Text accessibilityRole="header" style={styles.heading}>{config.groupLabel}</Text> : null}
-      {config.items.map((item) => (
-        <Pressable key={item.id} accessibilityRole={item.href ? 'link' : 'button'}
+      <View style={config.breadcrumbs ? styles.path : styles.items} accessibilityLabel={config.groupLabel || undefined}>
+      {config.items.map((item, index) => (
+        <View key={item.id} style={config.breadcrumbs && styles.pathItem}>
+          {config.breadcrumbs && (index > 0 || config.back) ? (
+            <Text accessible={false} accessibilityElementsHidden importantForAccessibility="no"
+              style={styles.separator}>{index > 0 ? '›' : '‹'}</Text>
+          ) : null}
+          {config.breadcrumbs && (item.current || !item.actionable || item.disabled) ? (
+            <Text accessibilityState={{ selected: item.current, disabled: item.disabled }}
+              accessibilityLabel={item.current ? item.label + ', bieżąca strona' : item.label}
+              style={[styles.current, item.disabled && styles.disabled]}>{item.label}</Text>
+          ) : (
+        <Pressable accessibilityRole={item.href ? 'link' : 'button'}
           accessibilityLabel={item.label} accessibilityState={{ disabled: item.disabled }}
           disabled={item.disabled} onPress={() => void activate(item)}
           style={[styles.item, config.list && styles.row, config.variant === 'primary' && !item.disabled && styles.primary,
@@ -109,7 +133,10 @@ export default function Example({
             </Text>
           ) : null}
         </Pressable>
+          )}
+        </View>
       ))}
+      </View>
       {error ? <Text accessibilityRole="alert" style={styles.error}>{error}</Text> : null}
     </View>
   );
@@ -118,6 +145,11 @@ export default function Example({
 const blue = isIOS ? '#165ef8' : '#0452a8';
 const styles = StyleSheet.create({
   panel: { padding: 16, gap: 8 },
+  items: { gap: 8 },
+  path: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' },
+  pathItem: { flexDirection: 'row', alignItems: 'center', maxWidth: '100%', flexShrink: 1 },
+  current: { color: '#161b22', flexShrink: 1, paddingHorizontal: 8, fontSize: isIOS ? 13 : 16 },
+  separator: { color: '#626872', fontSize: 16 },
   heading: { color: '#161b22', fontSize: 18, fontWeight: '700' },
   item: { minHeight: 44, flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 8 },
   row: { justifyContent: 'space-between', backgroundColor: '#f5f7fa', borderRadius: 8 },

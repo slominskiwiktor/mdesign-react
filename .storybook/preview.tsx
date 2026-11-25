@@ -245,7 +245,15 @@ const preview: Preview = {
         source = () => progressNativeSource(name, args, choice);
       }
       if (
-        ['MobileLink', 'LandingLink', 'PortalExternalLink', 'PortalServiceLinks'].includes(name)
+        [
+          'MobileLink',
+          'LandingLink',
+          'PortalExternalLink',
+          'PortalServiceLinks',
+          'Breadcrumbs',
+          'LandingBreadcrumbs',
+          'PortalBreadcrumbs',
+        ].includes(name)
       ) {
         source = () => linkNativeSource(name, args, choice);
       }
