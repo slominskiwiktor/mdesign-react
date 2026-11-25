@@ -1,3 +1,4 @@
+import { serviceCatalogNativeSource } from '../src/catalog/service-catalog-native';
 import { panelPartNativeSource } from '../src/catalog/panel-part-native';
 import { portalNoticeNativeSource } from '../src/catalog/portal-notice-native';
 import { formFieldNativeSource } from '../src/catalog/form-field-native';
@@ -378,6 +379,9 @@ const preview: Preview = {
         /^Portal(?:Card|Panel)(?:Header|Content|Footer)$/.test(name)
       ) {
         source = () => panelPartNativeSource(name, args.children, choice);
+      }
+      if (name === 'PortalServiceCatalog' && Array.isArray(args.items)) {
+        source = () => serviceCatalogNativeSource({ ...args, items: args.items }, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
