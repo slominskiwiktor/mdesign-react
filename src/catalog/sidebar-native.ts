@@ -22,6 +22,10 @@ type Args = {
   mode?: string;
   minimized?: boolean;
   menuOpen?: boolean;
+  language?: string;
+  languages?: { value: string; label: string; disabled?: boolean }[];
+  onLanguageChange?: (language: string) => void;
+  utility?: ReactNode;
   downloadLabel?: string;
   onDownload?: () => void;
   showMobileDownload?: boolean;
@@ -48,6 +52,17 @@ export function sidebarNativeSource(name: string, args: Args, platform: NativePl
   const landing = name === 'LandingHeader';
   const config = {
     landing,
+    language: args.language ?? 'pl',
+    languageControl: landing && !!args.onLanguageChange,
+    languages: landing
+      ? (
+          args.languages ?? [
+            { value: 'pl', label: 'Polski' },
+            { value: 'en', label: 'English' },
+          ]
+        ).map(({ value, label, disabled }) => ({ value, label, disabled: !!disabled }))
+      : [],
+    utility: landing ? textOf(args.utility) : '',
     initiallyOpen: args.menuOpen ?? !landing,
     download:
       landing && args.onDownload && args.showMobileDownload !== false
@@ -77,19 +92,22 @@ type Props = {
   onNavigate?: (href: string, id: string) => void;
   renderIcon?: (id: string, selected: boolean) => ReactNode;
   footer?: ReactNode; onDownload?: () => void; onMenuOpenChange?: (open: boolean) => void; menuOpen?: boolean;
+  language?: string; onLanguageChange?: (language: string) => void; utility?: ReactNode;
 };
 
 function contains(item: Item, selected: string): boolean {
   return item.id === selected || !!item.children?.some((child) => contains(child, selected));
 }
 
-export default function Example({ value, onValueChange, onClose, onNavigate, renderIcon, footer, onDownload, onMenuOpenChange, menuOpen }: Props = {}) {
+export default function Example({ value, onValueChange, onClose, onNavigate, renderIcon, footer, onDownload, onMenuOpenChange, menuOpen, language, onLanguageChange, utility }: Props = {}) {
   const [localValue, setValue] = useState(config.value);
   const [localOpen, setShow] = useState(config.initiallyOpen);
   const show = menuOpen ?? localOpen;
   const [groups, setGroups] = useState<Record<string, boolean>>({});
   const [feedback, setFeedback] = useState('');
   const selected = value ?? localValue;
+  const [localLanguage, setLanguage] = useState(config.language);
+  const activeLanguage = language ?? localLanguage;
 
   function update(open: boolean) {
     if (menuOpen === undefined) setShow(open);
@@ -162,8 +180,25 @@ export default function Example({ value, onValueChange, onClose, onNavigate, ren
         })}><Text style={styles.label}>Strona główna</Text></Pressable>
       ) : null}
       {render(items)}
+      {config.landing && (config.languageControl || onLanguageChange) && config.languages.length ? (
+        <View accessibilityRole="radiogroup" accessibilityLabel="Język strony">
+          <Text style={styles.label}>Język strony</Text>
+          {config.languages.map(({ value: locale, label, disabled }) => (
+            <Pressable key={locale} accessibilityRole="radio" accessibilityLabel={label}
+              accessibilityState={{ checked: activeLanguage === locale, disabled }} disabled={disabled}
+              style={[styles.item, locale === activeLanguage && styles.active, disabled && styles.disabled]}
+              onPress={() => {
+                if (disabled || activeLanguage === locale) return;
+                if (language === undefined) setLanguage(locale);
+                onLanguageChange?.(locale);
+              }}><Text style={styles.label}>{label}</Text></Pressable>
+          ))}
+        </View>
+      ) : null}
+      {utility ?? (config.utility ? <Text style={styles.label}>{config.utility}</Text> : null)}
       {config.download ? (
         <Pressable accessibilityRole="button" style={styles.item} onPress={() => {
+          close();
           if (onDownload) onDownload();
           else setFeedback(config.download);
         }}><Text style={styles.label}>{config.download}</Text></Pressable>
