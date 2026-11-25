@@ -24,6 +24,7 @@
     "tokens:check": "node scripts/generate-tokens.mjs --check",
     "test:tokens": "node --test scripts/generate-tokens.test.mjs",
     "stories:generate": "node scripts/generate-stories.mjs",
+    "audit:ios-coverage": "node scripts/audit-ios-coverage.mjs",
     "verify:native-exports": "node scripts/verify-native-exports.mjs",
     "verify:stories": "node scripts/generate-stories.mjs --check",
     "test:stories": "vitest run --config vitest.storybook.config.ts",

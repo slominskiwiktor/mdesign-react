@@ -126,9 +126,9 @@ export default function SelectExample({ onValueChange }: {
 
 const styles = StyleSheet.create({
   field: { gap: 6 },
-  label: { fontSize: 14, fontWeight: '600', color: '#101317' },
+  label: { fontSize: ios ? 13 : 14, fontWeight: ios ? '400' : '600', color: ios ? '#52575f' : '#101317' },
   trigger: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8,
-    minHeight: ios ? 48 : 56, paddingHorizontal: 16, borderRadius: ios ? 12 : 4,
+    minHeight: 56, paddingHorizontal: 16, borderRadius: ios ? 12 : 4,
     borderWidth: 1, borderColor: '#808893', backgroundColor: '#fff' },
   sheet: { flex: 1, padding: 16, gap: 16, backgroundColor: ios ? '#f4f6fb' : '#fff' },
   heading: { flexDirection: 'row', alignItems: 'center', gap: 12 },
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   close: { minHeight: 44, justifyContent: 'center' },
   action: { color: '#0452a8', fontWeight: '600' },
   input: { minHeight: 44, borderRadius: 12, paddingHorizontal: 12, backgroundColor: '#e7eaed', color: '#101317' },
-  option: { minHeight: ios ? 48 : 56, paddingHorizontal: 16, paddingVertical: 8, flexDirection: 'row',
+  option: { minHeight: 56, paddingHorizontal: 16, paddingVertical: ios ? 16 : 8, flexDirection: 'row',
     alignItems: 'center', gap: 12, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#d0d4db' },
   optionCopy: { flex: 1, gap: 4 },
   active: { backgroundColor: '#ddebfb' },

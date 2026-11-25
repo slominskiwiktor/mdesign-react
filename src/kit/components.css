@@ -2585,6 +2585,13 @@ button.m-document-tile {
   min-width: 24px;
   border-radius: 0;
 }
+/* AppTheme.defaultAppearance uses the screen background and semantic neutrals on iOS. */
+[data-mobile-os='ios'] .m-bottom-navigation {
+  background: var(--m-bg);
+}
+[data-mobile-os='ios'] .m-bottom-navigation > button:not([aria-current='page']) {
+  color: var(--m-muted);
+}
 .m-document-tile {
   aspect-ratio: 1;
   min-height: 0;

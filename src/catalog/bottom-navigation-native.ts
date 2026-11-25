@@ -55,7 +55,7 @@ export default function BottomNavigationExample({ renderIcon, onValueChange }: P
 
 const styles = StyleSheet.create({
   // Place the bar in the app's safe-area container.
-  bar: { flexDirection: 'row', minHeight: ios ? 49 : 80, backgroundColor: '#fff', borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#d0d4db' },
+  bar: { flexDirection: 'row', minHeight: ios ? 49 : 80, backgroundColor: ios ? '#f4f6fb' : '#fff', borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#d0d4db' },
   destination: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: ios ? 2 : 4 },
   icon: { width: ios ? 24 : 64, maxWidth: '100%', height: ios ? 24 : 32, borderRadius: ios ? 0 : 16, alignItems: 'center', justifyContent: 'center' },
   indicator: { backgroundColor: '#ddebfb' },
