@@ -1,3 +1,4 @@
+import { calendarNativeSource } from '../src/catalog/calendar-native';
 import { menuNativeSource } from '../src/catalog/menu-native';
 import { paginationNativeSource } from '../src/catalog/pagination-native';
 import { textInputNativeSource } from '../src/catalog/text-input-native';
@@ -218,6 +219,14 @@ const preview: Preview = {
         Array.isArray(args.items)
       ) {
         source = () => menuNativeSource({ ...args, items: args.items }, choice);
+      }
+      if (
+        name === 'MobileCalendar' ||
+        name === 'MobileDatePicker' ||
+        name === 'PortalCalendar' ||
+        name === 'PortalDatePicker'
+      ) {
+        source = () => calendarNativeSource(name, args, choice);
       }
       const platform =
         category === 'mobile'

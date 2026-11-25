@@ -10,6 +10,7 @@ import { choiceNativeSource } from './choice-native.js';
 import { textInputNativeSource } from './text-input-native.js';
 import { paginationNativeSource } from './pagination-native.js';
 import { menuNativeSource } from './menu-native.js';
+import { calendarNativeSource } from './calendar-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -320,4 +321,31 @@ test('exports selectable native menu actions with initial state and role metadat
       reportDiagnostics: true,
     }).diagnostics,
   ).toEqual([]);
+});
+
+test('exports platform calendars with bounds and a confirm step for the mobile date picker', () => {
+  const native = calendarNativeSource(
+    'MobileDatePicker',
+    { label: 'Wizyta', min: '2026-10-01', max: '2026-11-30' },
+    'ios',
+  );
+  const portal = calendarNativeSource(
+    'PortalDatePicker',
+    { events: { '2026-10-20': 'Spotkanie' } },
+    'android',
+  );
+  expect(native).toContain('"confirm": true');
+  expect(native).toContain('config.min && date < config.min');
+  expect(native).toContain('onPress={() => commit(draft)}');
+  expect(portal).toContain('"typed": true');
+  expect(portal).toContain('"2026-10-20": "Spotkanie"');
+  for (const source of [native, portal]) {
+    expect(
+      ts.transpileModule(source, {
+        fileName: 'Calendar.tsx',
+        compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+        reportDiagnostics: true,
+      }).diagnostics,
+    ).toEqual([]);
+  }
 });

@@ -2188,3 +2188,34 @@
 [data-mobile-os='ios'] .m-mobile-menu-popup > button[data-destructive='true'] {
   color: var(--m-danger);
 }
+
+/* iOS date fields adapt the in-context calendar picker to the web surface. */
+[data-mobile-os='ios'] .mp-calendar-popover {
+  border-radius: 16px;
+}
+[data-mobile-os='ios'] .mp-calendar-heading {
+  height: auto;
+  margin-bottom: 8px;
+  padding: 0;
+  background: transparent;
+}
+[data-mobile-os='ios'] .mp-calendar-heading strong {
+  font-size: 17px;
+  line-height: 22px;
+}
+[data-mobile-os='ios'] :is(.mp-calendar-heading button, .m-mobile-calendar-header > button) {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+}
+[data-mobile-os='ios'] :is(.mp-calendar-table, .m-mobile-calendar > table) td > button {
+  width: 100%;
+  height: 44px;
+  aspect-ratio: auto;
+  font-family: inherit;
+}
+[data-mobile-os='ios'] .mp-calendar-table td > button > span {
+  width: min(100%, 40px);
+  height: 40px;
+  border-radius: 50%;
+}
