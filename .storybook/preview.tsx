@@ -1,3 +1,4 @@
+import { textInputNativeSource } from '../src/catalog/text-input-native';
 import { choiceNativeSource } from '../src/catalog/choice-native';
 import { panelNativeSource } from '../src/catalog/panel-native';
 import { dialogNativeSource } from '../src/catalog/dialog-native';
@@ -199,6 +200,13 @@ const preview: Preview = {
       }
       if (['Checkbox', 'Radio', 'CheckboxGroup', 'RadioGroup', 'PortalRadioGroup'].includes(name)) {
         source = () => choiceNativeSource(args, name.startsWith('Checkbox'), choice);
+      }
+      if (
+        ['SearchField', 'LandingSearchField', 'TextField', 'TextArea', 'MobileTextArea'].includes(
+          name,
+        )
+      ) {
+        source = () => textInputNativeSource(name, args, choice);
       }
       const platform =
         category === 'mobile'

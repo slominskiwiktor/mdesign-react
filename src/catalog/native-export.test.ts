@@ -7,6 +7,7 @@ import { tabsNativeSource } from './tabs-native.js';
 import { dialogNativeSource } from './dialog-native.js';
 import { panelNativeSource } from './panel-native.js';
 import { choiceNativeSource } from './choice-native.js';
+import { textInputNativeSource } from './text-input-native.js';
 import { copyNativeSource } from './native-export.js';
 
 function preview(markup: string) {
@@ -244,6 +245,35 @@ test('exports native single and multiple choice with disabled and mixed states',
     expect(
       ts.transpileModule(source, {
         fileName: 'Choice.tsx',
+        compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
+        reportDiagnostics: true,
+      }).diagnostics,
+    ).toEqual([]);
+  }
+});
+
+test('exports native editing and grapheme limits while omitting password values', () => {
+  const password = textInputNativeSource(
+    'TextField',
+    { type: 'password', value: 'sekret', maxLength: 20 },
+    'ios',
+  );
+  const textarea = textInputNativeSource(
+    'MobileTextArea',
+    { characterLimit: 2, hardLimit: true },
+    'android',
+  );
+  const search = textInputNativeSource('LandingSearchField', { label: 'Szukaj usług' }, 'auto');
+  expect(password).not.toContain('sekret');
+  expect(password).toContain('maxLength={20}');
+  expect(textarea).toContain('"characterLimit": 2');
+  expect(textarea).toContain('characters(text).slice(0, config.characterLimit)');
+  expect(search).toContain('inputMode="search"');
+  expect(search).toContain("change('')");
+  for (const source of [password, textarea, search]) {
+    expect(
+      ts.transpileModule(source, {
+        fileName: 'Input.tsx',
         compilerOptions: { jsx: ts.JsxEmit.ReactJSX },
         reportDiagnostics: true,
       }).diagnostics,

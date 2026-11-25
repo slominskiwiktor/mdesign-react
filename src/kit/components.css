@@ -3052,8 +3052,28 @@ button.m-document-card {
   -webkit-appearance: none;
   appearance: none;
 }
+.m-search-field .m-input {
+  padding-inline-end: 38px;
+}
 .m-search-field .m-native-input-control {
-  display: flex;
+  display: flex !important;
+  position: absolute;
+  inset-inline-end: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--m-muted);
+  cursor: pointer;
+}
+.m-search-field .m-native-input-control:focus-visible {
+  outline: 2px solid var(--m-focus);
+  outline-offset: 2px;
 }
 :is([data-platform='mobile'], [data-mobile-os='ios']) .m-search-field {
   gap: 0;
