@@ -1,3 +1,4 @@
+import { codeNativeSource } from '../src/catalog/code-native';
 import { sidebarNativeSource } from '../src/catalog/sidebar-native';
 import { messageNativeSource } from '../src/catalog/message-native';
 import { sectionHeadingNativeSource } from '../src/catalog/section-heading-native';
@@ -337,6 +338,9 @@ const preview: Preview = {
       }
       if ((name === 'Sidebar' || name === 'PortalSidebar') && Array.isArray(args.items)) {
         source = () => sidebarNativeSource(name, { ...args, items: args.items }, choice);
+      }
+      if (['QRCodeCard', 'QRCodeGraphic', 'BarcodeCard', 'BarcodeGraphic'].includes(name)) {
+        source = () => codeNativeSource(name, args, choice);
       }
       if (name === 'Skeleton') {
         source = () => skeletonNativeSource(args, choice);
