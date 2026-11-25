@@ -1,3 +1,4 @@
+import { filterNativeSource } from '../src/catalog/filter-native';
 import { phoneNativeSource } from '../src/catalog/phone-native';
 import { filePickerNativeSource } from '../src/catalog/file-picker-native';
 import { badgeNativeSource } from '../src/catalog/badge-native';
@@ -268,6 +269,13 @@ const preview: Preview = {
       }
       if (name === 'EmptyState' || name === 'MobileEmptyState' || name === 'PortalEmptyState') {
         source = () => emptyStateNativeSource(name, args, choice);
+      }
+      if (name === 'FilterControl' && Array.isArray(args.items)) {
+        source = () =>
+          filterNativeSource(
+            { ...args, items: args.items, label: String(args.label ?? 'Filtry') },
+            choice,
+          );
       }
       if (name === 'PhoneField') {
         source = () => phoneNativeSource(args, choice);
