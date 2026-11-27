@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
-import { readFile, writeFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { basename, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import ts from 'typescript';
 
@@ -22,17 +23,29 @@ const stories = manifest.components.map(({ name }) => {
   return entry;
 });
 
-const typecheckRoot = process.argv[4] ? resolve(process.argv[4]) : undefined;
+const flags = process.argv.slice(3);
+assert(
+  flags.every((flag) => flag === '--typecheck' || flag === '--retry'),
+  'Unknown audit option',
+);
+const auditRoot = new URL('../artifacts/native-export-audit/', import.meta.url);
+const report = new URL('report.json', auditRoot);
+await mkdir(auditRoot, { recursive: true });
+const typecheckRoot = flags.includes('--typecheck') ? fileURLToPath(auditRoot) : undefined;
+
+function examplePath(id, platform) {
+  return resolve(fileURLToPath(auditRoot), basename(`${id}-${platform}.tsx`));
+}
 const examples = new Map();
-const retrying = process.argv[5] === '--retry';
-const results = retrying ? JSON.parse(await readFile(process.argv[3], 'utf8')) : [];
+const retrying = flags.includes('--retry');
+const results = retrying ? JSON.parse(await readFile(report, 'utf8')) : [];
 const known = new Set(stories.map(({ id }) => id));
 const settled = new Map();
 for (const result of results) {
   if (!known.has(result.id) || !['ios', 'android'].includes(result.platform)) continue;
   if (result.status !== 'pass' || result.exportKind !== 'component-example') continue;
   if (typecheckRoot) {
-    const filename = resolve(typecheckRoot, `${result.id}-${result.platform}.tsx`);
+    const filename = examplePath(result.id, result.platform);
     try {
       await readFile(filename);
       examples.set(filename, result);
@@ -47,9 +60,8 @@ const pending = stories.filter(({ id }) =>
   ['ios', 'android'].some((platform) => !settled.has(`${id}/${platform}`)),
 );
 const nativeVersion = typecheckRoot
-  ? JSON.parse(
-      await readFile(resolve(typecheckRoot, 'node_modules/react-native/package.json'), 'utf8'),
-    ).version
+  ? JSON.parse(await readFile(new URL('node_modules/react-native/package.json', auditRoot), 'utf8'))
+      .version
   : undefined;
 
 const browser = await chromium.launch();
@@ -138,7 +150,7 @@ try {
                 exportKind: 'component-example',
               };
               if (typecheckRoot) {
-                const file = resolve(typecheckRoot, `${story.id}-${platform}.tsx`);
+                const file = examplePath(story.id, platform);
                 await writeFile(file, source);
                 examples.set(file, result);
               }
@@ -200,7 +212,7 @@ if (typecheckRoot) {
 }
 
 results.sort((a, b) => a.id.localeCompare(b.id) || a.platform.localeCompare(b.platform));
-if (process.argv[3]) await writeFile(process.argv[3], JSON.stringify(results, null, 2) + '\n');
+await writeFile(report, JSON.stringify(results, null, 2) + '\n');
 assert.equal(results.length, stories.length * 2, 'Incomplete native export report');
 const failures = results.filter(({ status }) => status === 'fail');
 for (const failure of failures) {
