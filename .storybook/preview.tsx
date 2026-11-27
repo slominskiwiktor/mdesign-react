@@ -1,3 +1,4 @@
+import { portalLogoNativeSource } from '../src/catalog/portal-logo-native';
 import { mobilePageNativeSource } from '../src/catalog/mobile-page-native';
 import { cardStackNativeSource } from '../src/catalog/card-stack-native';
 import type { NativePlatformChoice } from '../src/catalog/native-export';
@@ -261,6 +262,8 @@ const preview: Preview = {
       if (name === 'CardStack') source = () => cardStackNativeSource(args, choice);
       if (['IconPage', 'IllustrationPage', 'ServiceWelcomePage', 'SupportPage'].includes(name))
         source = (_, root) => mobilePageNativeSource(root, name, args, choice);
+      if (name === 'PortalLogoInformation')
+        source = (_, root) => portalLogoNativeSource(root, args.label, args.alt);
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
