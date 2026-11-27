@@ -1,3 +1,4 @@
+import { infoRowNativeSource } from '../src/catalog/info-row-native';
 import { downloadNativeSource } from '../src/catalog/download-native';
 import { consentNativeSource } from '../src/catalog/consent-native';
 import { primitiveNativeSource } from '../src/catalog/primitives-native';
@@ -241,6 +242,15 @@ const preview: Preview = {
       if (name === 'LandingCookieConsent') source = () => consentNativeSource(args, choice);
       if (name === 'LandingDownloadCTA' || name === 'LandingDownloadPanel')
         source = () => downloadNativeSource(name, args, choice);
+      if (name === 'InfoRow')
+        source = () =>
+          infoRowNativeSource(
+            [args as Parameters<typeof infoRowNativeSource>[0][number]],
+            false,
+            choice,
+          );
+      if (name === 'InfoRowList' && Array.isArray(args.items))
+        source = () => infoRowNativeSource(args.items, true, choice);
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
