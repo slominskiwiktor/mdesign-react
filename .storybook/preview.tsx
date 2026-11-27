@@ -1,3 +1,5 @@
+import type { NativePlatformChoice } from '../src/catalog/native-export';
+import { iconSurfaceNativeSource } from '../src/catalog/icon-surface-native';
 import { infoRowNativeSource } from '../src/catalog/info-row-native';
 import { downloadNativeSource } from '../src/catalog/download-native';
 import { consentNativeSource } from '../src/catalog/consent-native';
@@ -184,7 +186,8 @@ const preview: Preview = {
         ? { ...context.args, platform: itemPlatform ?? nativePreviewPlatform(choice) }
         : context.args;
       const story = <Story args={args} />;
-      let source: (() => string | Promise<string>) | undefined;
+      let source:
+        ((choice: NativePlatformChoice, root: HTMLElement) => string | Promise<string>) | undefined;
       if (Array.isArray(args.items)) {
         if (cardList) {
           source = () =>
@@ -251,6 +254,8 @@ const preview: Preview = {
           );
       if (name === 'InfoRowList' && Array.isArray(args.items))
         source = () => infoRowNativeSource(args.items, true, choice);
+      if (name === 'IconSurface')
+        source = (_, root) => iconSurfaceNativeSource(root, args.label, args.disabled);
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;

@@ -372,6 +372,40 @@ function normalizeColors(nodes: Node[], document: Document) {
   nodes.forEach(visit);
 }
 
+export async function captureIconSurface(root: HTMLElement) {
+  const surface = root.querySelector('.m-mobile-icon-surface');
+  if (!surface) throw new Error('Brak widocznej powierzchni ikony.');
+  const styles = getComputedStyle(surface);
+  const width = surface.getBoundingClientRect().width;
+  const visual: Style = {
+    backgroundColor: styles.backgroundColor,
+    borderRadius: styles.borderRadius.endsWith('%')
+      ? width / 2
+      : parseFloat(styles.borderRadius) || 0,
+    opacity: Number(styles.opacity),
+  };
+  for (const element of surface.querySelectorAll('*')) {
+    const css = getComputedStyle(element);
+    const bounds = element.getBoundingClientRect();
+    if (css.visibility !== 'visible' || bounds.width <= 0 || bounds.height <= 0) continue;
+    const picture = pictureFor(element, css);
+    if (!picture) continue;
+    const icon: Style = { width: bounds.width, height: bounds.height };
+    if (picture.tintColor) icon.tintColor = picture.tintColor;
+    normalizeColors(
+      [
+        { type: 'View', style: visual },
+        { type: 'Image', style: icon },
+      ],
+      root.ownerDocument,
+    );
+    const uri = picture.rasterize ? await rasterize(picture.uri) : picture.uri;
+    if (uri) return { width, visual, icon, uri };
+  }
+  normalizeColors([{ type: 'View', style: visual }], root.ownerDocument);
+  return { width, visual, icon: undefined, uri: undefined };
+}
+
 export async function rasterize(uri: string): Promise<string | undefined> {
   const image = new window.Image();
   image.src = uri;
