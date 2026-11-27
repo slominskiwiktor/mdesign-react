@@ -1,3 +1,4 @@
+import { portalShellNativeSource } from '../src/catalog/portal-shell-native';
 import { dashboardNativeSource } from '../src/catalog/dashboard-native';
 import { portalHeaderNativeSource } from '../src/catalog/portal-header-native';
 import { portalLogoNativeSource } from '../src/catalog/portal-logo-native';
@@ -269,6 +270,12 @@ const preview: Preview = {
       if (name === 'PortalHeader')
         source = (_, root) => portalHeaderNativeSource(root, args, choice);
       if (name === 'PortalDashboard') source = () => dashboardNativeSource(args, choice);
+      if (name === 'PortalShell' && Array.isArray(args.navigation))
+        source = () =>
+          portalShellNativeSource(
+            args as unknown as Parameters<typeof portalShellNativeSource>[0],
+            choice,
+          );
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
