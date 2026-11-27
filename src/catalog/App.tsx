@@ -633,7 +633,9 @@ export default function App() {
     </div>
   );
   return (
-    <NativePreviewPreference.Provider value={nativePlatform}>
+    <NativePreviewPreference.Provider
+      value={{ choice: nativePlatform, onChoiceChange: setNativePlatform }}
+    >
       {view}
     </NativePreviewPreference.Provider>
   );

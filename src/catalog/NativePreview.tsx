@@ -8,7 +8,10 @@ import {
 import type { NativePlatformChoice } from './native-export.js';
 import './native-preview.css';
 
-export const NativePreviewPreference = createContext<NativePlatformChoice>('auto');
+export const NativePreviewPreference = createContext<{
+  choice: NativePlatformChoice;
+  onChoiceChange: (choice: NativePlatformChoice) => void;
+} | null>(null);
 
 export function NativePreview({
   children,
@@ -23,7 +26,7 @@ export function NativePreview({
   source?: (choice: NativePlatformChoice, root: HTMLElement) => string | Promise<string>;
   className?: string;
 }) {
-  const inheritedChoice = useContext(NativePreviewPreference);
+  const preference = useContext(NativePreviewPreference);
   const [localChoice, setLocalChoice] = useState<NativePlatformChoice>();
   const [result, setResult] = useState<{
     choice: NativePlatformChoice;
@@ -32,14 +35,14 @@ export function NativePreview({
   }>();
   const [busy, setBusy] = useState(false);
   const content = useRef<HTMLDivElement>(null);
-  const choice = controlledChoice ?? localChoice ?? inheritedChoice;
+  const choice = controlledChoice ?? preference?.choice ?? localChoice ?? 'auto';
   const platform = nativePreviewPlatform(choice);
   const visibleResult = result?.choice === choice ? result : undefined;
 
   function change(value: NativePlatformChoice) {
     setResult(undefined);
-    if (onChoiceChange) onChoiceChange(value);
-    else setLocalChoice(value);
+    const update = onChoiceChange ?? preference?.onChoiceChange ?? setLocalChoice;
+    update(value);
   }
 
   async function exportCode() {
