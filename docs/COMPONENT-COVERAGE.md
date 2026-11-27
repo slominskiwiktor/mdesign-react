@@ -28,3 +28,15 @@ Walidator sprawdza kompletność map, rzeczywiste eksporty TypeScript oraz opisa
 ograniczenia adapterów. Dane wejściowe są w
 [scripts/fixtures/source-inventory](https://github.com/slominskiwiktor/mdesign-react/tree/main/scripts/fixtures/source-inventory).
 Testy zachowania, dostępności i obrazu opisuje [DEVELOPMENT.md](DEVELOPMENT.md).
+
+## Audyt odpowiedników iOS
+
+Uruchom `bun run audit:ios-coverage`, aby wypisać relację z iOS i ścieżki SwiftUI dla wszystkich eksportów z manifestu.
+
+| Relacja          | Liczba | Zakres                                                                                                                           |
+| ---------------- | -----: | -------------------------------------------------------------------------------------------------------------------------------- |
+| Rodzina źródłowa |     39 | Komponent należy do rodziny powiązanej ze źródłem SwiftUI w katalogu komponentów lub plikach pomocniczych.                       |
+| Wspólny wzorzec  |     39 | Komponent współdzieli wzorzec interakcji lub prezentacji z rodziną źródłową.                                                     |
+| Adaptacja        |    108 | Audyt nie przypisał odpowiednika w badanej rewizji źródeł. Zachowanie adaptacji trzeba zweryfikować względem kontraktu webowego. |
+
+Audyt dotyczy dostępnej rewizji [kodu iOS](https://github.com/fajfer/mObywatel/tree/d39d2f947b1078332d758de086cb3cb7dd163940/iOS/Sources). Relacja oznacza pochodzenie lub podobieństwo wzorca. Weryfikacja wyglądu, stanów i interakcji wymaga osobnych testów.

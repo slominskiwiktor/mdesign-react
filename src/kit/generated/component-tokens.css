@@ -15,7 +15,7 @@
   --m-prime-brand-active:light-dark(#062256,#bcd9f9);
   --m-prime-on-brand:light-dark(#fff,#18181b);
 }
-[data-platform=mobile]{
+:is([data-platform=mobile],[data-mobile-os=ios]){
   --m-native-primary:var(--m-mobile-primary,var(--m-brand,var(--mo-walletPrimary900,#165ef8)));
   --m-native-secondary:var(--m-mobile-secondary,var(--m-brand-soft,var(--mo-walletSecondary900,#e5ecfd)));
   --m-native-neutral30:var(--m-mobile-neutral30,var(--m-border,var(--mo-neutral30,#e7eaed)));

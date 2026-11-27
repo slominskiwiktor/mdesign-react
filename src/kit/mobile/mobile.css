@@ -289,6 +289,17 @@
 .m-mobile-switch[aria-checked='true'] > span {
   transform: translateX(20px);
 }
+[data-mobile-os='ios'] .m-mobile-switch-copy > label {
+  color: var(--m-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+[data-mobile-os='ios'] .m-mobile-switch[aria-checked='false'] {
+  background: var(--m-switch-off, light-dark(#e9e9eb, #39393d));
+}
+[data-mobile-os='ios'] .m-mobile-switch[aria-checked='true'] {
+  background: var(--m-native-primary);
+}
 .m-mobile-date-trigger-field > button,
 .m-mobile-dropdown-trigger {
   width: 100%;
@@ -328,6 +339,15 @@
   color: var(--m-brand);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+[data-mobile-os='ios'] .m-mobile-link {
+  color: var(--m-native-primary);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+[data-mobile-os='ios'] .m-mobile-link[aria-disabled='true'] {
+  color: var(--m-muted);
 }
 .m-mobile-notification-badge {
   display: inline-flex;
@@ -1270,6 +1290,14 @@
   font-size: 15px;
   line-height: 20px;
 }
+[data-mobile-os='ios'] .m-mobile-snackbar {
+  min-height: 48px;
+  font-size: 13px;
+  line-height: 18px;
+  box-shadow:
+    0 2px 4px rgb(16 19 23 / 4%),
+    0 16px 32px rgb(16 19 23 / 12%);
+}
 .m-mobile-snackbar > span {
   flex: 1;
   min-width: 0;
@@ -1777,6 +1805,18 @@
   margin: 0;
   color: var(--m-muted);
 }
+[data-mobile-os='ios'] .m-mobile-empty-state {
+  gap: 8px;
+}
+[data-mobile-os='ios'] .m-mobile-empty-state > h2 {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+}
+[data-mobile-os='ios'] .m-mobile-empty-state > p {
+  font-size: 13px;
+  line-height: 18px;
+}
 .m-mobile-announcement {
   display: flex;
   align-items: flex-start;
@@ -1939,4 +1979,324 @@
   object-fit: cover;
   border-radius: 12px;
   flex: none;
+}
+
+/* iOS uses a segmented selector for closely related views. */
+[data-mobile-os='ios'] :is(.m-tabs-list, .m-landing .ml-tab-list, .m-mobile-segmented-control) {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  padding: 2px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--m-border);
+}
+
+[data-mobile-os='ios']
+  :is(.m-tabs-list, .m-landing .ml-tab-list, .m-mobile-segmented-control)
+  > button {
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 44px;
+  padding: 4px 6px;
+  margin: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--m-text);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+[data-mobile-os='ios']
+  :is(.m-tabs-list, .m-landing .ml-tab-list, .m-mobile-segmented-control)
+  > button:is([data-state='active'], [aria-checked='true']) {
+  background: var(--m-surface);
+  color: var(--m-text);
+  font-weight: 600;
+  box-shadow: none;
+}
+
+[data-mobile-os='ios'] .m-tabs-trigger[data-state='active']::after {
+  content: none;
+}
+
+[data-mobile-os='android'] .m-mobile-segmented-control {
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--m-input-border);
+  background: var(--m-surface);
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button {
+  min-height: 48px;
+  border-radius: 0;
+  overflow-wrap: anywhere;
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button:first-child {
+  border-start-start-radius: 999px;
+  border-end-start-radius: 999px;
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button:last-child {
+  border-start-end-radius: 999px;
+  border-end-end-radius: 999px;
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button + button {
+  border-inline-start: 1px solid var(--m-input-border);
+}
+[data-mobile-os='android'] .m-mobile-segmented-control > button[aria-checked='true'] {
+  background: var(--m-brand-soft);
+  color: var(--m-text);
+  box-shadow: none;
+}
+
+[data-mobile-os='android'] :is(.m-tabs-list, .m-landing .ml-tab-list) {
+  flex-wrap: nowrap;
+  gap: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--m-border);
+  background: var(--m-surface);
+}
+[data-mobile-os='android'] :is(.m-tabs-list, .m-landing .ml-tab-list) > button {
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 48px;
+  padding: 4px 6px;
+  margin: 0;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--m-muted);
+  font-size: 14px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+[data-mobile-os='android']
+  :is(.m-tabs-list, .m-landing .ml-tab-list)
+  > button[data-state='active'] {
+  border-bottom-color: var(--m-brand);
+  color: var(--m-text);
+  font-weight: 600;
+}
+[data-mobile-os='android'] .m-tabs-trigger[data-state='active']::after {
+  content: none;
+}
+
+/* Dialogs keep their content and slots when the surrounding platform changes. */
+[data-mobile-os='ios']
+  :is(
+    .m-dialog,
+    .m-mobile-dialog:not([data-variant='native-alert']),
+    .mp-dialog:not(.mp-dialog--fullscreen)
+  ) {
+  border-radius: 14px;
+}
+[data-mobile-os='ios']
+  :is(
+    .m-dialog-title,
+    .m-mobile-dialog:not([data-variant='native-alert']) > h2,
+    .mp-dialog-header h2
+  ) {
+  font-size: 17px;
+  line-height: 22px;
+}
+[data-mobile-os='android']
+  :is(
+    .m-dialog,
+    .m-mobile-dialog:not([data-variant='native-alert']),
+    .mp-dialog:not(.mp-dialog--fullscreen)
+  ) {
+  border-radius: 24px;
+}
+[data-mobile-os='android'] :is(.m-dialog-title, .mp-dialog-header h2) {
+  font-size: 22px;
+  line-height: 28px;
+}
+:is([data-mobile-os='ios'], [data-mobile-os='android']) .m-mobile-bottom-sheet {
+  border-start-start-radius: 24px;
+  border-start-end-radius: 24px;
+}
+
+/* SwiftUI ContentBox is the reference for these iOS card surfaces. */
+[data-mobile-os='ios'] :is(.m-card, .mp-card, .mp-panel, .m-mobile-content-box) {
+  min-height: 76px;
+  border-radius: 16px;
+  background: var(--m-surface);
+  color: var(--m-text);
+}
+[data-mobile-os='ios'] :is(.m-card, .mp-card, .mp-panel) {
+  box-shadow: var(--m-native-shadow);
+}
+[data-mobile-os='ios'] .m-card-header {
+  padding: 16px 16px 0;
+  margin-bottom: 12px;
+}
+[data-mobile-os='ios'] .m-card-title,
+[data-mobile-os='ios'] :is(.mp-card, .mp-panel) .mp-panel-header {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+}
+[data-mobile-os='ios'] .m-card-content {
+  padding: 16px;
+}
+[data-mobile-os='ios'] .m-card-header + .m-card-content {
+  padding-top: 0;
+}
+[data-mobile-os='ios'] :is(.mp-card, .mp-panel) .mp-panel-header {
+  padding: 16px 16px 12px;
+}
+[data-mobile-os='ios'] :is(.mp-card, .mp-panel) .mp-panel-content {
+  padding: 0 16px 16px;
+}
+[data-mobile-os='ios'] :is(.mp-card, .mp-panel) .mp-panel-content:first-child {
+  padding-top: 16px;
+}
+[data-mobile-os='ios'] .mp-panel:has(> .mp-panel-header) > div:nth-child(2) > .mp-panel-content {
+  padding-top: 0;
+}
+[data-mobile-os='ios'] :is(.mp-card, .mp-panel) .mp-panel-footer {
+  padding: 12px 16px;
+  border-color: var(--m-border);
+}
+
+[data-mobile-os='ios'] .mp-radio-group legend {
+  color: var(--m-text);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+}
+[data-mobile-os='ios'] .mp-radio-group > div {
+  gap: 8px;
+}
+[data-mobile-os='ios'] .mp-radio-group label {
+  min-height: 44px;
+  gap: 16px;
+  align-items: center;
+  color: var(--m-text);
+}
+[data-mobile-os='ios'] .mp-radio-group input {
+  flex: none;
+  margin: 0;
+  accent-color: var(--m-brand);
+}
+[data-mobile-os='ios'] .mp-radio-group small {
+  color: var(--m-muted);
+  font-size: 13px;
+}
+
+[data-mobile-os='ios'] .m-pagination {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4px;
+  background: transparent;
+}
+[data-mobile-os='ios'] .m-pagination-page,
+[data-mobile-os='ios'] .m-pagination .m-icon-button,
+[data-mobile-os='ios'] .mp-pagination :is(button, select) {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 10px;
+}
+[data-mobile-os='ios'] .m-pagination-page[aria-current='page'] {
+  color: var(--m-brand);
+  background: var(--m-brand-soft);
+}
+[data-mobile-os='ios'] .mp-pagination {
+  gap: 8px 12px;
+  justify-content: center;
+}
+
+/* Menu actions use standard iOS tap areas and group dividers. */
+[data-mobile-os='ios'] :is(.m-mobile-menu-popup, .mp-menu-list) {
+  border-radius: 14px;
+  background: var(--m-surface);
+  color: var(--m-text);
+}
+[data-mobile-os='ios'] :is(.m-mobile-menu-popup > button, .mp-menu-list .mp-menu-item) {
+  min-height: 44px;
+  padding-inline: 16px;
+  gap: 12px;
+  color: var(--m-text);
+  font-size: 16px;
+}
+[data-mobile-os='ios'] .m-mobile-menu-popup > button[data-destructive='true'] {
+  color: var(--m-danger);
+}
+
+/* iOS date fields adapt the in-context calendar picker to the web surface. */
+[data-mobile-os='ios'] .mp-calendar-popover {
+  border-radius: 16px;
+}
+[data-mobile-os='ios'] .mp-calendar-heading {
+  height: auto;
+  margin-bottom: 8px;
+  padding: 0;
+  background: transparent;
+}
+[data-mobile-os='ios'] .mp-calendar-heading strong {
+  font-size: 17px;
+  line-height: 22px;
+}
+[data-mobile-os='ios'] :is(.mp-calendar-heading button, .m-mobile-calendar-header > button) {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+}
+[data-mobile-os='ios'] :is(.mp-calendar-table, .m-mobile-calendar > table) td > button {
+  width: 100%;
+  height: 44px;
+  aspect-ratio: auto;
+  font-family: inherit;
+}
+[data-mobile-os='ios'] .mp-calendar-table td > button > span {
+  width: min(100%, 40px);
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Compact page dots, with an independent touch target in interactive mode. */
+[data-mobile-os='ios'] .m-mobile-page-indicator > button {
+  width: 30px;
+  height: 44px;
+}
+[data-mobile-os='ios'] :is(.m-mobile-page-indicator > button > span, .m-mobile-page-dot) {
+  width: 6px;
+  height: 6px;
+}
+[data-mobile-os='ios'] .m-mobile-page-dot {
+  margin: 19px 12px;
+}
+[data-mobile-os='ios'] .m-landing .ml-carousel-actions > button {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 12px;
+}
+
+[data-mobile-os='ios'] .mp-data-table :is(table, caption, td, th) {
+  font-family: var(--m-font);
+  color: var(--m-text);
+}
+[data-mobile-os='ios'] .mp-data-table caption {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+}
+[data-mobile-os='ios'] .mp-data-table :is(th, td) {
+  height: 48px;
+  padding-block: 8px;
+  border-bottom-color: var(--m-border);
+  font-size: 14px;
+  line-height: 20px;
+}
+[data-mobile-os='ios'] .mp-data-table th {
+  background: var(--m-bg);
+}
+[data-mobile-os='ios'] .mp-data-table tr[aria-selected='true'] td {
+  background: var(--m-brand-soft);
 }

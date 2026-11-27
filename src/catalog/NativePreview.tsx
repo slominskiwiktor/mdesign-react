@@ -1,4 +1,4 @@
-import { createContext, useContext, useRef, useState } from 'react';
+import { createContext, useContext, useLayoutEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import {
   copyNativeSource,
@@ -8,7 +8,10 @@ import {
 import type { NativePlatformChoice } from './native-export.js';
 import './native-preview.css';
 
-export const NativePreviewPreference = createContext<NativePlatformChoice>('auto');
+export const NativePreviewPreference = createContext<{
+  choice: NativePlatformChoice;
+  onChoiceChange: (choice: NativePlatformChoice) => void;
+} | null>(null);
 
 export function NativePreview({
   children,
@@ -20,41 +23,60 @@ export function NativePreview({
   children: ReactNode;
   choice?: NativePlatformChoice;
   onChoiceChange?: (choice: NativePlatformChoice) => void;
-  source?: (choice: NativePlatformChoice) => string;
+  source?: (choice: NativePlatformChoice, root: HTMLElement) => string | Promise<string>;
   className?: string;
 }) {
-  const inheritedChoice = useContext(NativePreviewPreference);
+  const preference = useContext(NativePreviewPreference);
   const [localChoice, setLocalChoice] = useState<NativePlatformChoice>();
-  const [code, setCode] = useState('');
-  const [feedback, setFeedback] = useState('');
+  const [result, setResult] = useState<{
+    choice: NativePlatformChoice;
+    code: string;
+    feedback: string;
+  }>();
   const [busy, setBusy] = useState(false);
   const content = useRef<HTMLDivElement>(null);
-  const choice = controlledChoice ?? localChoice ?? inheritedChoice;
+  const choice = controlledChoice ?? preference?.choice ?? localChoice ?? 'auto';
   const platform = nativePreviewPlatform(choice);
+  const generation = useRef(0);
+  useLayoutEffect(
+    () => () => {
+      generation.current++;
+    },
+    [choice],
+  );
+  const visibleResult = result?.choice === choice ? result : undefined;
 
   function change(value: NativePlatformChoice) {
-    setCode('');
-    setFeedback('');
-    if (onChoiceChange) onChoiceChange(value);
-    else setLocalChoice(value);
+    setResult(undefined);
+    const update = onChoiceChange ?? preference?.onChoiceChange ?? setLocalChoice;
+    update(value);
   }
 
   async function exportCode() {
-    if (!content.current) return;
+    const root = content.current;
+    if (!root) return;
+    const started = generation.current;
+    const isCurrent = () => content.current === root && started === generation.current;
     setBusy(true);
-    setFeedback('');
-    setCode('');
+    setResult(undefined);
     try {
-      const text = source ? source(choice) : await copyNativeSource(content.current, choice);
-      setCode(text);
+      const text = source ? await source(choice, root) : await copyNativeSource(root, choice);
+      if (!isCurrent()) return;
       try {
         await navigator.clipboard.writeText(text);
-        setFeedback('Skopiowano kod React Native.');
+        if (isCurrent())
+          setResult({ choice, code: text, feedback: 'Skopiowano kod React Native.' });
       } catch {
-        setFeedback('Skopiuj wygenerowany kod z pola poniżej.');
+        if (isCurrent())
+          setResult({ choice, code: text, feedback: 'Skopiuj wygenerowany kod z pola poniżej.' });
       }
     } catch {
-      setFeedback('Brak widocznej treści. Otwórz komponent w podglądzie i spróbuj ponownie.');
+      if (!isCurrent()) return;
+      setResult({
+        choice,
+        code: '',
+        feedback: 'Brak widocznej treści. Otwórz komponent w podglądzie i spróbuj ponownie.',
+      });
     } finally {
       setBusy(false);
     }
@@ -89,9 +111,14 @@ export function NativePreview({
             {busy ? 'Generowanie…' : 'Kopiuj kod React Native'}
           </button>
         </div>
-        {feedback && <p role="status">{feedback}</p>}
-        {!!code && (
-          <textarea readOnly aria-label="Wygenerowany kod React Native" value={code} rows={8} />
+        {visibleResult?.feedback && <p role="status">{visibleResult.feedback}</p>}
+        {!!visibleResult?.code && (
+          <textarea
+            readOnly
+            aria-label="Wygenerowany kod React Native"
+            value={visibleResult.code}
+            rows={8}
+          />
         )}
       </details>
     </>

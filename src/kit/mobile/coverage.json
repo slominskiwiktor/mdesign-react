@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sourceAudit": "scripts/fixtures/source-inventory/mobile-0.4.0.json",
   "scope": "All 65 semantic native UI families in the available iOS Components/Android source mirror. Cross-platform implementations, state variants, source helpers and models are deduplicated according to the 0.4.0 inventory.",
   "statusMeaning": {

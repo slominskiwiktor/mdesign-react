@@ -1,20 +1,10 @@
-export type NativePlatform = 'ios' | 'android';
-export type NativePlatformChoice = NativePlatform | 'auto';
-
-export function normalizeNativePlatformChoice(value: unknown): NativePlatformChoice {
-  return value === 'ios' || value === 'android' ? value : 'auto';
-}
-
-export function nativePreviewPlatform(choice: NativePlatformChoice): NativePlatform {
-  if (choice !== 'auto') return choice;
-  return typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent)
-    ? 'android'
-    : 'ios';
-}
+export { nativePreviewPlatform, normalizeNativePlatformChoice } from '../kit/native-platform.js';
+export type { NativePlatform, NativePlatformChoice } from '../kit/native-platform.js';
+import type { NativePlatform, NativePlatformChoice } from '../kit/native-platform.js';
 
 type Style = Record<string, string | number>;
 type Primitive = 'View' | 'Text' | 'Image' | 'Pressable' | 'TextInput' | 'Switch';
-type Picture = { uri: string; rasterize?: boolean };
+type Picture = { uri: string; rasterize?: boolean; tintColor?: string };
 type Node = {
   type: Primitive;
   style?: Style;
@@ -155,6 +145,17 @@ function pictureFor(element: Element, css: CSSStyleDeclaration): Picture | undef
         /\.svg(?:[?#]|$)/i.test(uri),
     };
   }
+  // Icons in the kit use a single SVG mask over a solid theme color.
+  if (!element.hasChildNodes()) {
+    const mask = css.maskImage || css.webkitMaskImage;
+    const match = /^url\(["']?(.*?)["']?\)$/.exec(mask);
+    if (match?.[1]) {
+      const uri = new URL(match[1], element.ownerDocument.baseURI);
+      if (uri.origin === window.location.origin || /^data:image\//i.test(uri.href)) {
+        return { uri: uri.href, rasterize: true, tintColor: css.backgroundColor };
+      }
+    }
+  }
   return undefined;
 }
 
@@ -165,6 +166,17 @@ const roles: Record<string, string> = {
   h2: 'header',
   h3: 'header',
   h4: 'header',
+};
+
+const nativeInputModes: Record<string, string> = {
+  email: 'email',
+  tel: 'tel',
+  url: 'url',
+  search: 'search',
+  numeric: 'numeric',
+  decimal: 'decimal',
+  text: 'text',
+  number: 'decimal',
 };
 
 function fromDom(node: ChildNode, parentCss: CSSStyleDeclaration): Node | undefined {
@@ -212,10 +224,18 @@ function fromDom(node: ChildNode, parentCss: CSSStyleDeclaration): Node | undefi
     const { width, height } = node.getBoundingClientRect();
     if (width <= 0 || height <= 0) return undefined;
     if (node instanceof HTMLImageElement && node.alt) props.accessibilityLabel = node.alt;
+    const decorative = node.getAttribute('aria-hidden') === 'true';
+    props.accessible = !decorative && !!props.accessibilityLabel;
+    if (decorative) props.importantForAccessibility = 'no';
+    if (props.accessible) props.accessibilityRole = 'image';
     return {
       type: 'Image',
       picture,
-      style: { width: Math.round(width), height: Math.round(height) },
+      style: {
+        width: Math.round(width),
+        height: Math.round(height),
+        ...(picture.tintColor ? { tintColor: picture.tintColor } : {}),
+      },
       props,
     };
   }
@@ -242,6 +262,10 @@ function fromDom(node: ChildNode, parentCss: CSSStyleDeclaration): Node | undefi
     const secure = node instanceof HTMLInputElement && node.type === 'password';
     if (secure) props.secureTextEntry = true;
     if (node instanceof HTMLTextAreaElement) props.multiline = true;
+    const mode = nativeInputModes[node.inputMode || node.type];
+    if (mode) props.inputMode = mode;
+    if (node.maxLength >= 0) props.maxLength = node.maxLength;
+    if (mode === 'search') props.returnKeyType = 'search';
     if (node.placeholder) props.placeholder = node.placeholder;
     if (!secure && node.value) props.defaultValue = node.value;
     return { type: 'TextInput', style: { ...style, ...textStyle(css) }, props };
@@ -259,6 +283,10 @@ function fromDom(node: ChildNode, parentCss: CSSStyleDeclaration): Node | undefi
 
   const children = Array.from(node.childNodes).flatMap((child) => fromDom(child, css) ?? []);
   if (!children.length && !Object.keys(style).length) return undefined;
+  if (role === 'img' && label) {
+    props.accessible = true;
+    props.accessibilityRole = 'image';
+  }
   if (role && ['header', 'link', 'button', 'tab', 'radio', 'checkbox'].includes(role))
     props.accessibilityRole = role;
   const interactive = [
@@ -302,7 +330,82 @@ function capture(root: HTMLElement, platform: NativePlatform): Node[] {
   }
 }
 
-async function rasterize(uri: string): Promise<string | undefined> {
+function normalizeColors(nodes: Node[], document: Document) {
+  const colors = new Map<string, string | undefined>();
+  let context: CanvasRenderingContext2D | null | undefined;
+
+  function toRgb(color: string) {
+    if (!colors.has(color)) {
+      if (context === undefined) {
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 1;
+        context = canvas.getContext('2d', { colorSpace: 'srgb', willReadFrequently: true });
+      }
+      let converted: string | undefined;
+      if (context) {
+        context.clearRect(0, 0, 1, 1);
+        context.fillStyle = 'rgba(0, 0, 0, 0)';
+        context.fillStyle = color;
+        context.fillRect(0, 0, 1, 1);
+        const [r, g, b, a] = context.getImageData(0, 0, 1, 1).data;
+        converted = `rgba(${r}, ${g}, ${b}, ${Math.round((a / 255) * 1000) / 1000})`;
+      }
+      colors.set(color, converted);
+    }
+    return colors.get(color);
+  }
+
+  function visit(node: Node) {
+    const { style } = node;
+    if (style) {
+      for (const key of ['color', 'tintColor', ...colorProps]) {
+        const value = style[key];
+        if (typeof value !== 'string' || !/^(color|lab|lch|oklab|oklch)\(/.test(value)) continue;
+        const converted = toRgb(value);
+        if (converted) style[key] = converted;
+        else delete style[key];
+      }
+    }
+    node.children?.forEach(visit);
+  }
+
+  nodes.forEach(visit);
+}
+
+export async function captureIconSurface(root: HTMLElement, selector = '.m-mobile-icon-surface') {
+  const surface = root.querySelector(selector);
+  if (!surface) throw new Error('Brak widocznej powierzchni ikony.');
+  const styles = getComputedStyle(surface);
+  const width = surface.getBoundingClientRect().width;
+  const visual: Style = {
+    backgroundColor: styles.backgroundColor,
+    borderRadius: styles.borderRadius.endsWith('%')
+      ? width / 2
+      : parseFloat(styles.borderRadius) || 0,
+    opacity: Number(styles.opacity),
+  };
+  const captured = await captureRenderedIcon(surface);
+  normalizeColors([{ type: 'View', style: visual }], root.ownerDocument);
+  return { width, visual, icon: captured?.style, uri: captured?.uri };
+}
+
+export async function captureRenderedIcon(root: Element) {
+  for (const element of root.querySelectorAll('*')) {
+    const css = getComputedStyle(element);
+    const bounds = element.getBoundingClientRect();
+    if (css.visibility !== 'visible' || bounds.width <= 0 || bounds.height <= 0) continue;
+    const picture = pictureFor(element, css);
+    if (!picture) continue;
+    const style: Style = { width: bounds.width, height: bounds.height };
+    if (picture.tintColor) style.tintColor = picture.tintColor;
+    normalizeColors([{ type: 'Image', style }], root.ownerDocument);
+    const uri = picture.rasterize ? await rasterize(picture.uri) : picture.uri;
+    if (uri) return { style, uri };
+  }
+  return undefined;
+}
+
+export async function rasterize(uri: string): Promise<string | undefined> {
   const image = new window.Image();
   image.src = uri;
   try {
@@ -370,6 +473,8 @@ export async function copyNativeSource(
   const ios = choice === 'android' ? undefined : capture(root, 'ios');
   const android = choice === 'ios' ? undefined : capture(root, 'android');
   if (!ios?.length && !android?.length) throw new Error('Brak widocznej treści do eksportu.');
+
+  normalizeColors([...(ios ?? []), ...(android ?? [])], root.ownerDocument);
 
   const imports = new Set<string>(['View']);
   const images = new Map<string, Promise<string | undefined>>();

@@ -12,7 +12,7 @@ body:
     attributes:
       label: Wersja mDesign
       description: Podaj wersję używanej paczki lub identyfikator commita.
-      placeholder: 1.0.0
+      placeholder: 1.1.0
     validations:
       required: true
   - type: dropdown

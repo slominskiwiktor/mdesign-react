@@ -1,6 +1,7 @@
 import { afterEach, expect, test } from 'vitest';
 import { page } from 'vitest/browser';
 import { cleanup, render, screen } from '@testing-library/react';
+import { Button } from '../kit';
 import { PortalDatePicker } from '../kit/portal/Calendar';
 import { PortalFormField, PortalSelect } from '../kit/portal/Forms';
 import { BrowserExample, BrowserSurface } from './fixtures';
@@ -25,6 +26,21 @@ test('Controls change the rendered example, including disabled and loading behav
   await expect.element(page.getByRole('button', { name: /Zapisz sprawę/ })).toBeDisabled();
   expect(screen.getByRole('button', { name: /Zapisz sprawę/ }).getAttribute('aria-busy')).toBe(
     'true',
+  );
+});
+
+test.each([
+  ['ios', '24px'],
+  ['android', '4px'],
+  [undefined, '24px'],
+])('applies the button geometry for the mobile platform %s', (mobileOS, radius) => {
+  render(
+    <div data-platform="mobile" data-mobile-os={mobileOS} data-theme="light">
+      <Button>Zapisz sprawę</Button>
+    </div>,
+  );
+  expect(getComputedStyle(screen.getByRole('button', { name: 'Zapisz sprawę' })).borderRadius).toBe(
+    radius,
   );
 });
 

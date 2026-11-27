@@ -34847,45 +34847,35 @@
     "PortalBanner": {
       "heading": {
         "summary": "\"Ważna informacja\"",
-        "detail": "'Ważna informacja'\nŹródło: src/kit/portal/Shell.tsx:579",
+        "detail": "'Ważna informacja'\nŹródło: src/kit/portal/Shell.tsx:581",
         "expression": "'Ważna informacja'",
-        "source": {
-          "file": "src/kit/portal/Shell.tsx",
-          "line": 579,
-          "kind": "parameter"
-        }
-      },
-      "description": {
-        "summary": "\"Treść demonstracyjna mDesign. Ten przykład pokazuje kompozycję interfejsu; aplikacja korzystająca z biblioteki dosta…",
-        "detail": "'Treść demonstracyjna mDesign. Ten przykład pokazuje kompozycję interfejsu; aplikacja korzystająca z biblioteki dostarcza własne dane i obsługę akcji.'\nŹródło: src/kit/portal/Shell.tsx:580",
-        "expression": "'Treść demonstracyjna mDesign. Ten przykład pokazuje kompozycję interfejsu; aplikacja korzystająca z biblioteki dostarcza własne dane i obsługę akcji.'",
-        "source": {
-          "file": "src/kit/portal/Shell.tsx",
-          "line": 580,
-          "kind": "parameter"
-        }
-      },
-      "image": {
-        "summary": "deliveryBanner",
-        "detail": "deliveryBanner\nŹródło: src/kit/portal/Shell.tsx:581",
-        "expression": "deliveryBanner",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
           "line": 581,
           "kind": "parameter"
         }
       },
-      "dismissible": {
-        "summary": "true",
-        "detail": "true\nŹródło: src/kit/portal/Shell.tsx:583",
-        "expression": "true",
+      "description": {
+        "summary": "\"Treść demonstracyjna mDesign. Ten przykład pokazuje kompozycję interfejsu; aplikacja korzystająca z biblioteki dosta…",
+        "detail": "'Treść demonstracyjna mDesign. Ten przykład pokazuje kompozycję interfejsu; aplikacja korzystająca z biblioteki dostarcza własne dane i obsługę akcji.'\nŹródło: src/kit/portal/Shell.tsx:582",
+        "expression": "'Treść demonstracyjna mDesign. Ten przykład pokazuje kompozycję interfejsu; aplikacja korzystająca z biblioteki dostarcza własne dane i obsługę akcji.'",
+        "source": {
+          "file": "src/kit/portal/Shell.tsx",
+          "line": 582,
+          "kind": "parameter"
+        }
+      },
+      "image": {
+        "summary": "deliveryBanner",
+        "detail": "deliveryBanner\nŹródło: src/kit/portal/Shell.tsx:583",
+        "expression": "deliveryBanner",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
           "line": 583,
           "kind": "parameter"
         }
       },
-      "defaultVisible": {
+      "dismissible": {
         "summary": "true",
         "detail": "true\nŹródło: src/kit/portal/Shell.tsx:585",
         "expression": "true",
@@ -34895,13 +34885,23 @@
           "kind": "parameter"
         }
       },
+      "defaultVisible": {
+        "summary": "true",
+        "detail": "true\nŹródło: src/kit/portal/Shell.tsx:587",
+        "expression": "true",
+        "source": {
+          "file": "src/kit/portal/Shell.tsx",
+          "line": 587,
+          "kind": "parameter"
+        }
+      },
       "className": {
         "summary": "\"\"",
-        "detail": "''\nŹródło: src/kit/portal/Shell.tsx:588",
+        "detail": "''\nŹródło: src/kit/portal/Shell.tsx:590",
         "expression": "''",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
-          "line": 588,
+          "line": 590,
           "kind": "parameter"
         }
       }
@@ -35157,11 +35157,11 @@
     "PortalEmptyState": {
       "variant": {
         "summary": "\"cases\"",
-        "detail": "'cases'\nŹródło: src/kit/portal/Shell.tsx:734",
+        "detail": "'cases'\nŹródło: src/kit/portal/Shell.tsx:736",
         "expression": "'cases'",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
-          "line": 734,
+          "line": 736,
           "kind": "parameter"
         }
       }
@@ -35214,41 +35214,41 @@
     "PortalFooter": {
       "groups": {
         "summary": "footerGroups",
-        "detail": "footerGroups\nŹródło: src/kit/portal/Shell.tsx:327",
+        "detail": "footerGroups\nŹródło: src/kit/portal/Shell.tsx:340",
         "expression": "footerGroups",
-        "source": {
-          "file": "src/kit/portal/Shell.tsx",
-          "line": 327,
-          "kind": "parameter"
-        }
-      },
-      "appLinks": {
-        "summary": "[ { label: 'Pobierz aplikację mObywatel z Google Play', href: 'https://play.google.com/store/apps/details?id=pl.nask.…",
-        "detail": "[\n    {\n      label: 'Pobierz aplikację mObywatel z Google Play',\n      href: 'https://play.google.com/store/apps/details?id=pl.nask.mobywatel',\n      image: googlePlay,\n    },\n    {\n      label: 'Pobierz aplikację mObywatel z App Store',\n      href: 'https://apps.apple.com/pl/app/mobywatel/id1339613469',\n      image: appStore,\n    },\n  ]\nŹródło: src/kit/portal/Shell.tsx:328",
-        "expression": "[\n    {\n      label: 'Pobierz aplikację mObywatel z Google Play',\n      href: 'https://play.google.com/store/apps/details?id=pl.nask.mobywatel',\n      image: googlePlay,\n    },\n    {\n      label: 'Pobierz aplikację mObywatel z App Store',\n      href: 'https://apps.apple.com/pl/app/mobywatel/id1339613469',\n      image: appStore,\n    },\n  ]",
-        "source": {
-          "file": "src/kit/portal/Shell.tsx",
-          "line": 328,
-          "kind": "parameter"
-        }
-      },
-      "appLabel": {
-        "summary": "\"Pobierz aplikację demo\"",
-        "detail": "'Pobierz aplikację demo'\nŹródło: src/kit/portal/Shell.tsx:340",
-        "expression": "'Pobierz aplikację demo'",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
           "line": 340,
           "kind": "parameter"
         }
       },
-      "className": {
-        "summary": "\"\"",
-        "detail": "''\nŹródło: src/kit/portal/Shell.tsx:342",
-        "expression": "''",
+      "appLinks": {
+        "summary": "portalDefaultAppLinks",
+        "detail": "portalDefaultAppLinks\nŹródło: src/kit/portal/Shell.tsx:341",
+        "expression": "portalDefaultAppLinks",
+        "source": {
+          "file": "src/kit/portal/Shell.tsx",
+          "line": 341,
+          "kind": "parameter"
+        }
+      },
+      "appLabel": {
+        "summary": "\"Pobierz aplikację demo\"",
+        "detail": "'Pobierz aplikację demo'\nŹródło: src/kit/portal/Shell.tsx:342",
+        "expression": "'Pobierz aplikację demo'",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
           "line": 342,
+          "kind": "parameter"
+        }
+      },
+      "className": {
+        "summary": "\"\"",
+        "detail": "''\nŹródło: src/kit/portal/Shell.tsx:344",
+        "expression": "''",
+        "source": {
+          "file": "src/kit/portal/Shell.tsx",
+          "line": 344,
           "kind": "parameter"
         }
       }
@@ -35475,11 +35475,11 @@
     "PortalPageTitle": {
       "level": {
         "summary": "1",
-        "detail": "1\nŹródło: src/kit/portal/Shell.tsx:534",
+        "detail": "1\nŹródło: src/kit/portal/Shell.tsx:536",
         "expression": "1",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
-          "line": 534,
+          "line": 536,
           "kind": "parameter"
         }
       }
@@ -35650,11 +35650,11 @@
     "PortalServiceCatalog": {
       "className": {
         "summary": "\"\"",
-        "detail": "''\nŹródło: src/kit/portal/Shell.tsx:666",
+        "detail": "''\nŹródło: src/kit/portal/Shell.tsx:668",
         "expression": "''",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
-          "line": 666,
+          "line": 668,
           "kind": "parameter"
         }
       }
@@ -35662,11 +35662,11 @@
     "PortalServiceLinks": {
       "label": {
         "summary": "\"Usługi\"",
-        "detail": "'Usługi'\nŹródło: src/kit/portal/Shell.tsx:631",
+        "detail": "'Usługi'\nŹródło: src/kit/portal/Shell.tsx:633",
         "expression": "'Usługi'",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
-          "line": 631,
+          "line": 633,
           "kind": "parameter"
         }
       }
@@ -35674,21 +35674,21 @@
     "PortalShell": {
       "contentLabel": {
         "summary": "\"Treść strony\"",
-        "detail": "'Treść strony'\nŹródło: src/kit/portal/Shell.tsx:425",
+        "detail": "'Treść strony'\nŹródło: src/kit/portal/Shell.tsx:427",
         "expression": "'Treść strony'",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
-          "line": 425,
+          "line": 427,
           "kind": "parameter"
         }
       },
       "defaultSidebarOpen": {
         "summary": "false",
-        "detail": "false\nŹródło: src/kit/portal/Shell.tsx:433",
+        "detail": "false\nŹródło: src/kit/portal/Shell.tsx:435",
         "expression": "false",
         "source": {
           "file": "src/kit/portal/Shell.tsx",
-          "line": 433,
+          "line": 435,
           "kind": "nullish-fallback"
         }
       }

@@ -29,3 +29,18 @@
   font-display: swap;
   src: url('./fonts/OpenSans-Bold.ttf') format('truetype');
 }
+
+[data-mobile-os='ios'] {
+  --m-font: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+[data-mobile-os='android'] {
+  --m-font: Roboto, 'Open Sans', sans-serif;
+}
+
+/* Named iOS neutral colors are defined in Display P3 in the source assets. */
+@supports (color: light-dark(color(display-p3 0 0 0), white)) {
+  [data-mobile-os='ios'] {
+    --m-text: light-dark(color(display-p3 0.062745 0.07451 0.090196), #f6f8f9);
+    --m-muted: light-dark(color(display-p3 0.321569 0.341176 0.372549), #a4aab2);
+  }
+}

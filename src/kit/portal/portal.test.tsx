@@ -325,18 +325,26 @@ describe('portal popup and messages', () => {
   it('skips disabled menu items, restores focus on Escape and selects checkbox items', async () => {
     const user = userEvent.setup();
     const changed = vi.fn();
-    render(
-      <PortalMenu
-        label="Opcje"
-        items={[
-          { id: 'a', label: 'Alfa' },
-          { id: 'b', label: 'Brak', disabled: true },
-          { id: 'c', label: 'Chcę', type: 'checkbox', onCheckedChange: changed },
-        ]}
-      />,
+    const { container } = render(
+      <div data-mobile-os="ios">
+        <PortalMenu
+          label="Opcje"
+          items={[
+            { id: 'a', label: 'Alfa' },
+            { id: 'b', label: 'Brak', disabled: true },
+            { id: 'c', label: 'Chcę', type: 'checkbox', onCheckedChange: changed },
+          ]}
+        />
+      </div>,
     );
     const button = screen.getByRole('button', { name: 'Opcje' });
     await user.click(button);
+    const menu = await screen.findByRole('menu');
+    expect(menu.closest('[data-mobile-os]')).toHaveAttribute('data-mobile-os', 'ios');
+    container.firstElementChild?.setAttribute('data-mobile-os', 'android');
+    await waitFor(() =>
+      expect(menu.closest('[data-mobile-os]')).toHaveAttribute('data-mobile-os', 'android'),
+    );
     await waitFor(() => expect(screen.getByRole('menuitem', { name: 'Alfa' })).toHaveFocus());
     await user.keyboard('{ArrowDown}');
     expect(screen.getByRole('menuitemcheckbox', { name: 'Chcę' })).toHaveFocus();

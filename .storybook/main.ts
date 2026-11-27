@@ -10,10 +10,13 @@ const config: StorybookConfig = {
   framework: { name: '@storybook/react-vite', options: {} },
   staticDirs: [
     '../public',
-    { from: '../src/kit/fonts', to: '/fonts/open-sans' },
     { from: '../dist/showcase', to: '/showcase' },
     { from: '../dist/showcase/preview', to: '/preview' },
   ],
+  viteFinal(config) {
+    // Storybook copies public via staticDirs. Avoid writing the same files from Vite.
+    return { ...config, build: { ...config.build, copyPublicDir: false } };
+  },
   docs: { defaultName: 'Docs' },
   typescript: { reactDocgen: false },
   core: { disableTelemetry: true, allowedHosts: ['localhost', '127.0.0.1'] },
