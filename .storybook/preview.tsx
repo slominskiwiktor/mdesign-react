@@ -1,3 +1,4 @@
+import { consentNativeSource } from '../src/catalog/consent-native';
 import { primitiveNativeSource } from '../src/catalog/primitives-native';
 import { utilityBarNativeSource } from '../src/catalog/utility-bar-native';
 import { footerNativeSource } from '../src/catalog/footer-native';
@@ -236,6 +237,7 @@ const preview: Preview = {
       if (name === 'MobileSnackbar' || name === 'PortalSnackbar' || name === 'MobileBanner') {
         source = () => snackbarNativeSource(name, args, choice);
       }
+      if (name === 'LandingCookieConsent') source = () => consentNativeSource(args, choice);
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
