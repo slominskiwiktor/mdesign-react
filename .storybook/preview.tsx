@@ -1,3 +1,4 @@
+import { portalHeaderNativeSource } from '../src/catalog/portal-header-native';
 import { portalLogoNativeSource } from '../src/catalog/portal-logo-native';
 import { mobilePageNativeSource } from '../src/catalog/mobile-page-native';
 import { cardStackNativeSource } from '../src/catalog/card-stack-native';
@@ -264,6 +265,8 @@ const preview: Preview = {
         source = (_, root) => mobilePageNativeSource(root, name, args, choice);
       if (name === 'PortalLogoInformation')
         source = (_, root) => portalLogoNativeSource(root, args.label, args.alt);
+      if (name === 'PortalHeader')
+        source = (_, root) => portalHeaderNativeSource(root, args, choice);
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
