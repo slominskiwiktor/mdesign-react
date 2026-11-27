@@ -548,6 +548,7 @@ const preview: Preview = {
         <div
           className="md-story-surface"
           data-platform={platform}
+          data-mobile-os={name && platform === 'mobile' ? nativePreviewPlatform(choice) : undefined}
           data-theme={theme}
           data-story-category={category ?? 'docs'}
         >
