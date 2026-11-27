@@ -1,16 +1,6 @@
-export type NativePlatform = 'ios' | 'android';
-export type NativePlatformChoice = NativePlatform | 'auto';
-
-export function normalizeNativePlatformChoice(value: unknown): NativePlatformChoice {
-  return value === 'ios' || value === 'android' ? value : 'auto';
-}
-
-export function nativePreviewPlatform(choice: NativePlatformChoice): NativePlatform {
-  if (choice !== 'auto') return choice;
-  return typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent)
-    ? 'android'
-    : 'ios';
-}
+export { nativePreviewPlatform, normalizeNativePlatformChoice } from '../kit/native-platform.js';
+export type { NativePlatform, NativePlatformChoice } from '../kit/native-platform.js';
+import type { NativePlatform, NativePlatformChoice } from '../kit/native-platform.js';
 
 type Style = Record<string, string | number>;
 type Primitive = 'View' | 'Text' | 'Image' | 'Pressable' | 'TextInput' | 'Switch';

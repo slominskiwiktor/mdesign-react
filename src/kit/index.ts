@@ -36,3 +36,5 @@ export * from './OfficialIcon.js';
 export * from './portal/index.js';
 export * from './mobile/index.js';
 export * from './landing/index.js';
+
+export * from './native-platform.js';
