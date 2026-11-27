@@ -76,6 +76,14 @@ try {
               });
 
               assert(source.includes("from 'react-native'"), 'Missing React Native import');
+              if (
+                [
+                  'mobile-icon-surface--default',
+                  'landing-landing-download-panel--default',
+                ].includes(story.id)
+              ) {
+                assert.match(source, /data:image\/png;base64,iVBORw0KGgo/, 'Missing embedded PNG');
+              }
               assert(source.includes('export default'), 'Missing example component');
               const diagnostics = ts.transpileModule(source, {
                 fileName: 'Example.tsx',
