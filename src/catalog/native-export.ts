@@ -372,8 +372,8 @@ function normalizeColors(nodes: Node[], document: Document) {
   nodes.forEach(visit);
 }
 
-export async function captureIconSurface(root: HTMLElement) {
-  const surface = root.querySelector('.m-mobile-icon-surface');
+export async function captureIconSurface(root: HTMLElement, selector = '.m-mobile-icon-surface') {
+  const surface = root.querySelector(selector);
   if (!surface) throw new Error('Brak widocznej powierzchni ikony.');
   const styles = getComputedStyle(surface);
   const width = surface.getBoundingClientRect().width;
