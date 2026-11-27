@@ -1,4 +1,4 @@
-import { createContext, useContext, useRef, useState } from 'react';
+import { createContext, useContext, useLayoutEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import {
   copyNativeSource,
@@ -37,6 +37,13 @@ export function NativePreview({
   const content = useRef<HTMLDivElement>(null);
   const choice = controlledChoice ?? preference?.choice ?? localChoice ?? 'auto';
   const platform = nativePreviewPlatform(choice);
+  const generation = useRef(0);
+  useLayoutEffect(
+    () => () => {
+      generation.current++;
+    },
+    [choice],
+  );
   const visibleResult = result?.choice === choice ? result : undefined;
 
   function change(value: NativePlatformChoice) {
@@ -46,20 +53,25 @@ export function NativePreview({
   }
 
   async function exportCode() {
-    if (!content.current) return;
+    const root = content.current;
+    if (!root) return;
+    const started = generation.current;
+    const isCurrent = () => content.current === root && started === generation.current;
     setBusy(true);
     setResult(undefined);
     try {
-      const text = source
-        ? await source(choice, content.current)
-        : await copyNativeSource(content.current, choice);
+      const text = source ? await source(choice, root) : await copyNativeSource(root, choice);
+      if (!isCurrent()) return;
       try {
         await navigator.clipboard.writeText(text);
-        setResult({ choice, code: text, feedback: 'Skopiowano kod React Native.' });
+        if (isCurrent())
+          setResult({ choice, code: text, feedback: 'Skopiowano kod React Native.' });
       } catch {
-        setResult({ choice, code: text, feedback: 'Skopiuj wygenerowany kod z pola poniżej.' });
+        if (isCurrent())
+          setResult({ choice, code: text, feedback: 'Skopiuj wygenerowany kod z pola poniżej.' });
       }
     } catch {
+      if (!isCurrent()) return;
       setResult({
         choice,
         code: '',

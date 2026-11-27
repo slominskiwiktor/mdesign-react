@@ -1,10 +1,13 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { useState } from 'react';
-import { afterEach, expect, test } from 'vitest';
+import { afterEach, expect, test, vi } from 'vitest';
 import type { NativePlatformChoice } from './native-export.js';
 import { NativePreview, NativePreviewPreference } from './NativePreview.js';
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+});
 
 function Catalog() {
   const [choice, onChoiceChange] = useState<NativePlatformChoice>('auto');
@@ -57,4 +60,30 @@ test('hides copied code when the global platform changes', async () => {
   expect(screen.queryByLabelText('Wygenerowany kod React Native')).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole('button', { name: 'Kopiuj kod React Native' }));
   expect(await screen.findByLabelText('Wygenerowany kod React Native')).toHaveValue('Kod: android');
+});
+
+test('does not copy a pending export after the platform changes', async () => {
+  const writeText = vi.fn().mockResolvedValue(undefined);
+  vi.stubGlobal('navigator', { clipboard: { writeText } });
+  let resolveExport!: (code: string) => void;
+  const pending = new Promise<string>((resolve) => {
+    resolveExport = resolve;
+  });
+  const { rerender } = render(
+    <NativePreview choice="ios" source={() => pending}>
+      Podgląd
+    </NativePreview>,
+  );
+  fireEvent.click(screen.getByText('React Native · iOS'));
+  fireEvent.click(screen.getByRole('button', { name: 'Kopiuj kod React Native' }));
+  rerender(
+    <NativePreview choice="android" source={() => 'Kod Androida'}>
+      Podgląd
+    </NativePreview>,
+  );
+  await act(async () => resolveExport('Stary kod iOS'));
+  expect(writeText).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('button', { name: 'Kopiuj kod React Native' }));
+  expect(await screen.findByLabelText('Wygenerowany kod React Native')).toHaveValue('Kod Androida');
+  expect(writeText).toHaveBeenCalledExactlyOnceWith('Kod Androida');
 });
