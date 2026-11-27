@@ -5,6 +5,13 @@ import { rasterize } from './native-export.js';
 import type { NativePlatformChoice } from './native-export.js';
 import { textOf } from './native-example-text.js';
 
+type Entry = {
+  title: string;
+  href?: string;
+  description?: ReactNode;
+  image?: { src: string; alt: string };
+};
+
 type Args = {
   title?: ReactNode;
   lead?: ReactNode;
@@ -18,7 +25,10 @@ type Args = {
   variant?: string;
   links?: { label: string; href: string }[];
   breadcrumbs?: { label: string; href?: string }[];
-  items?: { value: ReactNode; label: string; detail?: string }[];
+  items?: ({ value: ReactNode; label: string; detail?: string } | Entry)[];
+  related?: Entry[];
+  mobileImage?: string;
+  date?: string;
 };
 
 export async function landingSectionNativeSource(
@@ -36,20 +46,44 @@ export async function landingSectionNativeSource(
       disabled: !!props?.disabled,
     };
   });
+  const article = name === 'LandingArticle';
+  const awards = name === 'LandingAwards';
+  const entries = await Promise.all(
+    (article
+      ? (args.related ?? [])
+      : awards
+        ? (args.items ?? []).filter((item): item is Entry => 'title' in item)
+        : []
+    ).map(async (item) => ({
+      title: item.title,
+      description: textOf(item.description),
+      href: item.href ? (safeHref(item.href) ?? '') : '',
+      image: item.image ? ((await rasterize(item.image.src)) ?? null) : null,
+      alt: item.image?.alt ?? '',
+    })),
+  );
   const config = {
+    article,
+    entries,
+    date: args.date ?? '',
+    paragraphs: article ? Children.toArray(args.children).map(textOf).filter(Boolean) : [],
+    mobileImage: args.mobileImage ? ((await rasterize(args.mobileImage)) ?? null) : null,
     title: textOf(args.title),
-    body: textOf(args.lead ?? args.description ?? args.children),
+    body: textOf(args.lead ?? args.description ?? (article ? undefined : args.children)),
     image: args.image ? ((await rasterize(args.image.src)) ?? null) : null,
     alt: args.image?.alt ?? '',
     reverse: !!args.reverse,
-    split: (args.layout ?? 'split') === 'split' && args.variant !== 'listing',
+    split:
+      !article && !awards && (args.layout ?? 'split') === 'split' && args.variant !== 'listing',
     hero: name === 'LandingHero',
     tone: args.tone ?? (name === 'LandingSocialBanner' ? 'blue' : 'white'),
-    stats: (args.items ?? []).map(({ value, label, detail }) => ({
-      value: textOf(value),
-      label,
-      detail: detail ?? '',
-    })),
+    stats: (args.items ?? [])
+      .filter((item) => 'value' in item)
+      .map(({ value, label, detail }) => ({
+        value: textOf(value),
+        label,
+        detail: detail ?? '',
+      })),
     crumbs: (args.breadcrumbs ?? []).map(({ label, href }) => ({
       label,
       href: href ? (safeHref(href) ?? '') : '',
@@ -90,8 +124,9 @@ export default function Example({ media, onNavigate, onAction }: {
     } else setStatus(href);
   }
 
-  const image = media ?? (config.image ? <Image accessible={!!config.alt}
-    accessibilityLabel={config.alt || undefined} source={{ uri: config.image }}
+  const uri = width < 768 ? config.mobileImage ?? config.image : config.image;
+  const image = media ?? (uri ? <Image accessible={!!config.alt}
+    accessibilityLabel={config.alt || undefined} source={{ uri }}
     resizeMode="contain" style={styles.image} /> : null);
 
   return (
@@ -106,6 +141,7 @@ export default function Example({ media, onNavigate, onAction }: {
       </View> : null}
       <View style={[styles.layout, wide && styles.wide, wide && config.reverse && styles.reverse]}>
         <View style={styles.text}>
+          {config.date ? <Text style={styles.copy}>{config.date}</Text> : null}
           <Text accessibilityRole="header" style={[styles.heading, config.hero && styles.hero]}>{config.title}</Text>
           {config.body ? <Text style={styles.copy}>{config.body}</Text> : null}
           {(config.stats as { value: string; label: string; detail: string }[]).map((item, index) => (
@@ -124,6 +160,19 @@ export default function Example({ media, onNavigate, onAction }: {
         </View>
         {image ? <View style={styles.media}>{image}</View> : null}
       </View>
+      {(config.paragraphs as string[]).map((paragraph, index) => <Text key={index} style={styles.copy}>{paragraph}</Text>)}
+      {config.article && config.entries.length ? <Text accessibilityRole="header" style={styles.heading}>Przeczytaj również</Text> : null}
+      {(config.entries as { title: string; description: string; href: string; image: string | null; alt: string }[]).map((entry, index) => (
+        <View key={index} style={styles.entry}>
+          {entry.image ? <Image accessible={!!entry.alt} accessibilityLabel={entry.alt || undefined}
+            source={{ uri: entry.image }} resizeMode="contain" style={styles.image} /> : null}
+          {entry.href ? <Pressable accessibilityRole="link" style={styles.control}
+            onPress={() => void activate({ label: entry.title, href: entry.href, disabled: false })}>
+            <Text style={styles.link}>{entry.title}</Text>
+          </Pressable> : <Text accessibilityRole="header" style={styles.heading}>{entry.title}</Text>}
+          {entry.description ? <Text style={styles.copy}>{entry.description}</Text> : null}
+        </View>
+      ))}
     </View>
   );
 }
@@ -142,6 +191,7 @@ const styles = StyleSheet.create({
   hero: { fontSize: isIOS ? 34 : 30 },
   copy: { color: ink, fontSize: 16 },
   crumbs: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8 },
+  entry: { paddingVertical: 8, gap: 4 },
   stat: { gap: 2 },
   control: { minHeight: 44, justifyContent: 'center' },
   link: { color: dark ? '#fff' : '#0452a8', fontWeight: '600', textDecorationLine: 'underline' },

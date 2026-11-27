@@ -294,9 +294,14 @@ const preview: Preview = {
       )
         source = () => landingListNativeSource(name, { ...args, items: args.items }, choice);
       if (
-        ['LandingHero', 'LandingInfoSection', 'LandingSocialBanner', 'LandingStatistics'].includes(
-          name,
-        )
+        [
+          'LandingHero',
+          'LandingInfoSection',
+          'LandingSocialBanner',
+          'LandingStatistics',
+          'LandingArticle',
+          'LandingAwards',
+        ].includes(name)
       )
         source = () => landingSectionNativeSource(name, args, choice);
       if (typeof name === 'string' && !source) {
