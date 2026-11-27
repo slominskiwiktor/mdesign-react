@@ -8,6 +8,7 @@ import { portalLogoNativeSource } from '../src/catalog/portal-logo-native';
 import { mobilePageNativeSource } from '../src/catalog/mobile-page-native';
 import { cardStackNativeSource } from '../src/catalog/card-stack-native';
 import type { NativePlatformChoice } from '../src/catalog/native-export';
+import { landingVideoNativeSource } from '../src/catalog/landing-video-native';
 import { landingProviderNativeSource } from '../src/catalog/landing-provider-native';
 import { iconNativeSource, iconSurfaceNativeSource } from '../src/catalog/icon-surface-native';
 import { infoRowNativeSource } from '../src/catalog/info-row-native';
@@ -252,6 +253,11 @@ const preview: Preview = {
       if (name === 'MobileSnackbar' || name === 'PortalSnackbar' || name === 'MobileBanner') {
         source = () => snackbarNativeSource(name, args, choice);
       }
+      if (name === 'LandingVideo')
+        source = () =>
+          landingVideoNativeSource(
+            args as unknown as Parameters<typeof landingVideoNativeSource>[0],
+          );
       if (name === 'LandingProvider') source = () => landingProviderNativeSource(args);
       if (name === 'LandingCookieConsent') source = () => consentNativeSource(args, choice);
       if (name === 'LandingDownloadCTA' || name === 'LandingDownloadPanel')

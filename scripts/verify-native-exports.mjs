@@ -86,6 +86,7 @@ try {
                   'portal-portal-widget-icon--default',
                   'mobile-icon-surface--default',
                   'landing-landing-download-panel--default',
+                  'landing-landing-video--default',
                 ].includes(story.id)
               ) {
                 assert.match(source, /data:image\/png;base64,iVBORw0KGgo/, 'Missing embedded PNG');
