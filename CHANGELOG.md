@@ -1,5 +1,11 @@
 # Zmiany
 
+## 1.1.0
+
+- Storybook obsługuje wspólny wybór Auto, iOS i Android z ręcznym nadpisaniem.
+- Wszystkie 186 komponentów ma dedykowane przykłady React Native dla iOS i Androida.
+- Przykłady obu platform przeszły test renderowania w Expo Go.
+
 ## 1.0.0 — 2026-10-28
 
 Pierwsze stabilne wydanie: 186 komponentów React, 308 historii Storybooka, tokeny i trzy systemy wizualne. Obsługa React 18.3.1 oraz 19.x.

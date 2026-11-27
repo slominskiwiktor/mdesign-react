@@ -61,11 +61,11 @@ reload, run `bun run dev:showcase` and open port 5174.
 
 ## Use in an application
 
-Download the TGZ package from [release 1.0.0](https://github.com/slominskiwiktor/mdesign-react/releases/tag/v1.0.0)
+Download the TGZ package from [release 1.1.0](https://github.com/slominskiwiktor/mdesign-react/releases/tag/v1.1.0)
 and install it in your application:
 
 ```sh
-npm install ./mdesign-react-1.0.0.tgz
+npm install ./mdesign-react-1.1.0.tgz
 ```
 
 You can also build a package from the current source:

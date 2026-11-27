@@ -59,11 +59,11 @@ Instrukcja pracy i testów: [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 ## Użycie w aplikacji
 
-Pobierz [paczkę TGZ z wydania 1.0.0](https://github.com/slominskiwiktor/mdesign-react/releases/tag/v1.0.0)
+Pobierz [paczkę TGZ z wydania 1.1.0](https://github.com/slominskiwiktor/mdesign-react/releases/tag/v1.1.0)
 i zainstaluj ją w aplikacji:
 
 ```sh
-npm install ./mdesign-react-1.0.0.tgz
+npm install ./mdesign-react-1.1.0.tgz
 ```
 
 Możesz też zbudować paczkę z bieżących źródeł:
