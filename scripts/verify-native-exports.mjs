@@ -100,6 +100,7 @@ try {
               assert(source.includes("from 'react-native'"), 'Missing React Native import');
               if (
                 [
+                  'core-bottom-navigation--default',
                   'core-native-icon--default',
                   'core-official-icon--default',
                   'core-service-icon--default',
