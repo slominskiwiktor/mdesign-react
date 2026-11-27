@@ -1,3 +1,4 @@
+import { cardStackNativeSource } from '../src/catalog/card-stack-native';
 import type { NativePlatformChoice } from '../src/catalog/native-export';
 import { iconSurfaceNativeSource } from '../src/catalog/icon-surface-native';
 import { infoRowNativeSource } from '../src/catalog/info-row-native';
@@ -256,6 +257,7 @@ const preview: Preview = {
         source = () => infoRowNativeSource(args.items, true, choice);
       if (name === 'IconSurface')
         source = (_, root) => iconSurfaceNativeSource(root, args.label, args.disabled);
+      if (name === 'CardStack') source = () => cardStackNativeSource(args, choice);
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
