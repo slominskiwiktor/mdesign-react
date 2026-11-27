@@ -1,3 +1,4 @@
+import { landingCardNativeSource } from '../src/catalog/landing-card-native';
 import { portalShellNativeSource } from '../src/catalog/portal-shell-native';
 import { dashboardNativeSource } from '../src/catalog/dashboard-native';
 import { portalHeaderNativeSource } from '../src/catalog/portal-header-native';
@@ -276,6 +277,15 @@ const preview: Preview = {
             args as unknown as Parameters<typeof portalShellNativeSource>[0],
             choice,
           );
+      if (
+        [
+          'LandingCatalogCard',
+          'LandingNewsCard',
+          'LandingPressCard',
+          'LandingServiceCard',
+        ].includes(name)
+      )
+        source = (_, root) => landingCardNativeSource(root, name, args, choice);
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
