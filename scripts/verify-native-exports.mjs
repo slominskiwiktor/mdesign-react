@@ -24,6 +24,28 @@ const stories = manifest.components.map(({ name }) => {
 
 const typecheckRoot = process.argv[4] ? resolve(process.argv[4]) : undefined;
 const examples = new Map();
+const retrying = process.argv[5] === '--retry';
+const results = retrying ? JSON.parse(await readFile(process.argv[3], 'utf8')) : [];
+const known = new Set(stories.map(({ id }) => id));
+const settled = new Map();
+for (const result of results) {
+  if (!known.has(result.id) || !['ios', 'android'].includes(result.platform)) continue;
+  if (result.status !== 'pass' || result.exportKind !== 'component-example') continue;
+  if (typecheckRoot) {
+    const filename = resolve(typecheckRoot, `${result.id}-${result.platform}.tsx`);
+    try {
+      await readFile(filename);
+      examples.set(filename, result);
+    } catch {
+      continue;
+    }
+  }
+  settled.set(`${result.id}/${result.platform}`, result);
+}
+results.splice(0, results.length, ...settled.values());
+const pending = stories.filter(({ id }) =>
+  ['ios', 'android'].some((platform) => !settled.has(`${id}/${platform}`)),
+);
 const nativeVersion = typecheckRoot
   ? JSON.parse(
       await readFile(resolve(typecheckRoot, 'node_modules/react-native/package.json'), 'utf8'),
@@ -31,7 +53,6 @@ const nativeVersion = typecheckRoot
   : undefined;
 
 const browser = await chromium.launch();
-const results = [];
 let nextStory = 0;
 let clipboardQueue = Promise.resolve();
 
@@ -42,22 +63,23 @@ function useClipboard(check) {
 }
 try {
   await Promise.all(
-    Array.from({ length: 2 }, async () => {
+    Array.from({ length: retrying ? 1 : 2 }, async () => {
       const page = await browser.newPage({
         viewport: { width: 390, height: 844 },
         reducedMotion: 'reduce',
         permissions: ['clipboard-read', 'clipboard-write'],
       });
-      page.setDefaultTimeout(15000);
+      page.setDefaultTimeout(retrying ? 45000 : 15000);
       try {
-        while (nextStory < stories.length) {
-          const story = stories[nextStory++];
+        while (nextStory < pending.length) {
+          const story = pending[nextStory++];
           const iframe = new URL('iframe.html', base);
           iframe.search = new URLSearchParams({ id: story.id, viewMode: 'story' });
           for (const platform of ['ios', 'android']) {
+            if (settled.has(`${story.id}/${platform}`)) continue;
             try {
               iframe.searchParams.set('globals', `nativePlatform:${platform}`);
-              await page.goto(iframe.href, { waitUntil: 'domcontentloaded' });
+              await page.goto(iframe.href, { waitUntil: 'commit' });
               const tools = page.locator('details.md-native-preview-tools');
               await tools.locator('summary').click();
               const selector = tools.getByLabel('System podglądu');
@@ -104,13 +126,15 @@ try {
                   .map((item) => ts.flattenDiagnosticMessageText(item.messageText, '\n'))
                   .join('\n'),
               );
+              assert(
+                !source.includes('export default function ComponentExample('),
+                'The default story must use a dedicated React Native example',
+              );
               const result = {
                 id: story.id,
                 platform,
                 status: 'pass',
-                exportKind: source.includes('export default function ComponentExample(')
-                  ? 'dom-conversion'
-                  : 'component-example',
+                exportKind: 'component-example',
               };
               if (typecheckRoot) {
                 const file = resolve(typecheckRoot, `${story.id}-${platform}.tsx`);
@@ -176,6 +200,7 @@ if (typecheckRoot) {
 
 results.sort((a, b) => a.id.localeCompare(b.id) || a.platform.localeCompare(b.platform));
 if (process.argv[3]) await writeFile(process.argv[3], JSON.stringify(results, null, 2) + '\n');
+assert.equal(results.length, stories.length * 2, 'Incomplete native export report');
 const failures = results.filter(({ status }) => status === 'fail');
 for (const failure of failures) {
   console.error(
