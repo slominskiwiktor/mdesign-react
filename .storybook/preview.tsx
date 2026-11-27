@@ -1,3 +1,4 @@
+import { landingSectionNativeSource } from '../src/catalog/landing-section-native';
 import { landingListNativeSource } from '../src/catalog/landing-list-native';
 import { landingCardNativeSource } from '../src/catalog/landing-card-native';
 import { portalShellNativeSource } from '../src/catalog/portal-shell-native';
@@ -292,6 +293,12 @@ const preview: Preview = {
         Array.isArray(args.items)
       )
         source = () => landingListNativeSource(name, { ...args, items: args.items }, choice);
+      if (
+        ['LandingHero', 'LandingInfoSection', 'LandingSocialBanner', 'LandingStatistics'].includes(
+          name,
+        )
+      )
+        source = () => landingSectionNativeSource(name, args, choice);
       if (typeof name === 'string' && !source) {
         const dialog = dialogNativeSource(name, args, choice);
         if (dialog) source = () => dialog;
