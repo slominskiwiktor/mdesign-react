@@ -384,26 +384,25 @@ export async function captureIconSurface(root: HTMLElement, selector = '.m-mobil
       : parseFloat(styles.borderRadius) || 0,
     opacity: Number(styles.opacity),
   };
-  for (const element of surface.querySelectorAll('*')) {
+  const captured = await captureRenderedIcon(surface);
+  normalizeColors([{ type: 'View', style: visual }], root.ownerDocument);
+  return { width, visual, icon: captured?.style, uri: captured?.uri };
+}
+
+export async function captureRenderedIcon(root: Element) {
+  for (const element of root.querySelectorAll('*')) {
     const css = getComputedStyle(element);
     const bounds = element.getBoundingClientRect();
     if (css.visibility !== 'visible' || bounds.width <= 0 || bounds.height <= 0) continue;
     const picture = pictureFor(element, css);
     if (!picture) continue;
-    const icon: Style = { width: bounds.width, height: bounds.height };
-    if (picture.tintColor) icon.tintColor = picture.tintColor;
-    normalizeColors(
-      [
-        { type: 'View', style: visual },
-        { type: 'Image', style: icon },
-      ],
-      root.ownerDocument,
-    );
+    const style: Style = { width: bounds.width, height: bounds.height };
+    if (picture.tintColor) style.tintColor = picture.tintColor;
+    normalizeColors([{ type: 'Image', style }], root.ownerDocument);
     const uri = picture.rasterize ? await rasterize(picture.uri) : picture.uri;
-    if (uri) return { width, visual, icon, uri };
+    if (uri) return { style, uri };
   }
-  normalizeColors([{ type: 'View', style: visual }], root.ownerDocument);
-  return { width, visual, icon: undefined, uri: undefined };
+  return undefined;
 }
 
 export async function rasterize(uri: string): Promise<string | undefined> {

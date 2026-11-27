@@ -78,6 +78,12 @@ try {
               assert(source.includes("from 'react-native'"), 'Missing React Native import');
               if (
                 [
+                  'core-native-icon--default',
+                  'core-official-icon--default',
+                  'core-service-icon--default',
+                  'landing-landing-icon--default',
+                  'portal-portal-icon--default',
+                  'portal-portal-widget-icon--default',
                   'mobile-icon-surface--default',
                   'landing-landing-download-panel--default',
                 ].includes(story.id)

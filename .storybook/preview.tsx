@@ -8,7 +8,8 @@ import { portalLogoNativeSource } from '../src/catalog/portal-logo-native';
 import { mobilePageNativeSource } from '../src/catalog/mobile-page-native';
 import { cardStackNativeSource } from '../src/catalog/card-stack-native';
 import type { NativePlatformChoice } from '../src/catalog/native-export';
-import { iconSurfaceNativeSource } from '../src/catalog/icon-surface-native';
+import { landingProviderNativeSource } from '../src/catalog/landing-provider-native';
+import { iconNativeSource, iconSurfaceNativeSource } from '../src/catalog/icon-surface-native';
 import { infoRowNativeSource } from '../src/catalog/info-row-native';
 import { downloadNativeSource } from '../src/catalog/download-native';
 import { consentNativeSource } from '../src/catalog/consent-native';
@@ -251,6 +252,7 @@ const preview: Preview = {
       if (name === 'MobileSnackbar' || name === 'PortalSnackbar' || name === 'MobileBanner') {
         source = () => snackbarNativeSource(name, args, choice);
       }
+      if (name === 'LandingProvider') source = () => landingProviderNativeSource(args);
       if (name === 'LandingCookieConsent') source = () => consentNativeSource(args, choice);
       if (name === 'LandingDownloadCTA' || name === 'LandingDownloadPanel')
         source = () => downloadNativeSource(name, args, choice);
@@ -263,6 +265,17 @@ const preview: Preview = {
           );
       if (name === 'InfoRowList' && Array.isArray(args.items))
         source = () => infoRowNativeSource(args.items, true, choice);
+      if (
+        [
+          'NativeIcon',
+          'OfficialIcon',
+          'ServiceIcon',
+          'LandingIcon',
+          'PortalIcon',
+          'PortalWidgetIcon',
+        ].includes(name)
+      )
+        source = (_, root) => iconNativeSource(root, args.title);
       if (name === 'IconSurface')
         source = (_, root) => iconSurfaceNativeSource(root, args.label, args.disabled);
       if (name === 'CardStack') source = () => cardStackNativeSource(args, choice);
